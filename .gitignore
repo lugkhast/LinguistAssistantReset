@@ -1,0 +1,4 @@
+bin
+
+# Ignore test output
+InfectedEye_1.xml
