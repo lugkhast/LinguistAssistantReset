@@ -10,6 +10,7 @@ import java.util.Map;
 
 import managers.LexiconManager;
 import managers.OntologyManager;
+import managers.XMLManager;
 import ontology.Concept;
 
 import org.jdom2.Element;
@@ -457,14 +458,8 @@ public class LexiconList {
 	public void saveToXML(){
 		Element xmlElement = generateXMLElement();
 		String targetFile = LexiconManager.ROOT_LANGUAGE_FOLDER+"\\"+LexiconManager.getInstance().getCurrSelectedLanguage()+"\\"+pos+".xml";
-		XMLOutputter xmlOutput = new XMLOutputter();
-		xmlOutput.setFormat(Format.getPrettyFormat());
-		try{
-			xmlOutput.output(xmlElement, new FileWriter(targetFile));
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
+
+		XMLManager.getInstance().writeToXML(targetFile, xmlElement);
 	}
 
 }

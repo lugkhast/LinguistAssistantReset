@@ -3,6 +3,7 @@ import java.awt.Font;
 import javax.swing.UIManager;
 
 import controller.Controller;
+import controller.MainController;
 
 public class Driver {
 
@@ -14,6 +15,6 @@ public class Driver {
 		Font oldLabelFont = UIManager.getFont("Label.font");
 		UIManager.put("Label.font", oldLabelFont.deriveFont(Font.PLAIN,(float)14));
 		
-		new Controller().start();
+		new MainController();
 	}
 }

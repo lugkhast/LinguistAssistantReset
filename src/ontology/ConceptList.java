@@ -7,6 +7,7 @@ import java.util.List;
 import managers.ComponentManager;
 import managers.LexiconManager;
 import managers.OntologyManager;
+import managers.XMLManager;
 
 import org.jdom2.Element;
 import org.jdom2.output.Format;
@@ -88,10 +89,10 @@ public class ConceptList {
 		String senses = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		int currSenseIndex = 0;
 		for(Concept concept: conceptList){
-			if(concept.getName().toLowerCase().equals(conceptName.toLowerCase()))
+			if(concept.getName().equalsIgnoreCase(conceptName))
 			{
 				if(senses.indexOf(concept.getSense()) >= currSenseIndex)
-					currSenseIndex = senses.indexOf(concept.getSense());
+					currSenseIndex = senses.indexOf(concept.getSense()) + 1;
 			}
 		}
 		
@@ -162,13 +163,6 @@ public class ConceptList {
 			rootElement.addContent(concept.generateXMLElement());
 		}
 		
-		XMLOutputter xmlOutput = new XMLOutputter();
-		xmlOutput.setFormat(Format.getPrettyFormat());
-		try{
-			xmlOutput.output(rootElement, new FileWriter(path));
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
+		XMLManager.getInstance().writeToXML(path, rootElement);
 	}
 }

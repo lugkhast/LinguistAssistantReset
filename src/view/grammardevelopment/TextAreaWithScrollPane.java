@@ -11,6 +11,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 
+import view.MainFrame;
+
 public class TextAreaWithScrollPane extends JPanel{
 	
 	private JTextPane textArea;

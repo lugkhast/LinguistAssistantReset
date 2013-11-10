@@ -30,8 +30,8 @@ import managers.ComponentManager;
 import managers.LexiconManager;
 import managers.OntologyManager;
 import managers.SemanticsManager;
+import view.MainFrame;
 import view.grammardevelopment.DisplayScreen;
-import view.grammardevelopment.MainFrame;
 
 public class Controller {
 	public void start(){

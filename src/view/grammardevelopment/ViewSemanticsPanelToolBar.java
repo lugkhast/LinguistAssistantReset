@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import view.MainFrame;
+
 public class ViewSemanticsPanelToolBar extends JPanel{
 
 	private JButton editButton;

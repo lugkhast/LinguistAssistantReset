@@ -80,12 +80,14 @@ public class FeatureList {
 	
 	public void renameFeatureValue(String featureName, String oldFeatureValue, String newFeatureValue){
 		if(newFeatureValue != null && !newFeatureValue.trim().isEmpty()){
-			for(Feature feature: featureList)
-				if(feature.getName().equals(featureName)){
-					if(feature.getValue().equals(oldFeatureValue))
+			for(Feature feature: featureList){
+				//System.out.println("Testing "+feature.getName()+" = "+feature.getValue()+" with "+featureName+" = "+oldFeatureValue+" going to change to "+newFeatureValue);
+				if(feature.getName().equalsIgnoreCase(featureName)){
+					if(feature.getValue().equalsIgnoreCase(oldFeatureValue))
 						feature.setValue(newFeatureValue);
 					break;
 				}
+			}
 		}
 	}
 	

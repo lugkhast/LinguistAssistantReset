@@ -82,9 +82,9 @@ public abstract class Component {
 
 	public abstract String toGeneratedString();
 	
-	public abstract String toRawSentence();
+	public abstract String toConceptSentence();
 	
-	public abstract String toSentence();
+	public abstract String toLexiconSentence();
 	
 	public abstract boolean isLeaf();
 	

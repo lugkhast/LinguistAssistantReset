@@ -24,11 +24,10 @@ public class ComponentInfo {
 	}
 	
 	public boolean isLeaf(){
-		return type.equals(TYPE_LEAF);
+		return type.equalsIgnoreCase(TYPE_LEAF);
 	}
 	
 	public ComponentInfo getCopy(){
 		return new ComponentInfo(name, description, type);
 	}
-	
 }

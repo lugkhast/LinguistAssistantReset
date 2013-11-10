@@ -30,18 +30,22 @@ import javax.swing.border.BevelBorder;
 
 import components.Children;
 import components.Component;
+import components.Leaf;
 import components.Phrase;
-import controller.listener.SelectComponentActionListener;
-import controller.listener.editsemantics.DnDListener;
+import controller.listener.grammardev.CollapseButtonListener;
+import controller.listener.grammardev.SelectComponentActionListener;
+import controller.listener.grammardev.editsemantics.ComponentPaletteDnDListener;
 
 import managers.ColorManager;
 
+import view.MainFrame;;
 
 public class ComponentPanel extends JPanel {
 
 	private Component component;
 	private ArrayList<ComponentPanel> children;
 	private ComponentPanel parent;
+	private InputXMLDocumentPanel parentDocPanel;
 	private int desiredHeight;
 	
 	private JLabel nameLabel;
@@ -60,8 +64,8 @@ public class ComponentPanel extends JPanel {
 	private static ImageIcon imgCollapse;
 	private static ImageIcon imgExpand;
 	
-	private static final String COMMAND_COLLAPSE = "collapse";
-	private static final String COMMAND_EXPAND = "expand";
+	public static final String COMMAND_COLLAPSE = "collapse";
+	public static final String COMMAND_EXPAND = "expand";
 	
 	private static ImageIcon getImgCollapse(){
 		if(imgCollapse == null)
@@ -80,8 +84,8 @@ public class ComponentPanel extends JPanel {
 	}
 	
 	//constructor
-	private ComponentPanel(Component component){
-		final Clipboard clipboard = this.getToolkit().getSystemClipboard();
+	private ComponentPanel(Component component, InputXMLDocumentPanel parentDocPanel){
+		this.parentDocPanel = parentDocPanel;
 		this.component = component;
 		children = new ArrayList<ComponentPanel>();
 		setBackground(ColorManager.getInstance().getColor(component.getName()));
@@ -91,17 +95,7 @@ public class ComponentPanel extends JPanel {
 		if(!component.isLeaf()){
 			collapseButton = new JButton();
 			collapseButton.setBounds(HORIZONTAL_MARGIN, 0, LEAF_HEIGHT, LEAF_HEIGHT);
-			collapseButton.addActionListener(new ActionListener(){
-				public void actionPerformed(ActionEvent e){
-					JButton btn = (JButton) e.getSource();
-					
-					if(btn.getActionCommand().equals(COMMAND_COLLAPSE))
-						setCollapsed(true);
-					else
-						setCollapsed(false);
-					DisplayScreen.getCurrentlyDisplayedDocumentPanel().adjustPositioning();
-				}
-			});
+			collapseButton.addActionListener(new CollapseButtonListener(this));
 			add(collapseButton);
 		}
 		
@@ -125,21 +119,20 @@ public class ComponentPanel extends JPanel {
 	}
 	
 	//static method for creating a custompanel
-	public static ComponentPanel CreateInstance(Component component, SelectComponentActionListener selectListener){
+	public static ComponentPanel CreateInstance(Component component, InputXMLDocumentPanel parentDocPanel){
 		
-		ComponentPanel newCP = new ComponentPanel(component);
+		ComponentPanel newCP = new ComponentPanel(component, parentDocPanel);
 		DropTarget dt = new DropTarget();
 		try {
-			dt.addDropTargetListener(new DnDListener());
+			dt.addDropTargetListener(new ComponentPaletteDnDListener(parentDocPanel));
 			newCP.setDropTarget(dt);
 			
 		} catch (TooManyListenersException e) {}
-		newCP.setSelectListener(selectListener);
 		
 		Children children = component.getChildren();
 		if(children!=null){
 			for(Component child: children.getChildren()){
-				ComponentPanel currChildPanel = CreateInstance(child, selectListener);
+				ComponentPanel currChildPanel = CreateInstance(child, parentDocPanel);
 				newCP.addChild(currChildPanel);
 			}
 		}
@@ -182,14 +175,14 @@ public class ComponentPanel extends JPanel {
 				child.resize(leftX, topY);
 		}
 	}
-	
-	//setters
+
+	//setters	
 	public void setCollapsed(boolean isCollapsed){
 		if(isCollapsed){
 			if(isGenerateMode)
-				setLabelText(component.toString()+" = "+component.toSentence());
+				setLabelText(component.toString()+" = "+component.toLexiconSentence());
 			else
-				setLabelText(component.toString()+" = "+component.toRawSentence());
+				setLabelText(component.toString()+" = "+component.toConceptSentence());
 			collapseButton.setActionCommand(COMMAND_EXPAND);
 			collapseButton.setIcon(getImgExpand());
 		}
@@ -203,10 +196,19 @@ public class ComponentPanel extends JPanel {
 	}
 	
 	public void setGenerateMode(boolean isGenerateMode){
-		if(isGenerateMode)
-			setLabelText(component.toGeneratedString());
-		else
-			setLabelText(component.toString());
+		if(isGenerateMode){
+			if(isCollapsed)	
+				setLabelText(component.toLexiconSentence());
+			else
+				setLabelText(component.toGeneratedString());
+		}
+		else{
+			if(isCollapsed)
+				setLabelText(component.toConceptSentence());
+			else
+				setLabelText(component.toString());
+		}
+	
 		for(ComponentPanel child: children)
 			child.setGenerateMode(isGenerateMode);
 		this.isGenerateMode = isGenerateMode;
@@ -258,6 +260,18 @@ public class ComponentPanel extends JPanel {
 		add(child);
 		child.setParent(this);
 	}
+
+	public void refreshSemanticLexicons(){
+		if(component.isLeaf()){
+			Leaf leaf = ((Leaf)component);
+			leaf.refreshLexicon();
+			refreshLabelText();
+			refreshLabelToolTip();
+		}
+		
+		for(ComponentPanel child: children)
+			child.refreshSemanticLexicons();
+	}
 	
 	//method also removes children internally in data structure
 	public void removeChild(ComponentPanel child){
@@ -270,6 +284,9 @@ public class ComponentPanel extends JPanel {
 	public void setSelectListener(SelectComponentActionListener listener){
 		addMouseListener(listener);
 		this.selectListener = listener;
+		
+		for(ComponentPanel child: children)
+			child.setSelectListener(listener);
 	}
 	
 	private void setLabelText(String labelText){
@@ -290,8 +307,12 @@ public class ComponentPanel extends JPanel {
 	}
 	
 	//Getters
+	public InputXMLDocumentPanel getParentDocPanel(){
+		return parentDocPanel;
+	}
+	
 	public String toSentence(){
-		return component.toSentence();
+		return component.toLexiconSentence();
 	}
 		
 	public int getBottomY(){

@@ -189,6 +189,8 @@ public class Lexicon implements Comparable {
 		mappedConceptName = "";
 		mappedConceptSense = "";
 		mappedConceptPos = "";
+		parentLexiconList.saveToXML();
+		LexiconManager.getInstance().refresh();
 	}
 	
 	public void setMapping(String concept, String sense, String pos){
@@ -198,6 +200,7 @@ public class Lexicon implements Comparable {
 			mappedConceptSense = sense;
 			mappedConceptPos = pos;
 			parentLexiconList.saveToXML();
+			LexiconManager.getInstance().refresh();
 		}
 	}
 	
@@ -271,6 +274,7 @@ public class Lexicon implements Comparable {
 
 	//Manipulating Features
 	public void setFeature(String featureName, String featureValue){
+		System.out.println("Setting feature to "+featureName+" = "+featureValue+" for "+name);
 		featureList.setFeature(new Feature(featureName, featureValue, false));
 		parentLexiconList.saveToXML();
 	}

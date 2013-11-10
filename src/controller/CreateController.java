@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -12,120 +13,68 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.TransferHandler;
 
 import managers.FeatureManager;
 
 import components.Component;
 import components.Leaf;
-import controller.listener.SelectComponentActionListener;
+import controller.listener.grammardev.SelectComponentActionListener;
+import controller.listener.grammardev.editsemantics.FeaturePaletteCmbValuesItemListener;
+import controller.listener.grammardev.editsemantics.DeleteComponentBtnListener;
+import controller.listener.grammardev.editsemantics.FeaturePaletteResetBtnListener;
+import controller.listener.grammardev.editsemantics.LeafEditPaletteBtnListener;
 
 import features.Feature;
 
 import view.grammardevelopment.ComponentPanel;
 import view.grammardevelopment.DisplayScreen;
 import view.grammardevelopment.editsemantics.ComponentPaletteScrollPane;
+import view.grammardevelopment.editsemantics.CreationRightPanel;
 import view.grammardevelopment.editsemantics.FeaturePaletteScrollPane;
 import view.grammardevelopment.editsemantics.LeafEditPalette;
 
 public class CreateController {
 
-	DisplayScreen displayScreen; 
-	FeaturePaletteScrollPane featPalette;
-	ComponentPaletteScrollPane compPalette;
-	LeafEditPalette lePalette;
+	private CreationRightPanel creationPanel;
+	private GrammarDevController grammarDevController;
 	
-	
-	public CreateController(DisplayScreen displayScreen,FeaturePaletteScrollPane featPalette, ComponentPaletteScrollPane compPalette,
-										LeafEditPalette lePalette){
-		this.displayScreen = displayScreen; 
-		this.featPalette = featPalette; // pwedeng instantiated dito yung palettes
-		this.compPalette = compPalette;
-		this.lePalette = lePalette;
+	public CreateController(GrammarDevController grammarDevController, CreationRightPanel creationPanel){
+		this.creationPanel = creationPanel;
+		this.grammarDevController = grammarDevController;
 		
-		addListenerToCompPalette();
+		addDeleteButtonListener();
+		addListenersToCompPalette();
 		addListenersToFeatPalette();
 		addListenersToLeafEditPalette();
 	}
+	
+	private void addDeleteButtonListener(){
+		creationPanel.addDeleteBtnListener(new DeleteComponentBtnListener(grammarDevController));
+	}
 
 	private void addListenersToLeafEditPalette() {
-		lePalette.setButtonListener(new ActionListener(){
-			public void actionPerformed(ActionEvent arg0) {
-				ComponentPanel compPanel = SelectComponentActionListener.getSelectedPanel();
-				Leaf comp = (Leaf)compPanel.getComponent();
-				String newName = lePalette.getNameTextFieldContent();
-				comp.setConcept(newName);
-				String newSense = lePalette.getSenseTextFieldContent();
-				comp.setLexicalSense(newSense);
-				compPanel.refreshLabelText();
-				System.out.println("Saved");
-			}});
+		creationPanel.addLeafEditBtnListener(new LeafEditPaletteBtnListener(grammarDevController, creationPanel));
 	}
 
 	private void addListenersToFeatPalette() {
-		
-		featPalette.addListenerForReset(new ActionListener(){
-			public void actionPerformed(ActionEvent arg0) {
-				Object[] options = {"Yes","No"};
-				int n = JOptionPane.showOptionDialog(new JFrame(),
-							    "This would RESET the values of ALL FEATURES to default\nContinue?",
-							    "WARNING",
-							    JOptionPane.YES_NO_CANCEL_OPTION,
-							    JOptionPane.WARNING_MESSAGE,
-							    null,
-							    options,
-							    options[1]);
-				if(n == 0){
-					Component comp = null;
-					try{
-					comp = SelectComponentActionListener.getSelectedPanel().getComponent();
-					}catch(Exception x){}
-					ArrayList<Feature> featList = FeatureManager.getDefaultFeatures(comp.getName());
-					for(Feature feature : featList){
-						comp.setFeature(feature);
-					}
-					if(comp!= null){
-						featPalette.renewCmbValues(comp);
-						featPalette.resetCmbFeatIndex();
-					}
-				}
-			}});
-					
-					
-			featPalette.addCmbFeaturesListener(new ItemListener(){
-				
-				public void itemStateChanged(ItemEvent e) {
-					Component comp = null;
-					try{
-					comp = SelectComponentActionListener.getSelectedPanel().getComponent();
-					}catch(Exception x){}
-					((JComboBox)e.getSource()).getSelectedItem();
-						featPalette.renewCmbValues(comp);
-				
-			}});	
+		creationPanel.addSaveFeatureListener(new FeaturePaletteCmbValuesItemListener(grammarDevController, creationPanel));
+		creationPanel.addResetFeatureBtnListener(new FeaturePaletteResetBtnListener(creationPanel));
+		creationPanel.addSelectFeatureComboBoxListener(new ItemListener(){
+			public void itemStateChanged(ItemEvent e) {
+				creationPanel.refreshFeaturesDisplay();
+			}
+		});				
 	}
 
-	private void addListenerToCompPalette() {
-		
-		compPalette.addListenersForAllButtons(new MouseListener(){
-			public void mousePressed(MouseEvent e){
+	private void addListenersToCompPalette() {
+		creationPanel.addCompPaletteDragListener(new MouseAdapter(){
+            public void mousePressed(MouseEvent e){
                 JButton button = (JButton)e.getSource();
-                //add 
+                TransferHandler handle = button.getTransferHandler();
+                handle.exportAsDrag(button, e, TransferHandler.COPY);
             }
-			public void mouseClicked(MouseEvent arg0) {
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-			}
-
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-			}
-		});
+        });
 	}
 	
 }

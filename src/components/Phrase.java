@@ -82,17 +82,17 @@ public class Phrase extends Component{
 	}
 
 	@Override
-	public String toSentence() {
+	public String toLexiconSentence() {
 		StringBuilder sb = new StringBuilder();
 		int numChildren = children.getChildren().size();
 		ArrayList<Component> childList = children.getChildren();
 		
 		for(int i=0; i < numChildren; i++){
 			Component child = children.getChildren().get(i);
-			String childSentence = child.toSentence();
+			String childSentence = child.toLexiconSentence();
 			if(!childSentence.isEmpty()){
-				sb.append(child.toSentence());
-				if(i < numChildren - 1 && !childList.get(i+1).toSentence().equals("."))
+				sb.append(child.toLexiconSentence());
+				if(i < numChildren - 1 && !childList.get(i+1).toLexiconSentence().equals("."))
 					sb.append(" ");
 			}
 		}
@@ -100,17 +100,17 @@ public class Phrase extends Component{
 	}
 	
 	@Override
-	public String toRawSentence() {
+	public String toConceptSentence() {
 		StringBuilder sb = new StringBuilder();
 		int numChildren = children.getChildren().size();
 		ArrayList<Component> childList = children.getChildren();
 		
 		for(int i=0; i < numChildren; i++){
 			Component child = children.getChildren().get(i);
-			String childSentence = child.toRawSentence();
+			String childSentence = child.toConceptSentence();
 			if(!childSentence.isEmpty()){
 				sb.append(childSentence);
-				if(i < numChildren - 1 && !childList.get(i+1).toRawSentence().equals("."))
+				if(i < numChildren - 1 && !childList.get(i+1).toConceptSentence().equals("."))
 					sb.append(" ");
 			}
 		}

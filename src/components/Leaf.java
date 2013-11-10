@@ -36,17 +36,17 @@ public class Leaf extends Component{
 		else
 			lexicalSense = "";
 		
-		updateMappedLexicons();
+		refreshLexicon();
 	}
 	
 	public Leaf(String componentName){
 		super(componentName);
 		concept = "";
 		lexicalSense = "";
-		updateMappedLexicons();
+		refreshLexicon();
 	}
 	
-	private void updateMappedLexicons(){
+	public void refreshLexicon(){
 		mappedLexicons = LexiconManager.getInstance().getMappedLexicons(name, concept, lexicalSense);
 		if(mappedLexicons == null)
 			mappedLexicons = new ArrayList<Lexicon>();
@@ -67,8 +67,8 @@ public class Leaf extends Component{
 	@Override
 	public String toGeneratedString() {
 		StringBuilder sb = new StringBuilder();
-		if(!this.toSentence().isEmpty()){
-			sb.append(this.toSentence());
+		if(!this.toLexiconSentence().isEmpty()){
+			sb.append(this.toLexiconSentence());
 			sb.append(" <");
 			sb.append(this.toString());
 			sb.append(">");
@@ -80,15 +80,15 @@ public class Leaf extends Component{
 	}
 
 	@Override
-	public String toSentence() {
+	public String toLexiconSentence() {
 		Lexicon lexicon = getFirstMappedLexicon();
 		if(lexicon != null && lexicon.getParentLexiconList().getPOS().toLowerCase().equals(name.toLowerCase()))
 			return lexicon.getName();
-		return "";
+		return "???";
 	}
 	
 	@Override
-	public String toRawSentence() {
+	public String toConceptSentence() {
 		return concept;
 	}
 	
@@ -159,7 +159,7 @@ public class Leaf extends Component{
 
 	public void setLexicalSense(String lexicalSense) {
 		this.lexicalSense = lexicalSense;
-		updateMappedLexicons();
+		refreshLexicon();
 	}
 
 	public String getConcept() {
@@ -168,9 +168,7 @@ public class Leaf extends Component{
 
 	public void setConcept(String concept) {
 		this.concept = concept;
-		updateMappedLexicons();
+		refreshLexicon();
 	}
 
-
-	
 }

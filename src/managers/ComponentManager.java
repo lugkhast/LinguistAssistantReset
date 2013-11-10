@@ -31,7 +31,7 @@ public class ComponentManager {
 	//Attributes and Methods
 	private  ArrayList<ComponentInfo> componentsInfo;
 	
-	public ComponentManager(){
+	private ComponentManager(){
 		loadComponentsInfo();
 	}
 	
@@ -66,7 +66,7 @@ public class ComponentManager {
 	
 	public boolean isLeaf(String componentName){
 		ComponentInfo info = getComponentInfo(componentName);
-		
+		//System.out.println("For "+componentName+", found "+info.getName()+" = "+info.getDescription()+" "+info.isLeaf()+" type: "+info.getType());
 		return info.isLeaf();
 	}
 
@@ -85,4 +85,17 @@ public class ComponentManager {
 		
 		return partsOfSpeech;
 	}
+	
+	public ArrayList<PartOfSpeech> getLeafPartsOfSpeech(){
+		ArrayList<PartOfSpeech> partsOfSpeech = new ArrayList<PartOfSpeech>();
+		
+		for(ComponentInfo ci: componentsInfo)
+			if(ci.isLeaf())
+				partsOfSpeech.add(new PartOfSpeech(ci.getName(), ci.getDescription()));
+		
+		return partsOfSpeech;
+	}
+
+
+	
 }

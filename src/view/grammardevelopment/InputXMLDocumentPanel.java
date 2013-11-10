@@ -14,9 +14,9 @@ import javax.swing.JPanel;
 
 import components.Component;
 import components.InputXMLDocument;
-import controller.listener.SelectComponentActionListener;
-import controller.listener.editsemantics.DnDListener;
-import controller.listener.editsemantics.InputXMLDocPanelDNDListener;
+import controller.listener.grammardev.SelectComponentActionListener;
+import controller.listener.grammardev.editsemantics.ComponentPaletteDnDListener;
+import controller.listener.grammardev.editsemantics.InputXMLDocPanelDNDListener;
 
 public class InputXMLDocumentPanel extends JPanel{
 	
@@ -27,20 +27,24 @@ public class InputXMLDocumentPanel extends JPanel{
 	
 	private SelectComponentActionListener selectListener;
 	
-	public InputXMLDocumentPanel(InputXMLDocument doc, SelectComponentActionListener selectListener){
+	public InputXMLDocumentPanel(InputXMLDocument doc){
 		this.doc = doc;
 		DropTarget dt = new DropTarget();
 		try {
-			dt.addDropTargetListener(new InputXMLDocPanelDNDListener());
+			dt.addDropTargetListener(new InputXMLDocPanelDNDListener(this));
 			this.setDropTarget(dt);
 			
 		} catch (TooManyListenersException e) {}
-		this.selectListener = selectListener;
-		
-
+	
 		setLayout(null);
 		refreshDisplay();
 		refreshTitle();
+	}
+	
+	public void setSelectComponentPanelListener(SelectComponentActionListener selectListener){
+		this.selectListener = selectListener;
+		for(ComponentPanel sentencePanel: sentencePanels)
+			sentencePanel.setSelectListener(selectListener);
 	}
 	
 	public void refreshTitle(){
@@ -49,11 +53,7 @@ public class InputXMLDocumentPanel extends JPanel{
 			titleString += doc.getCategory()+" / ";
 		setBorder(BorderFactory.createTitledBorder(titleString + doc.getName()));
 	}
-	
-	public InputXMLDocumentPanel getCopy(){
-		return new InputXMLDocumentPanel(doc, selectListener);
-	}
-	
+		
 	public void refreshDisplay(){
 		createSentencePanels();
 		adjustPositioning();
@@ -64,11 +64,16 @@ public class InputXMLDocumentPanel extends JPanel{
 			sentence.refreshLabelToolTip();
 	}
 	
+	public void refreshSemanticLexicons(){
+		for(ComponentPanel sentencePanel: sentencePanels)
+			sentencePanel.refreshSemanticLexicons();
+	}
+	
 	private void createSentencePanels(){
 		sentencePanels = new ArrayList<ComponentPanel>();
 		
 		for(Component sentence: doc.getClauses())
-			addSentencePanel(ComponentPanel.CreateInstance(sentence, selectListener));
+			addSentencePanel(ComponentPanel.CreateInstance(sentence, this));
 	}
 	
 	private void addSentencePanel(ComponentPanel newPanel){

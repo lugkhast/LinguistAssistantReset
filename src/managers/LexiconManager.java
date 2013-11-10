@@ -102,6 +102,7 @@ public class LexiconManager {
 				catch(Exception e){e.printStackTrace();}
 			}
 			
+			System.out.println("There are "+languageLexicon.size()+" lists");
 			this.currSelectedLanguage = language;
 		}
 		initializeMappings();
@@ -215,55 +216,47 @@ public class LexiconManager {
 		currentLanguages.add(insertIndex, newLanguage);
 		
 		//save to xml
-		try{
-			FileWriter xmlFileWriter = new FileWriter(LANGUAGES_DB_PATH);
-			XMLOutputter xmlOutput = new XMLOutputter();
-			xmlOutput.setFormat(Format.getPrettyFormat());
-			xmlOutput.output(generateLanguageDBXMLElement(), xmlFileWriter);
-			createNewLanguageDirectory(newLanguage);
-			return true;
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
+	
+		if(!XMLManager.getInstance().writeToXML(LANGUAGES_DB_PATH, generateLanguageDBXMLElement()))
+			return false;
 		
-		
-		return false;
+		if(!createNewLanguageDirectory(newLanguage))
+			return false;
+
+		loadLexicon(newLanguage); //refresh the current lexicon
+		return true;
 	}
 	
-	private void createNewLanguageDirectory(String newLanguage){
+	private boolean createNewLanguageDirectory(String newLanguage){
 		String newPath = ROOT_LANGUAGE_FOLDER + "\\" + newLanguage;
 		File newFolder = new File(newPath);
 		
 		newFolder.mkdir();
 		
-		ArrayList<PartOfSpeech> partsOfSpeech = ComponentManager.getInstance().getPartsOfSpeech();
+		ArrayList<PartOfSpeech> partsOfSpeech = ComponentManager.getInstance().getLeafPartsOfSpeech();
 		try{
 			for(PartOfSpeech pos: partsOfSpeech){
-				FileWriter newfileWriter = new FileWriter(newPath+"\\"+pos.getName()+".xml");
+				String xmlPath = newPath+"\\"+pos.getName()+".xml";
 				Element baseElement = createBasePOSElement(pos.getName());
-				XMLOutputter xmlOutput = new XMLOutputter();
-				xmlOutput.setFormat(Format.getPrettyFormat());
-				xmlOutput.output(baseElement, newfileWriter);
+				XMLManager.getInstance().writeToXML(xmlPath, baseElement);
 			}
+			return true;
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		return false;
 	}
 	
 	public boolean addNewPOSForCurrentLanguage(String newPOS){
 		try{
 			File targetFile = new File(ROOT_LANGUAGE_FOLDER + "\\" + currSelectedLanguage+"\\"+newPOS+".xml");
 			
-			if(!targetFile.exists()){ //pos already exists
-				FileWriter newfileWriter = new FileWriter(targetFile);
+			if(!targetFile.exists()){ //pos doesn't exist yet
 				Element baseElement = createBasePOSElement("pos");
 				baseElement.setAttribute("name", newPOS);
-				XMLOutputter xmlOutput = new XMLOutputter();
-				xmlOutput.setFormat(Format.getPrettyFormat());
-				xmlOutput.output(baseElement, newfileWriter);
-				//re-load the lexicons
-				this.refresh();
+				XMLManager.getInstance().writeToXML(targetFile.getPath(), baseElement);
+			
+				this.refresh();	//re-load the lexicons
 				return true;
 			}
 		

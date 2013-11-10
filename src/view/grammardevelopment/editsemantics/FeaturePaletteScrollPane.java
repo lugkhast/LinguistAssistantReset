@@ -20,17 +20,20 @@ import managers.FeatureManager;
 
 import components.Component;
 import components.Phrase;
-import controller.listener.editsemantics.CmbValuesItemListener;
+import controller.listener.grammardev.editsemantics.FeaturePaletteCmbValuesItemListener;
 import features.DBFeatureValues;
 import features.Feature;
 import features.FeatureList;
 
 public class FeaturePaletteScrollPane extends JScrollPane{
-	JPanel panel;
-	JLabel componentName;
-	static JComboBox cmbFeatures;
-	static JComboBox cmbValues;
-	JButton resetButton;
+	
+	private JPanel panel;
+	private JLabel componentName;
+	private JComboBox cmbFeatures;
+	private JComboBox cmbValues;
+	private JButton resetButton;
+	private ItemListener saveFeatureListener;
+	
 	public FeaturePaletteScrollPane(){
 		this.setBorder(BorderFactory.createTitledBorder("Feature Palette"));
 		panel = new JPanel();
@@ -115,14 +118,14 @@ public class FeaturePaletteScrollPane extends JScrollPane{
 	
 	public void renewCmbValues(Component comp){ //call when an item state changes in Cmb
 		DBFeatureValues values = null;
-		if(comp!=null){
-			try{
+		if(comp!=null && cmbFeatures.getSelectedItem() != null){
+			//try{
 				values = FeatureManager.getFeatureValues(comp.getName(), cmbFeatures.getSelectedItem().toString());
-			}catch(Exception e){}
+			//}catch(Exception e){}
 			unlockComponents();
-			ItemListener[] itemListeners = cmbValues.getItemListeners().clone();
-			for(ItemListener itemListener: itemListeners)
-				cmbValues.removeItemListener(itemListener);
+			
+			//remove listeners first so that changing the values in combo box will not trigger saves
+			removeCmbValuesListeners();
 			
 			cmbValues.removeAllItems();
 			if(values != null){
@@ -131,12 +134,19 @@ public class FeaturePaletteScrollPane extends JScrollPane{
 				}
 				cmbValues.setSelectedItem(comp.getFeature(cmbFeatures.getSelectedItem().toString()).getValue());
 			}
-			cmbValues.addItemListener(new CmbValuesItemListener());
+			
+			cmbValues.addItemListener(saveFeatureListener);
 		}
 		
 	}
 	
-	public static Feature saveFeature(){
+	private void removeCmbValuesListeners(){
+		ItemListener[] itemListeners = cmbValues.getItemListeners().clone();
+		for(ItemListener itemListener: itemListeners)
+			cmbValues.removeItemListener(itemListener);
+	}
+	
+	public Feature getFeatureForSaving(){
 		if(cmbFeatures.getSelectedItem()!=null && cmbValues.getSelectedItem()!=null){
 			if(cmbFeatures.getSelectedIndex()!=-1 && cmbValues.getSelectedIndex()!=-1){
 				return new Feature(cmbFeatures.getSelectedItem().toString(),cmbValues.getSelectedItem().toString(),true);
@@ -152,6 +162,7 @@ public class FeaturePaletteScrollPane extends JScrollPane{
 	}
 	
 	public void addCmbValuesListener(ItemListener itemListener){
+		saveFeatureListener = itemListener;
 		cmbValues.addItemListener(itemListener);
 	}
 	
@@ -160,7 +171,7 @@ public class FeaturePaletteScrollPane extends JScrollPane{
 		cmbFeatures.setSelectedIndex(0);
 	}
 	
-	public void addListenerForReset(ActionListener listener){
+	public void addResetListener(ActionListener listener){
 		resetButton.addActionListener(listener);
 	}
 }

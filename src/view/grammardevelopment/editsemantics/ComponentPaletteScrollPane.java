@@ -60,8 +60,6 @@ public class ComponentPaletteScrollPane extends JScrollPane{
 	}
 	
 	public void addComponents(ArrayList<ComponentInfo> components){
-		
-
 		for(ComponentInfo component : components){
 			JButton button = new JButton(component.getName()){
 				protected void paintComponent(Graphics g) {
@@ -100,7 +98,9 @@ public class ComponentPaletteScrollPane extends JScrollPane{
 	
 	public void addListenersForAllButtons(MouseListener listener){
 		for(Component comp : panel.getComponents()){
+			
 			if(comp instanceof JButton){
+				System.out.println("HERE " +((JButton)comp).getText());
 				((JButton)comp).addMouseListener(listener);
 			}
 				

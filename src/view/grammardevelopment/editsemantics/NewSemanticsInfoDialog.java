@@ -19,8 +19,8 @@ import javax.swing.JTextPane;
 
 import components.InputXMLDocument;
 
-import controller.listener.NewSemanticsActionListener;
-import controller.listener.SemanticsInfoListener;
+import controller.listener.grammardev.NewSemanticsActionListener;
+import controller.listener.grammardev.SemanticsInfoListener;
 
 public class NewSemanticsInfoDialog extends JDialog {
 	private JTextField txtFieldName;

@@ -8,6 +8,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,21 +17,24 @@ import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
+import javax.swing.TransferHandler;
 
+import view.MainFrame;
 import view.grammardevelopment.editsemantics.CreationRightPanel;
 
 import managers.SemanticsManager;
 
 import components.Component;
 import components.InputXMLDocument;
-import controller.DnDController;
 import controller.CreateController;
-import controller.listener.SelectComponentActionListener;
-import controller.listener.editsemantics.EditDocInfoButtonListener;
-import controller.listener.toolbar.LoadPanelToolbarBtnListener;
-import controller.listener.toolbar.NextPrevListener;
+import controller.GrammarDevController;
+import controller.listener.grammardev.SelectComponentActionListener;
+import controller.listener.grammardev.toolbar.EditDocInfoButtonListener;
+import controller.listener.grammardev.toolbar.LoadPanelToolbarBtnListener;
+import controller.listener.grammardev.toolbar.NextPrevListener;
 
 public class ViewSemanticsPanel extends JPanel{
 
@@ -41,8 +46,7 @@ public class ViewSemanticsPanel extends JPanel{
 	private int currMode;
 	
 	//Other object references needed
-	//private LinkedHashMap<File, InputXMLDocument> fileVerseMap;
-	private InputXMLDocument initialDocument;
+	private InputXMLDocumentPanel initialDocPanel;
 	
 	//GUI Components
 	private ViewSemanticsPanelToolBar toolBar;
@@ -53,23 +57,35 @@ public class ViewSemanticsPanel extends JPanel{
 	private TextAreaWithScrollPane generatedArea;
 	private TextAreaWithScrollPane docInfoArea;
 	private TextAreaWithScrollPane infoArea;
-	private ArrayList<InputXMLDocument> XMLDocsList;
+	private ArrayList<InputXMLDocumentPanel> xmlDocPanels;
 		
-	public ViewSemanticsPanel(ArrayList<InputXMLDocument> loadedDocuments){ // Used for Loading a document
-		XMLDocsList = loadedDocuments;
-		this.initialDocument = XMLDocsList.get(0);
+	private GrammarDevController grammarDevController;
+	
+	public ViewSemanticsPanel(GrammarDevController grammarDevController, ArrayList<InputXMLDocument> loadedDocuments){ // Used for Loading a document
+		this.grammarDevController = grammarDevController;
+		//this.XMLDocsList = loadedDocuments;
+		
+		xmlDocPanels = new ArrayList<InputXMLDocumentPanel>();
+		for(InputXMLDocument doc: loadedDocuments)
+			xmlDocPanels.add(new InputXMLDocumentPanel(doc));
+
+		this.initialDocPanel = xmlDocPanels.get(0);
 		
 		//Create GUI elements
 		initializePanelSettings();
 		initializeBar();
-		initializeDisplay();	
+		initializeDisplay(MODE_VIEW);	
 	}
 		
-	public ViewSemanticsPanel(String name, String category, String comments){ //Used for Creating a new document
-		this.initialDocument = new InputXMLDocument(null, name, category, comments, null);
+	public ViewSemanticsPanel(GrammarDevController grammarDevController, String name, String category, String comments){ //Used for Creating a new document
+		this.grammarDevController = grammarDevController;
+		this.initialDocPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, name, category, comments, null));
+		this.xmlDocPanels = new ArrayList<InputXMLDocumentPanel>();
+		xmlDocPanels.add(initialDocPanel);
+		
 		initializePanelSettings();
 		initializeBar();
-		initializeDisplay();
+		initializeDisplay(MODE_EDIT);
 	}
 		
 	//Creation of the right panels for viewing
@@ -96,40 +112,28 @@ public class ViewSemanticsPanel extends JPanel{
 	//Initialize methods
 	private void initializePanelSettings(){
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setBackground(Color.ORANGE);
 	}
 	
 	private void initializeBar(){
 		toolBar = new ViewSemanticsPanelToolBar();
-		toolBar.setEditButtonListener(new LoadPanelToolbarBtnListener(this, MODE_EDIT));
-		toolBar.setGenerateButtonListener(new LoadPanelToolbarBtnListener(this, MODE_GENERATE));
-		toolBar.setDoneEditingButtonListener(new LoadPanelToolbarBtnListener(this, MODE_VIEW));
-		toolBar.setInitializeButtonListener(new LoadPanelToolbarBtnListener(this, MODE_VIEW));
-		toolBar.setEditDocInfoButtonListener(new EditDocInfoButtonListener());
-		
-		if(XMLDocsList != null){
-			toolBar.setCurrFileSelectedText("Current File Selected: "+initialDocument.getName()+ "     File: 1/"+XMLDocsList.size());
-			toolBar.setBtnNextListener(new NextPrevListener(NextPrevListener.MODE_NEXT,XMLDocsList,this, toolBar));
-			toolBar.setBtnPrevListener(new NextPrevListener(NextPrevListener.MODE_PREV,XMLDocsList,this, toolBar));
+		InputXMLDocument initialDocument = initialDocPanel.getXMLDocument();
+		if(xmlDocPanels != null){
+			toolBar.setCurrFileSelectedText("Current File Selected: "+initialDocument.getName()+ "     File: 1/"+xmlDocPanels.size());
 		}
 		add(toolBar);
 	}
 	
-	private void initializeDisplay(){
+	private void initializeDisplay(int initialMode){
 		//right panels
 		viewPanel = createRightViewPanel();
 		creationPanel = new CreationRightPanel();
 	
 		//LeftPanel
 		display = new DisplayScreen();
-		display.display(new InputXMLDocumentPanel(initialDocument, new SelectComponentActionListener(this))); //displays the first
-				
-		//Controller for creation and DnD
-		new CreateController(display,creationPanel.getFpScrollPane(),creationPanel.getCpScrollPane(),creationPanel.getLeScrollPane());
-		new DnDController(display,creationPanel.getCpScrollPane());
-		
+		display.display(this.initialDocPanel); //displays the first
+					
 		//Split Pane
-		if(XMLDocsList != null)
+		if(initialMode == MODE_VIEW)
 			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, viewPanel);
 		else{
 			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, creationPanel);
@@ -144,49 +148,49 @@ public class ViewSemanticsPanel extends JPanel{
 		setDocumentInfo();
 		generatedArea.setTextAreaContent(display.getDisplaySentence());
 	}
-
+	
 	public void initializeSentences(){
 		display.setMode(DisplayScreen.MODE_INITIALIZE);
 		generatedArea.setTextAreaContent("");
 	}
 	
 	//Setters
-	public void setDocumentInfo(){
-		docInfoArea.setTextAreaContent(initialDocument.getComments());
+	public void setSelectComponentPanelListener(SelectComponentActionListener selectListener){
+		for(InputXMLDocumentPanel docPanel: xmlDocPanels)
+			docPanel.setSelectComponentPanelListener(selectListener);	
 	}
 	
-	public void setComponentInfo(Component component){
-		
-		StringBuilder info = new StringBuilder("Information about ");
-		
-		if(!component.getDescription().equals(component.getName())){
-			info.append("(");
-			info.append(component.getDescription());
-			info.append(") ");
+	public void setDocumentInfo(){
+		if(this.initialDocPanel != null){
+			InputXMLDocument initialDocument = initialDocPanel.getXMLDocument();
+			docInfoArea.setTextAreaContent(initialDocument.getComments());
 		}
-		
-		info.append(component.toString());
-		
-		info.append("\n\n");
-		
-		if(component.isLeaf())
-			info.append("***Target Lexicon***\n"+component.toSentence()+"\n\n");
-		info.append(component.getFeaturesInString(true));
-		
-		
+	}
+	
+	public void setComponent(Component component){
 		if(component != null){
-			switch(currMode){
-				case MODE_VIEW:
-					infoArea.setTextAreaContent(info.toString());
-					break;
-				case MODE_EDIT:
-					creationPanel.setComponent(component);
-					if(component.isLeaf())
-						creationPanel.setLeaf(component);
-					break;
+			if(currMode == MODE_EDIT){
+				creationPanel.setComponent(component);
+			}
+			else{
+				StringBuilder info = new StringBuilder("Information about ");
+				
+				if(!component.getDescription().equals(component.getName())){
+					info.append("(");
+					info.append(component.getDescription());
+					info.append(") ");
+				}
+				
+				info.append(component.toString());
+				info.append("\n\n");
+				
+				if(component.isLeaf())
+					info.append("***Target Lexicon***\n"+component.toLexiconSentence()+"\n\n");
+				info.append(component.getFeaturesInString(true));
+
+				infoArea.setTextAreaContent(info.toString());
 			}
 		}
-			infoArea.setTextAreaContent(info.toString());
 	}
 	
 	public void setMode(int mode){
@@ -195,11 +199,10 @@ public class ViewSemanticsPanel extends JPanel{
 		switch(mode){
 			case MODE_VIEW:
 				display.setMode(DisplayScreen.MODE_INITIALIZE);
-				infoArea.setTextAreaContent("");
 				setDocumentInfo();
 				splitPane.setRightComponent(viewPanel);
 				splitPane.setDividerLocation(0.6);
-				display.display(new InputXMLDocumentPanel(this.initialDocument, new SelectComponentActionListener(this)));
+				display.display(this.initialDocPanel);
 				generatedArea.setTextAreaContent(display.getDisplaySentence());
 				viewPanel.remove(generatedArea);
 				break;
@@ -208,11 +211,9 @@ public class ViewSemanticsPanel extends JPanel{
 				creationPanel.clearInput();
 				
 				//initialize with the panel currently selected
-				if(SelectComponentActionListener.getSelectedPanel() != null){
-					Component selected = SelectComponentActionListener.getSelectedPanel().getComponent();
+				if(grammarDevController.getCurrSelectedComponentPanel() != null){
+					Component selected = grammarDevController.getCurrSelectedComponentPanel().getComponent();
 					creationPanel.setComponent(selected);
-					if(selected.isLeaf())
-						creationPanel.setLeaf(selected);
 				}
 			
 				splitPane.setRightComponent(creationPanel);
@@ -220,12 +221,11 @@ public class ViewSemanticsPanel extends JPanel{
 				break;		
 				
 			case MODE_GENERATE:
-				//this.initialDocument = DisplayScreen.getCurrentlyDisplayedDocumentPanel().getXMLDocument();
+				this.initialDocPanel= display.getCurrentlyDisplayedDocumentPanel();
 				//display.display(new InputXMLDocumentPanel(XMLManager.getVerse(new File("InputXML\\generated.xml")), new SelectComponentActionListener(this)));
 				display.setMode(DisplayScreen.MODE_GENERATE);
-				DisplayScreen.getCurrentlyDisplayedDocumentPanel().adjustPositioning();
+				display.getCurrentlyDisplayedDocumentPanel().adjustPositioning();
 				generatedArea.setTextAreaContent(display.getDisplaySentence());
-				infoArea.setTextAreaContent("");
 				viewPanel.add(generatedArea, 0);
 				break;
 		}
@@ -233,8 +233,76 @@ public class ViewSemanticsPanel extends JPanel{
 		this.currMode = mode;
 	}
 	
-	public void setInitialDocument(InputXMLDocument initialDocument) {
-		this.initialDocument = initialDocument;
+	public void setDocumentPanelIndex(int index) {
+		if(index >=0 && index <xmlDocPanels.size()){
+			System.out.println("INDEX"+index);
+			InputXMLDocumentPanel desiredPanel = xmlDocPanels.get(index);
+			toolBar.setCurrFileSelectedText("Current File Selected: "+desiredPanel.getXMLDocument().getName()+"  File: "+(index+1)+"/"+xmlDocPanels.size());
+			display.display(desiredPanel);
+		}
+	}
+	
+	public void setDragAndDropListener(MouseAdapter mouseAdapter){
+		if(mouseAdapter != null)
+			creationPanel.addDnDListenerForAllButtons(mouseAdapter);
+	}
+	
+	public void resetCreationPanel(){
+		creationPanel.clearInput();
+	}
+	
+	public void resetInfoPanel(){
+		infoArea.setTextAreaContent("");
+	}
+	
+	public void refreshSemanticLexicons(){
+		for(InputXMLDocumentPanel panel: xmlDocPanels)
+			panel.refreshSemanticLexicons();
+	}
+	
+	//Getters
+	public InputXMLDocumentPanel getCurrentlyDisplayedDocumentPanel(){
+		if(display == null)
+			return null;
+		return display.getCurrentlyDisplayedDocumentPanel();
+	
+	}
+	
+	public CreationRightPanel getCreationPanel(){
+		return creationPanel;
+	}
+	
+	public ArrayList<InputXMLDocumentPanel> getDocumentPanelList(){
+		return xmlDocPanels;
+	}
+	
+	//Listener setters
+	public void setEditButtonListener(LoadPanelToolbarBtnListener listener){
+		toolBar.setEditButtonListener(listener);
+	}
+	
+	public void setGenerateButtonListener(LoadPanelToolbarBtnListener listener){
+		toolBar.setGenerateButtonListener(listener);
+	}
+	
+	public void setDoneEditingButtonListener(LoadPanelToolbarBtnListener listener){
+		toolBar.setDoneEditingButtonListener(listener);
 	}
 
+	public void setInitializeButtonListener(LoadPanelToolbarBtnListener listener){
+		toolBar.setInitializeButtonListener(listener);
+	}
+
+	public void setEditDocInfoButtonListener(EditDocInfoButtonListener listener){
+		toolBar.setEditDocInfoButtonListener(listener);
+	}
+	
+	public void setNextButtonListener(NextPrevListener listener){
+		toolBar.setBtnNextListener(listener);
+	}
+	
+	public void setPrevButtonListener(NextPrevListener listener){
+		toolBar.setBtnPrevListener(listener);
+	}
+	
 }

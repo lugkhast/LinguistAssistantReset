@@ -18,10 +18,12 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.UIManager;
 
+import view.MainFrame;
+
 import components.Component;
 import components.InputXMLDocument;
-import controller.listener.SelectComponentActionListener;
-import controller.listener.editsemantics.DnDListener;
+import controller.listener.grammardev.SelectComponentActionListener;
+import controller.listener.grammardev.editsemantics.ComponentPaletteDnDListener;
 
 
 public class DisplayScreen extends JPanel{
@@ -35,9 +37,9 @@ public class DisplayScreen extends JPanel{
 	
 	
 	//This was made static because there is only one document to be displayed at a time anyway.
-	private static InputXMLDocumentPanel documentPanel;
+	private InputXMLDocumentPanel documentPanel;
 	
-	public static InputXMLDocumentPanel getCurrentlyDisplayedDocumentPanel(){
+	public InputXMLDocumentPanel getCurrentlyDisplayedDocumentPanel(){
 		return documentPanel;
 	}
 	
