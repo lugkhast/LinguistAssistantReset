@@ -1,6 +1,10 @@
 import java.awt.Font;
+import java.io.File;
 
 import javax.swing.UIManager;
+
+import managers.RulesManager;
+import module3.rules.RuleTree;
 
 import controller.Controller;
 import controller.MainController;
@@ -16,5 +20,10 @@ public class Driver {
 		UIManager.put("Label.font", oldLabelFont.deriveFont(Font.PLAIN,(float)14));
 		
 		new MainController();
+		
+		// DEBUG STUFF
+		RuleTree rt = RulesManager.initializeRules(new File("InputXML\\Rules\\Rulesets.xml"));
+		System.out.println(rt);
+		
 	}
 }

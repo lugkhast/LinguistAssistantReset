@@ -71,7 +71,7 @@ public class FeatureList {
 	public void renameFeatureName(String oldFeatureName, String newFeatureName){
 		if(newFeatureName != null && !newFeatureName.trim().isEmpty()){
 			for(Feature feature: featureList){
-				System.out.println(feature);
+				//System.out.println(feature);
 				if(feature.getName().equals(oldFeatureName))
 					feature.setName(newFeatureName);
 			}

@@ -16,7 +16,7 @@ import features.DBFeatureValues;
 
 public class ComponentManager {
 	
-	private static final String COMPONENTS_DB_FILE_PATH = "Databases\\ComponentsDB.xml";
+	private static final String COMPONENTS_DB_FILE_PATH = "Runnable\\Databases\\ComponentsDB.xml";
 	
 	//Singleton
 	private static ComponentManager instance;

@@ -64,7 +64,7 @@ public abstract class Component {
 			List<Element> childrenElements = (List<Element>)e.getChildren(SemanticsManager.COMPONENT);
 			if(childrenElements == null)
 				childrenElements = new ArrayList<Element>();
-
+			
 			Phrase phrase = new Phrase(e);
 			for(Element child: childrenElements)
 				phrase.addChild(createInstance(child));

@@ -15,7 +15,7 @@ import features.Feature;
 
 public class FeatureManager{
 
-	private static final String FEATURES_DB_FILE_PATH = "Databases\\FeaturesDB.xml";
+	private static final String FEATURES_DB_FILE_PATH = "Runnable\\Databases\\FeaturesDB.xml";
 	
 	private static LinkedHashMap<String, ArrayList<DBFeatureValues>> featureMap;
 	

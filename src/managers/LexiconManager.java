@@ -35,8 +35,8 @@ public class LexiconManager {
 	}
 	
 	//The "normal" attributes and methods
-	public static final String ROOT_LANGUAGE_FOLDER = "languages";
-	private static final String LANGUAGES_DB_PATH = "Databases\\LanguagesDB.xml";
+	public static final String ROOT_LANGUAGE_FOLDER = "Runnable\\languages";
+	private static final String LANGUAGES_DB_PATH = "Runnable\\Databases\\LanguagesDB.xml";
 	
 	private ArrayList<String> currentLanguages;
 	private  ArrayList<LexiconList> languageLexicon;
