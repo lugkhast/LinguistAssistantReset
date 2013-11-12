@@ -46,7 +46,7 @@ public class DisplayScreen extends JPanel{
 	public DisplayScreen(){
 		setLayout(new GridLayout());
 		setBackground(Color.BLACK);
-		
+		setMinimumSize(new Dimension(300,200));
 		scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setPreferredSize(new Dimension(MainFrame.getInstance().getWidth()/2, MainFrame.getInstance().getHeight()));
