@@ -27,21 +27,21 @@ public class ColorManager {
 		
 		colorMap.put(PartOfSpeech.CLAUSE.toLowerCase(), Color.DARK_GRAY);
 		
-		colorMap.put(PartOfSpeech.NOUN.toLowerCase(), new Color(0, 255, 255));
+		colorMap.put(PartOfSpeech.NOUN.toLowerCase(), new Color(150, 200, 255));
 		colorMap.put(PartOfSpeech.NOUN_PHRASE.toLowerCase(), new Color(0, 102, 204));
 			
-		colorMap.put(PartOfSpeech.VERB_PHRASE.toLowerCase(), Color.ORANGE);
-		colorMap.put(PartOfSpeech.VERB.toLowerCase(), Color.YELLOW);
+		colorMap.put(PartOfSpeech.VERB_PHRASE.toLowerCase(), new Color(255, 128, 0));
+		colorMap.put(PartOfSpeech.VERB.toLowerCase(), new Color(255, 255, 50));
 		
 		colorMap.put(PartOfSpeech.ADPOSITION.toLowerCase(), new Color(255, 222, 173));
 		
 		colorMap.put(PartOfSpeech.ADVERB.toLowerCase(), new Color(204,204,0));
 		colorMap.put(PartOfSpeech.ADVERBIAL_PHRASE.toLowerCase(), new Color(102,102,0));
 		
-		colorMap.put(PartOfSpeech.ADJECTIVE.toLowerCase(), new Color(255,204,229));
-		colorMap.put(PartOfSpeech.ADJECTIVE_PHRASE.toLowerCase(), Color.MAGENTA);
+		colorMap.put(PartOfSpeech.ADJECTIVE.toLowerCase(), new Color(255, 180, 255));
+		colorMap.put(PartOfSpeech.ADJECTIVE_PHRASE.toLowerCase(), new Color(205, 0, 255));
 		
-		colorMap.put(PartOfSpeech.CONJUCTION.toLowerCase(), Color.GREEN);
+		colorMap.put(PartOfSpeech.CONJUCTION.toLowerCase(), new Color(150, 255, 150));
 		
 		colorMap.put(PartOfSpeech.PARTICLE.toLowerCase(), new Color(224,224,224)); //violet
 		
