@@ -20,10 +20,5 @@ public class Driver {
 		UIManager.put("Label.font", oldLabelFont.deriveFont(Font.PLAIN,(float)14));
 		
 		new MainController();
-		
-		// DEBUG STUFF
-		RuleTree rt = RulesManager.initializeRules(new File("InputXML\\Rules\\Rulesets.xml"));
-		System.out.println(rt);
-		
 	}
 }
