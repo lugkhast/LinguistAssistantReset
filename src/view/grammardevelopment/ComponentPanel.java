@@ -5,7 +5,9 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.dnd.DropTarget;
 import java.awt.event.ActionEvent;
@@ -13,6 +15,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.FilteredImageSource;
+import java.awt.image.ImageFilter;
+import java.awt.image.ImageProducer;
+import java.awt.image.RGBImageFilter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.TooManyListenersException;
@@ -40,6 +46,7 @@ import managers.ColorManager;
 
 import view.MainFrame;;
 
+//panel for the components in the semantic representation (left side of the screen)
 public class ComponentPanel extends JPanel {
 
 	private Component component;
@@ -47,6 +54,7 @@ public class ComponentPanel extends JPanel {
 	private ComponentPanel parent;
 	private InputXMLDocumentPanel parentDocPanel;
 	private int desiredHeight;
+	private int desiredWidth;
 	
 	private JLabel nameLabel;
 	private SelectComponentActionListener selectListener;
@@ -56,6 +64,7 @@ public class ComponentPanel extends JPanel {
 	private boolean isCollapsed;
 	
 	private static final int LEAF_HEIGHT = 15;
+	private static final int LEAF_WIDTH = 250;
 	private static final int HORIZONTAL_MARGIN = 20;
 	private static final int VERTICAL_MARGIN = 15;
 	private static final int BTN_LABEL_MARGIN = 5;		
@@ -96,6 +105,8 @@ public class ComponentPanel extends JPanel {
 			collapseButton = new JButton();
 			collapseButton.setBounds(HORIZONTAL_MARGIN, 0, LEAF_HEIGHT, LEAF_HEIGHT);
 			collapseButton.addActionListener(new CollapseButtonListener(this));
+			collapseButton.setContentAreaFilled(false);
+			collapseButton.setFocusable(false);
 			add(collapseButton);
 		}
 		
@@ -111,7 +122,7 @@ public class ComponentPanel extends JPanel {
 		if(!component.isLeaf())
 			nameLabel.setForeground(Color.WHITE);
 		
-		this.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
+		this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		add(nameLabel);	
 		
 		if(!component.isLeaf())
@@ -143,6 +154,7 @@ public class ComponentPanel extends JPanel {
 
 	public void adjustPositioning(int leftX, int topY){
 		calculateDesiredHeightBasedOnChildren();
+//		calculateDesiredWidthBasedOnChildren();
 		resize(leftX, topY);
 	}
 	
@@ -165,7 +177,8 @@ public class ComponentPanel extends JPanel {
 			this.setPreferredSize(new Dimension(width,desiredHeight));
 		}
 		else{
-			int desiredWidth = (MainFrame.getInstance().getWidth()-50)*3/5;
+			int desiredWidth = (MainFrame.getInstance().getWidth()-100)*3/5;
+
 			setBounds(leftX, topY,desiredWidth,desiredHeight);
 			this.setPreferredSize(new Dimension(desiredWidth,desiredHeight));
 		}
@@ -175,7 +188,7 @@ public class ComponentPanel extends JPanel {
 				child.resize(leftX, topY);
 		}
 	}
-
+	
 	//setters	
 	public void setCollapsed(boolean isCollapsed){
 		if(isCollapsed){
@@ -230,10 +243,30 @@ public class ComponentPanel extends JPanel {
 		}
 	}
 
+	public void calculateDesiredWidthBasedOnChildren(){
+		if(component.isLeaf())
+			this.desiredWidth = LEAF_WIDTH;
+		else{
+			if(isCollapsed)
+				desiredWidth = LEAF_WIDTH;
+			else{
+				this.desiredWidth= HORIZONTAL_MARGIN;
+				for(ComponentPanel child: children){
+					child.calculateDesiredWidthBasedOnChildren();
+					this.desiredWidth += child.getDesiredWidth() + HORIZONTAL_MARGIN;
+				}
+			}
+		}
+	}
+	
 	public int getDesiredHeight(){
 		return desiredHeight;
 	}
-		
+	
+	public int getDesiredWidth(){
+		return desiredWidth;
+	}
+	
 	public void setParent(ComponentPanel parent){
 		this.parent = parent;
 	}
@@ -241,12 +274,13 @@ public class ComponentPanel extends JPanel {
 	public void setHighlighted(boolean isHighlighted){
 		if(isHighlighted){
 			//if(component.isLeaf() || isCollapsed)
-				setBorder(BorderFactory.createLineBorder(Color.RED, 3));
+				setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
 			//else
 				//setBorder(BorderFactory.createLineBorder(Color.RED, 5));
 		}
 		else
-			setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
+			setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+//			setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 	}
 	
 	public void addChild(ComponentPanel child){
@@ -317,6 +351,11 @@ public class ComponentPanel extends JPanel {
 		
 	public int getBottomY(){
 		return getY() + getHeight();
+	}
+	
+	public int getRightX(){
+		
+		return getX() + getWidth();
 	}
 	
 	public Component getComponent(){

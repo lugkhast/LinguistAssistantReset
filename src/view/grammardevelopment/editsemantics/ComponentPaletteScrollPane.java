@@ -54,7 +54,7 @@ public class ComponentPaletteScrollPane extends JScrollPane{
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
 		int palettewidth = (int)(width*0.4);
-		int paletteheight = (int)(height*0.3);
+		int paletteheight = (int)(height*0.25);
 		this.setPreferredSize(new Dimension(palettewidth,paletteheight));
 		addComponents(ComponentManager.getInstance().getComponentsInfo());
 	}

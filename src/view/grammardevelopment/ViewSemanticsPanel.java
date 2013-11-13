@@ -165,16 +165,19 @@ public class ViewSemanticsPanel extends JPanel{
 		//right panels
 		viewPanel = createRightViewPanel();
 		creationPanel = new CreationRightPanel();
-	
+		
+		JScrollPane viewScroll = new JScrollPane(viewPanel);
+		JScrollPane creationScroll = new JScrollPane(creationPanel);
+		
 		//LeftPanel
 		display = new DisplayScreen();
 		display.display(this.initialDocPanel); //displays the first
 					
 		//Split Pane
 		if(initialMode == MODE_VIEW)
-			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, viewPanel);
+			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, viewScroll);
 		else{
-			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, creationPanel);
+			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, creationScroll);
 			setMode(MODE_EDIT);
 		}
 		splitPane.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
