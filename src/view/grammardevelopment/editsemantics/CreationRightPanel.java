@@ -37,10 +37,10 @@ public class CreationRightPanel extends JPanel{
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
-		int palettewidth = (int)(width*0.4);
-		int paletteheight = (int)(height*0.1);
+		int palettewidth = (int)(width*0.3);
+		int paletteheight = (int)(height*0.05);
 		Dimension dimension = new Dimension(palettewidth,paletteheight);
-		deleteBtn.setFont(new Font(this.getFont().getFontName(), Font.PLAIN, paletteheight/4));
+		deleteBtn.setFont(new Font(this.getFont().getFontName(), Font.PLAIN, paletteheight/3));
 		deleteBtn.setPreferredSize(dimension);
 	}
 	

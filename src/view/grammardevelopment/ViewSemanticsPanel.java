@@ -19,8 +19,11 @@ import java.util.Map.Entry;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
+import javax.swing.JTree;
 import javax.swing.TransferHandler;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 import view.MainFrame;
 import view.grammardevelopment.editsemantics.CreationRightPanel;
@@ -58,7 +61,10 @@ public class ViewSemanticsPanel extends JPanel{
 	private TextAreaWithScrollPane docInfoArea;
 	private TextAreaWithScrollPane infoArea;
 	private ArrayList<InputXMLDocumentPanel> xmlDocPanels;
-		
+	
+	DefaultMutableTreeNode ruleNode;
+	JTree ruleTree;
+	
 	private GrammarDevController grammarDevController;
 	
 	public ViewSemanticsPanel(GrammarDevController grammarDevController, ArrayList<InputXMLDocument> loadedDocuments){ // Used for Loading a document
@@ -94,12 +100,19 @@ public class ViewSemanticsPanel extends JPanel{
 		docInfoArea = new TextAreaWithScrollPane("Document Information");
 		infoArea= new TextAreaWithScrollPane("Component Information");
 		generatedArea = new TextAreaWithScrollPane("Generated Sentence");
-
+		
+		//create a JScrollPane class for the rules
+		ruleNode = new DefaultMutableTreeNode("Rules");
+		createNodes (ruleNode);
+		ruleTree = new JTree (ruleNode);
+		JScrollPane treeView = new JScrollPane(ruleTree);
+		
 		JPanel rightPanel = new JPanel();
 		rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
+		rightPanel.add(treeView);
 		rightPanel.add(docInfoArea);
 		rightPanel.add(infoArea);
-		
+		rightPanel.setMinimumSize(new Dimension(400,200));
 		int panelHeight = rightPanel.getPreferredSize().height;
 		generatedArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
 		docInfoArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
@@ -112,6 +125,31 @@ public class ViewSemanticsPanel extends JPanel{
 	//Initialize methods
 	private void initializePanelSettings(){
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+	}
+	
+	public void createNodes(DefaultMutableTreeNode topNode)
+	{
+		DefaultMutableTreeNode ruleFolder = null;
+	    DefaultMutableTreeNode rules = null;
+	    
+	    
+	    ruleFolder = new DefaultMutableTreeNode("Verbs");
+	    topNode.add(ruleFolder);
+	    
+	    rules = new DefaultMutableTreeNode("Rule 1");
+	    ruleFolder.add(rules);
+	    rules = new DefaultMutableTreeNode("Rule 2");
+	    ruleFolder.add(rules);
+	    
+	    ruleFolder = new DefaultMutableTreeNode("Nouns");
+	    topNode.add(ruleFolder);
+	    rules = new DefaultMutableTreeNode("Rule 1");
+	    ruleFolder.add(rules);
+	    rules = new DefaultMutableTreeNode("Rule 2");
+	    ruleFolder.add(rules);
+	    
+	    
+
 	}
 	
 	private void initializeBar(){
@@ -127,16 +165,19 @@ public class ViewSemanticsPanel extends JPanel{
 		//right panels
 		viewPanel = createRightViewPanel();
 		creationPanel = new CreationRightPanel();
-	
+		
+		JScrollPane viewScroll = new JScrollPane(viewPanel);
+		JScrollPane creationScroll = new JScrollPane(creationPanel);
+		
 		//LeftPanel
 		display = new DisplayScreen();
 		display.display(this.initialDocPanel); //displays the first
 					
 		//Split Pane
 		if(initialMode == MODE_VIEW)
-			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, viewPanel);
+			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, viewScroll);
 		else{
-			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, creationPanel);
+			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, creationScroll);
 			setMode(MODE_EDIT);
 		}
 		splitPane.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
