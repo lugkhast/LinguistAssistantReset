@@ -10,6 +10,8 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 
+import view.rules.RuleFrame;
+
 public class RulesTreePanel extends JScrollPane{
 	JTree tree;
 	DefaultMutableTreeNode topNode;
@@ -67,9 +69,7 @@ public class RulesTreePanel extends JScrollPane{
 			 Object nodeInfo = node.getUserObject();
 			 if (node.isLeaf()) {
 				 //must create new class for this
-				 JFrame ruleWindow = new JFrame("Rule Type Blah");
-				 ruleWindow.setSize(new Dimension(100,100));
-				 ruleWindow.setVisible(true);
+				 RuleFrame ruleFrame = new RuleFrame(); 
 			 }
 
 			
