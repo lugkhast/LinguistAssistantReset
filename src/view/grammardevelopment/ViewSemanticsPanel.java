@@ -60,10 +60,8 @@ public class ViewSemanticsPanel extends JPanel{
 	private TextAreaWithScrollPane generatedArea;
 	private TextAreaWithScrollPane docInfoArea;
 	private TextAreaWithScrollPane infoArea;
+	private RulesTreePanel rulesPanel;
 	private ArrayList<InputXMLDocumentPanel> xmlDocPanels;
-	
-	DefaultMutableTreeNode ruleNode;
-	JTree ruleTree;
 	
 	private GrammarDevController grammarDevController;
 	
@@ -100,16 +98,12 @@ public class ViewSemanticsPanel extends JPanel{
 		docInfoArea = new TextAreaWithScrollPane("Document Information");
 		infoArea= new TextAreaWithScrollPane("Component Information");
 		generatedArea = new TextAreaWithScrollPane("Generated Sentence");
+		rulesPanel = new RulesTreePanel();
 		
-		//create a JScrollPane class for the rules
-		ruleNode = new DefaultMutableTreeNode("Rules");
-		createNodes (ruleNode);
-		ruleTree = new JTree (ruleNode);
-		JScrollPane treeView = new JScrollPane(ruleTree);
 		
 		JPanel rightPanel = new JPanel();
 		rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
-		rightPanel.add(treeView);
+		rightPanel.add(rulesPanel);
 		rightPanel.add(docInfoArea);
 		rightPanel.add(infoArea);
 		rightPanel.setMinimumSize(new Dimension(400,200));
@@ -125,31 +119,6 @@ public class ViewSemanticsPanel extends JPanel{
 	//Initialize methods
 	private void initializePanelSettings(){
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-	}
-	
-	public void createNodes(DefaultMutableTreeNode topNode)
-	{
-		DefaultMutableTreeNode ruleFolder = null;
-	    DefaultMutableTreeNode rules = null;
-	    
-	    
-	    ruleFolder = new DefaultMutableTreeNode("Verbs");
-	    topNode.add(ruleFolder);
-	    
-	    rules = new DefaultMutableTreeNode("Rule 1");
-	    ruleFolder.add(rules);
-	    rules = new DefaultMutableTreeNode("Rule 2");
-	    ruleFolder.add(rules);
-	    
-	    ruleFolder = new DefaultMutableTreeNode("Nouns");
-	    topNode.add(ruleFolder);
-	    rules = new DefaultMutableTreeNode("Rule 1");
-	    ruleFolder.add(rules);
-	    rules = new DefaultMutableTreeNode("Rule 2");
-	    ruleFolder.add(rules);
-	    
-	    
-
 	}
 	
 	private void initializeBar(){
