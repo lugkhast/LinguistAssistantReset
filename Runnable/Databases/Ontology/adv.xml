@@ -1,4 +1,5 @@
 <pos name="adv">
+  <stem name="aa" sense="A" />
   <stem name="actually" sense="A">
     <definition>in reality, the following is true</definition>
   </stem>

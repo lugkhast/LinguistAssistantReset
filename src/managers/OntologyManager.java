@@ -14,9 +14,6 @@ import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
-import components.Component;
-import components.InputXMLDocument;
-
 import ontology.Concept;
 import ontology.ConceptList;
 import ontology.PartOfSpeech;
@@ -66,8 +63,8 @@ public class OntologyManager {
 	}
 	
 	//"Normal" class attributes and methods
-	public static final String DB_PATH_ONTOLOGY = "Databases\\Ontology\\";
-	public static final String DB_PATH_ONTOLOGY_SPECIAL = "Databases\\Ontology\\special";
+	public static final String DB_PATH_ONTOLOGY = "Runnable\\Databases\\Ontology\\";
+	public static final String DB_PATH_ONTOLOGY_SPECIAL = "Runnable\\sDatabases\\Ontology\\special";
 	
 	private ArrayList<ConceptList> ontology;
 	

@@ -6,48 +6,46 @@
     </feature>
     <feature name="Sample 2">
       <value>Value 1</value>
-      <value>Value 2</value>
+      <value>Value 220</value>
+    </feature>
+    <feature name="Sample 3">
+      <value>Test 1</value>
+      <value>Test 2</value>
     </feature>
   </features>
   <forms>
     <form>Superlative</form>
-    <form>Comparative</form>
   </forms>
   <stems>
     <stem name="malaki" gloss="big">
-      <comments />
+      <comments>Value 1</comments>
       <sentence />
       <features>
         <feature name="Sample Filipino Adjective Feature" value="pangalawang value" />
       </features>
       <forms>
         <form name="Superlative" value="pinakamalaki" />
-        <form name="Comparative" value="malaki" />
       </forms>
-      <mappings>
-        <mapping concept="big" sense="A" pos="adj" />
-      </mappings>
     </stem>
     <stem name="mapula" gloss="sore">
-      <comments />
+      <comments>Value 2</comments>
       <sentence />
       <features>
         <feature name="Sample Filipino Adjective Feature" value="pangalawang value" />
+        <feature name="Sample 2" value="Value 220" />
       </features>
       <forms>
         <form name="Superlative" value="pinakamapula" />
-        <form name="Comparative" value="mapula" />
       </forms>
       <mappings>
         <mapping concept="sore" sense="A" pos="adj" />
       </mappings>
     </stem>
     <stem name="masaya" gloss="happy">
-      <comments />
+      <comments>Value 1</comments>
       <sentence />
       <forms>
         <form name="Superlative" value="pinakamasaya" />
-        <form name="Comparative" value="masaya" />
       </forms>
       <mappings>
         <mapping concept="happy" sense="A" pos="adj" />

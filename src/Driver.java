@@ -1,6 +1,10 @@
 import java.awt.Font;
+import java.io.File;
 
 import javax.swing.UIManager;
+
+import managers.RulesManager;
+import module3.rules.RuleTree;
 
 import controller.Controller;
 import controller.MainController;

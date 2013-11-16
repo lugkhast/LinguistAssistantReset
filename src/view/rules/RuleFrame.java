@@ -33,7 +33,9 @@ public class RuleFrame extends JFrame {
 	 */
 	public RuleFrame() {
 		setTitle("Rule Settings");
+
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
 		setBounds(100, 100, 538, 341);
 		//the panels that you'll be making will be placed in tabbedPane
 		initializeComponents();

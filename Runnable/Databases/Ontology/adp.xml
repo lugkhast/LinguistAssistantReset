@@ -11,9 +11,7 @@
   <stem name="Composed of" sense="A">
     <definition>one thing is composed of something (lake of fire, streets of gold, river of fire)</definition>
   </stem>
-  <stem name="Generic Genitive" sense="A">
-    <definition />
-  </stem>
+  <stem name="Generic Genitive" sense="A" />
   <stem name="Group" sense="A">
     <definition>marks a group of something (herd of sheep, flock of geese, crowd of people, etc.)</definition>
   </stem>
@@ -26,9 +24,7 @@
   <stem name="Made of" sense="A">
     <definition>one thing is made of another thing (house of bricks, table of wood, etc.)</definition>
   </stem>
-  <stem name="Name" sense="A">
-    <definition />
-  </stem>
+  <stem name="Name" sense="A" />
   <stem name="Nationality" sense="A">
     <definition>a Hebrew man</definition>
   </stem>
@@ -44,12 +40,8 @@
   <stem name="Region of Authority" sense="A">
     <definition>marks the region that someone governs (king of Israel, governor of Tiberius, etc.)</definition>
   </stem>
-  <stem name="Subgroup" sense="A">
-    <definition />
-  </stem>
-  <stem name="Title" sense="A">
-    <definition />
-  </stem>
+  <stem name="Subgroup" sense="A" />
+  <stem name="Title" sense="A" />
   <stem name="about" sense="A">
     <definition>concerning (told him about ...)</definition>
   </stem>
@@ -104,9 +96,7 @@
   <stem name="behind" sense="A">
     <definition>location behind someone</definition>
   </stem>
-  <stem name="below" sense="A">
-    <definition />
-  </stem>
+  <stem name="below" sense="A" />
   <stem name="beside" sense="A">
     <definition>next to, spacially</definition>
   </stem>

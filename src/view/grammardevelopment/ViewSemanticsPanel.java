@@ -60,11 +60,9 @@ public class ViewSemanticsPanel extends JPanel{
 	private TextAreaWithScrollPane generatedArea;
 	private TextAreaWithScrollPane docInfoArea;
 	private TextAreaWithScrollPane infoArea;
+	private RulesTreePanel rulesPanel;
 	private ArrayList<InputXMLDocumentPanel> xmlDocPanels;
-	
-	DefaultMutableTreeNode ruleNode;
-	JTree ruleTree;
-	
+
 	private GrammarDevController grammarDevController;
 	
 	public ViewSemanticsPanel(GrammarDevController grammarDevController, ArrayList<InputXMLDocument> loadedDocuments){ // Used for Loading a document
@@ -100,16 +98,13 @@ public class ViewSemanticsPanel extends JPanel{
 		docInfoArea = new TextAreaWithScrollPane("Document Information");
 		infoArea= new TextAreaWithScrollPane("Component Information");
 		generatedArea = new TextAreaWithScrollPane("Generated Sentence");
-		
-		//create a JScrollPane class for the rules
-		ruleNode = new DefaultMutableTreeNode("Rules");
-		createNodes (ruleNode);
-		ruleTree = new JTree (ruleNode);
-		JScrollPane treeView = new JScrollPane(ruleTree);
-		
+
+		rulesPanel = new RulesTreePanel();
+				
 		JPanel rightPanel = new JPanel();
 		rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
-		rightPanel.add(treeView);
+		rightPanel.add(rulesPanel);
+
 		rightPanel.add(docInfoArea);
 		rightPanel.add(infoArea);
 		rightPanel.setMinimumSize(new Dimension(400,200));
