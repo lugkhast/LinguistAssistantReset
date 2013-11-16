@@ -122,31 +122,6 @@ public class ViewSemanticsPanel extends JPanel{
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 	}
 	
-	public void createNodes(DefaultMutableTreeNode topNode)
-	{
-		DefaultMutableTreeNode ruleFolder = null;
-	    DefaultMutableTreeNode rules = null;
-	    
-	    
-	    ruleFolder = new DefaultMutableTreeNode("Verbs");
-	    topNode.add(ruleFolder);
-	    
-	    rules = new DefaultMutableTreeNode("Rule 1");
-	    ruleFolder.add(rules);
-	    rules = new DefaultMutableTreeNode("Rule 2");
-	    ruleFolder.add(rules);
-	    
-	    ruleFolder = new DefaultMutableTreeNode("Nouns");
-	    topNode.add(ruleFolder);
-	    rules = new DefaultMutableTreeNode("Rule 1");
-	    ruleFolder.add(rules);
-	    rules = new DefaultMutableTreeNode("Rule 2");
-	    ruleFolder.add(rules);
-	    
-	    
-
-	}
-	
 	private void initializeBar(){
 		toolBar = new ViewSemanticsPanelToolBar();
 		InputXMLDocument initialDocument = initialDocPanel.getXMLDocument();
