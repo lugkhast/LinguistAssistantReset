@@ -7,13 +7,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import managers.PlatformUtils;
+
 import org.jdom2.Element;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
 public class TextReader {
 	
-	private static final String TEXTFILE_PATH_ONTOLOGY = "InputXMLandFiles\\TextFiles\\relations.txt";
+	private static final String TEXTFILE_PATH_ONTOLOGY =
+			PlatformUtils.joinPath("InputXMLandFiles", "TextFiles", "relations.txt");
 	
 	public void readText(){
 		
@@ -66,7 +69,7 @@ public class TextReader {
 	        XMLOutputter xmlOutput = new XMLOutputter();
 			xmlOutput.setFormat(Format.getPrettyFormat());
 			try{
-				xmlOutput.output(posElement, new FileWriter("Databases\\Ontology\\rel.xml"));
+				xmlOutput.output(posElement, new FileWriter(PlatformUtils.joinPath("Databases", "Ontology", "rel.xml")));
 			}
 			catch(Exception e){
 				e.printStackTrace();

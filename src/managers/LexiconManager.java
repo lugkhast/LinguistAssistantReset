@@ -35,8 +35,10 @@ public class LexiconManager {
 	}
 	
 	//The "normal" attributes and methods
-	public static final String ROOT_LANGUAGE_FOLDER = "Runnable\\languages";
-	private static final String LANGUAGES_DB_PATH = "Runnable\\Databases\\LanguagesDB.xml";
+	public static final String ROOT_LANGUAGE_FOLDER = PlatformUtils.joinPath("Runnable",
+			"Languages");
+	private static final String LANGUAGES_DB_PATH = PlatformUtils.joinPath("Runnable",
+			"Databases", "LanguagesDB.xml");
 	
 	private ArrayList<String> currentLanguages;
 	private  ArrayList<LexiconList> languageLexicon;
@@ -76,23 +78,29 @@ public class LexiconManager {
 	public void loadLexicon(String language){
 		if(isLanguageValid(language)){
 			languageLexicon = new ArrayList<LexiconList>();
-			File languageFolder = new File(ROOT_LANGUAGE_FOLDER+"\\"+language);
+			File languageFolder = new File(
+					PlatformUtils.joinPath(ROOT_LANGUAGE_FOLDER, language));
+			System.out.println(languageFolder.getAbsolutePath());
+			System.out.println("| |");
 			
 			//Get only all the xml files
 			File[] posFiles = languageFolder.listFiles(new FilenameFilter() {
 	            @Override
 	            public boolean accept(File folder, String name) {
+	            	System.out.print("Inspecting " + name);
 	            	if(name.toLowerCase().endsWith(".xml")){
 	            		//String fileName = name.substring(0, name.length() - 4);
 	            		//if(POSManager.getInstance().getPOS(fileName) != null)
+	            			System.out.println("  -> YES!");
 	            			return true;
 	            	}
+	            	System.out.println("  -> Nope.");
 	                return false;
 	            }
 	        });
 			
 			//create lexicon list for each pos (each pos is in a diff file)
-			for(File xmlFile: posFiles){
+			for(File xmlFile : posFiles){
 				try{
 					SAXBuilder builder = new SAXBuilder();
 					Document document = (Document) builder.build(xmlFile);
@@ -228,7 +236,7 @@ public class LexiconManager {
 	}
 	
 	private boolean createNewLanguageDirectory(String newLanguage){
-		String newPath = ROOT_LANGUAGE_FOLDER + "\\" + newLanguage;
+		String newPath = PlatformUtils.joinPath(ROOT_LANGUAGE_FOLDER, newLanguage);
 		File newFolder = new File(newPath);
 		
 		newFolder.mkdir();
@@ -236,7 +244,7 @@ public class LexiconManager {
 		ArrayList<PartOfSpeech> partsOfSpeech = ComponentManager.getInstance().getLeafPartsOfSpeech();
 		try{
 			for(PartOfSpeech pos: partsOfSpeech){
-				String xmlPath = newPath+"\\"+pos.getName()+".xml";
+				String xmlPath = PlatformUtils.joinPath(newPath, pos.getName() + ".xml");
 				Element baseElement = createBasePOSElement(pos.getName());
 				XMLManager.getInstance().writeToXML(xmlPath, baseElement);
 			}
@@ -249,7 +257,8 @@ public class LexiconManager {
 	
 	public boolean addNewPOSForCurrentLanguage(String newPOS){
 		try{
-			File targetFile = new File(ROOT_LANGUAGE_FOLDER + "\\" + currSelectedLanguage+"\\"+newPOS+".xml");
+			File targetFile = new File(
+					PlatformUtils.joinPath(ROOT_LANGUAGE_FOLDER, currSelectedLanguage, newPOS+".xml"));
 			
 			if(!targetFile.exists()){ //pos doesn't exist yet
 				Element baseElement = createBasePOSElement("pos");

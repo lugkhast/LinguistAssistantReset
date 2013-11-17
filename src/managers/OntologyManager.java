@@ -63,8 +63,10 @@ public class OntologyManager {
 	}
 	
 	//"Normal" class attributes and methods
-	public static final String DB_PATH_ONTOLOGY = "Runnable\\Databases\\Ontology\\";
-	public static final String DB_PATH_ONTOLOGY_SPECIAL = "Runnable\\sDatabases\\Ontology\\special";
+	public static final String DB_PATH_ONTOLOGY = PlatformUtils.joinPath("Runnable",
+			"Databases", "Ontology");
+	public static final String DB_PATH_ONTOLOGY_SPECIAL = PlatformUtils.joinPath("Runnable",
+			"Databases", "Ontology", "special");
 	
 	private ArrayList<ConceptList> ontology;
 	
@@ -152,7 +154,7 @@ public class OntologyManager {
 		//Load Special
 		ArrayList<ConceptList> specialNouns = new ArrayList<ConceptList>();
 		SAXBuilder builder = new SAXBuilder();
-		File ontologyDirectory = new File(DB_PATH_ONTOLOGY+"\\special");
+		File ontologyDirectory = new File(PlatformUtils.joinPath(DB_PATH_ONTOLOGY, "special"));
 		File[] posFiles = ontologyDirectory.listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File folder, String name) {
@@ -263,7 +265,7 @@ public class OntologyManager {
 		for(Element stem: stems)
 			rootElement.addContent(stem);
 		
-		String targetPath = DB_PATH_ONTOLOGY_SPECIAL+"\\"+posDescription+".xml";
+		String targetPath = PlatformUtils.joinPath(DB_PATH_ONTOLOGY_SPECIAL, posDescription+".xml");
 		XMLOutputter xmlOutput = new XMLOutputter();
 		xmlOutput.setFormat(Format.getPrettyFormat());
 		try{

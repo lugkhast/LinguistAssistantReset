@@ -7,6 +7,7 @@ import java.util.List;
 import managers.ComponentManager;
 import managers.LexiconManager;
 import managers.OntologyManager;
+import managers.PlatformUtils;
 import managers.XMLManager;
 
 import org.jdom2.Element;
@@ -155,7 +156,7 @@ public class ConceptList {
 	}
 	
 	private void saveToXML(){
-		String path = OntologyManager.DB_PATH_ONTOLOGY+"\\"+pos+".xml";
+		String path = PlatformUtils.joinPath(OntologyManager.DB_PATH_ONTOLOGY, pos + ".xml");
 		Element rootElement = new Element("pos");
 		rootElement.setAttribute("name", pos);
 		
