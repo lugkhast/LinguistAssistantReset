@@ -12,7 +12,7 @@ import org.jdom2.Element;
 import features.Feature;
 import features.FeatureList;
 
-public abstract class Component {
+public abstract class Component implements Cloneable{
 	
 	public static final String ATTRIBUTE_NAME = "name";
 	
@@ -21,7 +21,7 @@ public abstract class Component {
 	protected FeatureList featureList;
 	
 	//Constructor
-	protected Component(Element componentElement){
+	protected Component(Element componentElement) {
 		
 		//Set the features defined in the XML
 		this.name = componentElement.getAttributeValue(ATTRIBUTE_NAME);
@@ -133,6 +133,18 @@ public abstract class Component {
 		}
 		addAdditionalXMLContent(xmlElement);
 		return xmlElement;
+	}
+	
+	public Object clone()
+	{
+		try
+		{
+			return super.clone();
+		}
+		catch( CloneNotSupportedException e )
+		{
+			return null;
+		}
 	}
 		
 }

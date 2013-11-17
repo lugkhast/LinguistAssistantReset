@@ -46,7 +46,7 @@ import components.Leaf;
 public class ComponentPaletteScrollPane extends JScrollPane{
 	JPanel panel;
 	public ComponentPaletteScrollPane() {
-		this.setBorder(BorderFactory.createTitledBorder("Component Palette - (Drag and Drop)    |    Phrases - White , Leaf - Black"));
+		this.setBorder(BorderFactory.createTitledBorder("Component Palette"));
 		panel = new JPanel();  
 		setViewportView(panel);
 		panel.setLayout(new WrapLayout());
@@ -54,7 +54,7 @@ public class ComponentPaletteScrollPane extends JScrollPane{
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
 		int palettewidth = (int)(width*0.4);
-		int paletteheight = (int)(height*0.25);
+		int paletteheight = (int)(height*0.23);
 		this.setPreferredSize(new Dimension(palettewidth,paletteheight));
 		addComponents(ComponentManager.getInstance().getComponentsInfo());
 	}

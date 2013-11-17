@@ -17,6 +17,8 @@ public class CreationRightPanel extends JPanel{
 	private ComponentPaletteScrollPane cpScrollPane;
 	private FeaturePaletteScrollPane fpScrollPane;
 	private LeafEditPalette leScrollPane;
+	private JButton copyBtn;
+	private JButton moveBtn;
 	private JButton deleteBtn;
 	private Component comp;
 	
@@ -24,14 +26,43 @@ public class CreationRightPanel extends JPanel{
 		cpScrollPane = new ComponentPaletteScrollPane();
 		fpScrollPane = new FeaturePaletteScrollPane();
 		leScrollPane = new LeafEditPalette();
+		
 		createDeleteButton();
+		createCopyButton();
+		createMoveButton();
 		
 		add(deleteBtn);
+		add(copyBtn);
+		add(moveBtn);
 		add(cpScrollPane);
 		add(fpScrollPane);
 		add(leScrollPane);
 	}
+	
+	private void createMoveButton(){
+		moveBtn = new JButton("Move Selected Component");
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		double width = screenSize.getWidth();
+		double height = screenSize.getHeight();
+		int palettewidth = (int)(width*0.3);
+		int paletteheight = (int)(height*0.05);
+		Dimension dimension = new Dimension(palettewidth,paletteheight);
+		moveBtn.setFont(new Font(this.getFont().getFontName(), Font.PLAIN, paletteheight/3));
+		moveBtn.setPreferredSize(dimension);
+	}
 
+	private void createCopyButton(){
+		copyBtn = new JButton("Copy Selected Component");
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		double width = screenSize.getWidth();
+		double height = screenSize.getHeight();
+		int palettewidth = (int)(width*0.3);
+		int paletteheight = (int)(height*0.05);
+		Dimension dimension = new Dimension(palettewidth,paletteheight);
+		copyBtn.setFont(new Font(this.getFont().getFontName(), Font.PLAIN, paletteheight/3));
+		copyBtn.setPreferredSize(dimension);
+	}
+	
 	private void createDeleteButton(){
 		deleteBtn = new JButton("Delete Selected Component");
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -96,6 +127,16 @@ public class CreationRightPanel extends JPanel{
 	
 	public Component getComponent(){
 		return comp;
+	}
+	
+	//Move Listener
+	public void addMoveBtnListener(ActionListener listener){
+		moveBtn.addActionListener(listener);
+	}
+	
+	//Copy Listener
+	public void addCopyBtnListener(ActionListener listener){
+		copyBtn.addActionListener(listener);
 	}
 	
 	//Delete Listener

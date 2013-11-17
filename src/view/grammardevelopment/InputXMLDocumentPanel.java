@@ -5,6 +5,8 @@ import java.awt.GridLayout;
 import java.awt.Point;
 import java.awt.dnd.DropTarget;
 import java.awt.dnd.DropTargetListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.TooManyListenersException;
 
@@ -14,6 +16,7 @@ import javax.swing.JPanel;
 
 import components.Component;
 import components.InputXMLDocument;
+import components.Phrase;
 import controller.listener.grammardev.SelectComponentActionListener;
 import controller.listener.grammardev.editsemantics.ComponentPaletteDnDListener;
 import controller.listener.grammardev.editsemantics.InputXMLDocPanelDNDListener;
@@ -24,8 +27,21 @@ public class InputXMLDocumentPanel extends JPanel{
 	private ArrayList<ComponentPanel> sentencePanels;
 
 	private static final int VERTICAL_MARGIN = 20;
+	private static final int HORIZONTAL_MARGIN = 20;
 	
 	private SelectComponentActionListener selectListener;
+	
+	public InputXMLDocumentPanel()
+	{
+		DropTarget dt = new DropTarget();
+		try {
+			dt.addDropTargetListener(new InputXMLDocPanelDNDListener(this));
+			this.setDropTarget(dt);
+			
+		} catch (TooManyListenersException e) {}
+		
+		setPanelListener(this);
+	}
 	
 	public InputXMLDocumentPanel(InputXMLDocument doc){
 		this.doc = doc;
@@ -39,6 +55,8 @@ public class InputXMLDocumentPanel extends JPanel{
 		setLayout(null);
 		refreshDisplay();
 		refreshTitle();
+		
+		setPanelListener(this);
 	}
 	
 	public void setSelectComponentPanelListener(SelectComponentActionListener selectListener){
@@ -76,7 +94,7 @@ public class InputXMLDocumentPanel extends JPanel{
 			addSentencePanel(ComponentPanel.CreateInstance(sentence, this));
 	}
 	
-	private void addSentencePanel(ComponentPanel newPanel){
+	public void addSentencePanel(ComponentPanel newPanel){
 		sentencePanels.add(newPanel);
 		add(newPanel);
 	}
@@ -92,9 +110,9 @@ public class InputXMLDocumentPanel extends JPanel{
 			ComponentPanel sentencePanel = sentencePanels.get(i);
 			
 			if(i > 0)
-				sentencePanel.adjustPositioning(0, sentencePanels.get(i-1).getBottomY() + VERTICAL_MARGIN);
+				sentencePanel.adjustPositioning(HORIZONTAL_MARGIN, sentencePanels.get(i-1).getBottomY() + VERTICAL_MARGIN);
 			else
-				sentencePanel.adjustPositioning(0, VERTICAL_MARGIN*2);	
+				sentencePanel.adjustPositioning(HORIZONTAL_MARGIN, VERTICAL_MARGIN*2);	
 			
 			newDesiredHeight += sentencePanel.getDesiredHeight() + VERTICAL_MARGIN;
 		}
@@ -155,6 +173,86 @@ public class InputXMLDocumentPanel extends JPanel{
 			remove(child);
 		}
 		adjustPositioning();
+	}
+	
+	public void setPanelListener(final InputXMLDocumentPanel parentDocuPanel)
+	{
+		this.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				if (selectListener.canCopy())
+				{
+					int index = determineInsertIndex(arg0.getPoint());
+					Component newComponent = (Component) selectListener.getSelectedPanel().getComponent().clone();
+					getXMLDocument().addClauseAt(index, newComponent);
+					ComponentPanel newPanel = ComponentPanel.CreateInstance(newComponent, parentDocuPanel);
+					newPanel.setSelectListener(parentDocuPanel.getSelectListener());
+										
+					parentDocuPanel.addSentencePanelAt(index, newPanel);
+					parentDocuPanel.adjustPositioning();
+					selectListener.setCopy(false);
+					
+				}
+				if (selectListener.canMove())
+				{
+					int index = determineInsertIndex(arg0.getPoint());
+					Component newComponent = (Component) selectListener.getSelectedPanel().getComponent().clone();
+					getXMLDocument().addClauseAt(index, newComponent);
+					ComponentPanel newPanel = ComponentPanel.CreateInstance(newComponent, parentDocuPanel);
+					newPanel.setSelectListener(parentDocuPanel.getSelectListener());
+										
+					parentDocuPanel.addSentencePanelAt(index, newPanel);
+					parentDocuPanel.adjustPositioning();
+					
+					//delete previous ComponentPanel
+					ComponentPanel oldPanel = selectListener.getSelectedPanel();
+					if(oldPanel.getParentComponentPanel() != null)
+					{
+						//remove internally
+						Phrase parentComponent = (Phrase)oldPanel.getParentComponentPanel().getComponent();
+						parentComponent.removeChild(oldPanel.getComponent());
+										
+						//remove in gui
+						oldPanel.getParentComponentPanel().removeChild(oldPanel);
+						parentDocuPanel.adjustPositioning();
+					}
+					else
+					{
+						//remove internally
+						parentDocuPanel.getXMLDocument().removeSentence(oldPanel.getComponent());
+						//remove in gui
+						parentDocuPanel.removeChild(oldPanel);
+					}
+					selectListener.setMove(false);
+					
+				}
+			}
+		});
 	}
 	
 }

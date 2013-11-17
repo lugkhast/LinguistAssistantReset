@@ -123,4 +123,14 @@ public class GrammarDevController {
 			return selectListener.getSelectedPanel();
 		return null;
 	}
+	
+	public void activateCopy()
+	{
+		selectListener.setCopy(true);
+	}
+	
+	public void activateMove()
+	{
+		selectListener.setMove(true);
+	}
 }
