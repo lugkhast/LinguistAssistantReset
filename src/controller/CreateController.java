@@ -25,6 +25,7 @@ import controller.listener.grammardev.editsemantics.FeaturePaletteCmbValuesItemL
 import controller.listener.grammardev.editsemantics.DeleteComponentBtnListener;
 import controller.listener.grammardev.editsemantics.FeaturePaletteResetBtnListener;
 import controller.listener.grammardev.editsemantics.LeafEditPaletteBtnListener;
+import controller.listener.grammardev.editsemantics.MoveComponentBtnListener;
 
 import features.Feature;
 
@@ -44,11 +45,16 @@ public class CreateController {
 		this.creationPanel = creationPanel;
 		this.grammarDevController = grammarDevController;
 		
+		addMoveButtonListener();
 		addCopyButtonListener();
 		addDeleteButtonListener();
 		addListenersToCompPalette();
 		addListenersToFeatPalette();
 		addListenersToLeafEditPalette();
+	}
+	
+	private void addMoveButtonListener(){
+		creationPanel.addMoveBtnListener(new MoveComponentBtnListener(grammarDevController));
 	}
 	
 	private void addCopyButtonListener(){

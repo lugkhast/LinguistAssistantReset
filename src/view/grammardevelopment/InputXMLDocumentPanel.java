@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 
 import components.Component;
 import components.InputXMLDocument;
+import components.Phrase;
 import controller.listener.grammardev.SelectComponentActionListener;
 import controller.listener.grammardev.editsemantics.ComponentPaletteDnDListener;
 import controller.listener.grammardev.editsemantics.InputXMLDocPanelDNDListener;
@@ -217,7 +218,39 @@ public class InputXMLDocumentPanel extends JPanel{
 					selectListener.setCopy(false);
 					
 				}
-				
+				if (selectListener.canMove())
+				{
+					int index = determineInsertIndex(arg0.getPoint());
+					Component newComponent = (Component) selectListener.getSelectedPanel().getComponent().clone();
+					getXMLDocument().addClauseAt(index, newComponent);
+					ComponentPanel newPanel = ComponentPanel.CreateInstance(newComponent, parentDocuPanel);
+					newPanel.setSelectListener(parentDocuPanel.getSelectListener());
+										
+					parentDocuPanel.addSentencePanelAt(index, newPanel);
+					parentDocuPanel.adjustPositioning();
+					
+					//delete previous ComponentPanel
+					ComponentPanel oldPanel = selectListener.getSelectedPanel();
+					if(oldPanel.getParentComponentPanel() != null)
+					{
+						//remove internally
+						Phrase parentComponent = (Phrase)oldPanel.getParentComponentPanel().getComponent();
+						parentComponent.removeChild(oldPanel.getComponent());
+										
+						//remove in gui
+						oldPanel.getParentComponentPanel().removeChild(oldPanel);
+						parentDocuPanel.adjustPositioning();
+					}
+					else
+					{
+						//remove internally
+						parentDocuPanel.getXMLDocument().removeSentence(oldPanel.getComponent());
+						//remove in gui
+						parentDocuPanel.removeChild(oldPanel);
+					}
+					selectListener.setMove(false);
+					
+				}
 			}
 		});
 	}

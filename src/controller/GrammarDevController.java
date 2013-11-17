@@ -128,4 +128,9 @@ public class GrammarDevController {
 	{
 		selectListener.setCopy(true);
 	}
+	
+	public void activateMove()
+	{
+		selectListener.setMove(true);
+	}
 }
