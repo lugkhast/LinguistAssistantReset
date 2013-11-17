@@ -17,6 +17,7 @@ public class CreationRightPanel extends JPanel{
 	private ComponentPaletteScrollPane cpScrollPane;
 	private FeaturePaletteScrollPane fpScrollPane;
 	private LeafEditPalette leScrollPane;
+	private JButton copyBtn;
 	private JButton deleteBtn;
 	private Component comp;
 	
@@ -24,14 +25,29 @@ public class CreationRightPanel extends JPanel{
 		cpScrollPane = new ComponentPaletteScrollPane();
 		fpScrollPane = new FeaturePaletteScrollPane();
 		leScrollPane = new LeafEditPalette();
+		
 		createDeleteButton();
+		createCopyButton();
 		
 		add(deleteBtn);
+		add(copyBtn);
 		add(cpScrollPane);
 		add(fpScrollPane);
 		add(leScrollPane);
 	}
 
+	private void createCopyButton(){
+		copyBtn = new JButton("Copy Selected Component");
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		double width = screenSize.getWidth();
+		double height = screenSize.getHeight();
+		int palettewidth = (int)(width*0.3);
+		int paletteheight = (int)(height*0.05);
+		Dimension dimension = new Dimension(palettewidth,paletteheight);
+		copyBtn.setFont(new Font(this.getFont().getFontName(), Font.PLAIN, paletteheight/3));
+		copyBtn.setPreferredSize(dimension);
+	}
+	
 	private void createDeleteButton(){
 		deleteBtn = new JButton("Delete Selected Component");
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -97,6 +113,11 @@ public class CreationRightPanel extends JPanel{
 	public Component getComponent(){
 		return comp;
 	}
+	
+	//Delete Listener
+	public void addCopyBtnListener(ActionListener listener){
+			copyBtn.addActionListener(listener);
+		}
 	
 	//Delete Listener
 	public void addDeleteBtnListener(ActionListener listener){

@@ -47,7 +47,7 @@ import managers.ColorManager;
 import view.MainFrame;;
 
 //panel for the components in the semantic representation (left side of the screen)
-public class ComponentPanel extends JPanel {
+public class ComponentPanel extends JPanel implements Cloneable {
 
 	private Component component;
 	private ArrayList<ComponentPanel> children;
@@ -358,6 +358,11 @@ public class ComponentPanel extends JPanel {
 		return getX() + getWidth();
 	}
 	
+	public int getChildrenSize()
+	{
+		return children.size();
+	}
+	
 	public Component getComponent(){
 		return component;
 	}
@@ -391,4 +396,15 @@ public class ComponentPanel extends JPanel {
 		return children.size(); //last
 	}
 
+	public Object clone()
+	{
+		try
+		{
+			return super.clone();
+		}
+		catch( CloneNotSupportedException e )
+		{
+			return null;
+		}
+	}
 }

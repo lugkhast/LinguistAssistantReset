@@ -34,7 +34,7 @@ public class LeafEditPalette extends JScrollPane{
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
 		int palettewidth = (int)(width*0.4);
-		int paletteheight = (int)(height*0.25);
+		int paletteheight = (int)(height*0.22);
 		this.setPreferredSize(new Dimension(palettewidth,paletteheight));
 		addComponents();
 	}

@@ -59,7 +59,7 @@ public class FeaturePaletteScrollPane extends JScrollPane{
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
 		int palettewidth = (int)(width*0.4);
-		int paletteheight = (int)(height*0.25);
+		int paletteheight = (int)(height*0.23);
 		this.setPreferredSize(new Dimension(palettewidth,paletteheight));
 		JLabel blankLabel = new JLabel("");
 		blankLabel.setMinimumSize(new Dimension(200,20));

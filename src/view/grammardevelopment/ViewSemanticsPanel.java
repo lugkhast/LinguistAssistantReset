@@ -45,7 +45,7 @@ public class ViewSemanticsPanel extends JPanel{
 	public static final int MODE_VIEW = 0;
 	public static final int MODE_EDIT = 1;
 	public static final int MODE_GENERATE = 2;
-		
+	public static final int MODE_RULE_EDIT = 3;
 	private int currMode;
 	
 	//Other object references needed
@@ -57,19 +57,19 @@ public class ViewSemanticsPanel extends JPanel{
 	private JPanel viewPanel;
 	private CreationRightPanel creationPanel;
 	private DisplayScreen display;
+//	private DisplayScreen display2;
 	private TextAreaWithScrollPane generatedArea;
 	private TextAreaWithScrollPane docInfoArea;
 	private TextAreaWithScrollPane infoArea;
 	private RulesTreePanel rulesPanel;
 	private ArrayList<InputXMLDocumentPanel> xmlDocPanels;
-	
+
 	private GrammarDevController grammarDevController;
 	
 	public ViewSemanticsPanel(GrammarDevController grammarDevController, ArrayList<InputXMLDocument> loadedDocuments){ // Used for Loading a document
 		this.grammarDevController = grammarDevController;
 		//this.XMLDocsList = loadedDocuments;
 		
-		xmlDocPanels = new ArrayList<InputXMLDocumentPanel>();
 		for(InputXMLDocument doc: loadedDocuments)
 			xmlDocPanels.add(new InputXMLDocumentPanel(doc));
 
@@ -92,18 +92,31 @@ public class ViewSemanticsPanel extends JPanel{
 		initializeDisplay(MODE_EDIT);
 	}
 		
+	public ViewSemanticsPanel(GrammarDevController grammarDevController, String category, String comments){ //Used for Creating a new document
+		this.grammarDevController = grammarDevController;
+		this.initialDocPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, null, null, null, null)); //null, name, category, comments, null
+		this.xmlDocPanels = new ArrayList<InputXMLDocumentPanel>();
+		xmlDocPanels.add(initialDocPanel);
+		setMode(MODE_RULE_EDIT);
+		
+		initializePanelSettings();
+		initializeBar();
+		initializeDisplay(MODE_EDIT);
+	}
+	
 	//Creation of the right panels for viewing
 	private JPanel createRightViewPanel(){
 		//Initialize right panel
 		docInfoArea = new TextAreaWithScrollPane("Document Information");
 		infoArea= new TextAreaWithScrollPane("Component Information");
 		generatedArea = new TextAreaWithScrollPane("Generated Sentence");
+
 		rulesPanel = new RulesTreePanel();
-		
-		
+				
 		JPanel rightPanel = new JPanel();
 		rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
 		rightPanel.add(rulesPanel);
+
 		rightPanel.add(docInfoArea);
 		rightPanel.add(infoArea);
 		rightPanel.setMinimumSize(new Dimension(400,200));
@@ -138,15 +151,24 @@ public class ViewSemanticsPanel extends JPanel{
 		JScrollPane viewScroll = new JScrollPane(viewPanel);
 		JScrollPane creationScroll = new JScrollPane(creationPanel);
 		
+		
 		//LeftPanel
 		display = new DisplayScreen();
 		display.display(this.initialDocPanel); //displays the first
-					
+		
+		//LeftPanel lower
+//		display2 = new DisplayScreen();
+//		display2.display(this.initialDocPanel); //displays the first
+//		
+		JPanel displayPanel = new JPanel();
+		displayPanel.add(display);
+//		displayPanel.add(display2);
+		
 		//Split Pane
 		if(initialMode == MODE_VIEW)
 			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, viewScroll);
 		else{
-			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, creationScroll);
+			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, displayPanel, creationScroll);
 			setMode(MODE_EDIT);
 		}
 		splitPane.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
