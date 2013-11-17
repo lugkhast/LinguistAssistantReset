@@ -3,11 +3,11 @@ package module3.rules;
 import java.util.ArrayList;
 
 public class RuleTree {
-	private String setName, comments;
+	private String topicName, comments;
 	private ArrayList<Rule> ruleList;
 	
 	public RuleTree(String name, String c, ArrayList<Rule> list){
-		this.setName = name;
+		this.topicName = name;
 		this.comments = c;
 		this.ruleList = list;
 		if(ruleList == null)
@@ -34,13 +34,15 @@ public class RuleTree {
 	}
 	
 	public String toString() {
-		String m = "name: " + setName;
+		String m = "name: " + topicName;
 		
 		m += "\ncomments: " + comments;
 		m += "\nrulecount : " + ruleList.size() + "\n";
 		
-		for (Rule r : ruleList)
+		for (Rule r : ruleList) { 
 			m += r;
+			m += r.getInput().getFeaturesInString(true);
+		}
 		
 		return m;
 	}
