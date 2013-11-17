@@ -101,7 +101,6 @@ public class SelectComponentActionListener extends MouseAdapter {
 	//move functions
 	public void moveSelectedComponentToPanel(ComponentPanel panel, Point p)
 	{		
-		System.out.println("SARANGEUN MOOOOOOVE");
 		int index = panel.determineInsertIndex(p);
 		Component parent = panel.getComponent();
 		if(!parent.isLeaf())
