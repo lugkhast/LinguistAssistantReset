@@ -33,7 +33,7 @@ public class RuleFrame extends JFrame {
 	 */
 	public RuleFrame() {
 		setTitle("Rule Settings");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 538, 341);
 		//the panels that you'll be making will be placed in tabbedPane
 		initializeComponents();
@@ -109,5 +109,7 @@ public class RuleFrame extends JFrame {
 		gbc_tabbedPane.gridx = 0;
 		gbc_tabbedPane.gridy = 1;
 		contentPane.add(tabbedPane, gbc_tabbedPane);
+		
+		tabbedPane.addTab("Simple", new JPanel());
 	}
 }

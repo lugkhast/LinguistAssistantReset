@@ -2,3 +2,6 @@ bin
 
 # Ignore test output
 InfectedEye_1.xml
+
+# Ignore this program's stuff
+LastAccessedDirectory

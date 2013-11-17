@@ -54,4 +54,9 @@ public class Rule {
 		
 		return m + "***********\n";
 	}
+	
+	public String generateXMLElement() {
+		System.err.println("CALLED STUB METHOD: generateXMLElement. Implement this later!");
+		return "";
+	}
 }
