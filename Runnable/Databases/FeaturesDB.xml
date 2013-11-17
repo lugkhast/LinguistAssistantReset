@@ -1,5 +1,5 @@
 <db>
-<component name = "Cl">
+<component name = "CL">
 	<featuregroup type = "standard">
 		<feature name = "Type">
 			<value>Independent</value>

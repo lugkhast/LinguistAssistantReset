@@ -12,7 +12,7 @@ import features.FeatureList;
 
 public class Phrase extends Component{
 
-	private Children children;
+	protected Children children;
 	
 	public Phrase(Element componentElement) {
 		super(componentElement);
@@ -34,6 +34,8 @@ public class Phrase extends Component{
 		for(Component child: children.getChildren())
 			stringBuilder.append(child.toString());
 		stringBuilder.append(")");
+		
+		stringBuilder.append(getFeatures(true, "\n"));
 		return stringBuilder.toString();
 	}
 	
@@ -67,7 +69,7 @@ public class Phrase extends Component{
 	}
 
 	public String toString() {
-		return name;
+		return getStringForPrinting();
 	}
 
 	@Override
@@ -76,7 +78,7 @@ public class Phrase extends Component{
 	}
 	
 	@Override
-	protected void addAdditionalXMLContent(Element parentElement) {
+	public void addAdditionalXMLContent(Element parentElement) {
 		for(Component child: children.getChildren())
 			parentElement.addContent(child.generateXMLElement());
 	}
