@@ -45,6 +45,11 @@ public class Rule {
 		return rule;
 	}
 	
+	public String getName()
+	{
+		return name;
+	}
+	
 	public String toString() {
 		String m = "***********\n";
 		

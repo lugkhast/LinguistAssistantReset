@@ -33,6 +33,11 @@ public class RuleTree {
 			ruleList.remove(rule);
 	}
 	
+	public String getName()
+	{
+		return setName;
+	}
+	
 	public String toString() {
 		String m = "name: " + setName;
 		

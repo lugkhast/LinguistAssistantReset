@@ -1,6 +1,7 @@
 package view.grammardevelopment;
 
 import java.awt.Dimension;
+import java.io.File;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -10,48 +11,46 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 
+import managers.RulesManager;
+import module3.rules.Rule;
+import module3.rules.RuleTree;
+
 import view.rules.RuleFrame;
 
 public class RulesTreePanel extends JScrollPane{
 	JTree tree;
 	DefaultMutableTreeNode topNode;
-	
+	RuleTree ruleTree;
 	//supposed to take the parameters rules set and add to tree
 	public RulesTreePanel()
 	{
-		topNode = new DefaultMutableTreeNode("Rules");
-		initializeRules();
+		RulesManager rulesManager;
+		rulesManager = new RulesManager();
+		ruleTree = rulesManager.initializeRules(new File("InputXML/Rules/Rulesets.xml"));
 		
-		tree = new JTree(topNode);
-	    tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
-	    
-	    tree.addTreeSelectionListener(new TreeListener());
+		initializeTree();
 
 		setViewportView(tree);
-		initializeRules();
 	}
-	
 
-	public void initializeRules()
+	public void initializeTree()
 	{
-		DefaultMutableTreeNode groupNode;
 		DefaultMutableTreeNode ruleNode;
-		
-		groupNode = new DefaultMutableTreeNode("GROUP 1");
-		topNode.add(groupNode);
-		
-		ruleNode = new DefaultMutableTreeNode("rule 1");
-		groupNode.add(ruleNode);
-		ruleNode = new DefaultMutableTreeNode("rule 2");
-		groupNode.add(ruleNode);
-		
-		groupNode = new DefaultMutableTreeNode("GROUP 2");
-		topNode.add(groupNode);
-		
-		ruleNode = new DefaultMutableTreeNode("rule 1");
-		groupNode.add(ruleNode);
-		ruleNode = new DefaultMutableTreeNode("rule 2");
-		groupNode.add(ruleNode);
+		DefaultMutableTreeNode setNode;
+		topNode = new DefaultMutableTreeNode("Rules");
+		setNode = new DefaultMutableTreeNode(ruleTree.getName());
+		topNode.add(setNode);
+		//add nodes
+		for (int i = 0; i<ruleTree.getChildren().size(); i++)
+		{
+			Rule rule = ruleTree.getChildren().get(i);
+			ruleNode = new DefaultMutableTreeNode(rule.getName());
+			setNode.add(ruleNode);
+		}
+		tree = new JTree(topNode);
+		tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+	    
+	    tree.addTreeSelectionListener(new TreeListener());
 	}
 	
 	class TreeListener implements TreeSelectionListener
