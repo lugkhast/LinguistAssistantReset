@@ -46,7 +46,7 @@ public class DisplayScreen extends JPanel{
 	public DisplayScreen(){
 		setLayout(new GridLayout());
 		setBackground(Color.BLACK);
-		setMinimumSize(new Dimension(300,120));
+//		setMinimumSize(new Dimension(300,120));
 		scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setPreferredSize(new Dimension(800, 500));
@@ -54,6 +54,10 @@ public class DisplayScreen extends JPanel{
 		add(scrollPane);
 	}
 	
+	public void setDisplaySize(Dimension d)
+	{
+		scrollPane.setPreferredSize(d);
+	}
 	//Used to change the display
 	public void display(InputXMLDocumentPanel panel){
 		documentPanel = panel;

@@ -24,12 +24,16 @@ public class CreationRightPanel extends JPanel{
 	
 	public CreationRightPanel(){
 		cpScrollPane = new ComponentPaletteScrollPane();
+		cpScrollPane.setBounds(13, 142, 517, 176);
 		fpScrollPane = new FeaturePaletteScrollPane();
+		fpScrollPane.setBounds(10, 323, 256, 176);
 		leScrollPane = new LeafEditPalette();
+		leScrollPane.setBounds(277, 329, 253, 168);
 		
 		createDeleteButton();
 		createCopyButton();
 		createMoveButton();
+		setLayout(null);
 		
 		add(deleteBtn);
 		add(copyBtn);
@@ -43,6 +47,7 @@ public class CreationRightPanel extends JPanel{
 	
 	private void createMoveButton(){
 		moveBtn = new JButton("Move Selected Component");
+		moveBtn.setBounds(100, 101, 351, 34);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
@@ -55,6 +60,7 @@ public class CreationRightPanel extends JPanel{
 
 	private void createCopyButton(){
 		copyBtn = new JButton("Copy Selected Component");
+		copyBtn.setBounds(100, 56, 351, 34);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
@@ -67,6 +73,7 @@ public class CreationRightPanel extends JPanel{
 	
 	private void createDeleteButton(){
 		deleteBtn = new JButton("Delete Selected Component");
+		deleteBtn.setBounds(100, 11, 351, 34);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();

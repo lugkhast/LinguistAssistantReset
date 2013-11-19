@@ -45,7 +45,6 @@ public class ViewSemanticsPanel extends JPanel{
 	public static final int MODE_VIEW = 0;
 	public static final int MODE_EDIT = 1;
 	public static final int MODE_GENERATE = 2;
-	public static final int MODE_RULE_EDIT = 3;
 	private int currMode;
 	
 	//Other object references needed
@@ -57,7 +56,6 @@ public class ViewSemanticsPanel extends JPanel{
 	private JPanel viewPanel;
 	private CreationRightPanel creationPanel;
 	DisplayScreen display;
-	DisplayScreen display2;
 	private TextAreaWithScrollPane generatedArea;
 	private TextAreaWithScrollPane docInfoArea;
 	private TextAreaWithScrollPane infoArea;
@@ -86,18 +84,6 @@ public class ViewSemanticsPanel extends JPanel{
 		this.initialDocPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, name, category, comments, null));
 		this.xmlDocPanels = new ArrayList<InputXMLDocumentPanel>();
 		xmlDocPanels.add(initialDocPanel);
-		
-		initializePanelSettings();
-		initializeBar();
-		initializeDisplay(MODE_EDIT);
-	}
-		
-	public ViewSemanticsPanel(GrammarDevController grammarDevController, String category, String comments){ //Used for Creating a new document
-		this.grammarDevController = grammarDevController;
-		this.initialDocPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, null, null, null, null)); //null, name, category, comments, null
-		this.xmlDocPanels = new ArrayList<InputXMLDocumentPanel>();
-		xmlDocPanels.add(initialDocPanel);
-		setMode(MODE_RULE_EDIT);
 		
 		initializePanelSettings();
 		initializeBar();
@@ -156,18 +142,11 @@ public class ViewSemanticsPanel extends JPanel{
 		//LeftPanel
 		display = new DisplayScreen();
 		display.display(this.initialDocPanel); //displays the first
-		
-		//LeftPanel lower
-		display2 = new DisplayScreen();
-		InputXMLDocumentPanel outputXML = new InputXMLDocumentPanel(new InputXMLDocument(null,null,"Output",null,null));
-		
-		display2.display(outputXML); //displays the first
-//		
-		setDisplay2Visible(false);
+		int height = this.getMaximumSize().height;
+		display.setDisplaySize(new Dimension(800,600));
 		
 		JPanel displayPanel = new JPanel();
 		displayPanel.add(display);
-		displayPanel.add(display2);
 		
 		//Split Pane
 		if(initialMode == MODE_VIEW)
@@ -191,21 +170,6 @@ public class ViewSemanticsPanel extends JPanel{
 		generatedArea.setTextAreaContent("");
 	}
 	
-	
-	
-	public DisplayScreen getDisplay(){
-		return display;
-	}
-	
-	public DisplayScreen getDisplay2(){
-		return display2;
-	}
-	
-	public void setDisplay2Visible(boolean b)
-	{
-		display2.setVisible(b);
-	}
-	
 	public ViewSemanticsPanelToolBar getToolbar()
 	{
 		return toolBar;
@@ -215,10 +179,6 @@ public class ViewSemanticsPanel extends JPanel{
 	public void setSelectComponentPanelListener(SelectComponentActionListener selectListener){
 		for(InputXMLDocumentPanel docPanel: xmlDocPanels)
 			docPanel.setSelectComponentPanelListener(selectListener);	
-	}
-	
-	public void setSelectComponentPanelListener2(SelectComponentActionListener selectListener){
-		display2.getCurrentlyDisplayedDocumentPanel().setSelectComponentPanelListener(selectListener);	
 	}
 	
 	public void setDocumentInfo(){

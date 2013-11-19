@@ -177,7 +177,7 @@ public class ComponentPanel extends JPanel implements Cloneable {
 			this.setPreferredSize(new Dimension(width,desiredHeight));
 		}
 		else{
-			int desiredWidth = (MainFrame.getInstance().getWidth()-100)*3/5;
+			int desiredWidth = (MainFrame.getInstance().getWidth()-130)*3/5;
 
 			setBounds(leftX, topY,desiredWidth,desiredHeight);
 			this.setPreferredSize(new Dimension(desiredWidth,desiredHeight));
