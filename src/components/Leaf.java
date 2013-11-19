@@ -16,9 +16,9 @@ public class Leaf extends Component{
 	public static final String ATTRIBUTE_LEXICAL_SENSE = "sense";
 	public static final String ATTRIBUTE_LEXICON = "lexicon";
 	
-	private String concept;
-	private String lexicalSense;
-	private ArrayList<Lexicon> mappedLexicons;
+	protected String concept;
+	protected String lexicalSense;
+	protected ArrayList<Lexicon> mappedLexicons;
 	
 	public Leaf(Element componentElement) {
 		super(componentElement);
@@ -138,14 +138,14 @@ public class Leaf extends Component{
 		return null;
 	}
 	
-	private Lexicon getFirstMappedLexicon(){
+	protected Lexicon getFirstMappedLexicon(){
 		if(mappedLexicons.size() == 0)
 			return null;
 		
 		return mappedLexicons.get(0);
 	}
 
-	protected void addAdditionalXMLContent(Element parentElement) {
+	public void addAdditionalXMLContent(Element parentElement) {
 		parentElement.setAttribute(ATTRIBUTE_CONCEPT, concept);
 		parentElement.setAttribute(ATTRIBUTE_LEXICAL_SENSE, lexicalSense);
 		Lexicon lexicon = getFirstMappedLexicon();

@@ -53,7 +53,8 @@ public class NewRuleWindow extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						panel.addRuleToTree(new Rule(nameField.getText()));
+						//panel.addRuleToTree(new Rule(nameField.getText()));
+						panel.addRuleToTree(Rule.createInstance(nameField.getText()));
 						dispose();
 					}
 				});

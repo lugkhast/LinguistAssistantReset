@@ -12,7 +12,10 @@ import org.jdom2.Element;
 import features.Feature;
 import features.FeatureList;
 
-public abstract class Component implements Cloneable{
+import module3.rules.LeafMatcher;
+import module3.rules.PhraseMatcher;
+
+public abstract class Component implements Cloneable {
 	
 	public static final String ATTRIBUTE_NAME = "name";
 	
@@ -21,7 +24,7 @@ public abstract class Component implements Cloneable{
 	protected FeatureList featureList;
 	
 	//Constructor
-	protected Component(Element componentElement) {
+	protected Component(Element componentElement){
 		
 		//Set the features defined in the XML
 		this.name = componentElement.getAttributeValue(ATTRIBUTE_NAME);
@@ -32,7 +35,7 @@ public abstract class Component implements Cloneable{
 		
 		//override defaults
 		ArrayList<Feature> specifiedFeatures = SemanticsManager.getSpecifiedFeatures(componentElement);
-		for(Feature feature: specifiedFeatures)
+		for(Feature feature: specifiedFeatures) 
 			setFeature(feature);
 	}
 		
@@ -76,7 +79,7 @@ public abstract class Component implements Cloneable{
 	//Abstract Methods
 	protected abstract String getFeatures(boolean includeDefaults, String nextLineToken);
 	
-	protected abstract void addAdditionalXMLContent(Element parentElement);
+	public abstract void addAdditionalXMLContent(Element parentElement);
 	
 	public abstract String toString();
 
@@ -134,7 +137,28 @@ public abstract class Component implements Cloneable{
 		addAdditionalXMLContent(xmlElement);
 		return xmlElement;
 	}
-	
+
+	public static Component createMatcher(Element e) {
+		String componentName = e.getAttributeValue(ATTRIBUTE_NAME);
+		
+		if(ComponentManager.getInstance().isLeaf(componentName)){
+			LeafMatcher c = new LeafMatcher(e);
+			return c;
+		}
+		else{
+			List<Element> childrenElements = (List<Element>)e.getChildren(SemanticsManager.COMPONENT);
+			if(childrenElements == null)
+				childrenElements = new ArrayList<Element>();
+			
+			PhraseMatcher phrase = new PhraseMatcher(e);
+
+			for(Element child: childrenElements)
+				phrase.addChild(createMatcher(child));
+			
+			return phrase;
+		}
+	}
+
 	public Object clone()
 	{
 		try
@@ -146,5 +170,4 @@ public abstract class Component implements Cloneable{
 			return null;
 		}
 	}
-		
 }
