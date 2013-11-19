@@ -34,8 +34,6 @@ public class Phrase extends Component{
 		for(Component child: children.getChildren())
 			stringBuilder.append(child.toString());
 		stringBuilder.append(")");
-		
-		stringBuilder.append(getFeatures(true, "\n"));
 		return stringBuilder.toString();
 	}
 	
