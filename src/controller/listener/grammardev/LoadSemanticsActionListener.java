@@ -31,8 +31,12 @@ public class LoadSemanticsActionListener implements ActionListener {
 
 			ArrayList<InputXMLDocument> loadedDocuments = new ArrayList<InputXMLDocument>();
 			for(File file: filesLoaded)
+			{
 				loadedDocuments.add(SemanticsManager.readSemanticsDocumentFromFile(file));
-		
+			}
+			
+			if (loadedDocuments==null)
+				System.out.print("NAAAAALLLL");
 			grammarDevController.loadDocuments(loadedDocuments);
 			MainFrame.getInstance().setPanel(grammarDevController.getPanel());
 		}

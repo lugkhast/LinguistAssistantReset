@@ -19,11 +19,8 @@ import java.util.Map.Entry;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
-import javax.swing.JTree;
 import javax.swing.TransferHandler;
-import javax.swing.tree.DefaultMutableTreeNode;
 
 import view.MainFrame;
 import view.grammardevelopment.editsemantics.CreationRightPanel;
@@ -45,6 +42,7 @@ public class ViewSemanticsPanel extends JPanel{
 	public static final int MODE_VIEW = 0;
 	public static final int MODE_EDIT = 1;
 	public static final int MODE_GENERATE = 2;
+		
 	private int currMode;
 	
 	//Other object references needed
@@ -55,19 +53,20 @@ public class ViewSemanticsPanel extends JPanel{
 	private JSplitPane splitPane;
 	private JPanel viewPanel;
 	private CreationRightPanel creationPanel;
-	DisplayScreen display;
+	private DisplayScreen display;
+	private RulesTreePanel rulesPanel;
 	private TextAreaWithScrollPane generatedArea;
 	private TextAreaWithScrollPane docInfoArea;
 	private TextAreaWithScrollPane infoArea;
-	private RulesTreePanel rulesPanel;
 	private ArrayList<InputXMLDocumentPanel> xmlDocPanels;
-
+		
 	private GrammarDevController grammarDevController;
 	
 	public ViewSemanticsPanel(GrammarDevController grammarDevController, ArrayList<InputXMLDocument> loadedDocuments){ // Used for Loading a document
 		this.grammarDevController = grammarDevController;
 		//this.XMLDocsList = loadedDocuments;
 		
+		xmlDocPanels = new ArrayList<InputXMLDocumentPanel>();
 		for(InputXMLDocument doc: loadedDocuments)
 			xmlDocPanels.add(new InputXMLDocumentPanel(doc));
 
@@ -89,25 +88,22 @@ public class ViewSemanticsPanel extends JPanel{
 		initializeBar();
 		initializeDisplay(MODE_EDIT);
 	}
-	
+		
 	//Creation of the right panels for viewing
 	private JPanel createRightViewPanel(){
 		//Initialize right panel
+		rulesPanel = new RulesTreePanel();
 		docInfoArea = new TextAreaWithScrollPane("Document Information");
 		infoArea= new TextAreaWithScrollPane("Component Information");
 		generatedArea = new TextAreaWithScrollPane("Generated Sentence");
 
-		rulesPanel = new RulesTreePanel();
-				
 		JPanel rightPanel = new JPanel();
 		rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
 		rightPanel.add(rulesPanel);
-
 		rightPanel.add(docInfoArea);
 		rightPanel.add(infoArea);
-		rightPanel.setMinimumSize(new Dimension(400,200));
+		
 		int panelHeight = rightPanel.getPreferredSize().height;
-		rulesPanel.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight*2/5));
 		generatedArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
 		docInfoArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
 		infoArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
@@ -134,25 +130,16 @@ public class ViewSemanticsPanel extends JPanel{
 		//right panels
 		viewPanel = createRightViewPanel();
 		creationPanel = new CreationRightPanel();
-		
-		JScrollPane viewScroll = new JScrollPane(viewPanel);
-		JScrollPane creationScroll = new JScrollPane(creationPanel);
-		
-		
+	
 		//LeftPanel
 		display = new DisplayScreen();
 		display.display(this.initialDocPanel); //displays the first
-		int height = this.getMaximumSize().height;
-		display.setDisplaySize(new Dimension(800,600));
-		
-		JPanel displayPanel = new JPanel();
-		displayPanel.add(display);
-		
+					
 		//Split Pane
 		if(initialMode == MODE_VIEW)
-			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, viewScroll);
+			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, viewPanel);
 		else{
-			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, displayPanel, creationScroll);
+			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, display, creationPanel);
 			setMode(MODE_EDIT);
 		}
 		splitPane.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
@@ -168,11 +155,6 @@ public class ViewSemanticsPanel extends JPanel{
 	public void initializeSentences(){
 		display.setMode(DisplayScreen.MODE_INITIALIZE);
 		generatedArea.setTextAreaContent("");
-	}
-	
-	public ViewSemanticsPanelToolBar getToolbar()
-	{
-		return toolBar;
 	}
 	
 	//Setters

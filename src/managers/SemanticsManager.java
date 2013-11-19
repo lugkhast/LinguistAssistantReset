@@ -49,7 +49,7 @@ public class SemanticsManager {
 			ArrayList<Component> clauseComponents = new ArrayList<Component>();
 			for(Element clauseNode: clauseNodes)
 				clauseComponents.add(Component.createInstance(clauseNode));
-			
+
 			return new InputXMLDocument(xmlFile, category, documentName, comments, clauseComponents);
 			
 		}catch(Exception e){e.printStackTrace();}
