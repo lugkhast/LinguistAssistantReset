@@ -1,49 +1,56 @@
 <ruleset name = "Spellout Rules">
 	<comments> These rules deal with blah blah blah </comments>
-	<rule name="Initialize Adverbial Clause Position to Not Applicable">
+	<rule name="name">
 		<input>
-			<component name="CL" matcher="$1">
+			<component name="Cl" matcher="$1">
 				<features>
-						<feature name="sample name" value="sample value" />
-						<feature name="namename" value="valuevalue" />
+						<feature name="Type" value="Independent" />
 				</features>
-				<component name="NP" sense="A" matcher="$2">
+				<component name="NP" matcher="$1-1">
 					<features>
-						<feature name="sample name" value="sample value" />
-						<feature name="name2" value="value2" />
+						<feature name="Semantic Role" value="Agent" />
 					</features>
+					<component name="N" concept="pia" sense="A" matcher="$3 />
 				</component>
 			</component>
 		</input>
 		<output>
-			<action target="const" type="del">
-				<argument label="$1" />
+			<action target="component" type="del">
+				<argument parentTag="$1" targetTag="$2" />
 			</action>
-			<action target="feature" type="edit">
-				<argument label="semantic-role" />
-				<argument label="most agent-like" />
+			<action target="feature" type="set">
+				<argument parentTag="$3" parentComponent="N" />
+				<argument>
+					<feature name="Semantic Role" value="Most Agent-like" />
+				</argument>
+			</action>
+ 			<action target="feature" type="specset">
+				<argument parentTag="$3" parentComponent="N" />
+				<argument>
+					<feature name="Semantic Role" value="Most Patient-like" />
+				</argument>
+				<argument value="Most Agent-like" />
 			</action>
 		</output>
 	</rule>
-	<rule name="name2">
+	<rule name="name">
 		<input>
-			<component name="CL" matcher="$1">
+			<component name="Cl" matcher="$1">
 				<features>
-						<feature name="sample name" value="sample value" />
-						<feature name="namename" value="valuetown" />
+						<feature name="Type" value="Independent" />
 				</features>
-				<component name="NP" sense="A" matcher = "$2">
+				<component name="NP" matcher="$2">
 					<features>
-						<feature name="sample name" value="sample value" />
-						<feature name="name2" value="value2" />
+						<feature name="Semantic Role" value="Agent" />
 					</features>
+					<component name="N" concept="pia" sense="A" matcher="$3 />
 				</component>
 			</component>
 		</input>
 		<output>
 			<action target="const" type="add">
 				<argument label="$1" />
-				<argument label="%ADD" >
+				<argument>
 					<component name="Conjunction">
 						<features>
 							<feature name="place" value="holder" />
