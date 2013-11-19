@@ -110,6 +110,6 @@ public class RuleFrame extends JFrame {
 		gbc_tabbedPane.gridy = 1;
 		contentPane.add(tabbedPane, gbc_tabbedPane);
 		
-		tabbedPane.addTab("Simple", new JPanel());
+		tabbedPane.addTab("Simple Spellout", new SimpleSpelloutRulePanel());
 	}
 }
