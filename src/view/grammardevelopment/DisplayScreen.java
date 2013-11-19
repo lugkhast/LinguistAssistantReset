@@ -49,7 +49,7 @@ public class DisplayScreen extends JPanel{
 		setMinimumSize(new Dimension(300,120));
 		scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-		scrollPane.setPreferredSize(new Dimension(800, 300));
+		scrollPane.setPreferredSize(new Dimension(800, 500));
 		scrollPane.getVerticalScrollBar().setUnitIncrement(16);
 		add(scrollPane);
 	}
@@ -61,6 +61,12 @@ public class DisplayScreen extends JPanel{
 		revalidate();
 		repaint();
 	}
+	
+	public void setScrollSize(Dimension d)
+	{
+		scrollPane.setPreferredSize(d);
+	}
+			
 		
 	//Gets the displaysentence of the document panel 
 	public String getDisplaySentence(){

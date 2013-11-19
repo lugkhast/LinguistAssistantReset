@@ -7,6 +7,7 @@ import org.jdom2.Element;
 
 public class Rule {
 
+	private RuleTree tree;
 	private String name;
 	private ComponentMatcher input;
 	private OutputList outputActions;
@@ -27,7 +28,7 @@ public class Rule {
 		
 	}
 
-	private Rule(String ruleName) {
+	public Rule(String ruleName) {
 		this.name = ruleName;		
 		input = ComponentMatcher.createInstance("cl");
 		outputActions = new OutputList();

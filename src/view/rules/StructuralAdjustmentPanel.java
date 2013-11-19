@@ -5,6 +5,9 @@ import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import com.jgoodies.forms.factories.FormFactory;
+import components.InputXMLDocument;
+import controller.listener.grammardev.SelectComponentActionListener;
+
 import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
 import javax.swing.JFrame;
@@ -40,9 +43,12 @@ public class StructuralAdjustmentPanel extends JPanel {
 	
 	
 	DisplayScreen inputScreen;
-
+	DisplayScreen outputScreen;
+	
 	CreationRightPanel rightPanel;
 	InputXMLDocumentPanel inputXMLPanel;
+	InputXMLDocumentPanel outputXMLPanel;
+	
 	
 	public static void main (String args[])
 	{
@@ -85,13 +91,24 @@ public class StructuralAdjustmentPanel extends JPanel {
 		inputPanel.add(lblInputStructure, "cell 0 0");
 		
 		inputScreen = new DisplayScreen();
+		inputXMLPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, null, "Input", null, null));
+		inputScreen.display(inputXMLPanel);
 		inputPanel.add(inputScreen, "cell 0 1,grow");
+		
+		inputXMLPanel.setSelectComponentPanelListener(new SelectComponentActionListener(null));
 		
 		JPanel actionsPanel = new JPanel();
 		add(actionsPanel, "4, 2, 1, 3, right, fill");
 		actionsPanel.setLayout(new MigLayout("", "[532.00px]", "[91px,grow]"));
 		rightPanel = new CreationRightPanel();
 		actionsPanel.add(rightPanel, "cell 0 0,alignx right,growy");
+		rightPanel.addDnDListenerForAllButtons(new MouseAdapter(){
+            public void mousePressed(MouseEvent e){
+                JButton button = (JButton)e.getSource();
+                TransferHandler handle = button.getTransferHandler();
+                handle.exportAsDrag(button, e, TransferHandler.COPY);
+            }
+        });
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
@@ -101,8 +118,13 @@ public class StructuralAdjustmentPanel extends JPanel {
 		JLabel lblOutputStructure = new JLabel("Output Structure");
 		panel.add(lblOutputStructure, "cell 0 0");
 		
-		DisplayScreen displayScreen = new DisplayScreen();
-		panel.add(displayScreen, "cell 0 1,grow");
+		outputScreen = new DisplayScreen();
+		outputXMLPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, null, "Output", null, null));
+		outputScreen.display(outputXMLPanel);
+		panel.add(outputScreen, "cell 0 1,grow");
+		
+		outputXMLPanel.setSelectComponentPanelListener(new SelectComponentActionListener(null));
+		
 		
 		JPanel buttonsPanel = new JPanel();
 		add(buttonsPanel, "4, 5, default, fill");

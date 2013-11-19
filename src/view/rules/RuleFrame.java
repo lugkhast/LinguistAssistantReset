@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.BoxLayout;
+
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -18,28 +20,54 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.JTextPane;
+
+import view.grammardevelopment.ViewSemanticsPanel;
+
+import module3.rules.Rule;
+
 import java.awt.SystemColor;
 
 public class RuleFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField nameField;
-
+	JTabbedPane tabbedPane;
+	Rule rule;
+	String comment;
 	/**
 	 * Launch the application.
 	 */
 	/**
 	 * Create the frame.
 	 */
-	public RuleFrame() {
+	public RuleFrame(Rule selectedRule, String comment) {
+		rule = selectedRule;
+		this.comment = comment;
+//		saPanel.setMode(1);
+//		saPanel.getDisplay().setSize(new Dimension(800,300));
+//		saPanel.setDisplay2Visible(true);
+//		this.saPanel = saPanel;
+		
 		setTitle("Rule Settings");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 538, 341);
 		//the panels that you'll be making will be placed in tabbedPane
 		initializeComponents();
+		addTabs();
 		setVisible(true);
 	}
 
+	public void addTabs()
+	{
+		tabbedPane.add("Morphophonemic", new MorphophonemicPanel());
+//		tabbedPane.add("Structural Adjustment", saPanel);
+//		
+//		saPanel.getDisplay().setScrollSize(new Dimension(600,300));
+//		saPanel.getDisplay2().setScrollSize(new Dimension(600,300));
+//		saPanel.getToolbar().setVisible(false);
+//		saPanel.setPreferredSize(saPanel.getPreferredSize());
+//		saPanel.validate();
+	}
 	public void initializeComponents()
 	{
 		contentPane = new JPanel();
@@ -77,7 +105,7 @@ public class RuleFrame extends JFrame {
 		panel.add(lblNewLabel, gbc_lblNewLabel);
 		
 		nameField = new JTextField();
-		nameField.setText("<insert rule name>");
+		nameField.setText(rule.getName());
 		GridBagConstraints gbc_nameField = new GridBagConstraints();
 		gbc_nameField.insets = new Insets(0, 0, 5, 0);
 		gbc_nameField.fill = GridBagConstraints.HORIZONTAL;
@@ -95,14 +123,14 @@ public class RuleFrame extends JFrame {
 		panel.add(lblComments, gbc_lblComments);
 		
 		JTextPane commentField = new JTextPane();
-		commentField.setText("<comments go here>");
+		commentField.setText(comment);
 		GridBagConstraints gbc_commentField = new GridBagConstraints();
 		gbc_commentField.fill = GridBagConstraints.BOTH;
 		gbc_commentField.gridx = 1;
 		gbc_commentField.gridy = 1;
 		panel.add(commentField, gbc_commentField);
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBackground(SystemColor.scrollbar);
 		GridBagConstraints gbc_tabbedPane = new GridBagConstraints();
 		gbc_tabbedPane.fill = GridBagConstraints.BOTH;

@@ -3,8 +3,10 @@ package module3.rules;
 import java.util.ArrayList;
 
 public class RuleTree {
+	
 	private String setName, comments;
 	private ArrayList<Rule> ruleList;
+	private ArrayList<RuleTree> treeList;
 	
 	public RuleTree(String name, String c, ArrayList<Rule> list){
 		this.setName = name;
@@ -12,6 +14,14 @@ public class RuleTree {
 		this.ruleList = list;
 		if(ruleList == null)
 			this.ruleList = new ArrayList<Rule>();
+		
+		//temporary
+		this.treeList = new ArrayList<RuleTree>();
+	}
+	
+	public void addTreeChild(RuleTree tree)
+	{
+		treeList.add(tree);
 	}
 	
 	public void addChild(Rule rule){
@@ -48,5 +58,10 @@ public class RuleTree {
 			m += r;
 		
 		return m;
+	}
+	
+	public String getComment()
+	{
+		return comments;
 	}
 }

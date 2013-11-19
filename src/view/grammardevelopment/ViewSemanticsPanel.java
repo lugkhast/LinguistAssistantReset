@@ -56,8 +56,8 @@ public class ViewSemanticsPanel extends JPanel{
 	private JSplitPane splitPane;
 	private JPanel viewPanel;
 	private CreationRightPanel creationPanel;
-	private DisplayScreen display;
-//	private DisplayScreen display2;
+	DisplayScreen display;
+	DisplayScreen display2;
 	private TextAreaWithScrollPane generatedArea;
 	private TextAreaWithScrollPane docInfoArea;
 	private TextAreaWithScrollPane infoArea;
@@ -121,9 +121,10 @@ public class ViewSemanticsPanel extends JPanel{
 		rightPanel.add(infoArea);
 		rightPanel.setMinimumSize(new Dimension(400,200));
 		int panelHeight = rightPanel.getPreferredSize().height;
+		rulesPanel.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight*2/5));
 		generatedArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
 		docInfoArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
-		infoArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight*3/5));
+		infoArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
 		
 		
 		return rightPanel;
@@ -157,12 +158,16 @@ public class ViewSemanticsPanel extends JPanel{
 		display.display(this.initialDocPanel); //displays the first
 		
 		//LeftPanel lower
-//		display2 = new DisplayScreen();
-//		display2.display(this.initialDocPanel); //displays the first
+		display2 = new DisplayScreen();
+		InputXMLDocumentPanel outputXML = new InputXMLDocumentPanel(new InputXMLDocument(null,null,"Output",null,null));
+		
+		display2.display(outputXML); //displays the first
 //		
+		setDisplay2Visible(false);
+		
 		JPanel displayPanel = new JPanel();
 		displayPanel.add(display);
-//		displayPanel.add(display2);
+		displayPanel.add(display2);
 		
 		//Split Pane
 		if(initialMode == MODE_VIEW)
@@ -186,10 +191,34 @@ public class ViewSemanticsPanel extends JPanel{
 		generatedArea.setTextAreaContent("");
 	}
 	
+	
+	
+	public DisplayScreen getDisplay(){
+		return display;
+	}
+	
+	public DisplayScreen getDisplay2(){
+		return display2;
+	}
+	
+	public void setDisplay2Visible(boolean b)
+	{
+		display2.setVisible(b);
+	}
+	
+	public ViewSemanticsPanelToolBar getToolbar()
+	{
+		return toolBar;
+	}
+	
 	//Setters
 	public void setSelectComponentPanelListener(SelectComponentActionListener selectListener){
 		for(InputXMLDocumentPanel docPanel: xmlDocPanels)
 			docPanel.setSelectComponentPanelListener(selectListener);	
+	}
+	
+	public void setSelectComponentPanelListener2(SelectComponentActionListener selectListener){
+		display2.getCurrentlyDisplayedDocumentPanel().setSelectComponentPanelListener(selectListener);	
 	}
 	
 	public void setDocumentInfo(){

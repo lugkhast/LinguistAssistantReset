@@ -1,6 +1,6 @@
 <ruleset name = "Spellout Rules">
 	<comments> These rules deal with blah blah blah </comments>
-	<rule name="name">
+	<rule name="Initialize Adverbial Clause Position to Not Applicable">
 		<input>
 			<component name="CL" matcher="$1">
 				<features>
@@ -25,7 +25,7 @@
 			</action>
 		</output>
 	</rule>
-	<rule name="name">
+	<rule name="name2">
 		<input>
 			<component name="CL" matcher="$1">
 				<features>

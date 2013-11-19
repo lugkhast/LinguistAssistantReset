@@ -27,6 +27,7 @@ public class GrammarDevController {
 	//sub-controllers
 	private CreateController createController; //not really used. it was just created to initialize the listeners
 	private SelectComponentActionListener selectListener;
+	private SelectComponentActionListener selectListener2;
 	
 	//views
 	private ViewSemanticsPanel grammarDevPanel;
@@ -45,6 +46,8 @@ public class GrammarDevController {
 		if(grammarDevPanel != null){
 			selectListener = new SelectComponentActionListener(grammarDevPanel);
 			grammarDevPanel.setSelectComponentPanelListener(selectListener);
+			selectListener2 = new SelectComponentActionListener(grammarDevPanel);
+			grammarDevPanel.setSelectComponentPanelListener2(selectListener2);
 			grammarDevPanel.resetCreationPanel();
 			
 			CreationRightPanel creationPanel = grammarDevPanel.getCreationPanel();

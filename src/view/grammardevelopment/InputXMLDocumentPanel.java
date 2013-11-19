@@ -21,7 +21,7 @@ import controller.listener.grammardev.SelectComponentActionListener;
 import controller.listener.grammardev.editsemantics.ComponentPaletteDnDListener;
 import controller.listener.grammardev.editsemantics.InputXMLDocPanelDNDListener;
 
-public class InputXMLDocumentPanel extends JPanel{
+public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 	
 	private InputXMLDocument doc;
 	private ArrayList<ComponentPanel> sentencePanels;
@@ -33,14 +33,24 @@ public class InputXMLDocumentPanel extends JPanel{
 	
 	public InputXMLDocumentPanel()
 	{
+		addDropTargetListener();
+		
+		setPanelListener(this);
+	}
+	
+	public void addDropTargetListener()
+	{
 		DropTarget dt = new DropTarget();
 		try {
 			dt.addDropTargetListener(new InputXMLDocPanelDNDListener(this));
 			this.setDropTarget(dt);
 			
 		} catch (TooManyListenersException e) {}
-		
-		setPanelListener(this);
+	}
+	
+	public void removeDnDListener()
+	{
+		this.setDropTarget(null);
 	}
 	
 	public InputXMLDocumentPanel(InputXMLDocument doc){
@@ -253,6 +263,18 @@ public class InputXMLDocumentPanel extends JPanel{
 				}
 			}
 		});
+	}
+	
+	public Object clone()
+	{
+		try
+		{
+			return super.clone();
+		}
+		catch( CloneNotSupportedException e )
+		{
+			return null;
+		}
 	}
 	
 }

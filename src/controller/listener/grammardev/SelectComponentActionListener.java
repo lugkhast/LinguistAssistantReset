@@ -23,6 +23,7 @@ public class SelectComponentActionListener extends MouseAdapter {
 	
 	boolean copyComponent = false;
 	boolean moveComponent = false;
+	
 	public SelectComponentActionListener(ViewSemanticsPanel loadPanel){
 		this.loadPanel = loadPanel;
 	}

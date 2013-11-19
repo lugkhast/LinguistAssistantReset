@@ -37,6 +37,8 @@ public class CreationRightPanel extends JPanel{
 		add(cpScrollPane);
 		add(fpScrollPane);
 		add(leScrollPane);
+		
+		setMaximumSize(new Dimension(400,600));
 	}
 	
 	private void createMoveButton(){

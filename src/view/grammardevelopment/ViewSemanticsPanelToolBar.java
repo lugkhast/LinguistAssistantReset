@@ -118,7 +118,7 @@ public class ViewSemanticsPanelToolBar extends JPanel{
 			add(cancelEditButton);
 		}
 		else //if(mode == MODE_GENERATE){
-			add(initializeButton);
+			this.setVisible(false);
 		
 			
 		this.currMode = mode;
