@@ -15,17 +15,23 @@ import components.Phrase;
 import view.grammardevelopment.ComponentPanel;
 import view.grammardevelopment.InputXMLDocumentPanel;
 import view.grammardevelopment.ViewSemanticsPanel;
+import view.rules.StructuralAdjustmentPanel;
 
 public class SelectComponentActionListener extends MouseAdapter {
 
 	private ComponentPanel prevSelectedPanel;
-	private ViewSemanticsPanel loadPanel;
+	private ViewSemanticsPanel loadPanel = null;
+	private StructuralAdjustmentPanel rulePanel = null;
 	
 	boolean copyComponent = false;
 	boolean moveComponent = false;
 	
 	public SelectComponentActionListener(ViewSemanticsPanel loadPanel){
 		this.loadPanel = loadPanel;
+	}
+	
+	public SelectComponentActionListener(StructuralAdjustmentPanel rulePanel){
+		this.rulePanel = rulePanel;
 	}
 	
 	public ComponentPanel getSelectedPanel(){
@@ -51,7 +57,13 @@ public class SelectComponentActionListener extends MouseAdapter {
 		
 		prevSelectedPanel = null;
 		prevSelectedPanel = selectedPanel;
-		loadPanel.setComponent(selectedPanel.getComponent());	
+		if (loadPanel != null)
+			loadPanel.setComponent(selectedPanel.getComponent());
+		else
+		{
+			rulePanel.setComponent(selectedPanel.getComponent());
+			rulePanel.setSelectListener(this);
+		}
 	}
 	
 	//copy functions

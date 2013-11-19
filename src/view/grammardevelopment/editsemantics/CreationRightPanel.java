@@ -42,7 +42,7 @@ public class CreationRightPanel extends JPanel{
 		add(fpScrollPane);
 		add(leScrollPane);
 		
-		setMaximumSize(new Dimension(400,600));
+		setPreferredSize(new Dimension(400,600));
 	}
 	
 	private void createMoveButton(){
@@ -108,6 +108,10 @@ public class CreationRightPanel extends JPanel{
 		cpScrollPane.addListenersForAllButtons(mouseAdapter);
 	}
 	
+	public void addListenersForAllButtons(MouseAdapter mouseAdapter){
+		cpScrollPane.addListenersForAllButtons(mouseAdapter);
+	}
+
 	/*
 	public void resetFeaturesDisplayToDefault(){
 		if(comp != null){

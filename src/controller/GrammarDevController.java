@@ -21,6 +21,7 @@ import view.grammardevelopment.DisplayScreen;
 import view.grammardevelopment.InputXMLDocumentPanel;
 import view.grammardevelopment.ViewSemanticsPanel;
 import view.grammardevelopment.editsemantics.CreationRightPanel;
+import view.rules.StructuralAdjustmentPanel;
 
 public class GrammarDevController {
 
@@ -31,6 +32,7 @@ public class GrammarDevController {
 	//views
 	private ViewSemanticsPanel grammarDevPanel;
 	private MainController mainController;
+	private StructuralAdjustmentPanel rulePanel;
 	
 	public GrammarDevController(MainController mainController){
 		this.mainController = mainController;
@@ -132,5 +134,16 @@ public class GrammarDevController {
 	public void activateMove()
 	{
 		selectListener.setMove(true);
+	}
+	
+	//StructuralAdjustment functions
+	public GrammarDevController(StructuralAdjustmentPanel rulePanel)
+	{
+		this.rulePanel = rulePanel;
+	}
+	
+	public void setSelectListener(SelectComponentActionListener listener)
+	{
+		selectListener = listener;
 	}
 }

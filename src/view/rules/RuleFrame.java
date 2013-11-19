@@ -43,10 +43,6 @@ public class RuleFrame extends JFrame {
 	public RuleFrame(Rule selectedRule, String comment) {
 		rule = selectedRule;
 		this.comment = comment;
-//		saPanel.setMode(1);
-//		saPanel.getDisplay().setSize(new Dimension(800,300));
-//		saPanel.setDisplay2Visible(true);
-//		this.saPanel = saPanel;
 		
 		setTitle("Rule Settings");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -60,13 +56,7 @@ public class RuleFrame extends JFrame {
 	public void addTabs()
 	{
 		tabbedPane.add("Morphophonemic", new MorphophonemicPanel());
-//		tabbedPane.add("Structural Adjustment", saPanel);
-//		
-//		saPanel.getDisplay().setScrollSize(new Dimension(600,300));
-//		saPanel.getDisplay2().setScrollSize(new Dimension(600,300));
-//		saPanel.getToolbar().setVisible(false);
-//		saPanel.setPreferredSize(saPanel.getPreferredSize());
-//		saPanel.validate();
+		tabbedPane.add("Structural Adjustment", new StructuralAdjustmentPanel());
 	}
 	public void initializeComponents()
 	{

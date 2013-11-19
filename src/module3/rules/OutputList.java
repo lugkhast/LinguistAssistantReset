@@ -2,6 +2,8 @@ package module3.rules;
 
 import java.util.ArrayList;
 
+import module3.rules.outputactions.OutputAction;
+
 public class OutputList {
 	private ArrayList<OutputAction> rules;
 	

@@ -10,7 +10,7 @@
 					<features>
 						<feature name="Semantic Role" value="Agent" />
 					</features>
-					<component name="N" concept="pia" sense="A" matcher="$3 />
+					<component name="N" concept="pia" sense="A" matcher="$3" />
 				</component>
 			</component>
 		</input>
@@ -43,7 +43,7 @@
 					<features>
 						<feature name="Semantic Role" value="Agent" />
 					</features>
-					<component name="N" concept="pia" sense="A" matcher="$3 />
+					<component name="N" concept="pia" sense="A" matcher="$3" />
 				</component>
 			</component>
 		</input>
