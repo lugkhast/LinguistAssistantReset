@@ -73,4 +73,9 @@ public class Rule {
 	public String getName() {
 		return name;
 	}
+	
+	public String generateXMLElement() {
+		System.err.println("CALLED STUB METHOD: generateXMLElement. Implement this later!");
+		return "";
+	}
 }

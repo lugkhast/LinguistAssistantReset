@@ -38,7 +38,7 @@ public class FileSaveLoad extends JFrame{
 		fileDirectory = new File(directoryLocation);
 		
 		 try {
-			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -146,7 +146,7 @@ public class FileSaveLoad extends JFrame{
 	private void setDirectory(){
 		if (fileDirectory.exists()){
 			try {
-				String lastAccessed = new Scanner(fileDirectory).useDelimiter("\\A").next();
+				String lastAccessed = new Scanner(fileDirectory).useDelimiter(File.separator + "A").next();
 				if(fileDirectory.exists()){	
 					File directory = new File(lastAccessed);
 					if(directory.exists())

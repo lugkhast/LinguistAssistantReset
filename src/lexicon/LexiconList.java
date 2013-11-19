@@ -8,8 +8,10 @@ import java.util.List;
 import java.util.Map;
 
 
+
 import managers.LexiconManager;
 import managers.OntologyManager;
+import managers.PlatformUtils;
 import managers.XMLManager;
 import ontology.Concept;
 
@@ -457,7 +459,8 @@ public class LexiconList {
 	//update xml
 	public void saveToXML(){
 		Element xmlElement = generateXMLElement();
-		String targetFile = LexiconManager.ROOT_LANGUAGE_FOLDER+"\\"+LexiconManager.getInstance().getCurrSelectedLanguage()+"\\"+pos+".xml";
+		String targetFile = 
+				PlatformUtils.joinPath(LexiconManager.ROOT_LANGUAGE_FOLDER, LexiconManager.getInstance().getCurrSelectedLanguage(), pos+".xml");
 
 		XMLManager.getInstance().writeToXML(targetFile, xmlElement);
 	}

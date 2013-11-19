@@ -121,7 +121,7 @@ public class Controller {
 			XMLOutputter xmlOutput = new XMLOutputter();
 			xmlOutput.setFormat(Format.getPrettyFormat());
 			try{
-				//xmlOutput.output(xmlElement, new FileWriter("C:\\"+ll.getPOS()+".xml"));
+				//xmlOutput.output(xmlElement, new FileWriter(ll.getPOS()+".xml"));
 			}
 			catch(Exception e){
 				e.printStackTrace();

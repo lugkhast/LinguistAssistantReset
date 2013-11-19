@@ -88,8 +88,9 @@ public class RulesXMLDocument {
 		}
 		
 		
-		for(Rule r: sentences)
+		for(Rule r: sentences) {
 			rootElement.addContent(r.generateXMLElement());
+		}
 		
 		return rootElement;
 	}

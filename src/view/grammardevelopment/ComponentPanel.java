@@ -41,9 +41,8 @@ import components.Phrase;
 import controller.listener.grammardev.CollapseButtonListener;
 import controller.listener.grammardev.SelectComponentActionListener;
 import controller.listener.grammardev.editsemantics.ComponentPaletteDnDListener;
-
 import managers.ColorManager;
-
+import managers.PlatformUtils;
 import view.MainFrame;;
 
 //panel for the components in the semantic representation (left side of the screen)
@@ -78,7 +77,7 @@ public class ComponentPanel extends JPanel implements Cloneable {
 	
 	private static ImageIcon getImgCollapse(){
 		if(imgCollapse == null)
-			imgCollapse = new ImageIcon("Resources\\collapse.png");
+			imgCollapse = new ImageIcon(PlatformUtils.joinPath("Resources", "collapse.png"));
 		if(imgCollapse == null)
 			System.out.println("NULL");
 		return imgCollapse;
@@ -86,7 +85,7 @@ public class ComponentPanel extends JPanel implements Cloneable {
 	
 	private static ImageIcon getImgExpand(){
 		if(imgExpand == null)
-			imgExpand = new ImageIcon("Resources\\expand.png");
+			imgExpand = new ImageIcon(PlatformUtils.joinPath("Resources", "expand.png"));
 		if(imgExpand == null)
 			System.out.println("NULL");
 		return imgExpand;

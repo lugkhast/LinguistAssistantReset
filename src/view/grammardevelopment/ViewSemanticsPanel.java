@@ -225,7 +225,6 @@ public class ViewSemanticsPanel extends JPanel{
 				
 			case MODE_GENERATE:
 				this.initialDocPanel= display.getCurrentlyDisplayedDocumentPanel();
-				//display.display(new InputXMLDocumentPanel(XMLManager.getVerse(new File("InputXML\\generated.xml")), new SelectComponentActionListener(this)));
 				display.setMode(DisplayScreen.MODE_GENERATE);
 				display.getCurrentlyDisplayedDocumentPanel().adjustPositioning();
 				generatedArea.setTextAreaContent(display.getDisplaySentence());

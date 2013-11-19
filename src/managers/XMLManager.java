@@ -28,7 +28,7 @@ public class XMLManager {
 	
 	//Other attributes/methods
 	
-	private static final String BACKUP_PATH = "backups\\";
+	private static final String BACKUP_PATH = "backups";
 	
 	public boolean writeToXML(String filePath, Element rootElement){
 		File targetFile = new File(filePath);
@@ -54,7 +54,8 @@ public class XMLManager {
 	private boolean writeToXMLWithBackup(String filePath, Element rootElement){
 		//backup the file first
 		Path targetPath = Paths.get(filePath);
-		Path backupPath = Paths.get(BACKUP_PATH+targetPath.getFileName());
+		Path backupPath = Paths.get(
+				PlatformUtils.joinPath(BACKUP_PATH, targetPath.getFileName().toString()));
 
 		//Create the folder if it does not exist
 		File backUpFolder = new File(BACKUP_PATH);
