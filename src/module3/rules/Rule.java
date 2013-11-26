@@ -6,6 +6,7 @@ import java.util.List;
 import org.jdom2.Element;
 
 import components.Component;
+import features.Feature;
 
 public class Rule {
 
@@ -74,8 +75,43 @@ public class Rule {
 		return name;
 	}
 	
-	public String generateXMLElement() {
-		System.err.println("CALLED STUB METHOD: generateXMLElement. Implement this later!");
-		return "";
+	public ArrayList<UniMap> unify(Component constit, Component pattern) {
+		// returns null if false
+		// a list if true (DUH)
+		if (!constit.getName().equals(pattern.getName()))
+			return null;
+		
+		for (Feature f : pattern.getFeatureList().getFeatureList()) {
+			Feature m = constit.getFeature(f.getName());
+			if (m == null)
+				return null;
+			if (!f.equals(m))
+				return null;
+		}
+		
+		ArrayList<UniMap> results = new ArrayList<UniMap>();
+		
+		if (!pattern.isLeaf()) {
+			for (Component subPattern : pattern.getChildren().getChildren()) {
+				boolean match = false;
+				
+				for (Component subConstit : constit.getChildren().getChildren()) {
+					ArrayList<UniMap> subResult = unify(subConstit, subPattern);
+					if (subResult != null) {
+						results.addAll(subResult);
+						match = true;
+					}
+				}
+				
+				if (!match)
+					return null;
+			}
+			
+			results.add(new UniMap(((PhraseMatcher)pattern).getTag(), (PhraseMatcher)pattern));
+			// pattern matches and is a phrase
+		}
+		
+		return results;
+		
 	}
 }

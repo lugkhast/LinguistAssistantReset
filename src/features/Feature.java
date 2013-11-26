@@ -2,7 +2,7 @@ package features;
 
 import org.jdom2.Element;
 
-public class Feature {
+public class Feature implements Comparable<Feature>{
 
 	public static final String ATTRIBUTE_NAME = "name";
 	public static final String ATTRIBUTE_VALUE = "value";
@@ -49,5 +49,9 @@ public class Feature {
 		featureElement.setAttribute(ATTRIBUTE_NAME, name);
 		featureElement.setAttribute(ATTRIBUTE_VALUE, value);
 		return featureElement;
+	}
+
+	public int compareTo(Feature other) {
+		return (name.equals(other.name) && value.equals(other.value))? 0 : 1;
 	}	
 }

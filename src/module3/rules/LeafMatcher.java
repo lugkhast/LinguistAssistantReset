@@ -5,6 +5,7 @@ import lexicon.Lexicon;
 import org.jdom2.Element;
 
 import components.Leaf;
+import features.FeatureList;
 
 public class LeafMatcher extends Leaf {
 	
@@ -48,4 +49,9 @@ public class LeafMatcher extends Leaf {
 	public String getTag() {
 		return tag;
 	}
+	
+	public FeatureList getFeatureList() {
+		return featureList;
+	}
+
 }

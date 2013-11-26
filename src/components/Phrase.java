@@ -30,13 +30,16 @@ public class Phrase extends Component{
 
 	public String getStringForPrinting() {
 		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append(name);
+		/*
 		stringBuilder.append(name+"(");
 		for(Component child: children.getChildren())
 			stringBuilder.append(child.toString());
 		stringBuilder.append(")");
+		*/
 		return stringBuilder.toString();
 	}
-	
+
 	protected String getFeatures(boolean includeDefaults, String nextLineToken){
 		StringBuilder featureString = new StringBuilder();
 		featureString.append("*****Features");
@@ -67,12 +70,20 @@ public class Phrase extends Component{
 	}
 
 	public String toString() {
-		return getStringForPrinting();
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append(name);
+		/*
+		stringBuilder.append(name+"(");
+		for(Component child: children.getChildren())
+			stringBuilder.append(child.toString());
+		stringBuilder.append(")");
+		*/
+		return stringBuilder.toString();
 	}
 
 	@Override
 	public String toGeneratedString() {
-		return toString();
+		return getStringForPrinting();
 	}
 	
 	@Override

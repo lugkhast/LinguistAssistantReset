@@ -4,6 +4,7 @@ import org.jdom2.Element;
 
 import components.Component;
 import components.Phrase;
+import features.FeatureList;
 
 public class PhraseMatcher extends Phrase {
 	
@@ -43,5 +44,9 @@ public class PhraseMatcher extends Phrase {
 
 	public String getTag() {
 		return tag;
+	}
+	
+	public FeatureList getFeatureList() {
+		return featureList;
 	}
 }

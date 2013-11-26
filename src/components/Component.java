@@ -170,4 +170,8 @@ public abstract class Component implements Cloneable {
 			return null;
 		}
 	}
+
+	public FeatureList getFeatureList() {
+		return featureList;
+	}
 }

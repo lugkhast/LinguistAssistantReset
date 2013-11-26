@@ -45,17 +45,19 @@ public class ComponentAction extends OutputAction{
 		e.setAttribute("target", "component");
 		e.setAttribute("type", type);
 		
-		Element arg1 = new Element("argument"), arg2 = new Element("argument");
+		Element arg1 = new Element("argument");
 		
 		arg1.setAttribute("parentTag", parentTag);
 		arg1.setAttribute("targetTag", targetTag);
 		arg1.setAttribute("position", position);
 		
-		if (toAdd != null)
-			arg2.addContent(toAdd.generateXMLElement());
-		
 		e.addContent(arg1);
-		e.addContent(arg2);
+
+		if (toAdd != null) {
+			Element arg2 = new Element("argument");
+			arg2.addContent(toAdd.generateXMLElement());
+			e.addContent(arg2);
+		}
 		
 		return e;
 	}
