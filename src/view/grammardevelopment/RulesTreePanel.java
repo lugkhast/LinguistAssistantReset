@@ -43,9 +43,7 @@ public class RulesTreePanel extends JPanel{
 	//supposed to take the parameters rules set and add to tree
 	public RulesTreePanel()
 	{
-		RulesManager rulesManager;
-		rulesManager = new RulesManager();
-		ruleTree = rulesManager.initializeRules(new File("InputXML/Rules/Rulesets.xml"));
+		ruleTree = RulesManager.initializeRules(new File("InputXML/Rules/Rulesets.xml"));
 		JScrollPane scrollPane = new JScrollPane();
 		
 		

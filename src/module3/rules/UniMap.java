@@ -1,10 +1,12 @@
 package module3.rules;
 
+import components.Component;
+
 public class UniMap {
 	private String tag;
-	private PhraseMatcher var;
+	private Component var;
 	
-	public UniMap(String s, PhraseMatcher p) {
+	public UniMap(String s, Component p) {
 		tag = s;
 		var = p;
 	}
