@@ -23,12 +23,15 @@ public class PhraseMatcher extends Phrase {
 
 	public String getStringForPrinting() {
 		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append(name+"/"+tag);
+		/*
 		stringBuilder.append(name+"/"+tag+"(");
 		for(Component child: children.getChildren())
 			stringBuilder.append(child.toString());
 		stringBuilder.append(")");
 		
 		stringBuilder.append(getFeatures(true, "\n"));
+		*/
 		return stringBuilder.toString();
 	}
 	

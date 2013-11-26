@@ -78,15 +78,18 @@ public class Rule {
 	public ArrayList<UniMap> unify(Component constit, Component pattern) {
 		// returns null if false
 		// a list if true (DUH)
-		if (!constit.getName().equals(pattern.getName()))
+		if (!constit.getName().equals(pattern.getName())) {
 			return null;
+		}
 		
 		for (Feature f : pattern.getFeatureList().getFeatureList()) {
 			Feature m = constit.getFeature(f.getName());
-			if (m == null)
+			if (m == null) {
 				return null;
-			if (!f.equals(m))
+			}
+			if (!f.getValue().equals(m.getValue())) {
 				return null;
+			}
 		}
 		
 		ArrayList<UniMap> results = new ArrayList<UniMap>();
@@ -103,12 +106,21 @@ public class Rule {
 					}
 				}
 				
-				if (!match)
+				if (!match) {
 					return null;
+				}
 			}
 			
-			results.add(new UniMap(((PhraseMatcher)pattern).getTag(), (PhraseMatcher)pattern));
+			if (((PhraseMatcher)pattern).getTag() != null)
+				results.add(new UniMap(((PhraseMatcher)pattern).getTag(), constit));
 			// pattern matches and is a phrase
+		}
+		else {
+			// no need to check for subconstits because it is a leaf
+			// it matches features
+			if (((LeafMatcher)pattern).getTag() != null)
+				results.add(new UniMap(((LeafMatcher)pattern).getTag(), constit));
+			
 		}
 		
 		return results;

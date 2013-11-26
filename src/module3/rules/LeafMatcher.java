@@ -11,8 +11,10 @@ public class LeafMatcher extends Leaf {
 	
 	private String tag;
 	
-	public LeafMatcher(Element componentElement) {
-		super(componentElement);
+	public LeafMatcher(Element e) {
+		super(e);
+
+		tag = e.getAttributeValue("matcher");
 	}
 
 	public LeafMatcher(String componentName) {

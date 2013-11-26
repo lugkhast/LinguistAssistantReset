@@ -10,4 +10,8 @@ public class UniMap {
 		tag = s;
 		var = p;
 	}
+	
+	public String toString() {
+		return "Tag: " + tag + ", Component: " + var.toGeneratedString();
+	}
 }
