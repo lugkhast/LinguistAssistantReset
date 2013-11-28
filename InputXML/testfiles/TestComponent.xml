@@ -1,0 +1,78 @@
+<document name="Test File">
+  <comments>just a test file</comments>
+	
+	<component name="Cl">
+		<component name="NP">
+			<features>
+				<feature name="Semantic Role" value="Agent" />
+			</features>
+			<component name="N" concept="human" sense="A" />
+		</component>
+		<component name="VP">
+			<component name="V" concept="sleep" sense="A">
+				<features>
+					<feature name="Time" value="Present" />
+				</features>
+			</component>
+		</component>
+	</component>
+	
+	<component name="Cl">
+		<component name="VP">
+			<component name="V" concept="sleep" sense="A">
+				<feature name="Time" value="Present" />
+			</component>
+		</component>
+		<component name="NP">
+			<features>
+				<feature name="Semantic Role" value="Agent" />
+			</features>
+			<component name="N" concept="human" sense="A" />
+		</component>
+	</component>
+	
+	<component name="Cl">
+		<component name="NP">
+			<features>
+				<feature name="Semantic Role" value="Patient" />
+			</features>
+			<component name="N" concept="human" sense="A" />
+		</component>
+		<component name="VP">
+			<component name="V" concept="sleep" sense="A">
+				<features>
+					<feature name="Time" value="Present" />
+				</features>
+			</component>
+		</component>
+	</component>
+	
+	<component name="Cl">
+		<component name="NP">
+			<features>
+				<feature name="Semantic Role" value="Patient" />
+			</features>
+			<component name="N" concept="building" sense="A">
+				<features>
+					<feature name="Number" value="Plural" />
+				</features>
+			</component>
+		</component>
+		<component name="VP">
+			<component name="V" concept="sleep" sense="A">
+				<feature name="Time" value="Present" />
+			</component>
+		</component>
+		<component name="NP">
+			<features>
+				<feature name="Semantic Role" value="Agent" />
+			</features>
+			<component name="N" concept="human" sense="A">
+				<features>
+					<feature name="Number" value="Plural" />
+				</features>
+			</component>
+		</component>
+	</component>
+	
+</document>

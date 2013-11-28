@@ -21,6 +21,7 @@ import components.Component;
 import components.Leaf;
 import controller.listener.grammardev.SelectComponentActionListener;
 import controller.listener.grammardev.editsemantics.CopyComponentBtnListener;
+import controller.listener.grammardev.editsemantics.CopyStructureBtnListener;
 import controller.listener.grammardev.editsemantics.FeaturePaletteCmbValuesItemListener;
 import controller.listener.grammardev.editsemantics.DeleteComponentBtnListener;
 import controller.listener.grammardev.editsemantics.FeaturePaletteResetBtnListener;
@@ -48,6 +49,7 @@ public class CreateController {
 		addMoveButtonListener();
 		addCopyButtonListener();
 		addDeleteButtonListener();
+		addCopyStructListener();
 		addListenersToCompPalette();
 		addListenersToFeatPalette();
 		addListenersToLeafEditPalette();
@@ -65,6 +67,10 @@ public class CreateController {
 		creationPanel.addDeleteBtnListener(new DeleteComponentBtnListener(grammarDevController));
 	}
 
+	private void addCopyStructListener(){
+		creationPanel.addCopyStructListener(new CopyStructureBtnListener(grammarDevController));
+	}
+	
 	private void addListenersToLeafEditPalette() {
 		creationPanel.addLeafEditBtnListener(new LeafEditPaletteBtnListener(grammarDevController, creationPanel));
 	}

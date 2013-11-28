@@ -55,6 +55,7 @@ public class RulesManager {
 		RuleTree rt = RulesManager.initializeRules(new File("inputxml/testfiles/TestRule.xml"));
 		ArrayList<Rule> list = rt.getChildren();
 		
+
 		
 		for (int i = 0; i < list.size(); i++) {
 			for (int j = 0; j < comp.size(); j++) {

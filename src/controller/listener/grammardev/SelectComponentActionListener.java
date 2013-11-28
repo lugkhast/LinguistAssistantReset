@@ -25,6 +25,7 @@ public class SelectComponentActionListener extends MouseAdapter {
 	
 	boolean copyComponent = false;
 	boolean moveComponent = false;
+	boolean copyStruct = false;
 	
 	public SelectComponentActionListener(ViewSemanticsPanel loadPanel){
 		this.loadPanel = loadPanel;
@@ -54,6 +55,10 @@ public class SelectComponentActionListener extends MouseAdapter {
 		
 		if (canMove())
 			moveSelectedComponentToPanel(selectedPanel, e.getPoint());
+		
+		if (canCopyStruct())
+			copyStruct(selectedPanel);
+		
 		
 		prevSelectedPanel = null;
 		prevSelectedPanel = selectedPanel;
@@ -169,5 +174,48 @@ public class SelectComponentActionListener extends MouseAdapter {
 	public boolean canMove()
 	{
 		return moveComponent;
+	}
+	
+	// copy structure
+	public void copyStruct(ComponentPanel panel)
+	{
+		InputXMLDocumentPanel xmlPanel = panel.getParentDocPanel();
+		xmlPanel.adjustPositioning();
+		System.out.println("COPY STRUCT HERE");
+		 //delete previous ComponentPanel
+		if(prevSelectedPanel.getParentComponentPanel() != null)
+		{
+			//remove internally
+			Phrase parentComponent = (Phrase)prevSelectedPanel.getParentComponentPanel().getComponent();
+			parentComponent.removeChild(prevSelectedPanel.getComponent());
+							
+			//remove in gui
+			prevSelectedPanel.getParentComponentPanel().removeChild(prevSelectedPanel);
+			xmlPanel.adjustPositioning();
+		}
+		else
+		{
+			//remove internally
+			xmlPanel.getXMLDocument().removeSentence(prevSelectedPanel.getComponent());
+			//remove in gui
+			xmlPanel.removeChild(prevSelectedPanel);
+		}
+	}
+
+	public void setCopyStruct(boolean b)
+	{
+		copyStruct = b;
+		if (copyStruct)
+		{
+			if (copyComponent)
+				setCopy(false);
+			if (moveComponent)
+				setMove(false);
+		}
+	}
+	
+	public boolean canCopyStruct()
+	{
+		return copyStruct;
 	}
 }

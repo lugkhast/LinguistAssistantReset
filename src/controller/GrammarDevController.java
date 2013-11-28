@@ -146,4 +146,9 @@ public class GrammarDevController {
 	{
 		selectListener = listener;
 	}
+
+	public void activateCopyStruct() {
+		selectListener.setCopyStruct(true);
+		
+	}
 }

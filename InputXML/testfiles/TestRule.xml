@@ -1,0 +1,67 @@
+<ruleset name = "Spellout Rules">
+	<comments> These rules deal with blah blah blah </comments>
+
+	<rule name="Matches NP: Agent">
+		<input>
+			<component name="Cl">
+				<component name="NP">
+					<features>
+						<feature name="Semantic Role" value="Agent" />
+					</features>
+				</component>
+			</component>
+		</input>
+		<output>
+		</output>
+	</rule>
+
+	<rule name="Matches (NP: Agent)(NP: Patient)">
+		<input>
+			<component name="Cl">
+				<component name="NP">
+					<features>
+						<feature name="Semantic Role" value="Agent" />
+					</features>
+				</component>
+				<component name="NP">
+					<features>
+						<feature name="Semantic Role" value="Patient" />
+					</features>
+				</component>
+			</component>
+		</input>
+		<output>
+		</output>
+	</rule>
+	
+	<rule name="Matches (NP: Agent (N:Plural))">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Semantic Role" value="Agent" />
+					</features>
+					<component name="N" matcher="$2">
+						<features>
+							<feature name="Number" value="Plural" />
+						</features>
+					</component>
+				</component>
+				<component name="NP">
+					<features>
+						<feature name="Semantic Role" value="Patient" />
+					</features>
+					<component name="N">
+						<features>
+							<feature name="Number" value="Plural" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+		</output>
+	</rule>
+	
+	
+</ruleset>

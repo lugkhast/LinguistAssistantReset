@@ -20,6 +20,7 @@ public class CreationRightPanel extends JPanel{
 	private JButton copyBtn;
 	private JButton moveBtn;
 	private JButton deleteBtn;
+	private JButton copyStructure;
 	private Component comp;
 	
 	public CreationRightPanel(){
@@ -33,21 +34,23 @@ public class CreationRightPanel extends JPanel{
 		createDeleteButton();
 		createCopyButton();
 		createMoveButton();
+		createCopyStructButton();
 		setLayout(null);
 		
 		add(deleteBtn);
 		add(copyBtn);
 		add(moveBtn);
+		add(copyStructure);
 		add(cpScrollPane);
 		add(fpScrollPane);
 		add(leScrollPane);
 		
-		setPreferredSize(new Dimension(400,600));
+		setPreferredSize(new Dimension(581, 600));
 	}
 	
 	private void createMoveButton(){
 		moveBtn = new JButton("Move Selected Component");
-		moveBtn.setBounds(100, 101, 351, 34);
+		moveBtn.setBounds(44, 101, 222, 34);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
@@ -60,7 +63,7 @@ public class CreationRightPanel extends JPanel{
 
 	private void createCopyButton(){
 		copyBtn = new JButton("Copy Selected Component");
-		copyBtn.setBounds(100, 56, 351, 34);
+		copyBtn.setBounds(44, 56, 222, 34);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
@@ -73,7 +76,7 @@ public class CreationRightPanel extends JPanel{
 	
 	private void createDeleteButton(){
 		deleteBtn = new JButton("Delete Selected Component");
-		deleteBtn.setBounds(100, 11, 351, 34);
+		deleteBtn.setBounds(44, 11, 222, 34);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
@@ -81,6 +84,19 @@ public class CreationRightPanel extends JPanel{
 		int paletteheight = (int)(height*0.05);
 		Dimension dimension = new Dimension(palettewidth,paletteheight);
 		deleteBtn.setFont(new Font(this.getFont().getFontName(), Font.PLAIN, paletteheight/3));
+		deleteBtn.setPreferredSize(dimension);
+	}
+	
+	private void createCopyStructButton() {
+		copyStructure = new JButton("Copy Structure to Output");
+		copyStructure.setBounds(286, 11, 222, 34);
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		double width = screenSize.getWidth();
+		double height = screenSize.getHeight();
+		int palettewidth = (int)(width*0.3);
+		int paletteheight = (int)(height*0.05);
+		Dimension dimension = new Dimension(palettewidth,paletteheight);
+		copyStructure.setFont(new Font(this.getFont().getFontName(), Font.PLAIN, paletteheight/3));
 		deleteBtn.setPreferredSize(dimension);
 	}
 	
@@ -157,6 +173,11 @@ public class CreationRightPanel extends JPanel{
 		deleteBtn.addActionListener(listener);
 	}
 	
+	//Copy Structure Listener
+	public void addCopyStructListener(ActionListener listener){
+		copyStructure.addActionListener(listener);
+	}
+
 	//CompPalette Listener
 	public void addCompPaletteDragListener(MouseAdapter mouseAdapter){
 		cpScrollPane.addListenersForAllButtons(mouseAdapter);
@@ -179,5 +200,4 @@ public class CreationRightPanel extends JPanel{
 	public void addSelectFeatureComboBoxListener(ItemListener listener){
 		fpScrollPane.addCmbFeaturesListener(listener);
 	}
-
 }
