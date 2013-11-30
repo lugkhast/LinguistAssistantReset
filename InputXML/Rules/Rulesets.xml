@@ -1,6 +1,6 @@
 <ruleset name = "Spellout Rules">
 	<comments> These rules deal with blah blah blah </comments>
-	<rule name="name">
+	<rule name="For Dates, always use Ordinal Numbers">
 		<input>
 			<component name="Cl" matcher="$1">
 				<features>
@@ -33,7 +33,7 @@
 			</action>
 		</output>
 	</rule>
-	<rule name="name">
+	<rule name="Comparative Adverbs use than as the Marker">
 		<input>
 			<component name="Cl" matcher="$1">
 				<features>

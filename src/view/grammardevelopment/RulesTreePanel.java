@@ -37,6 +37,7 @@ public class RulesTreePanel extends JPanel{
 	JButton addFolder;
 	JButton addRule;
 	JButton delete;
+	JScrollPane scrollPane;
 	RuleNode selectedNode = null;
 	DefaultMutableTreeNode topNode;
 	
@@ -45,8 +46,7 @@ public class RulesTreePanel extends JPanel{
 	{
 		ruleTree = RulesManager.initializeRules(new File("InputXML/Rules/Rulesets.xml"));
 		JScrollPane scrollPane = new JScrollPane();
-		
-		
+			
 		JPanel buttonPanel = new JPanel();
 		addFolder = new JButton("Add Folder");
 		addRule = new JButton("Add Rule");
@@ -63,9 +63,14 @@ public class RulesTreePanel extends JPanel{
 		initializeTree();
 		
 		scrollPane.setViewportView(tree);
-		scrollPane.getViewport().setPreferredSize(new Dimension(530,250));
+//		scrollPane.getViewport().setPreferredSize(new Dimension(530,170));
 		
 		setBorder(new TitledBorder("Rules"));
+	}
+	
+	public void setPanelSize()
+	{
+		scrollPane.getViewport().setPreferredSize(new Dimension(500,180));
 	}
 	
 	public void setRuleTree(RuleTree rTree)
@@ -264,7 +269,10 @@ public class RulesTreePanel extends JPanel{
 						 RuleFrame ruleFrame = new RuleFrame(selectedNode.getRule(), ruleTree.getComment());
 					 }
 				 }
-			}catch(Exception ex){}
+			}catch(Exception ex){
+				selectedNode = null;
+				tree.setSelectionPath(null);
+			}
 		}
 
 		@Override

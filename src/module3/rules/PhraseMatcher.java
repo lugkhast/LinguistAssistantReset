@@ -26,6 +26,7 @@ public class PhraseMatcher extends Phrase {
 		stringBuilder.append(name+"/"+tag);
 		/*
 		stringBuilder.append(name+"/"+tag+"(");
+		stringBuilder.append(name+"(");
 		for(Component child: children.getChildren())
 			stringBuilder.append(child.toString());
 		stringBuilder.append(")");

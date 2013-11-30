@@ -55,6 +55,7 @@ public class RuleFrame extends JFrame {
 
 	public void addTabs()
 	{
+		tabbedPane.add("Simple", new SimpleSpelloutRulePanel());
 		tabbedPane.add("Morphophonemic", new MorphophonemicPanel());
 		tabbedPane.add("Structural Adjustment", new StructuralAdjustmentPanel());
 	}
@@ -127,7 +128,5 @@ public class RuleFrame extends JFrame {
 		gbc_tabbedPane.gridx = 0;
 		gbc_tabbedPane.gridy = 1;
 		contentPane.add(tabbedPane, gbc_tabbedPane);
-		
-		tabbedPane.addTab("Simple Spellout", new SimpleSpelloutRulePanel());
 	}
 }

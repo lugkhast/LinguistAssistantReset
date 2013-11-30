@@ -105,8 +105,9 @@ public class ViewSemanticsPanel extends JPanel{
 		
 		int panelHeight = rightPanel.getPreferredSize().height;
 		generatedArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
-		docInfoArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
-		infoArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/5));
+		rulesPanel.setPanelSize();
+		docInfoArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/6));
+		infoArea.setPreferredSize(new Dimension(generatedArea.getPreferredSize().width, panelHeight/6));
 		
 		
 		return rightPanel;
