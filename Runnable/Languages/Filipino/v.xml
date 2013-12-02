@@ -1,11 +1,15 @@
 <pos name="v">
   <features />
-  <forms />
+  <forms>
+    <form>OF Perfective</form>
+  </forms>
   <stems>
     <stem name="ay" gloss="be">
       <comments />
       <sentence />
-      <forms />
+      <forms>
+        <form name="OF Perfective" value="ayay" />
+      </forms>
       <mappings>
         <mapping concept="be" sense="D" pos="v" />
       </mappings>
@@ -13,7 +17,9 @@
     <stem name="upo" gloss="sit">
       <comments />
       <sentence />
-      <forms />
+      <forms>
+        <form name="OF Perfective" value="upo" />
+      </forms>
       <mappings>
         <mapping concept="sit" sense="A" pos="v" />
       </mappings>

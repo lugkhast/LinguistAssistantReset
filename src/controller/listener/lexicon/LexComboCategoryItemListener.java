@@ -25,6 +25,7 @@ public class LexComboCategoryItemListener implements ItemListener{
 	
 	public void itemStateChanged(ItemEvent arg0) {
 		lexList = LexiconManager.getInstance().getLexiconList(lexPanel.getCodeFromSelectedPOS());
+		lexPanel.setLexiconList(lexList);
 		lexPanel.clearTable();
 		DefaultTableModel model = (DefaultTableModel)lexTable.getModel();
 		

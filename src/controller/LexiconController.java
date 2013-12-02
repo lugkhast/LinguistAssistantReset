@@ -19,11 +19,9 @@ import view.lexicon.LexiconPanel;
 public class LexiconController {
 	
 	private LexiconPanel lexiconPanel;
-	private LexiconList lexList;
 	
 	public LexiconController(){
 		lexiconPanel = new LexiconPanel();
-		lexList =  LexiconManager.getInstance().getLexiconList(lexiconPanel.getCodeFromSelectedPOS());
 		addListeners();
 	}
 	
@@ -59,13 +57,13 @@ public class LexiconController {
 		
 		lexiconPanel.getBtnAddEditFeatures().addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				new AddEditFeatureFrame(lexList); 
+				new AddEditFeatureFrame(lexiconPanel.getLexiconList()); 
 				lexiconPanel.initTable(); // para bumalik nalang sa viewstem, hassle kasi pag irerefresh mo pa if nasa viewfeature ba siya or ano man
 			}});
 		
 		lexiconPanel.getBtnAddEditForms().addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				new AddEditFormFrame(lexList);
+				new AddEditFormFrame(lexiconPanel.getLexiconList());
 				lexiconPanel.initTable();
 			}
 			

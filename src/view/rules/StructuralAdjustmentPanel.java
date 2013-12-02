@@ -15,6 +15,7 @@ import controller.listener.grammardev.SelectComponentActionListener;
 	import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import javax.swing.TransferHandler;
 import javax.swing.UIManager;
 import javax.swing.JSplitPane;
@@ -43,6 +44,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 	public class StructuralAdjustmentPanel extends JPanel {
 		
@@ -126,14 +129,16 @@ import java.awt.event.MouseEvent;
 			
 			
 			JPanel buttonsPanel = new JPanel();
-			buttonsPanel.setBounds(1215, 531, 127, 28);
+			buttonsPanel.setBounds(1209, 531, 133, 28);
 			add(buttonsPanel);
 			buttonsPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			
 			JButton btnOk = new JButton("OK");
+			btnOk.addActionListener(new OKButtonListener(this));
 			buttonsPanel.add(btnOk);
 			
 			JButton btnCancel = new JButton("Cancel");
+			btnCancel.addActionListener(new CancelButtonListener(this));
 			buttonsPanel.add(btnCancel);
 			
 			inputScreen = new DisplayScreen();
@@ -177,5 +182,40 @@ import java.awt.event.MouseEvent;
 	            }
 	        });
 		}
-
+		
+		class OKButtonListener implements ActionListener
+		{
+			StructuralAdjustmentPanel panel;
+			
+			public OKButtonListener(StructuralAdjustmentPanel panel)
+			{
+				this.panel = panel;
+			}
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(panel);
+				frame.dispose();
+			}
+			
+		}
+		
+		class CancelButtonListener implements ActionListener
+		{
+			StructuralAdjustmentPanel panel;
+			
+			public CancelButtonListener(StructuralAdjustmentPanel panel)
+			{
+				this.panel = panel;
+			}
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(panel);
+				frame.dispose();
+			}
+			
+		}
 	}

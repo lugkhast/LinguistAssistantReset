@@ -27,6 +27,7 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
+import controller.LexiconController;
 import controller.listener.lexicon.LexAddNewPOSActionListener;
 import controller.listener.lexicon.LexComboCategoryItemListener;
 import controller.listener.lexicon.LexMapToNewConcept;
@@ -225,7 +226,9 @@ public class LexiconPanel extends JPanel{
 							ArrayList<String> columns= new ArrayList<String>();
 							columns.add("Stem");
 							columns.add("Glosses");
+							
 							for(String form : lexList.getPossibleForms()){
+								System.out.print("\n\nBLAAAAAAHHH\n\n");
 								columns.add(form);
 							}
 							 model.setColumnIdentifiers(columns.toArray()); 
@@ -288,6 +291,11 @@ public class LexiconPanel extends JPanel{
 
 	public void setLexiconList(LexiconList lexList){
 		this.lexList = lexList;
+	}
+	
+	public LexiconList getLexiconList()
+	{
+		return lexList;
 	}
 	
 	public LexiconTable getTable(){

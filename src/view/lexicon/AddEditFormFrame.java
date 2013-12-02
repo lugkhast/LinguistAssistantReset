@@ -24,7 +24,7 @@ public class AddEditFormFrame extends JFrame{
 	DefaultTableModel model ;
 	LexiconList lexList;
 	
-	public AddEditFormFrame(LexiconList list ) {
+	public AddEditFormFrame(LexiconList list) {
 		
 		this.lexList = list;
 
