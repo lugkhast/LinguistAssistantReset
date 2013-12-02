@@ -36,6 +36,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
+
+import module3.rules.Rule;
 import net.miginfocom.swing.MigLayout;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -54,32 +56,49 @@ import java.awt.event.MouseEvent;
 		
 		InputXMLDocumentPanel inputXMLPanel;
 		InputXMLDocumentPanel outputXMLPanel;
+		Rule rule;
 		
-		
-		public static void main (String args[])
-		{
-			try{
-				UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-			}catch(Exception e){}
-			
-			Font oldLabelFont = UIManager.getFont("Label.font");
-			UIManager.put("Label.font", oldLabelFont.deriveFont(Font.PLAIN,(float)14));
-			
-			StructuralAdjustmentPanel sap = new StructuralAdjustmentPanel();
-			JFrame frame = new JFrame();
-			frame.getContentPane().add(sap);
-			frame.setVisible(true);
-			Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-			frame.setBounds(0, 0, (int) screenSize.getWidth(), (int)screenSize.getHeight());
-		}
+//		public static void main (String args[])
+//		{
+//			try{
+//				UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//			}catch(Exception e){}
+//			
+//			Font oldLabelFont = UIManager.getFont("Label.font");
+//			UIManager.put("Label.font", oldLabelFont.deriveFont(Font.PLAIN,(float)14));
+//			
+//			StructuralAdjustmentPanel sap = new StructuralAdjustmentPanel(new Rule());
+//			JFrame frame = new JFrame();
+//			frame.getContentPane().add(sap);
+//			frame.setVisible(true);
+//			Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+//			frame.setBounds(0, 0, (int) screenSize.getWidth(), (int)screenSize.getHeight());
+//		}
 		
 //		take parameter Rule which has input and output blah
-		public StructuralAdjustmentPanel() 
+		public StructuralAdjustmentPanel(Rule rule) 
 		{
 			initializeUI();
+			this.rule = rule;
+			
+			initializeComponentContent();
 			addListenersToCompPalette();
+			
 			grammarController = new GrammarDevController(this);
 			rightController = new CreateController(grammarController, rightPanel);
+		}
+		
+		public void initializeComponentContent()
+		{
+			//add input components
+			if (rule.getInput() != null)
+			{
+				inputXMLPanel.getXMLDocument().addClauseAt(0, rule.getInput());
+				inputXMLPanel.refreshDisplay();
+			}
+			
+			setSelectComponentListeners();
+			//add output components
 		}
 		
 		public void initializeUI()
@@ -104,7 +123,7 @@ import java.awt.event.MouseEvent;
 			
 			outputXMLPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, null, "Output Structure", null, null));
 			
-			setSelectComponentListeners();
+			
 			
 			JPanel buttonsPanel = new JPanel();
 			buttonsPanel.setBounds(1215, 531, 127, 28);

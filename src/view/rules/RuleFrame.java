@@ -57,8 +57,9 @@ public class RuleFrame extends JFrame {
 	{
 		tabbedPane.add("Simple", new SimpleSpelloutRulePanel());
 		tabbedPane.add("Morphophonemic", new MorphophonemicPanel());
-		tabbedPane.add("Structural Adjustment", new StructuralAdjustmentPanel());
+		tabbedPane.add("Structural Adjustment", new StructuralAdjustmentPanel(rule));
 	}
+	
 	public void initializeComponents()
 	{
 		contentPane = new JPanel();

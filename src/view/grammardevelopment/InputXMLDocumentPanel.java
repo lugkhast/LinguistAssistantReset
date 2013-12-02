@@ -14,6 +14,8 @@ import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
+import module3.rules.PhraseMatcher;
+
 import components.Component;
 import components.InputXMLDocument;
 import components.Phrase;

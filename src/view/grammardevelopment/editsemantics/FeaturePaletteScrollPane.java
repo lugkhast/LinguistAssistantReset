@@ -24,6 +24,7 @@ import controller.listener.grammardev.editsemantics.FeaturePaletteCmbValuesItemL
 import features.DBFeatureValues;
 import features.Feature;
 import features.FeatureList;
+import javax.swing.SwingConstants;
 
 public class FeaturePaletteScrollPane extends JScrollPane{
 	
@@ -33,6 +34,7 @@ public class FeaturePaletteScrollPane extends JScrollPane{
 	private JComboBox cmbValues;
 	private JButton resetButton;
 	private ItemListener saveFeatureListener;
+	private JLabel lblFeature;
 	
 	public FeaturePaletteScrollPane(){
 		this.setBorder(BorderFactory.createTitledBorder("Feature Palette"));
@@ -40,6 +42,7 @@ public class FeaturePaletteScrollPane extends JScrollPane{
 		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 		setViewportView(panel);
 		componentName = new JLabel("Component: ");
+		componentName.setHorizontalAlignment(SwingConstants.CENTER);
 		componentName.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 		componentName.setMinimumSize(new Dimension(200,20));
 		componentName.setMaximumSize(new Dimension(200,20));
@@ -61,20 +64,21 @@ public class FeaturePaletteScrollPane extends JScrollPane{
 		int palettewidth = (int)(width*0.4);
 		int paletteheight = (int)(height*0.23);
 		this.setPreferredSize(new Dimension(palettewidth,paletteheight));
-		JLabel blankLabel = new JLabel("");
-		blankLabel.setMinimumSize(new Dimension(200,20));
-		blankLabel.setMaximumSize(new Dimension(200,20));
-		blankLabel.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 		JLabel blankLabel2 = new JLabel("");
 		blankLabel2.setMinimumSize(new Dimension(200,20));
 		blankLabel2.setMaximumSize(new Dimension(200,20));
 		blankLabel2.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
-		JLabel blankLabel3 = new JLabel("");
-		blankLabel3.setMinimumSize(new Dimension(200,10));
-		blankLabel3.setMaximumSize(new Dimension(200,10));
+		JLabel blankLabel3 = new JLabel("Value:");
+		blankLabel3.setHorizontalAlignment(SwingConstants.CENTER);
+		blankLabel3.setMinimumSize(new Dimension(200, 20));
+		blankLabel3.setMaximumSize(new Dimension(200, 20));
 		blankLabel3.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
 		panel.add(componentName);
-		panel.add(blankLabel);
+		
+		lblFeature = new JLabel("Feature:");
+		lblFeature.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+		lblFeature.setHorizontalAlignment(SwingConstants.LEFT);
+		panel.add(lblFeature);
 		panel.add(cmbFeatures);
 		panel.add(blankLabel3);
 		panel.add(cmbValues);
