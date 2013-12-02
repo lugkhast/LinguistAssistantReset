@@ -1,24 +1,78 @@
 <pos name="v">
   <features />
   <forms>
+    <form>AF Contemplative</form>
+    <form>AF Imperfective</form>
+    <form>AF Perfective</form>
+    <form>OF Contemplative</form>
+    <form>OF Imperfective</form>
     <form>OF Perfective</form>
+    <form>DF Contemplative</form>
+    <form>DF Imperfective</form>
+    <form>DF Perfective</form>
   </forms>
   <stems>
     <stem name="ay" gloss="be">
       <comments />
       <sentence />
       <forms>
-        <form name="OF Perfective" value="ayay" />
+        <form name="AF Contemplative" value="ay" />
+        <form name="AF Imperfective" value="ay" />
+        <form name="AF Perfective" value="ay" />
+        <form name="OF Contemplative" value="ay" />
+        <form name="OF Imperfective" value="ay" />
+        <form name="OF Perfective" value="ay" />
+        <form name="DF Contemplative" value="ay" />
+        <form name="DF Imperfective" value="ay" />
+        <form name="DF Perfective" value="ay" />
       </forms>
       <mappings>
         <mapping concept="be" sense="D" pos="v" />
       </mappings>
     </stem>
+    <stem name="bigay" gloss="give">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="magbibigay" />
+        <form name="AF Imperfective" value="nagbibigay" />
+        <form name="AF Perfective" value="nagbigay" />
+        <form name="OF Contemplative" value="ibibigay" />
+        <form name="OF Imperfective" value="ibinibigay" />
+        <form name="OF Perfective" value="ibinigay" />
+        <form name="DF Contemplative" value="bibigayan" />
+        <form name="DF Imperfective" value="binibigayan" />
+        <form name="DF Perfective" value="binigayan" />
+      </forms>
+    </stem>
+    <stem name="hiwa" gloss="to slice">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="maghihiwa" />
+        <form name="AF Imperfective" value="naghihiwa" />
+        <form name="AF Perfective" value="naghiwa" />
+        <form name="OF Contemplative" value="hihiwain" />
+        <form name="OF Imperfective" value="hinihiwa" />
+        <form name="OF Perfective" value="hiniwa" />
+        <form name="DF Contemplative" value="" />
+        <form name="DF Imperfective" value="" />
+        <form name="DF Perfective" value="" />
+      </forms>
+    </stem>
     <stem name="upo" gloss="sit">
       <comments />
       <sentence />
       <forms>
+        <form name="AF Contemplative" value="upo" />
+        <form name="AF Imperfective" value="upo" />
+        <form name="AF Perfective" value="upo" />
+        <form name="OF Contemplative" value="upo" />
+        <form name="OF Imperfective" value="upo" />
         <form name="OF Perfective" value="upo" />
+        <form name="DF Contemplative" value="upo" />
+        <form name="DF Imperfective" value="upo" />
+        <form name="DF Perfective" value="upo" />
       </forms>
       <mappings>
         <mapping concept="sit" sense="A" pos="v" />
