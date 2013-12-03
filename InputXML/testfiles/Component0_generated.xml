@@ -1,0 +1,27 @@
+<component name="Cl">
+  <component name="NP">
+    <features>
+      <feature name="Semantic Role" value="Patient" />
+      <feature name="Complement Type" value="Object" />
+    </features>
+    <component name="N" concept="human" sense="A">
+      <features>
+        <feature name="Participant Tracking" value="Routine" />
+      </features>
+    </component>
+  </component>
+  <component name="VP">
+    <component name="V" concept="sleep" sense="A">
+      <features>
+        <feature name="Time" value="Present" />
+        <feature name="Surface Aspect" value="Imperfective" />
+      </features>
+    </component>
+  </component>
+  <component name="NP">
+    <features>
+      <feature name="Semantic Role" value="Agent" />
+      <feature name="Complement Type" value="Actor" />
+    </features>
+  </component>
+</component>

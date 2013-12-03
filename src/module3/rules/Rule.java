@@ -3,6 +3,9 @@ package module3.rules;
 import java.util.ArrayList;
 import java.util.List;
 
+import module3.rules.outputactions.OutputAction;
+import module3.rules.outputactions.OutputActionReader;
+
 import org.jdom2.Element;
 
 import components.Component;
@@ -25,8 +28,8 @@ public class Rule {
 			actionList = new ArrayList<Element>();
 		
 		this.outputActions = new OutputList();
-		//for(Element child: actionList)
-			//outputActions.addChild(new OutputAction(child));
+		for(Element child: actionList)
+			outputActions.addChild(new OutputAction(child));
 		
 	}
 
@@ -124,6 +127,22 @@ public class Rule {
 		}
 		
 		return results;
+	}
+	
+	public boolean apply(Component constit) {
+		ArrayList<UniMap> mapList = unify(constit, this.input);
 		
+		if (mapList == null)
+			return false;
+		
+		for (UniMap mapping : mapList) {
+			for (OutputAction action : outputActions.getChildren()) {
+				if (action.getTag().equals(mapping.getTag())) {
+					OutputActionReader.DoOutputAction(mapping.getVar(), action);
+				}
+			}
+		}
+		
+		return true;
 	}
 }

@@ -52,26 +52,21 @@ public class RulesManager {
 		InputXMLDocument doc = SemanticsManager.readSemanticsDocumentFromFile(new File("inputxml/testfiles/TestComponent.xml"));
 		ArrayList<Component> comp = doc.getClauses();
 		// get test rules
-		RuleTree rt = RulesManager.initializeRules(new File("inputxml/testfiles/TestRule.xml"));
-		ArrayList<Rule> list = rt.getChildren();
+		ArrayList<RuleTree> rts = new ArrayList<RuleTree>();
+		for (int i = 1; i <= 4; i++) {
+			rts.add(RulesManager.initializeRules(new File("inputxml/testfiles/Rule " + i + ".xml")));
+			System.out.println("File " + i + " successfully loaded");
+		}
 		
-
-		
-		for (int i = 0; i < list.size(); i++) {
-			for (int j = 0; j < comp.size(); j++) {
-				ArrayList<UniMap> u = list.get(i).unify(comp.get(j), list.get(i).getInput());
-				System.out.print(i + " - " + list.get(i).getName() + ", component " + j + " - ");
-				if (u==null) {
-					System.out.println("false");
-					continue;
+		for (int i = 0; i < comp.size(); i++) {
+			System.out.println("Component " + i + ":");
+			for (RuleTree rt : rts) {
+				for (Rule r : rt.getChildren()) {
+					if (r.apply(comp.get(i)))
+						System.out.println("Rule name - " + r.getName());
 				}
-				if (u.size() == 0) {
-					System.out.println("true");
-					continue;
-				}
-				
-				System.out.println(u);
 			}
+			XMLManager.getInstance().writeToXML("inputxml/testfiles/Component" + i + "_generated.xml", comp.get(i).generateXMLElement());
 		}
 	}
 }

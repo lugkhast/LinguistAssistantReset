@@ -14,6 +14,7 @@ import features.FeatureList;
 
 import module3.rules.LeafMatcher;
 import module3.rules.PhraseMatcher;
+import module3.rules.Rule;
 
 public abstract class Component implements Cloneable {
 	
