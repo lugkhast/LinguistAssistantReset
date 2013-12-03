@@ -1,0 +1,105 @@
+<ruleset name="Tagalog Rules: Rule 1">
+	<comments> Rule 3, PLAYING WITH TIME >:D </comments>
+	<rule name="Time Future = Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
+							<feature name="Time" value="Immediate Future" />
+							<feature name="Time" value="Later Today" />
+							<feature name="Time" value="Tomorrow" />
+							<feature name="Time" value="2 Days From Now" />
+							<feature name="Time" value="3 Days From Now" />
+							<feature name="Time" value="Week From Now" />
+							<feature name="Time" value="Month From Now" />
+							<feature name="Time" value="Year From Now" />
+							<feature name="Time" value="Unknown Future" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
+							<feature name="Time" value="Immediate Past" />
+							<feature name="Time" value="Earlier Today" />
+							<feature name="Time" value="Yesterday" />
+							<feature name="Time" value="2 Days Ago" />
+							<feature name="Time" value="3 Days Ago" />
+							<feature name="Time" value="Week Ago" />
+							<feature name="Time" value="Month Ago" />
+							<feature name="Time" value="Year Ago" />
+							<feature name="Time" value="Historic Past" />
+							<feature name="Time" value="Eternity Past" />
+							<feature name="Time" value="Unknown Past" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Present = Imperfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
+							<feature name="Time" value="Present" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Imperfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Semantic Aspect Imperfective = Imperfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
+							<feature name="Aspect" value="Imperfect" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Imperfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+</ruleset>
