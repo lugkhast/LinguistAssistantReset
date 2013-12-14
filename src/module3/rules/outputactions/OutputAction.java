@@ -8,13 +8,15 @@ import org.jdom2.Element;
 
 import components.Component;
 
-public abstract class OutputAction {
+public class OutputAction {
 	
-	protected String type;
-	protected List<Element> args;
+	String type;
+	private String tag;
+	List<Element> args;
 	
 	public OutputAction(Element e) {
-		this.type = e.getAttributeValue("type");
+		this.type = e.getAttributeValue("name");
+		this.tag = e.getAttributeValue("parentTag");
 		
 		args = (List<Element>)e.getChildren("argument");
 	}
@@ -24,8 +26,27 @@ public abstract class OutputAction {
 	}
 	
 	public String toString() {
-		return "*****\ntype: " + type + "\nargs length: " + args.size() + "\n*****\n";
+		return "type - " + type;
 	}
 
-	public abstract Element generateXML();
+	public Element generateXML() {
+		Element xmlElement = new Element("output");
+		xmlElement.setAttribute("name", type);
+		xmlElement.setAttribute("parentTag", tag);
+		
+		for (Element e : args) {
+			xmlElement.addContent(e);
+		}
+		
+		return xmlElement;
+
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public String getTag() {
+		return tag;
+	}
 }

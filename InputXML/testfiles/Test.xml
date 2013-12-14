@@ -1,6 +1,4 @@
 <document name="Test File">
-  <comments>just a test file</comments>
-	
 	<component name="Cl">
 		<component name="NP">
 			<features>
@@ -25,25 +23,4 @@
 			</features>
 		</component>
 	</component>
-	
-	<component name="Cl">
-		<component name="NP">
-			<features>
-				<feature name="Semantic Role" value="Agent" />
-			</features>
-			<component name="N" concept="human" sense="A">
-				<features>
-					<feature name="Participant Tracking" value="Routine" />
-				</features>
-			</component>
-		</component>
-		<component name="VP">
-			<component name="V" concept="sleep" sense="A">
-				<features>
-					<feature name="Time" value="Present" />
-				</features>
-			</component>
-		</component>
-	</component>
-	
 </document>

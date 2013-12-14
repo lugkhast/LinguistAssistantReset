@@ -3,6 +3,9 @@ package module3.rules;
 import java.util.ArrayList;
 import java.util.List;
 
+import module3.rules.outputactions.OutputAction;
+import module3.rules.outputactions.OutputActionReader;
+
 import org.jdom2.Element;
 
 import components.Component;
@@ -25,8 +28,8 @@ public class Rule {
 			actionList = new ArrayList<Element>();
 		
 		this.outputActions = new OutputList();
-		//for(Element child: actionList)
-			//outputActions.addChild(new OutputAction(child));
+		for(Element child: actionList)
+			outputActions.addChild(new OutputAction(child));
 		
 	}
 
@@ -78,12 +81,14 @@ public class Rule {
 	public ArrayList<UniMap> unify(Component constit, Component pattern) {
 		// returns null if false
 		// a list if true (DUH)
+		System.out.println("Comparing " + constit.getName() + " " + pattern.getName());
 		if (!constit.getName().equals(pattern.getName())) {
 			return null;
 		}
 		
 		for (Feature f : pattern.getFeatureList().getFeatureList()) {
 			Feature m = constit.getFeature(f.getName());
+			System.out.println("Comparing features " + f.getValue() + " " + m.getValue());
 			if (m == null) {
 				return null;
 			}
@@ -124,6 +129,26 @@ public class Rule {
 		}
 		
 		return results;
-		
 	}
+	
+	public boolean apply(Component constit) {
+		ArrayList<UniMap> mapList = unify(constit, this.input);
+		
+		if (mapList == null)
+			return false;
+		
+		for (UniMap mapping : mapList) {
+			for (OutputAction action : outputActions.getChildren()) {
+				if (action.getTag().equals(mapping.getTag())) {
+					OutputActionReader.DoOutputAction(mapping.getVar(), action);
+				}
+			}
+		}
+		
+<<<<<<< HEAD
+	}
+=======
+		return true;
+	}
+>>>>>>> origin/dook
 }

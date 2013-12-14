@@ -1,0 +1,71 @@
+<ruleset name = "Tagalog Rules: Rule 4">
+	<comments> Rule 4, FOCUS ON AGREEMENTS :> </comments>
+	<rule name="NP-Actor + VP = V-AF">
+		<input>
+			<component name="Cl">
+				<component name="NP">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+						<feature name="Complement Type" value="Actor" />
+					</features>
+				</component>
+				<component name="VP">
+					<component name="V" matcher="$1" />
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="AF" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="NP-Object + VP = V-OF">
+		<input>
+			<component name="Cl">
+				<component name="NP">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+						<feature name="Complement Type" value="Object" />
+					</features>
+				</component>
+				<component name="VP">
+					<component name="V" matcher="$1" />
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="OF" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="NP-Dir + VP = V-DF">
+		<input>
+			<component name="Cl">
+				<component name="NP">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+						<feature name="Complement Type" value="Directional" />
+					</features>
+				</component>
+				<component name="VP">
+					<component name="V" matcher="$1" />
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="DF" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+</ruleset>

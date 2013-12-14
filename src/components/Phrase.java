@@ -136,6 +136,17 @@ public class Phrase extends Component{
 	public void removeChild(Component child){
 		children.removeChild(child);
 	}
-
 	
+	/*
+	public Component clone() {
+		Phrase p = new Phrase(this.name);
+		
+		for (Component c : this.children.children) {
+			p.addChild(c.clone());
+		}
+		
+		
+		return p;
+	}
+	*/
 }
