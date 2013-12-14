@@ -64,7 +64,7 @@ public class NewFolderWindow extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						panel.addFolderToTree(new RuleTree(nameField.getText(), commentField.getText(), null));
+						panel.addFolderToTree(new RuleTree(nameField.getText(), nameField.getText(), commentField.getText(), null));
 						dispose();
 					}
 				});

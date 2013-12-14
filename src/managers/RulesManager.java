@@ -41,7 +41,7 @@ public class RulesManager {
 			for(Element node: nodes)
 				rulesList.add(Rule.createInstance(node));
 			
-			return new RuleTree(rulesetName, comments, rulesList);
+			return new RuleTree(xmlFile.getName(), rulesetName, comments, rulesList);
 		}catch(Exception e){e.printStackTrace();}
 		
 		return null;

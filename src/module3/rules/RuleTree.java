@@ -2,15 +2,23 @@ package module3.rules;
 
 import java.util.ArrayList;
 
+import managers.XMLManager;
+
 import org.jdom2.Element;
 
 public class RuleTree {
+	
+	String path;
 	
 	private String setName, comments;
 	private ArrayList<Rule> ruleList;
 	private ArrayList<RuleTree> treeList;
 	
-	public RuleTree(String name, String c, ArrayList<Rule> list){
+	public RuleTree(String fileName, String name, String c, ArrayList<Rule> list){
+		this.path = "InputXML/Rules/" + fileName;
+		
+		System.out.print("XML NAME "+fileName);
+		
 		this.setName = name;
 		this.comments = c;
 		this.ruleList = list;
@@ -29,11 +37,15 @@ public class RuleTree {
 	public void addChild(Rule rule){
 		if(rule != null)
 			ruleList.add(rule);
+		
+		saveToXML();
 	}
 	
 	public void addChild(int index, Rule rule){
 		if(rule != null)
 			ruleList.add(index, rule);
+		
+		saveToXML();
 	}
 	
 	public ArrayList<Rule> getChildren(){
@@ -43,6 +55,8 @@ public class RuleTree {
 	public void removeChild(Rule rule){
 		if(rule != null)
 			ruleList.remove(rule);
+		
+		saveToXML();
 	}
 	
 	public String getName()
@@ -65,6 +79,11 @@ public class RuleTree {
 	public String getComment()
 	{
 		return comments;
+	}
+	
+	public void saveToXML()
+	{
+		XMLManager.getInstance().writeToXML(path, generateXMLElement());
 	}
 	
 	public Element generateXMLElement() {
