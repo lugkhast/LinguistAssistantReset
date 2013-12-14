@@ -8,7 +8,7 @@ import features.FeatureList;
 
 public class PhraseMatcher extends Phrase {
 	
-	private String tag = "";
+	private String tag;
 	
 	public PhraseMatcher(Element e) {
 		super(e);
