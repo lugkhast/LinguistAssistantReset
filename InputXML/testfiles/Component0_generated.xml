@@ -13,14 +13,13 @@
   <component name="VP">
     <component name="V" concept="sleep" sense="A">
       <features>
-        <feature name="Time" value="Present" />
         <feature name="Surface Aspect" value="Imperfective" />
+        <feature name="Focus" value="DF" />
       </features>
     </component>
   </component>
   <component name="NP">
     <features>
-      <feature name="Semantic Role" value="Agent" />
       <feature name="Complement Type" value="Actor" />
     </features>
   </component>

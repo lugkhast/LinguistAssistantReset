@@ -1,0 +1,173 @@
+<ruleset name = "Tagalog Rules: Rule 2">
+	<comments> Rule 2, THERE CAN ONLY BE ONE D: </comments>
+	<rule name="Complement Object = Focus">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Complement Type" value="Object" />
+					</features>
+					<component name="N">
+						<features>
+							<feature name="Participant Tracking" value="Routine" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus Type" value="Focus" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+	
+	<rule name="Complement Patient = Focus">
+		<input>
+			<component name="Cl">
+				<component name="NP">
+					<features>
+						<feature name="Complement Type" value="Object" />
+						<feature name="Focus Type" value="undefined" />
+					</features>
+				</component>
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Complement Type" value="Patient" />
+					</features>
+					<component name="N">
+						<features>
+							<feature name="Participant Tracking" value="Routine" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus Type" value="Focus" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Complement Patient = Focus (No Object)">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Complement Type" value="Patient" />
+						<feature name="Focus Type" value="undefined" />
+					</features>
+					<component name="N">
+						<features>
+							<feature name="Participant Tracking" value="Routine" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus Type" value="Focus" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Complement Agent = Focus">
+		<input>
+			<component name="Cl">
+				<component name="NP">
+					<features>
+						<feature name="Complement Type" value="Object" />
+						<feature name="Focus Type" value="undefined" />
+					</features>
+				</component>
+				<component name="NP">
+					<features>
+						<feature name="Complement Type" value="Patient" />
+						<feature name="Focus Type" value="undefined" />
+					</features>
+				</component>
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Complement Type" value="Agent" />
+					</features>
+					<component name="N">
+						<features>
+							<feature name="Participant Tracking" value="Routine" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus Type" value="Focus" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Complement Agent = Focus (No Object)">
+		<input>
+			<component name="Cl">
+				<component name="NP">
+					<features>
+						<feature name="Complement Type" value="Patient" />
+						<feature name="Focus Type" value="undefined" />
+					</features>
+				</component>
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Complement Type" value="Agent" />
+						<feature name="Focus Type" value="undefined" />
+					</features>
+					<component name="N">
+						<features>
+							<feature name="Participant Tracking" value="Routine" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus Type" value="Focus" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Complement Agent = Focus (No Object or Patient)">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Complement Type" value="Agent" />
+						<feature name="Focus Type" value="undefined" />
+					</features>
+					<component name="N">
+						<features>
+							<feature name="Participant Tracking" value="Routine" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus Type" value="Focus" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+</ruleset>
