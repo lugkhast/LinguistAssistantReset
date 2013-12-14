@@ -38,7 +38,8 @@ public class PhraseMatcher extends Phrase {
 	public void addAdditionalXMLContent(Element e) { 
 		for(Component child: children.getChildren())
 			e.addContent(child.generateXMLElement());
-		e.setAttribute("matcher", tag);
+		if (tag != null)
+			e.setAttribute("matcher", tag);
 	}
 
 	public void setTag(String s) {
