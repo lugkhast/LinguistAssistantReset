@@ -14,6 +14,10 @@ import components.Component;
 import features.Feature;
 
 public class CreationRightPanel extends JPanel{
+	
+	public static final int GRAMMAR_EDIT = 1;
+	public static final int RULE_EDIT = 2;
+	
 	private ComponentPaletteScrollPane cpScrollPane;
 	private FeaturePaletteScrollPane fpScrollPane;
 	private LeafEditPalette leScrollPane;
@@ -22,6 +26,8 @@ public class CreationRightPanel extends JPanel{
 	private JButton deleteBtn;
 	private JButton copyStructure;
 	private Component comp;
+	
+	private int mode;
 	
 	public CreationRightPanel(){
 		cpScrollPane = new ComponentPaletteScrollPane();
@@ -120,6 +126,19 @@ public class CreationRightPanel extends JPanel{
 		}
 	}
 		
+	public void setMode(int mode)
+	{
+		switch (mode)
+		{
+			case GRAMMAR_EDIT:
+				copyStructure.setEnabled(false);
+				break;
+			case RULE_EDIT:
+				copyStructure.setEnabled(true);
+				break;
+		}
+	}
+	
 	public void addDnDListenerForAllButtons(MouseAdapter mouseAdapter){
 		cpScrollPane.addListenersForAllButtons(mouseAdapter);
 	}

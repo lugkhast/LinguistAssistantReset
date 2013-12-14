@@ -25,6 +25,12 @@ import controller.listener.grammardev.editsemantics.InputXMLDocPanelDNDListener;
 
 public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 	
+	public static final int GRAMMAR = 0; 
+	public static final int RULE_INPUT = 1;
+	public static final int RULE_OUTPUT = 2;
+	
+	int mode; 
+	
 	private InputXMLDocument doc;
 	private ArrayList<ComponentPanel> sentencePanels;
 
@@ -33,7 +39,7 @@ public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 	
 	private SelectComponentActionListener selectListener;
 	
-	public InputXMLDocumentPanel()
+	public InputXMLDocumentPanel(int mode)
 	{
 		addDropTargetListener();
 		
@@ -55,7 +61,7 @@ public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 		this.setDropTarget(null);
 	}
 	
-	public InputXMLDocumentPanel(InputXMLDocument doc){
+	public InputXMLDocumentPanel(InputXMLDocument doc, int mode){
 		this.doc = doc;
 		DropTarget dt = new DropTarget();
 		try {
@@ -63,7 +69,8 @@ public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 			this.setDropTarget(dt);
 			
 		} catch (TooManyListenersException e) {}
-	
+		
+		setMode(mode);
 		setLayout(null);
 		refreshDisplay();
 		refreshTitle();
@@ -71,10 +78,27 @@ public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 		setPanelListener(this);
 	}
 	
+	public void setMode(int mode)
+	{
+		this.mode = mode;
+	}
+	
 	public void setSelectComponentPanelListener(SelectComponentActionListener selectListener){
 		this.selectListener = selectListener;
 		for(ComponentPanel sentencePanel: sentencePanels)
 			sentencePanel.setSelectListener(selectListener);
+	}
+	
+	public void setSelectComponentPanelListener(){
+		if (selectListener!= null)
+		{
+			
+			for(ComponentPanel sentencePanel: sentencePanels)
+			{
+				System.out.print("ASLDKJALS");
+				sentencePanel.setSelectListener(selectListener);
+			}
+		}
 	}
 	
 	public void refreshTitle(){
@@ -99,7 +123,7 @@ public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 			sentencePanel.refreshSemanticLexicons();
 	}
 	
-	private void createSentencePanels(){
+	public void createSentencePanels(){			
 		sentencePanels = new ArrayList<ComponentPanel>();
 		
 		for(Component sentence: doc.getClauses())
@@ -185,6 +209,21 @@ public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 			remove(child);
 		}
 		adjustPositioning();
+	}
+	
+	public void removeAllChildren()
+	{
+		if (sentencePanels != null)
+		{
+			for (int i = sentencePanels.size(); i>0; i--)
+			{
+				ComponentPanel panel = sentencePanels.get(i-1);
+				sentencePanels.remove(panel);
+				remove(panel);
+			}
+			
+			repaint();
+		}
 	}
 	
 	public void setPanelListener(final InputXMLDocumentPanel parentDocuPanel)

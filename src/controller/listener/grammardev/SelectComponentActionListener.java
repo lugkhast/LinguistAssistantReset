@@ -19,6 +19,11 @@ import view.rules.StructuralAdjustmentPanel;
 
 public class SelectComponentActionListener extends MouseAdapter {
 
+	public static final int RULE_INPUT = 1;
+	public static final int RULE_OUTPUT = 2;
+	
+	int mode; 
+	
 	private ComponentPanel prevSelectedPanel;
 	private ViewSemanticsPanel loadPanel = null;
 	private StructuralAdjustmentPanel rulePanel = null;
@@ -31,7 +36,8 @@ public class SelectComponentActionListener extends MouseAdapter {
 		this.loadPanel = loadPanel;
 	}
 	
-	public SelectComponentActionListener(StructuralAdjustmentPanel rulePanel){
+	public SelectComponentActionListener(StructuralAdjustmentPanel rulePanel, int mode){
+		this.mode = mode;
 		this.rulePanel = rulePanel;
 	}
 	
@@ -49,6 +55,7 @@ public class SelectComponentActionListener extends MouseAdapter {
 		ComponentPanel selectedPanel = (ComponentPanel) e.getSource();
 		deselectCurrentPanel();
 		selectedPanel.setHighlighted(true);
+		setInputOrOutput();
 		
 		if (canCopy())
 			copySelectedComponentToPanel(selectedPanel, e.getPoint());
@@ -217,5 +224,10 @@ public class SelectComponentActionListener extends MouseAdapter {
 	public boolean canCopyStruct()
 	{
 		return copyStruct;
+	}
+	
+	public void setInputOrOutput()
+	{
+		rulePanel.setCurrentXMLPanel(mode);
 	}
 }

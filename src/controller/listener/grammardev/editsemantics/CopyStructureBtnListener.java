@@ -21,17 +21,6 @@ public class CopyStructureBtnListener implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		//ComponentPanel selectedPanel = grammarDevController.getCurrSelectedComponentPanel();
-		//if(selectedPanel != null)
-		//{
-			grammarDevController.activateCopyStruct();
-			System.out.println("what am i doing");
-		//}
-		//else{
-			//JOptionPane.showMessageDialog(null,
-				//    "No panel selected",
-				  //  "No panel selected",
-				    //JOptionPane.ERROR_MESSAGE);
-		//}
+			grammarDevController.copyInputToOutput();
 	}
 }
