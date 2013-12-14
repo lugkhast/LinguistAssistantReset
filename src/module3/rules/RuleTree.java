@@ -2,6 +2,8 @@ package module3.rules;
 
 import java.util.ArrayList;
 
+import org.jdom2.Element;
+
 public class RuleTree {
 	
 	private String setName, comments;
@@ -63,5 +65,15 @@ public class RuleTree {
 	public String getComment()
 	{
 		return comments;
+	}
+	
+	public Element generateXMLElement() {
+		Element xmlElement = new Element("ruleset");
+		xmlElement.setAttribute("name", setName);
+		xmlElement.setAttribute("comments", comments);
+		
+		for (Rule r : ruleList)
+			xmlElement.addContent(r.generateXMLElement());
+		return xmlElement;
 	}
 }

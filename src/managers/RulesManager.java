@@ -62,8 +62,10 @@ public class RulesManager {
 			System.out.println("Component " + i + ":");
 			for (RuleTree rt : rts) {
 				for (Rule r : rt.getChildren()) {
-					if (r.apply(comp.get(i)))
-						System.out.println("Rule name - " + r.getName());
+					System.out.println("Processing Rule " + r.getName());
+					if (r.apply(comp.get(i))) {
+						System.out.println("Rule name - " + r.unify(comp.get(i), r.getInput()));
+					}
 				}
 			}
 			XMLManager.getInstance().writeToXML("inputxml/testfiles/Component" + i + "_generated.xml", comp.get(i).generateXMLElement());

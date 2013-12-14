@@ -1,11 +1,11 @@
-<ruleset name = "Tagalog Rules: Rule 1">
+<ruleset name = "Tagalog Rules: Rule 4">
 	<comments> Rule 4, FOCUS ON AGREEMENTS :> </comments>
 	<rule name="NP-Actor + VP = V-AF">
 		<input>
 			<component name="Cl">
 				<component name="NP">
 					<features>
-						<feature name="Type" value="Focus" />
+						<feature name="Focus Type" value="Focus" />
 						<feature name="Complement Type" value="Actor" />
 					</features>
 				</component>
@@ -28,7 +28,7 @@
 			<component name="Cl">
 				<component name="NP">
 					<features>
-						<feature name="Type" value="Focus" />
+						<feature name="Focus Type" value="Focus" />
 						<feature name="Complement Type" value="Object" />
 					</features>
 				</component>
@@ -51,7 +51,7 @@
 			<component name="Cl">
 				<component name="NP">
 					<features>
-						<feature name="Type" value="Focus" />
+						<feature name="Focus Type" value="Focus" />
 						<feature name="Complement Type" value="Directional" />
 					</features>
 				</component>

@@ -23,9 +23,46 @@ public class OutputActionReader {
 			return;
 		}
 		if (action.equals("deleteFeature")) {
+			deleteFeatureAction(c, a.args);
+			return;
+		}
+		if (action.equals("addConstit")) {
+			addConstituentAction(c, a.args);
+			return;
+		}
+		if (action.equals("moveConstit")) {
+			//moveConstituentAction(c, a.args);
+			return;
+		}
+		if (action.equals("deleteConstit")) {
+			//deleteConstituentAction(c, a.args);
+			return;
+		}
+		if (action.equals("copyConstit")) {
+			return;
+		}
+		if (action.equals("orderSubConst")) {
+			return;
+		}
+		if (action.equals("addLexicon")) {
+			return;
+		}
+		if (action.equals("changeLexicon")) {
+			return;
+		}
+		if (action.equals("deleteLexicon")) {
+			return;
+		}
+		if (action.equals("selectForm")) {
 			return;
 		}
  		
+	}
+	
+	private static void addConstituentAction(Component c, List<Element> args) {
+		
+		
+		return;
 	}
 	
 	private static void addFeatureAction(Component c, List<Element> args) {
@@ -37,10 +74,16 @@ public class OutputActionReader {
 	}
 
 	private static void editFeatureAction(Component c, List<Element> args) {
-		String featureName = args.get(0).getAttributeValue("name");
-		String featureValue = args.get(0).getAttributeValue("value");
+		String featureName = args.get(0).getChild("feature").getAttributeValue("name");
+		String featureValue = args.get(0).getChild("feature").getAttributeValue("value");
 		
 		Feature f = new Feature(featureName, featureValue, FeatureManager.isFeatureStandard(c.getName(), featureName));
 		c.setFeature(f);
+	}
+	
+	private static void deleteFeatureAction(Component c, List<Element> args) {
+		String featureName = args.get(0).getAttributeValue("name");
+		
+		c.getFeatureList().removeFeature(featureName);
 	}
 }
