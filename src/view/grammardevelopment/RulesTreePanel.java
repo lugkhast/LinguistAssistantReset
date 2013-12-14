@@ -48,7 +48,7 @@ public class RulesTreePanel extends JPanel{
 	{
 		ruleTrees = new ArrayList<RuleTree>();
 		loadRules();
-		
+
 		scrollPane = new JScrollPane();
 			
 		JPanel buttonPanel = new JPanel();
