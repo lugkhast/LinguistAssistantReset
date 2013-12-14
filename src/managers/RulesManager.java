@@ -20,6 +20,8 @@ public class RulesManager {
 	public static RuleTree initializeRules(File xmlFile){
 		SAXBuilder builder = new SAXBuilder();
 		
+		System.out.print("XML NAME: " + xmlFile.getName());
+		
 		String rulesetName = "";
 		
 		try{
