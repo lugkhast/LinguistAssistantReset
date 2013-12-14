@@ -144,11 +144,6 @@ public class Rule {
 				}
 			}
 		}
-		
-<<<<<<< HEAD
-	}
-=======
 		return true;
 	}
->>>>>>> origin/dook
 }

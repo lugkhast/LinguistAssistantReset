@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -33,7 +34,8 @@ import view.rules.RuleNode;
 
 public class RulesTreePanel extends JPanel{
 	JTree tree;
-	RuleTree ruleTree;
+	ArrayList <RuleTree> ruleTrees;
+	RuleTree selectedRuleTree;
 	JButton addFolder;
 	JButton addRule;
 	JButton delete;
@@ -44,7 +46,8 @@ public class RulesTreePanel extends JPanel{
 	//supposed to take the parameters rules set and add to tree
 	public RulesTreePanel()
 	{
-		ruleTree = RulesManager.initializeRules(new File("InputXML/Rules/Rulesets.xml"));
+		loadRules();
+		
 		scrollPane = new JScrollPane();
 			
 		JPanel buttonPanel = new JPanel();
@@ -68,32 +71,53 @@ public class RulesTreePanel extends JPanel{
 		setBorder(new TitledBorder("Rules"));
 	}
 	
+	public void loadRules()
+	{
+		ruleTrees = new ArrayList<RuleTree>();
+		
+		File folder = new File("InputXML/Rules");
+		File[] listOfFiles = folder.listFiles();
+
+		for (File file : listOfFiles) {
+			RuleTree ruleTree = RulesManager.initializeRules(file);
+			ruleTrees.add(ruleTree);
+		}
+	}
+	
 	public void setPanelSize()
 	{
 		scrollPane.getViewport().setPreferredSize(new Dimension(500,180));
 	}
 	
-	public void setRuleTree(RuleTree rTree)
-	{
-		ruleTree = rTree;
-	}
+//	public void setRuleTree(RuleTree rTree)
+//	{
+//		ruleTree = rTree;
+//	}
 
 	public void initializeTree()
 	{
 		
-		RuleNode setNode = new RuleNode(ruleTree);
-		setNode.setParent(topNode);
-		//add nodes
-		for (int i = 0; i<ruleTree.getChildren().size(); i++)
-		{
-			RuleNode ruleNode = new RuleNode(ruleTree.getChildren().get(i));
-
-			setNode.add(ruleNode);
-			System.out.println(ruleNode.getRule().getName());
-		}
+		ArrayList<RuleNode> setNodes = new ArrayList<RuleNode>();
 		
+		for (RuleTree ruleTree : ruleTrees)
+		{
+			RuleNode setNode = new RuleNode(ruleTree);
+			setNode.setParent(topNode);
+			//add nodes
+			for (int i = 0; i<ruleTree.getChildren().size(); i++)
+			{
+				RuleNode ruleNode = new RuleNode(ruleTree.getChildren().get(i));
+	
+				setNode.add(ruleNode);
+				System.out.println(ruleNode.getRule().getName());
+			}
+			
+			setNodes.add(setNode);
+		}
+
 		topNode = new DefaultMutableTreeNode("Rules");
-		topNode.add(setNode);
+		for (RuleNode setNode : setNodes)
+			topNode.add(setNode);
 		tree = new JTree(topNode);
 		tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 		tree.addMouseListener(new TreeListener());
@@ -226,7 +250,7 @@ public class RulesTreePanel extends JPanel{
 					//delete internally
 					if (selectedNode.isRule())
 					{
-						ruleTree.removeChild(selectedNode.getRule());
+						selectedRuleTree.removeChild(selectedNode.getRule());
 					}
 					
 					selectedNode = null;
@@ -253,7 +277,9 @@ public class RulesTreePanel extends JPanel{
 			try
 			{
 				selectedNode = (RuleNode) tree.getLastSelectedPathComponent();
-					
+				RuleNode parent = (RuleNode) selectedNode.getParent();
+				selectedRuleTree = parent.getTree();
+				
 				/* if nothing is selected */ 
 				 if (selectedNode == null)
 					 return;
@@ -266,7 +292,7 @@ public class RulesTreePanel extends JPanel{
 				 {
 					 if (selectedNode!=null && selectedNode.isRule()) 
 					 {
-						 RuleFrame ruleFrame = new RuleFrame(selectedNode.getRule(), ruleTree.getComment());
+						 RuleFrame ruleFrame = new RuleFrame(selectedNode.getRule(), selectedRuleTree.getComment());
 					 }
 				 }
 			}catch(Exception ex){
