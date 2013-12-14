@@ -70,8 +70,17 @@ public class Rule {
 		Element xmlElement = new Element("rule");
 		xmlElement.setAttribute("name", name);
 		
+		Element inputElement = new Element("input");
+		input.addAdditionalXMLContent(inputElement);
 		
-		input.addAdditionalXMLContent(xmlElement);
+		Element outputElement = new Element("output");
+		for (OutputAction o : outputActions.getChildren())
+			outputElement.addContent(o.generateXML());
+		
+		xmlElement.addContent(inputElement);
+		xmlElement.addContent(outputElement);
+		
+		
 		return xmlElement;
 	}
 
