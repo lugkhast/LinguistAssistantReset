@@ -1,0 +1,81 @@
+<ruleset name = "Tagalog Rules: Rule 5">
+	<comments> Rule 5, ADDING FLOWERS :3 </comments>
+	<rule name="Focus = Add 'ang'">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+					</features>
+					<component name="N" />
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addConstit" parentTag="$1" />
+			<argument>
+				<component name="Marker" translation="ang" />
+			</argument>
+		</output>
+	</rule>
+	
+	<rule name="Nonfocus, Actor = 'ng'">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Focus Type" value="undefined" />
+						<feature name="Complement Type" value="Actor" />
+					</features>
+					<component name="N" />
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addConstit" parentTag="$1" />
+			<argument>
+				<component name="Marker" translation="ng" />
+			</argument>
+		</output>
+	</rule>
+
+	<rule name="Nonfocus, Object = 'ng'">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Focus Type" value="undefined" />
+						<feature name="Complement Type" value="Object" />
+					</features>
+					<component name="N" />
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addConstit" parentTag="$1" />
+			<argument>
+				<component name="Marker" translation="ng" />
+			</argument>
+		</output>
+	</rule>
+
+	<rule name="Nonfocus, Directional = 'sa'">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Focus Type" value="undefined" />
+						<feature name="Complement Type" value="Directional" />
+					</features>
+					<component name="N" />
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addConstit" parentTag="$1" />
+			<argument>
+				<component name="Marker" translation="sa" />
+			</argument>
+		</output>
+	</rule>
+</ruleset>

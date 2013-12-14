@@ -2,7 +2,6 @@
 <component name = "Cl">
 	<featuregroup type = "standard">
 		<feature name = "Type">
-			<value>N/A</value>
 			<value>Independent</value>
 			<value>Coordinate Independent</value>
 			<value>Restrictive Thing Modifier</value>
@@ -14,7 +13,6 @@
 			<value>Closing Quotation Frame</value>
 		</feature>
 		<feature name = "Illocutionary Force">
-			<value>N/A</value>
 			<value>Declarative</value>
 			<value>Imperative</value>
 			<value>Content Interrogative</value>
@@ -23,7 +21,6 @@
 			<value>Let Imperative</value>
 		</feature>
 		<feature name = "Topic NP">
-			<value>N/A</value>
 			<value>Most Agent-like</value>
 			<value>Most Patient-like</value>
 		</feature>
@@ -130,7 +127,6 @@
 			<value>Elder</value>
 		</feature>
 		<feature name = "Speaker-Listener Age">
-			<value>N/A</value>
 			<value>Older Different Generation</value>
 			<value>Older Same Generation</value>
 			<value>Same</value>
@@ -141,7 +137,6 @@
 			<value>N/A</value>
 		</feature>
 		<feature name = "Discourse Genre">
-			<value>N/A</value>
 			<value>Climactic Narrative Story</value>
 			<value>Episodic Narrative Story</value>
 			<value>Narrative Prophecy</value>
@@ -209,7 +204,6 @@
 			<value>Coordinate Head</value>
 		</feature>
 		<feature name = "Semantic Role">
-			<value>N/A</value>
 			<value>Agent</value>
 			<value>Patient</value>
 			<value>State</value>
@@ -230,13 +224,21 @@
 			<value>N/A</value>
 		</feature>
 		<feature name = "Relativized">
-			<value>N/A</value>
 			<value>No</value>
 			<value>Yes</value>
 		</feature>
-		
 	</featuregroup>
 	<featuregroup type = "user">
+		<feature name = "Complement type">
+			<value>Undefined</value>
+			<value>Actor</value>
+			<value>Object</value>
+			<value>Directional</value>
+		</feature>
+		<feature name = "Type">
+			<value>Undefined</value>
+			<value>Focus</value> 
+		</feature>
 	</featuregroup>
 </component>
 <component name = "VP">
@@ -261,7 +263,6 @@
 			<value>Coordinate</value>
 		</feature>
 		<feature name = "Usage">
-			<value>N/A</value>
 			<value>Attributive</value>
 			<value>Predicative</value>
 		</feature>
@@ -284,7 +285,6 @@
 <component name = "N">
 	<featuregroup type = "standard">
 		<feature name = "Number">
-			<value>N/A</value>
 			<value>Singular</value>
 			<value>Dual</value>
 			<value>Trial</value>
@@ -293,7 +293,6 @@
 			<value>Plural</value>
 		</feature>
 		<feature name = "Participant Tracking">	
-			<value>N/A</value>
 			<value>First Mention</value>
 			<value>Routine</value>
 			<value>Integration</value>
@@ -305,7 +304,6 @@
 			<value>Frame Inferable</value>
 		</feature>
 		<feature name = "Polarity">
-			<value>N/A</value>
 			<value>Affirmative</value>
 			<value>Negative</value>
 		</feature>
@@ -325,7 +323,6 @@
 			<value>Unspecified</value>
 		</feature>
 		<feature name = "Person">
-			<value>N/A</value>
 			<value>First</value>
 			<value>Second</value>
 			<value>Third</value>
@@ -358,7 +355,6 @@
 <component name = "V">
 	<featuregroup type = "standard">
 		<feature name = "Time">
-			<value>N/A</value>
 			<value>Present</value>
 			<value>Immediate Past</value>
 			<value>Earlier Today</value>
@@ -381,11 +377,10 @@
 			<value>Week from Now</value>
 			<value>Month from Now</value>
 			<value>Year from Now</value>
-			<value>Unknown Future</value>
+			<value>Unkown Future</value>
 			<value>Timeless</value>
 		</feature>
 		<feature name = "Aspect">
-			<value>N/A</value>
 			<value>Unmarked</value>
 			<value>Habitual</value>
 			<value>Completive</value>
@@ -396,7 +391,6 @@
 			<value>Imperfect</value>
 		</feature>
 		<feature name = "Mood">
-			<value>N/A</value>
 			<value>Indicative</value>
 			<value>Definite Potenital</value>
 			<value>Probable Potential</value>
@@ -415,7 +409,6 @@
 			<value>Reflexive</value>
 		</feature>
 		<feature name = "Polarity">
-			<value>N/A</value>
 			<value>Affirmative</value>
 			<value>Negative</value>
 			<value>Emphatic Affirmative</value>
