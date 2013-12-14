@@ -46,6 +46,7 @@ public class RulesTreePanel extends JPanel{
 	//supposed to take the parameters rules set and add to tree
 	public RulesTreePanel()
 	{
+		ruleTrees = new ArrayList<RuleTree>();
 		loadRules();
 		
 		scrollPane = new JScrollPane();
@@ -63,7 +64,6 @@ public class RulesTreePanel extends JPanel{
 		add(buttonPanel);
 	    addButtonListeners();
 	    
-	    ruleTrees = new ArrayList<RuleTree>();
 		initializeTree();
 		
 		scrollPane.setViewportView(tree);
@@ -74,15 +74,16 @@ public class RulesTreePanel extends JPanel{
 	
 	public void loadRules()
 	{
-		ruleTrees = new ArrayList<RuleTree>();
 		
 		File folder = new File("InputXML/Rules");
 		File[] listOfFiles = folder.listFiles();
-
+		
 		for (File file : listOfFiles) {
 			RuleTree ruleTree = RulesManager.initializeRules(file);
+			System.out.println(ruleTree.getName() + "-rt name");
 			ruleTrees.add(ruleTree);
 		}
+		
 	}
 	
 	public void setPanelSize()
@@ -99,7 +100,6 @@ public class RulesTreePanel extends JPanel{
 	{
 		
 		ArrayList<RuleNode> setNodes = new ArrayList<RuleNode>();
-		
 		for (RuleTree ruleTree : ruleTrees)
 		{
 			RuleNode setNode = new RuleNode(ruleTree);

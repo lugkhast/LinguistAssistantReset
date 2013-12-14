@@ -26,7 +26,7 @@ public class RulesManager {
 			Document document = (Document) builder.build(xmlFile);
 			Element verseNode = document.getRootElement();
 			
-			//get name and category
+			//get name
 			rulesetName = verseNode.getAttributeValue("name");
 			
 			//comments

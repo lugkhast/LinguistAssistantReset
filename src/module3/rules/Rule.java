@@ -19,6 +19,7 @@ public class Rule {
 	
 	private Rule(Element e) {
 		this.name = e.getAttributeValue("name");
+		System.out.println(name + " - name");
 		
 		this.input = (PhraseMatcher)Component.createMatcher(e.getChild("input").getChild("component"));
 		
