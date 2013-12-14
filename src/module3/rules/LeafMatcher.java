@@ -35,9 +35,13 @@ public class LeafMatcher extends Leaf {
 	}
 	
 	public void addAdditionalXMLContent(Element e) { 
-		e.setAttribute(ATTRIBUTE_CONCEPT, concept);
-		e.setAttribute(ATTRIBUTE_LEXICAL_SENSE, lexicalSense);
-		e.setAttribute("matcher", tag);
+		if (concept != null)
+			e.setAttribute(ATTRIBUTE_CONCEPT, concept);
+		if (lexicalSense != null)
+			e.setAttribute(ATTRIBUTE_LEXICAL_SENSE, lexicalSense);
+		if (tag != null)
+			e.setAttribute("matcher", tag);
+		
 		Lexicon lexicon = getFirstMappedLexicon();
 		if(lexicon!= null && !lexicon.getName().isEmpty())
 			e.setAttribute(ATTRIBUTE_LEXICON, lexicon.getName());
