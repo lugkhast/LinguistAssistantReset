@@ -17,8 +17,6 @@ public class RuleTree {
 	public RuleTree(String fileName, String name, String c, ArrayList<Rule> list){
 		this.path = "InputXML/Rules/" + fileName;
 		
-		System.out.print("XML NAME "+fileName);
-		
 		this.setName = name;
 		this.comments = c;
 		this.ruleList = list;

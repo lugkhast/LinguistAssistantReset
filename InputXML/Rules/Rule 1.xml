@@ -1,78 +1,31 @@
-<ruleset name = "Tagalog Rules: Rule 1">
-	<comments> Rule 1, HOKUS POKUS O: </comments>
-	<rule name="NP-Agent = Pokus ng Aktor">
-		<input>
-			<component name="Cl">
-				<component name="NP" matcher="$1">
-					<features>
-						<feature name="Semantic Role" value="Agent" />
-					</features>
-				</component>
-			</component>
-		</input>
-		<output>
-			<action name="addFeature" parentTag="$1">
-				<argument>
-					<feature name="Complement Type" value="Actor" />
-				</argument>
-			</action>
-		</output>
-	</rule>
-	
-	<rule name="NP-Patient = Pokus ng Tagatanggap">
-		<input>
-			<component name="Cl">
-				<component name="NP" matcher="$1">
-					<features>
-						<feature name="Semantic Role" value="Patient" />
-					</features>
-				</component>
-			</component>
-		</input>
-		<output>
-			<action name="addFeature" parentTag="$1">
-				<argument>
-					<feature name="Complement Type" value="Object" />
-				</argument>
-			</action>
-		</output>
-	</rule>
-
-	<rule name="NP-Destination = Pokus na Direksyunal">
-		<input>
-			<component name="Cl">
-				<component name="NP" matcher="$1">
-					<features>
-						<feature name="Semantic Role" value="Destination" />
-					</features>
-				</component>
-			</component>
-		</input>
-		<output>
-			<action name="addFeature" parentTag="$1">
-				<argument>
-					<feature name="Complement Type" value="Destination" />
-				</argument>
-			</action>
-		</output>
-	</rule>
-
-	<rule name="NP-Beneficiary = Pokus na Direksyunal">
-		<input>
-			<component name="Cl">
-				<component name="NP" matcher="$1">
-					<features>
-						<feature name="Semantic Role" value="Beneficiary" />
-					</features>
-				</component>
-			</component>
-		</input>
-		<output>
-			<action name="addFeature" parentTag="$1">
-				<argument>
-					<feature name="Complement Type" value="Destination" />
-				</argument>
-			</action>
-		</output>
-	</rule>
+<ruleset name="Tagalog Rules: Rule 1" comments="Rule 1, HOKUS POKUS O:">
+  <rule name="NP-Agent = Pokus ng Aktor">
+    <component name="NP" matcher="$1">
+      <features>
+        <feature name="Semantic Role" value="Agent" />
+      </features>
+    </component>
+  </rule>
+  <rule name="NP-Patient = Pokus ng Tagatanggap">
+    <component name="NP" matcher="$1">
+      <features>
+        <feature name="Semantic Role" value="Patient" />
+      </features>
+    </component>
+  </rule>
+  <rule name="NP-Destination = Pokus na Direksyunal">
+    <component name="NP" matcher="$1">
+      <features>
+        <feature name="Semantic Role" value="Destination" />
+      </features>
+    </component>
+  </rule>
+  <rule name="NP-Beneficiary = Pokus na Direksyunal">
+    <component name="NP" matcher="$1">
+      <features>
+        <feature name="Semantic Role" value="Beneficiary" />
+      </features>
+    </component>
+  </rule>
+  <rule name="BLAHH" matcher="" />
 </ruleset>
