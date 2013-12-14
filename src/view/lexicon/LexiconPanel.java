@@ -228,7 +228,6 @@ public class LexiconPanel extends JPanel{
 							columns.add("Glosses");
 							
 							for(String form : lexList.getPossibleForms()){
-								System.out.print("\n\nBLAAAAAAHHH\n\n");
 								columns.add(form);
 							}
 							 model.setColumnIdentifiers(columns.toArray()); 

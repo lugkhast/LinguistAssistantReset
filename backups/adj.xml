@@ -15,6 +15,7 @@
   </features>
   <forms>
     <form>Superlative</form>
+    <form>OF Imperfective</form>
   </forms>
   <stems>
     <stem name="malaki" gloss="big">
@@ -25,6 +26,7 @@
       </features>
       <forms>
         <form name="Superlative" value="pinakamalaki" />
+        <form name="OF Imperfective" value="malaki" />
       </forms>
     </stem>
     <stem name="mapula" gloss="sore">
@@ -36,6 +38,7 @@
       </features>
       <forms>
         <form name="Superlative" value="pinakamapula" />
+        <form name="OF Imperfective" value="mapula" />
       </forms>
       <mappings>
         <mapping concept="sore" sense="A" pos="adj" />
@@ -46,6 +49,7 @@
       <sentence />
       <forms>
         <form name="Superlative" value="pinakamasaya" />
+        <form name="OF Imperfective" value="masaya" />
       </forms>
       <mappings>
         <mapping concept="happy" sense="A" pos="adj" />
