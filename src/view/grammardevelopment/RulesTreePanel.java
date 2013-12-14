@@ -62,7 +62,8 @@ public class RulesTreePanel extends JPanel{
 		add(scrollPane);
 		add(buttonPanel);
 	    addButtonListeners();
-
+	    
+	    ruleTrees = new ArrayList<RuleTree>();
 		initializeTree();
 		
 		scrollPane.setViewportView(tree);
