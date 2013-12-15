@@ -88,7 +88,7 @@ public class RulesTreePanel extends JPanel{
 	
 	public void setPanelSize()
 	{
-		scrollPane.getViewport().setPreferredSize(new Dimension(500,180));
+		scrollPane.getViewport().setPreferredSize(new Dimension(530,150));
 	}
 	
 //	public void setRuleTree(RuleTree rTree)

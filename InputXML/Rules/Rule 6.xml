@@ -1,0 +1,200 @@
+<ruleset name = "Tagalog Rules: Rule 6">
+	<comments> Rule 6, NOT THE FINAL FORM (= A =) </comments>
+	<rule name="Verb Form = AF, Imperfective">
+		<input>
+			<component name="Cl">
+				<component name="VP" matcher="$1">
+					<component name="V">
+						<features>
+							<feature name="Focus" value="AF" />
+							<feature name="Surface Aspect" value="Imperfective" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="selectForm" parentTag="$1" />
+			<argument>
+				<feature name="Focus" value="AF" />
+				<feature name="Surface Aspect" value="Imperfective" />
+			</argument>
+		</output>
+	</rule>
+
+		<rule name="Verb Form = AF, Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP" matcher="$1">
+					<component name="V">
+						<features>
+							<feature name="Focus" value="AF" />
+							<feature name="Surface Aspect" value="Perfective" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="selectForm" parentTag="$1" />
+			<argument>
+				<feature name="Focus" value="AF" />
+				<feature name="Surface Aspect" value="Perfective" />
+			</argument>
+		</output>
+	</rule>
+
+	<rule name="Verb Form = AF, Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP" matcher="$1">
+					<component name="V">
+						<features>
+							<feature name="Focus" value="AF" />
+							<feature name="Surface Aspect" value="Contemplative" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="selectForm" parentTag="$1" />
+			<argument>
+				<feature name="Focus" value="AF" />
+				<feature name="Surface Aspect" value="Contemplative" />
+			</argument>
+		</output>
+	</rule>
+
+	<rule name="Verb Form = OF, Imperfective">
+		<input>
+			<component name="Cl">
+				<component name="VP" matcher="$1">
+					<component name="V">
+						<features>
+							<feature name="Focus" value="OF" />
+							<feature name="Surface Aspect" value="Imperfective" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="selectForm" parentTag="$1" />
+			<argument>
+				<feature name="Focus" value="OF" />
+				<feature name="Surface Aspect" value="Imperfective" />
+			</argument>
+		</output>
+	</rule>
+
+	<rule name="Verb Form = OF, Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP" matcher="$1">
+					<component name="V">
+						<features>
+							<feature name="Focus" value="OF" />
+							<feature name="Surface Aspect" value="Perfective" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="selectForm" parentTag="$1" />
+			<argument>
+				<feature name="Focus" value="OF" />
+				<feature name="Surface Aspect" value="Perfective" />
+			</argument>
+		</output>
+	</rule>
+
+	<rule name="Verb Form = OF, Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP" matcher="$1">
+					<component name="V">
+						<features>
+							<feature name="Focus" value="OF" />
+							<feature name="Surface Aspect" value="Contemplative" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="selectForm" parentTag="$1" />
+			<argument>
+				<feature name="Focus" value="OF" />
+				<feature name="Surface Aspect" value="Contemplative" />
+			</argument>
+		</output>
+	</rule>
+
+	<rule name="Verb Form = DF, Imperfective">
+		<input>
+			<component name="Cl">
+				<component name="VP" matcher="$1">
+					<component name="V">
+						<features>
+							<feature name="Focus" value="DF" />
+							<feature name="Surface Aspect" value="Imperfective" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="selectForm" parentTag="$1" />
+			<argument>
+				<feature name="Focus" value="DF" />
+				<feature name="Surface Aspect" value="Imperfective" />
+			</argument>
+		</output>
+	</rule>
+
+	<rule name="Verb Form = DF, Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP" matcher="$1">
+					<component name="V">
+						<features>
+							<feature name="Focus" value="DF" />
+							<feature name="Surface Aspect" value="Perfective" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="selectForm" parentTag="$1" />
+			<argument>
+				<feature name="Focus" value="DF" />
+				<feature name="Surface Aspect" value="Perfective" />
+			</argument>
+		</output>
+	</rule>
+
+	<rule name="Verb Form = DF, Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP" matcher="$1">
+					<component name="V">
+						<features>
+							<feature name="Focus" value="DF" />
+							<feature name="Surface Aspect" value="Contemplative" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="selectForm" parentTag="$1" />
+			<argument>
+				<feature name="Focus" value="DF" />
+				<feature name="Surface Aspect" value="Contemplative" />
+			</argument>
+		</output>
+	</rule>
+</ruleset>

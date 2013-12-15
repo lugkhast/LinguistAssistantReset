@@ -105,7 +105,7 @@ public class ViewSemanticsPanelToolBar extends JPanel{
 		
 		this.removeAll();
 		
-		if(mode == ViewSemanticsPanel.MODE_VIEW){
+		if(mode == ViewSemanticsPanel.MODE_VIEW || mode == ViewSemanticsPanel.MODE_GENERATE){
 			add(currFileSelected);
 			add(btnPrev);
 			add(btnNext);
@@ -117,8 +117,8 @@ public class ViewSemanticsPanelToolBar extends JPanel{
 			add(editDocInfoButton);
 			add(cancelEditButton);
 		}
-		else //if(mode == MODE_GENERATE){
-			this.setVisible(false);
+//		else if(mode == ViewSemanticsPanel.MODE_GENERATE)
+//			this.setVisible(true);
 		
 			
 		this.currMode = mode;

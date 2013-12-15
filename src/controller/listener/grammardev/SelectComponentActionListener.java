@@ -228,6 +228,7 @@ public class SelectComponentActionListener extends MouseAdapter {
 	
 	public void setInputOrOutput()
 	{
-		rulePanel.setCurrentXMLPanel(mode);
+		if (rulePanel != null)
+			rulePanel.setCurrentXMLPanel(mode);
 	}
 }
