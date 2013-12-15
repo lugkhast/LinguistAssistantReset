@@ -60,7 +60,8 @@ public class OutputActionReader {
 	}
 	
 	private static void addConstituentAction(Component c, List<Element> args) {
-		
+		Component child = Component.createMatcher(args.get(0).getChild("component"));
+		c.getChildren().addChild(child);
 		
 		return;
 	}
