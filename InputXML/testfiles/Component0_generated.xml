@@ -1,47 +1,31 @@
 <component name="Cl">
   <component name="VP">
-    <component name="V" concept="sleep" sense="A">
+    <component name="V" concept="walk" sense="A" lexicon="lakad">
       <features>
-        <feature name="Time" value="Earlier Today" />
+        <feature name="Time" value="Immediate Past" />
+        <feature name="Aspect" value="Imperfective" />
         <feature name="Surface Aspect" value="Perfective" />
-        <feature name="Focus" value="OF" />
+        <feature name="Focus" value="AF" />
       </features>
     </component>
   </component>
   <component name="NP">
     <features>
       <feature name="Complement Type" value="Actor" />
+      <feature name="Focus Type" value="Focus" />
     </features>
     <component name="Marker" />
-    <component name="Marker" />
-    <component name="N" concept="human" sense="A">
+    <component name="N" concept="girl" sense="A" lexicon="babae">
       <features>
         <feature name="Participant Tracking" value="Routine" />
-      </features>
-    </component>
-    <component name="N" concept="man" sense="A">
-      <features>
-        <feature name="Participant Tracking" value="Frame Inferable" />
       </features>
     </component>
   </component>
   <component name="NP">
     <features>
-      <feature name="Semantic Role" value="Patient" />
-      <feature name="Complement Type" value="Object" />
-      <feature name="Focus Type" value="Focus" />
+      <feature name="Semantic Role" value="Destination" />
+      <feature name="Complement Type" value="Destination" />
     </features>
-    <component name="Marker" />
-    <component name="Marker" />
-    <component name="N" concept="human" sense="A">
-      <features>
-        <feature name="Participant Tracking" value="Routine" />
-      </features>
-    </component>
-    <component name="N" concept="man" sense="A">
-      <features>
-        <feature name="Participant Tracking" value="Frame Inferable" />
-      </features>
-    </component>
+    <component name="N" concept="store" sense="A" lexicon="tindahan" />
   </component>
 </component>

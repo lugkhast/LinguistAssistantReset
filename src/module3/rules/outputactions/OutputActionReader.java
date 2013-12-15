@@ -110,8 +110,10 @@ public class OutputActionReader {
 			String firstTag = order[i];
 			for (UniMap p : u) {
 				if (firstTag.equals(p.getTag())) {
-					c.getChildren().removeChild(p.getVar());
-					c.getChildren().addChild(0, p.getVar());
+					if (c.getChildren().getChildren().contains(p.getVar())) {
+						c.getChildren().removeChild(p.getVar());
+						c.getChildren().addChild(0, p.getVar());
+					}
 				}
 			}
 		}

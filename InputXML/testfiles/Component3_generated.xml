@@ -1,10 +1,10 @@
 <component name="Cl">
   <component name="VP">
-    <component name="V" concept="walk" sense="A" lexicon="lakad">
+    <component name="V" concept="run" sense="A" lexicon="takbo">
       <features>
-        <feature name="Time" value="Immediate Past" />
+        <feature name="Time" value="Immediate Future" />
         <feature name="Aspect" value="Imperfective" />
-        <feature name="Surface Aspect" value="Perfective" />
+        <feature name="Surface Aspect" value="Contemplative" />
         <feature name="Focus" value="AF" />
       </features>
     </component>
@@ -20,12 +20,5 @@
         <feature name="Participant Tracking" value="Routine" />
       </features>
     </component>
-  </component>
-  <component name="NP">
-    <features>
-      <feature name="Semantic Role" value="Destination" />
-      <feature name="Complement Type" value="Destination" />
-    </features>
-    <component name="N" concept="store" sense="A" lexicon="tindahan" />
   </component>
 </component>

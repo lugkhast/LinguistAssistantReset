@@ -51,13 +51,13 @@ public class RulesManager {
 	
 	public static void main(String args[]) {
 		// get test components
-		InputXMLDocument doc = SemanticsManager.readSemanticsDocumentFromFile(new File("inputxml/testfiles/TestComponent.xml"));
+		InputXMLDocument doc = SemanticsManager.readSemanticsDocumentFromFile(new File("inputxml/books/mp demo/sample text.xml"));
 		ArrayList<Component> comp = doc.getClauses();
 		// get test rules
 		ArrayList<RuleTree> rts = new ArrayList<RuleTree>();
 		for (int i = 1; i <= 8; i++) {
 			rts.add(RulesManager.initializeRules(new File("inputxml/testfiles/Rule " + i + ".xml")));
-			System.out.println("File " + i + " successfully loaded");
+			System.out.println("Rule " + i + " successfully loaded");
 		}
 		
 		for (int i = 0; i < comp.size(); i++) {

@@ -1,11 +1,27 @@
 <component name="Cl">
   <component name="VP">
-    <component name="V" concept="sleep" sense="A">
+    <component name="V" concept="buy" sense="A" lexicon="bili">
       <features>
-        <feature name="Surface Aspect" value="Imperfective" />
+        <feature name="Time" value="Immediate Past" />
+        <feature name="Aspect" value="Imperfective" />
+        <feature name="Surface Aspect" value="Perfective" />
         <feature name="Focus" value="AF" />
       </features>
     </component>
+  </component>
+  <component name="NP">
+    <features>
+      <feature name="Semantic Role" value="Patient" />
+      <feature name="Complement Type" value="Object" />
+    </features>
+    <component name="Marker" />
+    <component name="Marker" />
+    <component name="N" concept="girl" sense="A" lexicon="babae">
+      <features>
+        <feature name="Participant Tracking" value="Routine" />
+      </features>
+    </component>
+    <component name="N" concept="dress" sense="A" lexicon="bestida" />
   </component>
   <component name="NP">
     <features>
@@ -13,10 +29,12 @@
       <feature name="Focus Type" value="Focus" />
     </features>
     <component name="Marker" />
-    <component name="N" concept="human" sense="A">
+    <component name="Marker" />
+    <component name="N" concept="girl" sense="A" lexicon="babae">
       <features>
         <feature name="Participant Tracking" value="Routine" />
       </features>
     </component>
+    <component name="N" concept="dress" sense="A" lexicon="bestida" />
   </component>
 </component>
