@@ -389,6 +389,15 @@
 			<value>Continuative</value>
 			<value>Gnomic</value>
 			<value>Imperfect</value>
+			<value>Contemplative</value>
+			<value>Imperfective</value>
+			<value>Perfective</value>
+			<value>Contemplative</value>
+			<value>Imperfective</value>
+			<value>Perfective</value>
+			<value>Contemplative</value>
+			<value>Imperfective</value>
+			<value>Perfective</value>
 		</feature>
 		<feature name = "Mood">
 			<value>Indicative</value>

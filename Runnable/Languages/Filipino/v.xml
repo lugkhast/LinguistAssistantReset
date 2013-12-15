@@ -2046,6 +2046,21 @@
         <form name="DF Perfective" value="shop" />
       </forms>
     </stem>
+    <stem name="sit" gloss="to sit">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="umupo" />
+        <form name="AF Imperfective" value="upo" />
+        <form name="AF Perfective" value="sit" />
+        <form name="OF Contemplative" value="sit" />
+        <form name="OF Imperfective" value="sit" />
+        <form name="OF Perfective" value="sit" />
+        <form name="DF Contemplative" value="sit" />
+        <form name="DF Imperfective" value="sit" />
+        <form name="DF Perfective" value="sit" />
+      </forms>
+    </stem>
     <stem name="stand" gloss="to stand">
       <comments />
       <sentence />
@@ -2230,7 +2245,7 @@
       <comments />
       <sentence />
       <forms>
-        <form name="AF Contemplative" value="upo" />
+        <form name="AF Contemplative" value="umuupo" />
         <form name="AF Imperfective" value="upo" />
         <form name="AF Perfective" value="upo" />
         <form name="OF Contemplative" value="upo" />

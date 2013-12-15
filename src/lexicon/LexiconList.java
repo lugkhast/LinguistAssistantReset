@@ -179,6 +179,14 @@ public class LexiconList {
 		return new ArrayList<String>();
 	}
 	
+	public Lexicon getALexicon(String lexicon){
+		for(Lexicon l: lexiconList){
+			if(lexicon.equals(l.getName()))
+				return l;
+		}
+		return null;
+	}
+	
 	//Checkers
 	public boolean doesLexiconExist(String lexicon){
 		for(Lexicon l: lexiconList)
