@@ -23,6 +23,11 @@
 			<features>
 				<feature name="Semantic Role" value="Agent" />
 			</features>
+			<component name="N" concept="man" sense="A">
+				  <features>
+						<feature name="Participant Tracking" value="Frame Inferable" />
+				  </features>
+			</component>
 		</component>
 	</component>
 	
