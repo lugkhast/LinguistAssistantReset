@@ -1,0 +1,66 @@
+<pos name="par">
+  <features />
+  <forms />
+  <stems>
+    <stem name="!" gloss="exclamation">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="&quot;" gloss="-QuoteBegin">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="1)" gloss="1) - sentence enumerator">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="10)" gloss="10)">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="11)" gloss="11)">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="2)" gloss="2)">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="3)" gloss="3)">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="asdasd" gloss="asdasd">
+      <comments>sample sentence</comments>
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="no" gloss="no">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="please" gloss="please">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="yes" gloss="yes">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="~" gloss="-QuoteEnd">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+  </stems>
+</pos>
