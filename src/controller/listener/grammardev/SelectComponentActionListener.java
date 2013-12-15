@@ -69,11 +69,10 @@ public class SelectComponentActionListener extends MouseAdapter {
 		
 		prevSelectedPanel = null;
 		prevSelectedPanel = selectedPanel;
-<<<<<<< HEAD
 		//prevSelectedPanel.getComponent().getForm();
-=======
+
 //		prevSelectedPanel.getComponent().getForm();
->>>>>>> sample xml in Books/MP Demo/Sample text.xml
+
 		if (loadPanel != null)
 			loadPanel.setComponent(selectedPanel.getComponent());
 		else
