@@ -65,10 +65,20 @@ public class OutputActionReader {
  		
 	}
 	
+	private static void moveConstituentAction(Component c, List<Element> args) {	
+		//indexTag and component
+		//what am i doing D:
+		String indexTag = args.get(0).getChild("argument").getAttributeValue("indexTag");
+		String moveTag = args.get(1).getChild("argument").getAttributeValue("moveTag");
+		
+		return;
+	}
+	
 	private static void addConstituentAction(Component c, List<Element> args) {
 		Component child = Component.createMatcher(args.get(0).getChild("component"));
 		c.getChildren().addChild(child);
 	}
+	
 	private static void selectFormAction(Component c, List<Element> args) {	
 		return;
 	}
@@ -94,10 +104,6 @@ public class OutputActionReader {
 	}
 	
 	private static void deleteConstituentAction(Component c, List<Element> args) {	
-		return;
-	}
-	
-	private static void moveConstituentAction(Component c, List<Element> args) {	
 		return;
 	}
 	
