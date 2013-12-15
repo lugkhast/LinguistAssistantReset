@@ -106,7 +106,6 @@ public class Rule {
 				return null;
 			if (!m.getValue().equals(p.getValue()))
 				return null;
-			System.out.println(p.getName() + " = " + p.getValue() + " - " + m.getValue());
 		}
 		
 		ArrayList<UniMap> results = new ArrayList<UniMap>();
@@ -152,7 +151,7 @@ public class Rule {
 		for (UniMap mapping : mapList) {
 			for (OutputAction action : outputActions.getChildren()) {
 				if (action.getTag().equals(mapping.getTag())) {
-					OutputActionReader.DoOutputAction(mapping.getVar(), action);
+					OutputActionReader.DoOutputAction(mapping.getVar(), action, mapList);
 				}
 			}
 		}

@@ -3,12 +3,8 @@ package components;
 import java.util.ArrayList;
 import java.util.List;
 
-import lexicon.Form;
-import lexicon.Lexicon;
-import lexicon.LexiconList;
 import managers.ComponentManager;
 import managers.FeatureManager;
-import managers.LexiconManager;
 import managers.SemanticsManager;
 
 import org.jdom2.Element;
@@ -18,7 +14,6 @@ import features.FeatureList;
 
 import module3.rules.LeafMatcher;
 import module3.rules.PhraseMatcher;
-import module3.rules.Rule;
 
 public abstract class Component implements Cloneable {
 	
@@ -179,37 +174,5 @@ public abstract class Component implements Cloneable {
 
 	public FeatureList getFeatureList() {
 		return featureList;
-	}
-	
-	//for verbs onleh
-	public String getForm()
-	{
-		String word = "";
-		
-		if (featureList.getFeature("Aspect")!=null)
-		{	
-			Feature aspect = featureList.getFeature("Aspect"); 
-			Feature focus = featureList.getFeature("Focus");
-			
-			String formName = focus.getValue() + " " + aspect.getValue();
-			
-			Leaf comp = (Leaf) this;
-			String stem = comp.getConcept();
-			System.out.print("name: "+ formName + " stem:" +  stem);
-			
-			Lexicon lexicon = null;
-			for (LexiconList list : LexiconManager.getInstance().getLanguageLexicon())
-				lexicon = list.getALexicon(stem);	//get the lexicon that contains the stem word
-			if (lexicon !=null)
-			{
-				//get the value of the form with the given formName
-				// if given the right features, this should work
-				word = lexicon.getFormList().getForm(formName).getValue();
-			}
-			return word;
-		}
-		
-		return null;
-	}
-	
+	}	
 }

@@ -3,33 +3,30 @@
     <features>
       <feature name="Semantic Role" value="Patient" />
       <feature name="Complement Type" value="Object" />
-      <feature name="Focus Type" value="Focus" />
     </features>
     <component name="N" concept="human" sense="A">
       <features>
         <feature name="Participant Tracking" value="Routine" />
       </features>
     </component>
-    <component name="Marker" />
   </component>
   <component name="VP">
     <component name="V" concept="sleep" sense="A">
       <features>
         <feature name="Time" value="Earlier Today" />
         <feature name="Surface Aspect" value="Perfective" />
-        <feature name="Focus" value="OF" />
       </features>
     </component>
   </component>
   <component name="NP">
     <features>
       <feature name="Complement Type" value="Actor" />
+      <feature name="Focus Type" value="Focus" />
     </features>
     <component name="N" concept="man" sense="A">
       <features>
         <feature name="Participant Tracking" value="Frame Inferable" />
       </features>
     </component>
-    <component name="Marker" />
   </component>
 </component>

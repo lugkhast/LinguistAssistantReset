@@ -3,7 +3,6 @@
     <features>
       <feature name="Semantic Role" value="Patient" />
       <feature name="Complement Type" value="Object" />
-      <feature name="Focus Type" value="Focus" />
     </features>
     <component name="N" concept="human" sense="A">
       <features>
@@ -15,12 +14,14 @@
     <component name="V" concept="sleep" sense="A">
       <features>
         <feature name="Time" value="Earlier Today" />
+        <feature name="Surface Aspect" value="Perfective" />
       </features>
     </component>
   </component>
   <component name="NP">
     <features>
       <feature name="Complement Type" value="Actor" />
+      <feature name="Focus Type" value="Focus" />
     </features>
     <component name="N" concept="man" sense="A">
       <features>

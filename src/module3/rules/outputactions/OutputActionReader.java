@@ -1,8 +1,10 @@
 package module3.rules.outputactions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import managers.FeatureManager;
+import module3.rules.UniMap;
 
 import org.jdom2.Element;
 
@@ -12,7 +14,7 @@ import features.Feature;
 
 public class OutputActionReader {
 	
-	public static Component DoOutputAction(Component c, OutputAction a) {
+	public static Component DoOutputAction(Component c, OutputAction a, ArrayList<UniMap> u) {
 		String action = a.type;
 		
 		// i kind of love the switch format <33
@@ -45,7 +47,7 @@ public class OutputActionReader {
 			return c;
 		}
 		if (action.equals("orderSubConst")) {
-			orderSubConstituentAction(c, a.args);
+			orderSubConstituentAction(c, a.args, u);
 			return c;
 		}
 		if (action.equals("addLexicon")) {
@@ -69,6 +71,9 @@ public class OutputActionReader {
 	}
 	
 	private static void selectFormAction(Component c, List<Element> args) {	
+		Leaf l = (Leaf)(c);
+		
+		//l.setConcept();
 		return;
 	}
 	
@@ -96,10 +101,18 @@ public class OutputActionReader {
 			leaf.setConcept(lexicon);
 	}
 	
-	private static void orderSubConstituentAction(Component c, List<Element> args) {	
-		String order = args.get(0).getChild("argument").getAttributeValue("order");
-		//return new order or rearranged component
-		return;
+	private static void orderSubConstituentAction(Component c, List<Element> args, ArrayList<UniMap> u) {	
+		String[] order = args.get(0).getChild("argument").getAttributeValue("order").split(" ");
+		
+		for (int i = order.length-1; i >= 0; i--) {
+			String firstTag = order[i];
+			for (UniMap p : u) {
+				if (firstTag.equals(p.getTag())) {
+					c.getChildren().removeChild(p.getVar());
+					c.getChildren().addChild(0, p.getVar());
+				}
+			}
+		}
 	}
 	
 	private static void copyConstituentAction(Component c, List<Element> args) {	
@@ -126,14 +139,6 @@ public class OutputActionReader {
 	}
 	
 	private static void addFeatureAction(Component c, List<Element> args) {
-		String featureName = args.get(0).getChild("feature").getAttributeValue("name");
-		String featureValue = args.get(0).getChild("feature").getAttributeValue("value");
-		
-		Feature f = new Feature(featureName, featureValue, FeatureManager.isFeatureStandard(c.getName(), featureName));
-		c.setFeature(f);
-	}
-
-	private static void editFeatureAction(Component c, List<Element> args) {
 		String featureName = args.get(0).getChild("feature").getAttributeValue("name");
 		String featureValue = args.get(0).getChild("feature").getAttributeValue("value");
 		
