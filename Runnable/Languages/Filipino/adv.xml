@@ -1,1 +1,21 @@
-<pos name="adv" />
+<pos name="adv">
+  <features />
+  <forms />
+  <stems>
+    <stem name="first" gloss="first">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="how" gloss="how">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="immediately" gloss="immediately">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+  </stems>
+</pos>
