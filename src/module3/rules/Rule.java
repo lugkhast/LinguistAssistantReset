@@ -56,6 +56,11 @@ public class Rule {
 		return input;
 	}
 	
+	public OutputList getOutputActions()
+	{
+		return outputActions;
+	}
+	
 	public String toString() {
 		String m = "Rule:\n";
 		
