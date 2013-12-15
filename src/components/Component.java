@@ -3,8 +3,12 @@ package components;
 import java.util.ArrayList;
 import java.util.List;
 
+import lexicon.Form;
+import lexicon.Lexicon;
+import lexicon.LexiconList;
 import managers.ComponentManager;
 import managers.FeatureManager;
+import managers.LexiconManager;
 import managers.SemanticsManager;
 
 import org.jdom2.Element;
@@ -29,8 +33,7 @@ public abstract class Component implements Cloneable {
 		
 		//Set the features defined in the XML
 		this.name = componentElement.getAttributeValue(ATTRIBUTE_NAME);
-		//this.featureList = new FeatureList(FeatureManager.getDefaultFeatures(name));
-		this.featureList = new FeatureList(null); // match all unspecified features
+		this.featureList = new FeatureList(FeatureManager.getDefaultFeatures(name));
 		
 		//get info (may be null for now as input xml may contain user defined phrases)
 		info = ComponentManager.getInstance().getComponentInfo(name);
@@ -39,7 +42,8 @@ public abstract class Component implements Cloneable {
 		ArrayList<Feature> specifiedFeatures = SemanticsManager.getSpecifiedFeatures(componentElement);
 		for(Feature feature: specifiedFeatures) 
 			//setFeature(feature);
-			this.featureList.getFeatureList().add(feature);
+			setFeature(feature);
+		
 	}
 		
 	protected Component(String componentName){
@@ -177,4 +181,36 @@ public abstract class Component implements Cloneable {
 	public FeatureList getFeatureList() {
 		return featureList;
 	}
+	
+	//for verbs onleh
+	public String getForm()
+	{
+		String word = "";
+		
+		if (featureList.getFeature("Aspect")!=null)
+		{	
+			Feature aspect = featureList.getFeature("Aspect"); 
+			Feature focus = featureList.getFeature("Focus");
+			
+			String formName = focus.getValue() + " " + aspect.getValue();
+			
+			Leaf comp = (Leaf) this;
+			String stem = comp.getConcept();
+			System.out.print("name: "+ formName + " stem:" +  stem);
+			
+			Lexicon lexicon = null;
+			for (LexiconList list : LexiconManager.getInstance().getLanguageLexicon())
+				lexicon = list.getALexicon(stem);	//get the lexicon that contains the stem word
+			if (lexicon !=null)
+			{
+				//get the value of the form with the given formName
+				// if given the right features, this should work
+				word = lexicon.getFormList().getForm(formName).getValue();
+			}
+			return word;
+		}
+		
+		return null;
+	}
+	
 }
