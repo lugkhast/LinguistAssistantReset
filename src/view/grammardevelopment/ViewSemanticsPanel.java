@@ -68,7 +68,7 @@ public class ViewSemanticsPanel extends JPanel{
 		
 		xmlDocPanels = new ArrayList<InputXMLDocumentPanel>();
 		for(InputXMLDocument doc: loadedDocuments)
-			xmlDocPanels.add(new InputXMLDocumentPanel(doc));
+			xmlDocPanels.add(new InputXMLDocumentPanel(doc, InputXMLDocumentPanel.GRAMMAR));
 
 		this.initialDocPanel = xmlDocPanels.get(0);
 		
@@ -80,7 +80,7 @@ public class ViewSemanticsPanel extends JPanel{
 		
 	public ViewSemanticsPanel(GrammarDevController grammarDevController, String name, String category, String comments){ //Used for Creating a new document
 		this.grammarDevController = grammarDevController;
-		this.initialDocPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, name, category, comments, null));
+		this.initialDocPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, name, category, comments, null), InputXMLDocumentPanel.GRAMMAR);
 		this.xmlDocPanels = new ArrayList<InputXMLDocumentPanel>();
 		xmlDocPanels.add(initialDocPanel);
 		
@@ -131,7 +131,7 @@ public class ViewSemanticsPanel extends JPanel{
 		//right panels
 		viewPanel = createRightViewPanel();
 		creationPanel = new CreationRightPanel();
-	
+		creationPanel.setMode(CreationRightPanel.GRAMMAR_EDIT);
 		//LeftPanel
 		display = new DisplayScreen();
 		display.display(this.initialDocPanel); //displays the first

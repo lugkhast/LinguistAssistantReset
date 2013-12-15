@@ -26,6 +26,7 @@ import javax.swing.JButton;
 import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
 
+import view.grammardevelopment.ComponentPanel;
 	import view.grammardevelopment.DisplayScreen;
 import view.grammardevelopment.InputXMLDocumentPanel;
 import view.grammardevelopment.editsemantics.ComponentPaletteScrollPane;
@@ -46,6 +47,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 	public class StructuralAdjustmentPanel extends JPanel {
 		
@@ -59,24 +61,10 @@ import java.awt.event.ActionEvent;
 		
 		InputXMLDocumentPanel inputXMLPanel;
 		InputXMLDocumentPanel outputXMLPanel;
-		Rule rule;
 		
-//		public static void main (String args[])
-//		{
-//			try{
-//				UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//			}catch(Exception e){}
-//			
-//			Font oldLabelFont = UIManager.getFont("Label.font");
-//			UIManager.put("Label.font", oldLabelFont.deriveFont(Font.PLAIN,(float)14));
-//			
-//			StructuralAdjustmentPanel sap = new StructuralAdjustmentPanel(new Rule());
-//			JFrame frame = new JFrame();
-//			frame.getContentPane().add(sap);
-//			frame.setVisible(true);
-//			Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-//			frame.setBounds(0, 0, (int) screenSize.getWidth(), (int)screenSize.getHeight());
-//		}
+		InputXMLDocumentPanel currentXMLPanel;
+		
+		Rule rule;
 		
 //		take parameter Rule which has input and output blah
 		public StructuralAdjustmentPanel(Rule rule) 
@@ -107,13 +95,14 @@ import java.awt.event.ActionEvent;
 		public void initializeUI()
 		{
 			setLayout(null);
-			inputXMLPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, null, "Input Structure", null, null));
+			inputXMLPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, null, "Input Structure", null, null), InputXMLDocumentPanel.RULE_INPUT);
 			
 			JPanel actionsPanel = new JPanel();
 			actionsPanel.setBounds(815, 11, 549, 525);
 			add(actionsPanel);
 			actionsPanel.setLayout(null);
 			rightPanel = new CreationRightPanel();
+			rightPanel.setMode(CreationRightPanel.RULE_EDIT);
 			rightPanel.setBounds(0, 0, 537, 511);
 			actionsPanel.add(rightPanel);
 			rightPanel.addDnDListenerForAllButtons(new MouseAdapter(){
@@ -124,9 +113,7 @@ import java.awt.event.ActionEvent;
 	            }
 	        });
 			
-			outputXMLPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, null, "Output Structure", null, null));
-			
-			
+			outputXMLPanel = new InputXMLDocumentPanel(new InputXMLDocument(null, null, "Output Structure", null, null), InputXMLDocumentPanel.RULE_OUTPUT);
 			
 			JPanel buttonsPanel = new JPanel();
 			buttonsPanel.setBounds(1209, 531, 133, 28);
@@ -157,10 +144,47 @@ import java.awt.event.ActionEvent;
 			//call DisplayScreen.display()
 		}
 		
+		public void copyInputToOutput()
+		{
+			//remove internally
+			outputXMLPanel.getXMLDocument().clearSentences();
+			//remove from gui
+			outputXMLPanel.removeAllChildren();
+			
+			ArrayList<Component> input = inputXMLPanel.getXMLDocument().getSentences();
+			
+			//add internally
+			outputXMLPanel.getXMLDocument().addToSentences(input);
+			
+			//add to gui
+			outputXMLPanel.createSentencePanels();
+			outputXMLPanel.refreshDisplay();
+			outputXMLPanel.setSelectComponentPanelListener();
+		}
+		
+		public InputXMLDocumentPanel getCurrentXMLPanel()
+		{
+			return currentXMLPanel;
+		}
+		
+		public void setCurrentXMLPanel(int mode)
+		{
+			switch (mode)
+			{
+				case SelectComponentActionListener.RULE_INPUT:
+					currentXMLPanel = inputXMLPanel;
+					break;
+				case SelectComponentActionListener.RULE_OUTPUT:
+					currentXMLPanel = outputXMLPanel;
+					break;
+			}
+			
+		}
+		
 		public void setSelectComponentListeners()
 		{
-			inputXMLPanel.setSelectComponentPanelListener(new SelectComponentActionListener(this));
-			outputXMLPanel.setSelectComponentPanelListener(new SelectComponentActionListener(this));
+			inputXMLPanel.setSelectComponentPanelListener(new SelectComponentActionListener(this, SelectComponentActionListener.RULE_INPUT));
+			outputXMLPanel.setSelectComponentPanelListener(new SelectComponentActionListener(this, SelectComponentActionListener.RULE_OUTPUT));
 		}
 		
 		public void setComponent(Component component)

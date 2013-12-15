@@ -48,6 +48,17 @@ public class InputXMLDocument {
 		return comments;
 	}
 	
+	public ArrayList<Component> getSentences()
+	{
+		ArrayList<Component> copy = new ArrayList<Component>();
+		for (Component comp : sentences)
+		{
+			copy.add((Component) comp.clone());
+		}
+		
+		return copy;
+	}
+	
 	public File getXmlFile(){
 		return xmlFile;
 	}
@@ -66,6 +77,20 @@ public class InputXMLDocument {
 	
 	public void setOtherInfo(String otherInfo){
 		this.comments = otherInfo;
+	}
+	
+	public void addToSentences(ArrayList<Component> sentences)
+	{
+		for (Component comp : sentences)
+			this.sentences.add(comp);
+	}
+	
+	public void clearSentences()
+	{
+		for (int i = sentences.size(); i>0; i--)
+		{
+			removeSentence(sentences.get(i-1));
+		}
 	}
 	
 	public ArrayList<Component> getClauses(){
@@ -116,5 +141,17 @@ public class InputXMLDocument {
 	private void setElementAttribute(Element element, String attributeName, String attributeValue){
 		if(attributeValue != null && !attributeValue.isEmpty() && attributeName != null && !attributeName.isEmpty())
 			element.setAttribute(attributeName, attributeValue);
+	}
+	
+	public Object clone()
+	{
+		try
+		{
+			return super.clone();
+		}
+		catch( CloneNotSupportedException e )
+		{
+			return null;
+		}
 	}
 }

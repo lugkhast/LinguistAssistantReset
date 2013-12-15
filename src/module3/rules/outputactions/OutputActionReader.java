@@ -31,29 +31,35 @@ public class OutputActionReader {
 			return;
 		}
 		if (action.equals("moveConstit")) {
-			//moveConstituentAction(c, a.args);
+			moveConstituentAction(c, a.args);
 			return;
 		}
 		if (action.equals("deleteConstit")) {
-			//deleteConstituentAction(c, a.args);
+			deleteConstituentAction(c, a.args);
 			return;
 		}
 		if (action.equals("copyConstit")) {
+			copyConstituentAction(c, a.args);
 			return;
 		}
 		if (action.equals("orderSubConst")) {
+			orderSubConstituentAction(c, a.args);
 			return;
 		}
 		if (action.equals("addLexicon")) {
+			addLexiconAction(c, a.args);
 			return;
 		}
 		if (action.equals("changeLexicon")) {
+			changeLexiconAction(c, a.args);
 			return;
 		}
 		if (action.equals("deleteLexicon")) {
+			deleteLexiconAction(c, a.args);
 			return;
 		}
 		if (action.equals("selectForm")) {
+			selectFormAction(c, a.args);
 			return;
 		}
  		
@@ -62,7 +68,36 @@ public class OutputActionReader {
 	private static void addConstituentAction(Component c, List<Element> args) {
 		Component child = Component.createMatcher(args.get(0).getChild("component"));
 		c.getChildren().addChild(child);
-		
+	}
+	private static void selectFormAction(Component c, List<Element> args) {	
+		return;
+	}
+	
+	private static void deleteLexiconAction(Component c, List<Element> args) {	
+		return;
+	}
+	
+	private static void changeLexiconAction(Component c, List<Element> args) {	
+		return;
+	}
+	
+	private static void addLexiconAction(Component c, List<Element> args) {	
+		return;
+	}
+	
+	private static void orderSubConstituentAction(Component c, List<Element> args) {	
+		return;
+	}
+	
+	private static void copyConstituentAction(Component c, List<Element> args) {	
+		return;
+	}
+	
+	private static void deleteConstituentAction(Component c, List<Element> args) {	
+		return;
+	}
+	
+	private static void moveConstituentAction(Component c, List<Element> args) {	
 		return;
 	}
 	

@@ -24,7 +24,7 @@ import view.grammardevelopment.editsemantics.CreationRightPanel;
 import view.rules.StructuralAdjustmentPanel;
 
 public class GrammarDevController {
-
+	
 	//sub-controllers
 	private CreateController createController; //not really used. it was just created to initialize the listeners
 	private SelectComponentActionListener selectListener;
@@ -72,8 +72,11 @@ public class GrammarDevController {
 	public void deselectCurrSelectedPanel(){
 		if(selectListener != null){
 			selectListener.deselectCurrentPanel();
-			grammarDevPanel.resetInfoPanel();
-			grammarDevPanel.resetCreationPanel();
+			if (grammarDevPanel!=null)
+			{
+				grammarDevPanel.resetInfoPanel();
+				grammarDevPanel.resetCreationPanel();
+			}
 		}
 	}
 	
@@ -116,8 +119,10 @@ public class GrammarDevController {
 	
 	public InputXMLDocumentPanel getCurrentlyDisplayedDocumentPanel(){
 		if(grammarDevPanel == null)
-			return null;
-		return grammarDevPanel.getCurrentlyDisplayedDocumentPanel();
+			return rulePanel.getCurrentXMLPanel();
+		
+		else
+			return grammarDevPanel.getCurrentlyDisplayedDocumentPanel();
 	}
 	
 	public ComponentPanel getCurrSelectedComponentPanel(){
@@ -146,9 +151,9 @@ public class GrammarDevController {
 	{
 		selectListener = listener;
 	}
-
-	public void activateCopyStruct() {
-		selectListener.setCopyStruct(true);
-		
+	
+	public void copyInputToOutput()
+	{
+		rulePanel.copyInputToOutput();
 	}
 }
