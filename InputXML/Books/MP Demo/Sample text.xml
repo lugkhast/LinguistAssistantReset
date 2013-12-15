@@ -9,7 +9,7 @@
       </component>
     </component>
     <component name="VP">
-      <component name="V" concept="shop" sense="A">
+      <component name="V" concept="walk" sense="A" lexicon="lakad">
         <features>
           <feature name="Time" value="Immediate Past" />
           <feature name="Aspect" value="Imperfective" />
@@ -20,7 +20,7 @@
       <features>
         <feature name="Semantic Role" value="Destination" />
       </features>
-      <component name="N" concept="store" sense="A" />
+      <component name="N" concept="store" sense="A" lexicon="tindahan" />
     </component>
   </component>
   <component name="Cl">
@@ -32,13 +32,42 @@
       </component>
     </component>
     <component name="VP">
-      <component name="V" concept="mad" sense="A">
+      <component name="V" concept="buy" sense="A" lexicon="bili">
+        <features>
+          <feature name="Time" value="Immediate Past" />
+          <feature name="Aspect" value="Imperfective" />
+        </features>
+      </component>
+    </component>
+    <component name="NP">
+      <features>
+        <feature name="Semantic Role" value="Patient" />
+      </features>
+      <component name="N" concept="dress" sense="A" lexicon="bestida" />
+    </component>
+  </component>
+  <component name="Cl">
+    <component name="NP">
+      <component name="N" concept="dog" sense="A" lexicon="aso" />
+    </component>
+    <component name="VP">
+      <component name="V" concept="bite" sense="A" lexicon="kagat">
         <features>
           <feature name="Time" value="Immediate Future" />
           <feature name="Aspect" value="Imperfective" />
         </features>
       </component>
     </component>
+    <component name="NP">
+      <features>
+        <feature name="Semantic Role" value="Patient" />
+      </features>
+      <component name="N" concept="dress" sense="A" lexicon="bestida">
+        <features>
+          <feature name="Participant Tracking" value="Routine" />
+        </features>
+      </component>
+    </component>
   </component>
   <component name="Cl">
     <component name="NP">
@@ -49,24 +78,7 @@
       </component>
     </component>
     <component name="VP">
-      <component name="V" concept="mad" sense="A">
-        <features>
-          <feature name="Time" value="Immediate Future" />
-          <feature name="Aspect" value="Imperfective" />
-        </features>
-      </component>
-    </component>
-  </component>
-  <component name="Cl">
-    <component name="NP">
-      <component name="N" concept="girl" sense="A" lexicon="babae">
-        <features>
-          <feature name="Participant Tracking" value="Routine" />
-        </features>
-      </component>
-    </component>
-    <component name="VP">
-      <component name="V" concept="mad" sense="A">
+      <component name="V" concept="run" sense="A" lexicon="takbo">
         <features>
           <feature name="Time" value="Immediate Future" />
           <feature name="Aspect" value="Imperfective" />

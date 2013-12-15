@@ -53,9 +53,7 @@
   <stem name="appear" sense="A">
     <definition>to become visible (suddenly an angel appeared)</definition>
   </stem>
-  <stem name="appear" sense="B">
-    <definition />
-  </stem>
+  <stem name="appear" sense="B" />
   <stem name="appear" sense="C">
     <definition>to make oneself visible to someone</definition>
   </stem>
@@ -122,9 +120,7 @@
   <stem name="bake" sense="A">
     <definition>to cook something in an oven</definition>
   </stem>
-  <stem name="baptize" sense="A">
-    <definition />
-  </stem>
+  <stem name="baptize" sense="A" />
   <stem name="be" sense="A">
     <definition>generic stative "be"; used with object complements (The problem is that John already left.).</definition>
   </stem>
@@ -155,15 +151,11 @@
   <stem name="be" sense="J">
     <definition>date (The date was June 2nd.)</definition>
   </stem>
-  <stem name="be" sense="K">
-    <definition />
-  </stem>
+  <stem name="be" sense="K" />
   <stem name="be" sense="L">
     <definition>social role (John is a doctor.)</definition>
   </stem>
-  <stem name="be" sense="M">
-    <definition />
-  </stem>
+  <stem name="be" sense="M" />
   <stem name="be" sense="N">
     <definition>time (The time was 4 pm.)</definition>
   </stem>
@@ -197,18 +189,14 @@
   <stem name="beat" sense="C">
     <definition>to repeatedly hit and/or kick a person or animal in order to hurt him</definition>
   </stem>
-  <stem name="become" sense="A">
-    <definition />
-  </stem>
+  <stem name="become" sense="A" />
   <stem name="become" sense="B">
     <definition>class membership (John became a man)</definition>
   </stem>
   <stem name="become" sense="C">
     <definition>social role (John became a servant)</definition>
   </stem>
-  <stem name="become" sense="D">
-    <definition />
-  </stem>
+  <stem name="become" sense="D" />
   <stem name="become" sense="E">
     <definition>kinship (John became a father)</definition>
   </stem>
@@ -236,18 +224,12 @@
   <stem name="bend-over" sense="A">
     <definition>to bend over in order to get lower, perhaps to see or touch something that is low (John bent over to look under the table.)</definition>
   </stem>
-  <stem name="betray" sense="A">
-    <definition />
-  </stem>
+  <stem name="betray" sense="A" />
   <stem name="birth" sense="A">
     <definition>to give birth to something</definition>
   </stem>
-  <stem name="bite" sense="A">
-    <definition />
-  </stem>
-  <stem name="blame" sense="A">
-    <definition />
-  </stem>
+  <stem name="bite" sense="A" />
+  <stem name="blame" sense="A" />
   <stem name="bleed" sense="A">
     <definition>to bleed</definition>
   </stem>
@@ -278,9 +260,7 @@
   <stem name="bother" sense="A">
     <definition>to bother someone</definition>
   </stem>
-  <stem name="bow" sense="A">
-    <definition />
-  </stem>
+  <stem name="bow" sense="A" />
   <stem name="break" sense="A">
     <definition>to break something into multiple pieces</definition>
   </stem>
@@ -344,9 +324,7 @@
   <stem name="capture" sense="A">
     <definition>to take someone as prisoner</definition>
   </stem>
-  <stem name="care" sense="A">
-    <definition />
-  </stem>
+  <stem name="care" sense="A" />
   <stem name="care" sense="B">
     <definition>to have concern about someone or something</definition>
   </stem>
@@ -389,15 +367,11 @@
   <stem name="change" sense="A">
     <definition>to become something else (stick changed into a snake)</definition>
   </stem>
-  <stem name="change" sense="B">
-    <definition />
-  </stem>
+  <stem name="change" sense="B" />
   <stem name="change" sense="C">
     <definition>someone changes something into something else (Jesus is able to change stones into bread.)</definition>
   </stem>
-  <stem name="change" sense="D">
-    <definition />
-  </stem>
+  <stem name="change" sense="D" />
   <stem name="change" sense="E">
     <definition>to change something from one thing to another thing</definition>
   </stem>
@@ -437,12 +411,8 @@
   <stem name="close" sense="B">
     <definition>to close something like a book</definition>
   </stem>
-  <stem name="close" sense="C">
-    <definition />
-  </stem>
-  <stem name="close" sense="D">
-    <definition />
-  </stem>
+  <stem name="close" sense="C" />
+  <stem name="close" sense="D" />
   <stem name="collect" sense="A">
     <definition>to collect taxes</definition>
   </stem>
@@ -461,27 +431,17 @@
   <stem name="command" sense="A">
     <definition>to command someone to do something</definition>
   </stem>
-  <stem name="command" sense="B">
-    <definition />
-  </stem>
-  <stem name="compare" sense="A">
-    <definition />
-  </stem>
+  <stem name="command" sense="B" />
+  <stem name="compare" sense="A" />
   <stem name="complain" sense="A">
     <definition>to complain to someone about something</definition>
   </stem>
-  <stem name="confess" sense="A">
-    <definition />
-  </stem>
+  <stem name="confess" sense="A" />
   <stem name="confess" sense="B">
     <definition>to confess doing something (Mary confessed that she took the book.)</definition>
   </stem>
-  <stem name="confuse" sense="A">
-    <definition />
-  </stem>
-  <stem name="consist" sense="A">
-    <definition />
-  </stem>
+  <stem name="confuse" sense="A" />
+  <stem name="consist" sense="A" />
   <stem name="contain" sense="A">
     <definition>to contain or hold a liquid</definition>
   </stem>
@@ -491,9 +451,7 @@
   <stem name="control" sense="A">
     <definition>to control someone or something</definition>
   </stem>
-  <stem name="cook" sense="A">
-    <definition />
-  </stem>
+  <stem name="cook" sense="A" />
   <stem name="cough" sense="A">
     <definition>to cough when you have a cold</definition>
   </stem>
@@ -518,9 +476,7 @@
   <stem name="create" sense="A">
     <definition>to create something (from nothing)</definition>
   </stem>
-  <stem name="crush" sense="A">
-    <definition />
-  </stem>
+  <stem name="crush" sense="A" />
   <stem name="cry" sense="A">
     <definition>to cry with tears</definition>
   </stem>
@@ -536,9 +492,7 @@
   <stem name="cut" sense="A">
     <definition>to cut something</definition>
   </stem>
-  <stem name="cut-off" sense="A">
-    <definition />
-  </stem>
+  <stem name="cut-off" sense="A" />
   <stem name="cut-down" sense="A">
     <definition>to cut down something (a plant)</definition>
   </stem>
@@ -593,9 +547,7 @@
   <stem name="dip" sense="A">
     <definition>to dip something into a liquid</definition>
   </stem>
-  <stem name="disagree" sense="A">
-    <definition />
-  </stem>
+  <stem name="disagree" sense="A" />
   <stem name="discover" sense="A">
     <definition>to find out something</definition>
   </stem>
@@ -605,9 +557,7 @@
   <stem name="do" sense="A">
     <definition>to do a generic action</definition>
   </stem>
-  <stem name="doubt" sense="A">
-    <definition />
-  </stem>
+  <stem name="doubt" sense="A" />
   <stem name="dream" sense="A">
     <definition>to dream about something</definition>
   </stem>
@@ -629,9 +579,7 @@
   <stem name="dry" sense="A">
     <definition>to dry something with a towel, to remove water with a towel (John dried the dishes.)</definition>
   </stem>
-  <stem name="earn" sense="A">
-    <definition />
-  </stem>
+  <stem name="earn" sense="A" />
   <stem name="eat" sense="A">
     <definition>to consume something (food)</definition>
   </stem>
@@ -668,9 +616,7 @@
   <stem name="examine" sense="A">
     <definition>to look at something closely, look at it in detail</definition>
   </stem>
-  <stem name="exist" sense="A">
-    <definition />
-  </stem>
+  <stem name="exist" sense="A" />
   <stem name="expect" sense="A">
     <definition>to expect (hope) someone to do something (John expects his son to do well on the test.)</definition>
   </stem>
@@ -683,9 +629,7 @@
   <stem name="explain-how" sense="A">
     <definition>to explain or describe how people do something (Mary explained how people cook turkeys.)</definition>
   </stem>
-  <stem name="fail" sense="A">
-    <definition />
-  </stem>
+  <stem name="fail" sense="A" />
   <stem name="fall" sense="A">
     <definition>to fall downward onto or into something after being dropped, knocked over, or thrown (John threw the stone and it fell into the lake.)</definition>
   </stem>
@@ -740,12 +684,8 @@
   <stem name="flow" sense="A">
     <definition>the movement of liquids in a river</definition>
   </stem>
-  <stem name="fly" sense="A">
-    <definition />
-  </stem>
-  <stem name="fold" sense="A">
-    <definition />
-  </stem>
+  <stem name="fly" sense="A" />
+  <stem name="fold" sense="A" />
   <stem name="follow" sense="A">
     <definition>to follow behind someone who is walking</definition>
   </stem>
@@ -779,15 +719,9 @@
   <stem name="free" sense="A">
     <definition>to free a slave or prisoner</definition>
   </stem>
-  <stem name="frighten" sense="A">
-    <definition />
-  </stem>
-  <stem name="frown" sense="A">
-    <definition />
-  </stem>
-  <stem name="gain" sense="A">
-    <definition />
-  </stem>
+  <stem name="frighten" sense="A" />
+  <stem name="frown" sense="A" />
+  <stem name="gain" sense="A" />
   <stem name="gather" sense="A">
     <definition>to gather people or animals together</definition>
   </stem>
@@ -797,9 +731,7 @@
   <stem name="gather" sense="C">
     <definition>people or animals gather together</definition>
   </stem>
-  <stem name="get" sense="A">
-    <definition />
-  </stem>
+  <stem name="get" sense="A" />
   <stem name="get-up" sense="A">
     <definition>to get up out of bed</definition>
   </stem>
@@ -824,9 +756,7 @@
   <stem name="goodbye" sense="A">
     <definition>to take leave of, "say goodbye" (used by the person who is leaving)</definition>
   </stem>
-  <stem name="govern" sense="A">
-    <definition />
-  </stem>
+  <stem name="govern" sense="A" />
   <stem name="grab" sense="A">
     <definition>to quickly take hold of something</definition>
   </stem>
@@ -941,9 +871,7 @@
   <stem name="hold" sense="B">
     <definition>to hold something in your arms (Mary held the baby.)</definition>
   </stem>
-  <stem name="hold" sense="C">
-    <definition />
-  </stem>
+  <stem name="hold" sense="C" />
   <stem name="honor" sense="A">
     <definition>to honor someone or something</definition>
   </stem>
@@ -962,18 +890,12 @@
   <stem name="hurt" sense="A">
     <definition>to hurt someone, cause them physical pain</definition>
   </stem>
-  <stem name="hurt" sense="B">
-    <definition />
-  </stem>
+  <stem name="hurt" sense="B" />
   <stem name="ignore" sense="A">
     <definition>to not pay attention to someone or something</definition>
   </stem>
-  <stem name="improve" sense="A">
-    <definition />
-  </stem>
-  <stem name="include" sense="A">
-    <definition />
-  </stem>
+  <stem name="improve" sense="A" />
+  <stem name="include" sense="A" />
   <stem name="increase" sense="A">
     <definition>to grow in quantity</definition>
   </stem>
@@ -989,9 +911,7 @@
   <stem name="insult" sense="A">
     <definition>to insult someone</definition>
   </stem>
-  <stem name="introduce" sense="A">
-    <definition />
-  </stem>
+  <stem name="introduce" sense="A" />
   <stem name="invite" sense="A">
     <definition>to invite someone to do something (The king invited many people to come to the palace.)</definition>
   </stem>
@@ -1007,9 +927,7 @@
   <stem name="jump" sense="A">
     <definition>to jump from someplace to someplace</definition>
   </stem>
-  <stem name="jump" sense="B">
-    <definition />
-  </stem>
+  <stem name="jump" sense="B" />
   <stem name="jump-down" sense="A">
     <definition>to jump down from a high place to a lower place</definition>
   </stem>
@@ -1028,24 +946,16 @@
   <stem name="kiss" sense="A">
     <definition>to kiss someone on the cheek affectionately, not on the lips romantically</definition>
   </stem>
-  <stem name="kneel" sense="A">
-    <definition />
-  </stem>
-  <stem name="knock" sense="A">
-    <definition />
-  </stem>
-  <stem name="knock-down" sense="A">
-    <definition />
-  </stem>
+  <stem name="kneel" sense="A" />
+  <stem name="knock" sense="A" />
+  <stem name="knock-down" sense="A" />
   <stem name="know" sense="A">
     <definition>to be acquainted or familiar with a person or place (Mary knew John.)</definition>
   </stem>
   <stem name="know" sense="B">
     <definition>to be sure about something (Mary knew that John went to the library.)</definition>
   </stem>
-  <stem name="know" sense="C">
-    <definition />
-  </stem>
+  <stem name="know" sense="C" />
   <stem name="know" sense="D">
     <definition>to know about something (John knows about the problem.)</definition>
   </stem>
@@ -1091,9 +1001,7 @@
   <stem name="leave" sense="C">
     <definition>to not bring something (Mary left the book at home.)</definition>
   </stem>
-  <stem name="lick" sense="A">
-    <definition />
-  </stem>
+  <stem name="lick" sense="A" />
   <stem name="lie" sense="A">
     <definition>to tell a lie to someone, to say false things to someone</definition>
   </stem>
@@ -1109,9 +1017,7 @@
   <stem name="lift" sense="A">
     <definition>to lift something</definition>
   </stem>
-  <stem name="light" sense="A">
-    <definition />
-  </stem>
+  <stem name="light" sense="A" />
   <stem name="like" sense="A">
     <definition>to like a person or thing (John likes candy.)</definition>
   </stem>
@@ -1145,9 +1051,7 @@
   <stem name="look" sense="B">
     <definition>to appear a certain way (John looked happy/sad/excited.)</definition>
   </stem>
-  <stem name="lose" sense="A">
-    <definition />
-  </stem>
+  <stem name="lose" sense="A" />
   <stem name="lose" sense="B">
     <definition>to lose a battle or war</definition>
   </stem>
@@ -1175,9 +1079,7 @@
   <stem name="manage" sense="A">
     <definition>to direct, control, or ovesee a business or operation  (John managed the strore.)</definition>
   </stem>
-  <stem name="mark" sense="A">
-    <definition />
-  </stem>
+  <stem name="mark" sense="A" />
   <stem name="marry" sense="A">
     <definition>to marry someone</definition>
   </stem>
@@ -1190,9 +1092,7 @@
   <stem name="mean" sense="B">
     <definition>a word means something (a clause) (Mene means, "God has counted the days of your life.")</definition>
   </stem>
-  <stem name="measure" sense="A">
-    <definition />
-  </stem>
+  <stem name="measure" sense="A" />
   <stem name="meet" sense="A">
     <definition>to meet someone for the first time (John met a new woman at church.)</definition>
   </stem>
@@ -1205,9 +1105,7 @@
   <stem name="melt" sense="A">
     <definition>to melt due to intense heat, like a candle (The candle melted.)</definition>
   </stem>
-  <stem name="menstruate" sense="A">
-    <definition />
-  </stem>
+  <stem name="menstruate" sense="A" />
   <stem name="miss" sense="A">
     <definition>to miss someone, long for them</definition>
   </stem>
@@ -1253,9 +1151,7 @@
   <stem name="need" sense="C">
     <definition>to require oneself to do so something (John needs to wash the car.)</definition>
   </stem>
-  <stem name="notice" sense="A">
-    <definition />
-  </stem>
+  <stem name="notice" sense="A" />
   <stem name="nurse" sense="A">
     <definition>a mother nurses a baby</definition>
   </stem>
@@ -1268,9 +1164,7 @@
   <stem name="obtain" sense="A">
     <definition>to get something (into your possession)</definition>
   </stem>
-  <stem name="offend" sense="A">
-    <definition />
-  </stem>
+  <stem name="offend" sense="A" />
   <stem name="open" sense="A">
     <definition>to open a container such as a box, bottle, envelope, etc.</definition>
   </stem>
@@ -1280,12 +1174,8 @@
   <stem name="open" sense="C">
     <definition>to open a book</definition>
   </stem>
-  <stem name="open" sense="D">
-    <definition />
-  </stem>
-  <stem name="open" sense="E">
-    <definition />
-  </stem>
+  <stem name="open" sense="D" />
+  <stem name="open" sense="E" />
   <stem name="oppose" sense="A">
     <definition>to oppose someone</definition>
   </stem>
@@ -1313,9 +1203,7 @@
   <stem name="pay" sense="C">
     <definition>to pay taxes</definition>
   </stem>
-  <stem name="persuade" sense="A">
-    <definition />
-  </stem>
+  <stem name="persuade" sense="A" />
   <stem name="persuade" sense="B">
     <definition>to cause someone to agree that the speaker should do something (John persuaded Mary that he should read that book.)</definition>
   </stem>
@@ -1394,9 +1282,7 @@
   <stem name="prepare" sense="B">
     <definition>to prepare something like a meal (Mary prepared the dinner.)</definition>
   </stem>
-  <stem name="preserve" sense="A">
-    <definition />
-  </stem>
+  <stem name="preserve" sense="A" />
   <stem name="pretend" sense="A">
     <definition>to do something falsely in order to deceive</definition>
   </stem>
@@ -1445,9 +1331,7 @@
   <stem name="punish" sense="B">
     <definition>to punish a child for disobeying</definition>
   </stem>
-  <stem name="pursue" sense="A">
-    <definition />
-  </stem>
+  <stem name="pursue" sense="A" />
   <stem name="push" sense="A">
     <definition>to push something</definition>
   </stem>
@@ -1505,9 +1389,7 @@
   <stem name="rejoice" sense="A">
     <definition>to be joyful</definition>
   </stem>
-  <stem name="release" sense="A">
-    <definition />
-  </stem>
+  <stem name="release" sense="A" />
   <stem name="remember" sense="A">
     <definition>to remember an event (John remembers going into the store.)</definition>
   </stem>
@@ -1535,12 +1417,8 @@
   <stem name="repent" sense="A">
     <definition>complex - to repent of something (sins)</definition>
   </stem>
-  <stem name="replace" sense="A">
-    <definition />
-  </stem>
-  <stem name="represent" sense="A">
-    <definition />
-  </stem>
+  <stem name="replace" sense="A" />
+  <stem name="represent" sense="A" />
   <stem name="require" sense="A">
     <definition>to require someone to do something</definition>
   </stem>
@@ -1559,9 +1437,7 @@
   <stem name="return" sense="C">
     <definition>someone returns something to its previous place (John returned the book to the shelf.)</definition>
   </stem>
-  <stem name="return" sense="D">
-    <definition />
-  </stem>
+  <stem name="return" sense="D" />
   <stem name="return" sense="E">
     <definition>to return something that was borrowed or stolen (John returned the book to his friend.)</definition>
   </stem>
@@ -1580,9 +1456,7 @@
   <stem name="roast" sense="A">
     <definition>to cook something over a fire</definition>
   </stem>
-  <stem name="ruin" sense="A">
-    <definition />
-  </stem>
+  <stem name="ruin" sense="A" />
   <stem name="rule" sense="A">
     <definition>to reign over a group of people</definition>
   </stem>
@@ -1592,12 +1466,8 @@
   <stem name="run" sense="B">
     <definition>to run in order to escape from someone or something that is chasing you (John ran from the dog.)</definition>
   </stem>
-  <stem name="run" sense="C">
-    <definition />
-  </stem>
-  <stem name="run" sense="D">
-    <definition />
-  </stem>
+  <stem name="run" sense="C" />
+  <stem name="run" sense="D" />
   <stem name="run-down" sense="A">
     <definition>to run down something such as a hill (John ran down the hill.)</definition>
   </stem>
@@ -1607,9 +1477,7 @@
   <stem name="sacrifice" sense="A">
     <definition>to sacrifice to someone (God) something</definition>
   </stem>
-  <stem name="satisfy" sense="A">
-    <definition />
-  </stem>
+  <stem name="satisfy" sense="A" />
   <stem name="save" sense="A">
     <definition>to save a person or animal from something dangerous or death</definition>
   </stem>
@@ -1664,9 +1532,7 @@
   <stem name="seek-attention" sense="A">
     <definition>X tries to gain the attention of Y in order to talk to him/her.</definition>
   </stem>
-  <stem name="seem" sense="A">
-    <definition />
-  </stem>
+  <stem name="seem" sense="A" />
   <stem name="sell" sense="A">
     <definition>to sell something to someone</definition>
   </stem>
@@ -1709,9 +1575,7 @@
   <stem name="share" sense="A">
     <definition>to share something with someone</definition>
   </stem>
-  <stem name="shave" sense="A">
-    <definition />
-  </stem>
+  <stem name="shave" sense="A" />
   <stem name="shine" sense="A">
     <definition>something shines (The stars shine.)</definition>
   </stem>
@@ -1720,6 +1584,9 @@
   </stem>
   <stem name="shoot" sense="A">
     <definition>to shoot something at something (John shot the deer with an arrow.)</definition>
+  </stem>
+  <stem name="shop" sense="A">
+    <definition>to buy something in a mall</definition>
   </stem>
   <stem name="shout" sense="A">
     <definition>to shout something to someone, a direct quote</definition>
@@ -1751,9 +1618,7 @@
   <stem name="sigh" sense="A">
     <definition>complex - to breath deeply, the person is disturbed or tired or sad</definition>
   </stem>
-  <stem name="sign" sense="A">
-    <definition />
-  </stem>
+  <stem name="sign" sense="A" />
   <stem name="sin" sense="A">
     <definition>complex - to disobey God, do things that God hates</definition>
   </stem>
@@ -1841,36 +1706,26 @@
   <stem name="study" sense="A">
     <definition>to carefully read or review something in order to learn it</definition>
   </stem>
-  <stem name="succeed" sense="A">
-    <definition />
-  </stem>
+  <stem name="succeed" sense="A" />
   <stem name="suffer" sense="A">
     <definition>to be miserable</definition>
   </stem>
   <stem name="suggest" sense="A">
     <definition>to advise someone to do something</definition>
   </stem>
-  <stem name="surprise" sense="A">
-    <definition />
-  </stem>
+  <stem name="surprise" sense="A" />
   <stem name="surround" sense="A">
     <definition>something surrounds the outside of something</definition>
   </stem>
   <stem name="swallow" sense="A">
     <definition>to swallow something</definition>
   </stem>
-  <stem name="swear" sense="A">
-    <definition />
-  </stem>
+  <stem name="swear" sense="A" />
   <stem name="sweat" sense="A">
     <definition>to have drops of salty liquid come from the skin</definition>
   </stem>
-  <stem name="sweep" sense="A">
-    <definition />
-  </stem>
-  <stem name="swim" sense="A">
-    <definition />
-  </stem>
+  <stem name="sweep" sense="A" />
+  <stem name="swim" sense="A" />
   <stem name="take" sense="A">
     <definition>to move something from one place to another place (John took the book to the library.)</definition>
   </stem>
@@ -1907,9 +1762,7 @@
   <stem name="teach" sense="A">
     <definition>to teach someone about something (He taught them about cars.)</definition>
   </stem>
-  <stem name="teach" sense="B">
-    <definition />
-  </stem>
+  <stem name="teach" sense="B" />
   <stem name="teach" sense="C">
     <definition>to teach someone something (John taught his son that he should work hard.)</definition>
   </stem>
@@ -2168,9 +2021,7 @@
   <stem name="worship" sense="A">
     <definition>to worship something (God or a god)</definition>
   </stem>
-  <stem name="wound" sense="A">
-    <definition />
-  </stem>
+  <stem name="wound" sense="A" />
   <stem name="wrap" sense="A">
     <definition>to wrap something with something</definition>
   </stem>
@@ -2192,9 +2043,7 @@
   <stem name="write" sense="F">
     <definition>to write a law or command</definition>
   </stem>
-  <stem name="write" sense="G">
-    <definition />
-  </stem>
+  <stem name="write" sense="G" />
   <stem name="write" sense="H">
     <definition>to write something in a book or letter (John wrote some things in that book.)</definition>
   </stem>
