@@ -7,10 +7,110 @@
 					<component name="V" matcher="$1">
 						<features>
 							<feature name="Time" value="Immediate Future" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Future = Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Later Today" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Future = Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Tomorrow" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Future = Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="2 Days from Now" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Future = Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="3 Days from Now" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Future = Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Week from Now" />
 							<feature name="Time" value="Month from Now" />
 							<feature name="Time" value="Year from Now" />
@@ -29,6 +129,69 @@
 		</output>
 	</rule>
 
+	<rule name="Time Future = Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
+							<feature name="Time" value="Month from Now" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Future = Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
+							<feature name="Time" value="Year from Now" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Future = Contemplative">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
+							<feature name="Time" value="Unknown Future" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+	
 	<rule name="Time Past = Perfective">
 		<input>
 			<component name="Cl">
@@ -36,15 +199,215 @@
 					<component name="V" matcher="$1">
 						<features>
 							<feature name="Time" value="Immediate Past" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Earlier Today" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Yesterday" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="2 Days ago" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="3 Days ago" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Week ago" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Month ago" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Year ago" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Historic Past" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Eternity Past" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Time Past = Perfective">
+		<input>
+			<component name="Cl">
+				<component name="VP">
+					<component name="V" matcher="$1">
+						<features>
 							<feature name="Time" value="Unknown Past" />
 						</features>
 					</component>

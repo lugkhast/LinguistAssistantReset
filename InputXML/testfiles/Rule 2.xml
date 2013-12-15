@@ -29,6 +29,29 @@
 					<component name="N">
 						<features>
 							<feature name="Participant Tracking" value="Routine" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus Type" value="Focus" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Complement Object = Focus">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Complement Type" value="Object" />
+					</features>
+					<component name="N">
+						<features>
 							<feature name="Participant Tracking" value="Frame Inferable" />
 						</features>
 					</component>
@@ -62,7 +85,7 @@
 			</component>
 		</input>
 		<output>
-			<action name="setFeature" parentTag="$1">
+			<action name="addFeature" parentTag="$1">
 				<argument>
 					<feature name="Focus Type" value="Undefined" />
 				</argument>
@@ -80,6 +103,29 @@
 					<component name="N">
 						<features>
 							<feature name="Participant Tracking" value="Routine" />
+						</features>
+					</component>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="addFeature" parentTag="$1">
+				<argument>
+					<feature name="Focus Type" value="Focus" />
+				</argument>
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Complement Destination = Focus">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<features>
+						<feature name="Complement Type" value="Destination" />
+					</features>
+					<component name="N">
+						<features>
 							<feature name="Participant Tracking" value="Frame Inferable" />
 						</features>
 					</component>
@@ -113,7 +159,7 @@
 			</component>
 		</input>
 		<output>
-			<action name="setFeature" parentTag="$1">
+			<action name="addFeature" parentTag="$1">
 				<argument>
 					<feature name="Focus Type" value="Undefined" />
 				</argument>
@@ -139,7 +185,7 @@
 			</component>
 		</input>
 		<output>
-			<action name="setFeature" parentTag="$1">
+			<action name="addFeature" parentTag="$1">
 				<argument>
 					<feature name="Focus Type" value="Undefined" />
 				</argument>

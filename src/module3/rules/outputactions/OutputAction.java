@@ -30,15 +30,20 @@ public class OutputAction {
 	}
 
 	public Element generateXML() {
-		Element xmlElement = new Element("output");
+		Element outElement = new Element("output");
+		Element xmlElement = new Element("action");
+		
 		xmlElement.setAttribute("name", type);
 		xmlElement.setAttribute("parentTag", tag);
 		
+		
 		for (Element e : args) {
-			xmlElement.addContent(e);
+			xmlElement.addContent(e.cloneContent());
 		}
 		
-		return xmlElement;
+		outElement.addContent(xmlElement);
+		
+		return outElement;
 
 	}
 

@@ -21,7 +21,7 @@ public class OutputActionReader {
 			return c;
 		}
 		if (action.equals("editFeature")) {
-			editFeatureAction(c, a.args);
+			addFeatureAction(c, a.args);
 			return c;
 		}
 		if (action.equals("deleteFeature")) {

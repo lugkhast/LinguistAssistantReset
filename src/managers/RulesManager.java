@@ -63,10 +63,11 @@ public class RulesManager {
 		for (int i = 0; i < comp.size(); i++) {
 			System.out.println("Component " + i + ":");
 			for (RuleTree rt : rts) {
+				System.out.println(rt.getName());
 				for (Rule r : rt.getChildren()) {
-					System.out.println("Processing Rule " + r.getName());
+					System.out.println("Rule: " + r.getName());
 					if (r.apply(comp.get(i))) {
-						System.out.println("Rule name - " + r.unify(comp.get(i), r.getInput()));
+						System.out.println("applied");
 					}
 				}
 			}

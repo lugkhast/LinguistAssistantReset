@@ -36,7 +36,7 @@ public class Rule {
 
 	private Rule(String ruleName) {
 		this.name = ruleName;		
-		input = new PhraseMatcher("cl");
+		this.input = new PhraseMatcher("Cl");
 		outputActions = new OutputList();
 	}
 
@@ -52,7 +52,7 @@ public class Rule {
 		return rule;
 	}
 	
-	public Component getInput() {
+	public PhraseMatcher getInput() {
 		return input;
 	}
 	
@@ -76,7 +76,7 @@ public class Rule {
 		xmlElement.setAttribute("name", name);
 		
 		Element inputElement = new Element("input");
-		input.addAdditionalXMLContent(inputElement);
+		inputElement.addContent(input.generateXMLElement());
 		
 		Element outputElement = new Element("output");
 		for (OutputAction o : outputActions.getChildren())
@@ -100,22 +100,14 @@ public class Rule {
 			return null;
 		}
 		
-		boolean featureFound = false;
-		for (Feature f : pattern.getFeatureList().getFeatureList()) {
-			for (Feature m : constit.getFeatureList().getFeatureList()) {
-				if (m.getName().equals(f.getName())) {
-					System.out.println(f.getName() + " = " + m.getValue() + " - " + f.getValue());
-					if (f.getValue().equals(m.getValue())) {
-						featureFound = true;
-						break;
-					}
-				}
-			}
-			if (featureFound)
-				break;
+		for (Feature p : pattern.getFeatureList().getFeatureList()) {
+			Feature m = constit.getFeature(p.getName());
+			if (m == null)
+				return null;
+			if (!m.getValue().equals(p.getValue()))
+				return null;
+			System.out.println(p.getName() + " = " + p.getValue() + " - " + m.getValue());
 		}
-		if (!featureFound && pattern.getFeatureList().getFeatureList().size() != 0)
-			return null;
 		
 		ArrayList<UniMap> results = new ArrayList<UniMap>();
 		

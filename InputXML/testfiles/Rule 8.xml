@@ -10,8 +10,9 @@
 			</component>
 		</input>
 		<output>
-			<action name="orderSubConst" parentTag="$1" />
-			<argument order="$3 $2" />
+			<action name="orderSubConst" parentTag="$1">
+				<argument order="$3 $2" />
+			</action>
 		</output>
 	</rule>
 </ruleset>

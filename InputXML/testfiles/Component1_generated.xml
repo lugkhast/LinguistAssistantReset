@@ -15,7 +15,7 @@
     <component name="V" concept="sleep" sense="A">
       <features>
         <feature name="Surface Aspect" value="Imperfective" />
-        <feature name="Focus" value="DF" />
+        <feature name="Focus" value="AF" />
       </features>
     </component>
   </component>

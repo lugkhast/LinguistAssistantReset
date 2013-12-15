@@ -7,6 +7,69 @@ import components.Phrase;
 import features.FeatureList;
 
 public class PhraseMatcher extends Phrase {
+
+	private String tag;
+	private boolean optional;
+	
+	public PhraseMatcher(Element componentElement) {
+		super(componentElement);
+		tag = componentElement.getAttributeValue("matcher");
+	}
+	
+	public PhraseMatcher(String componentName) {
+		super(componentName);
+		tag = "";
+	}
+
+	protected void setDefaults() {
+		this.featureList = new FeatureList(null);
+	}
+
+	public String getTag(){
+		return tag;
+	}
+	
+	public void setTag(String tag){
+		this.tag = tag;
+	}
+
+	public boolean isOptional(){
+		return optional;
+	}
+	public void setOptional(boolean optional){
+		this.optional = optional;
+	}
+	
+	public Element generateXMLElement() {
+		Element xmlElement = new Element("component");
+		xmlElement.setAttribute(ATTRIBUTE_NAME, name);
+		if(optional)
+			xmlElement.setAttribute("optional", Boolean.toString(optional));
+		if(tag != null)
+			xmlElement.setAttribute("matcher", tag);
+		if(featureList != null){
+			Element featuresElement = featureList.generateXMLElementForComponent(name);
+			if(featuresElement != null)
+				xmlElement.addContent(featuresElement);
+		}
+		addAdditionalXMLContent(xmlElement);
+		return xmlElement;
+	}
+	
+	public void addAdditionalXMLContent(Element e) { 
+		for(Component child: children.getChildren())
+			e.addContent(child.generateXMLElement());
+		if (tag != null)
+			e.setAttribute("matcher", tag);
+	}
+
+}
+
+
+
+
+/*
+public class PhraseMatcher extends Phrase {
 	
 	private String tag;
 	
@@ -32,7 +95,7 @@ public class PhraseMatcher extends Phrase {
 		stringBuilder.append(")");
 		
 		stringBuilder.append(getFeatures(true, "\n"));
-		*/
+		
 		return stringBuilder.toString();
 	}
 	
@@ -55,3 +118,4 @@ public class PhraseMatcher extends Phrase {
 		return featureList;
 	}
 }
+*/

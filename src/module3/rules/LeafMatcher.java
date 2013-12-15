@@ -1,63 +1,52 @@
 package module3.rules;
 
-import lexicon.Lexicon;
-
 import org.jdom2.Element;
 
 import components.Leaf;
 import features.FeatureList;
 
-public class LeafMatcher extends Leaf {
-	
+public class LeafMatcher extends Leaf{
+
 	private String tag;
+	private boolean optional;
 	
-	public LeafMatcher(Element e) {
-		super(e);
-
-		tag = e.getAttributeValue("matcher");
-	}
-
-	public LeafMatcher(String componentName) {
-		super(componentName);
-		
-		tag = "";
+	public LeafMatcher(Element componentElement) {
+		super(componentElement);
+		tag = componentElement.getAttributeValue("matcher");
 	}
 	
-	public String toString() {
-		StringBuilder string  = new StringBuilder();
-		string.append(name);
-		string.append(": ");
-		string.append(concept);
-		string.append("-");
-		string.append(lexicalSense);
-		string.append(getFeatures(true, "\n"));
-		return string.toString();
+	protected void setDefaults() {
+		this.featureList = new FeatureList(null);
 	}
 	
-	public void addAdditionalXMLContent(Element e) { 
-		if (concept != null)
-			e.setAttribute(ATTRIBUTE_CONCEPT, concept);
-		if (lexicalSense != null)
-			e.setAttribute(ATTRIBUTE_LEXICAL_SENSE, lexicalSense);
-		if (tag != null)
-			e.setAttribute("matcher", tag);
-		
-		Lexicon lexicon = getFirstMappedLexicon();
-		if(lexicon!= null && !lexicon.getName().isEmpty())
-			e.setAttribute(ATTRIBUTE_LEXICON, lexicon.getName());
-	}
-	
-	
-	public void setTag(String s) {
-		tag = s;
-	}
-
-	public String getTag() {
+	public String getTag(){
 		return tag;
 	}
 	
-	public FeatureList getFeatureList() {
-		return featureList;
+	public void setTag(String tag){
+		this.tag = tag;
 	}
-
+	
+	public boolean isOptional(){
+		return optional;
+	}
+	public void setOptional(boolean optional){
+		this.optional = optional;
+	}
+	
+	public Element generateXMLElement() {
+		Element xmlElement = new Element("component");
+		xmlElement.setAttribute(ATTRIBUTE_NAME, name);
+		if(optional)
+			xmlElement.setAttribute("optional", "true");
+		if(tag != null)
+			xmlElement.setAttribute("matcher", tag);
+		if(featureList != null){
+			Element featuresElement = featureList.generateXMLElementForComponent(name);
+			if(featuresElement != null)
+				xmlElement.addContent(featuresElement);
+		}
+		addAdditionalXMLContent(xmlElement);
+		return xmlElement;
+	}
 }

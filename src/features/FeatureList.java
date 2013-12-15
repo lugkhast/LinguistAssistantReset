@@ -31,9 +31,9 @@ public class FeatureList {
 	
 	public Feature getFeature(String featureName){
 		for(Feature feature: featureList)
-			if(feature.getName().equals(featureName))
+			if(feature.getName().equals(featureName)) {
 				return feature;
-		
+			}
 		return null;
 	}
 	
