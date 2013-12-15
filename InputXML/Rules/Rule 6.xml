@@ -14,15 +14,16 @@
 			</component>
 		</input>
 		<output>
-			<action name="selectForm" parentTag="$1" />
-			<argument>
-				<feature name="Focus" value="AF" />
-				<feature name="Surface Aspect" value="Imperfective" />
-			</argument>
+			<action name="selectForm" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="AF" />
+					<feature name="Surface Aspect" value="Imperfective" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 
-		<rule name="Verb Form = AF, Perfective">
+	<rule name="Verb Form = AF, Perfective">
 		<input>
 			<component name="Cl">
 				<component name="VP" matcher="$1">
@@ -36,11 +37,12 @@
 			</component>
 		</input>
 		<output>
-			<action name="selectForm" parentTag="$1" />
-			<argument>
-				<feature name="Focus" value="AF" />
-				<feature name="Surface Aspect" value="Perfective" />
-			</argument>
+			<action name="selectForm" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="AF" />
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 
@@ -58,11 +60,12 @@
 			</component>
 		</input>
 		<output>
-			<action name="selectForm" parentTag="$1" />
-			<argument>
-				<feature name="Focus" value="AF" />
-				<feature name="Surface Aspect" value="Contemplative" />
-			</argument>
+			<action name="selectForm" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="AF" />
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 
@@ -80,11 +83,12 @@
 			</component>
 		</input>
 		<output>
-			<action name="selectForm" parentTag="$1" />
-			<argument>
-				<feature name="Focus" value="OF" />
-				<feature name="Surface Aspect" value="Imperfective" />
-			</argument>
+			<action name="selectForm" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="OF" />
+					<feature name="Surface Aspect" value="Imperfective" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 
@@ -102,11 +106,12 @@
 			</component>
 		</input>
 		<output>
-			<action name="selectForm" parentTag="$1" />
-			<argument>
-				<feature name="Focus" value="OF" />
-				<feature name="Surface Aspect" value="Perfective" />
-			</argument>
+			<action name="selectForm" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="OF" />
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 
@@ -124,11 +129,12 @@
 			</component>
 		</input>
 		<output>
-			<action name="selectForm" parentTag="$1" />
-			<argument>
-				<feature name="Focus" value="OF" />
-				<feature name="Surface Aspect" value="Contemplative" />
-			</argument>
+			<action name="selectForm" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="OF" />
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 
@@ -146,11 +152,12 @@
 			</component>
 		</input>
 		<output>
-			<action name="selectForm" parentTag="$1" />
-			<argument>
-				<feature name="Focus" value="DF" />
-				<feature name="Surface Aspect" value="Imperfective" />
-			</argument>
+			<action name="selectForm" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="DF" />
+					<feature name="Surface Aspect" value="Imperfective" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 
@@ -168,11 +175,12 @@
 			</component>
 		</input>
 		<output>
-			<action name="selectForm" parentTag="$1" />
-			<argument>
-				<feature name="Focus" value="DF" />
-				<feature name="Surface Aspect" value="Perfective" />
-			</argument>
+			<action name="selectForm" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="DF" />
+					<feature name="Surface Aspect" value="Perfective" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 
@@ -190,11 +198,12 @@
 			</component>
 		</input>
 		<output>
-			<action name="selectForm" parentTag="$1" />
-			<argument>
-				<feature name="Focus" value="DF" />
-				<feature name="Surface Aspect" value="Contemplative" />
-			</argument>
+			<action name="selectForm" parentTag="$1">
+				<argument>
+					<feature name="Focus" value="DF" />
+					<feature name="Surface Aspect" value="Contemplative" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 </ruleset>
