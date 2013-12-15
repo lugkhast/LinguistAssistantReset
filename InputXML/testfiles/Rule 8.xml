@@ -1,0 +1,17 @@
+<ruleset name = "Tagalog Rules: Rule 8">
+	<comments> Rule 8, SWAPPING MARKERS, BLUE FOR RED :/ </comments>
+	<rule name="Swapping Marker with N">
+		<input>
+			<component name="Cl">
+				<component name="NP" matcher="$1">
+					<component name="N" matcher="$2"/>
+					<component name="Marker" matcher="$3"/>
+				</component>
+			</component>
+		</input>
+		<output>
+			<action name="orderSubConst" parentTag="$1" />
+			<argument order="$3 $2" />
+		</output>
+	</rule>
+</ruleset>
