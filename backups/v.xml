@@ -42,7 +42,22 @@
         <form name="OF Perfective" value="ibinigay" />
         <form name="DF Contemplative" value="bibigayan" />
         <form name="DF Imperfective" value="binibigayan" />
-        <form name="DF Perfective" value="bigay" />
+        <form name="DF Perfective" value="binigayan" />
+      </forms>
+    </stem>
+    <stem name="himasok" gloss="">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="manghimasok" />
+        <form name="AF Imperfective" value="naghimasok" />
+        <form name="AF Perfective" value="nanghimasok" />
+        <form name="OF Contemplative" value="" />
+        <form name="OF Imperfective" value="" />
+        <form name="OF Perfective" value="" />
+        <form name="DF Contemplative" value="panghihimasukan" />
+        <form name="DF Imperfective" value="pinanghihimasukan" />
+        <form name="DF Perfective" value="himasok" />
       </forms>
     </stem>
     <stem name="hiwa" gloss="to slice">
