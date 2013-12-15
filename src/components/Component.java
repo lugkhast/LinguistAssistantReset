@@ -41,7 +41,6 @@ public abstract class Component implements Cloneable {
 		//override defaults
 		ArrayList<Feature> specifiedFeatures = SemanticsManager.getSpecifiedFeatures(componentElement);
 		for(Feature feature: specifiedFeatures) 
-			//setFeature(feature);
 			setFeature(feature);
 		
 	}

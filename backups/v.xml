@@ -3,7 +3,7 @@
     <feature name="Type">
       <value>Object</value>
       <value>Directional</value>
-      <value />
+      <value>Double Obj</value>
     </feature>
   </features>
   <forms>
@@ -18,6 +18,186 @@
     <form>DF Perfective</form>
   </forms>
   <stems>
+    <stem name="accuse" gloss="to accuse">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="accuse" />
+        <form name="AF Imperfective" value="accuse" />
+        <form name="AF Perfective" value="accuse" />
+        <form name="OF Contemplative" value="accuse" />
+        <form name="OF Imperfective" value="accuse" />
+        <form name="OF Perfective" value="accuse" />
+        <form name="DF Contemplative" value="accuse" />
+        <form name="DF Imperfective" value="accuse" />
+        <form name="DF Perfective" value="accuse" />
+      </forms>
+    </stem>
+    <stem name="act" gloss="to act">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="act" />
+        <form name="AF Imperfective" value="act" />
+        <form name="AF Perfective" value="act" />
+        <form name="OF Contemplative" value="act" />
+        <form name="OF Imperfective" value="act" />
+        <form name="OF Perfective" value="act" />
+        <form name="DF Contemplative" value="act" />
+        <form name="DF Imperfective" value="act" />
+        <form name="DF Perfective" value="act" />
+      </forms>
+    </stem>
+    <stem name="agree" gloss="to agree">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="agree" />
+        <form name="AF Imperfective" value="agree" />
+        <form name="AF Perfective" value="agree" />
+        <form name="OF Contemplative" value="agree" />
+        <form name="OF Imperfective" value="agree" />
+        <form name="OF Perfective" value="agree" />
+        <form name="DF Contemplative" value="agree" />
+        <form name="DF Imperfective" value="agree" />
+        <form name="DF Perfective" value="agree" />
+      </forms>
+    </stem>
+    <stem name="allow" gloss="to allow">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="allow" />
+        <form name="AF Imperfective" value="allow" />
+        <form name="AF Perfective" value="allow" />
+        <form name="OF Contemplative" value="allow" />
+        <form name="OF Imperfective" value="allow" />
+        <form name="OF Perfective" value="allow" />
+        <form name="DF Contemplative" value="allow" />
+        <form name="DF Imperfective" value="allow" />
+        <form name="DF Perfective" value="allow" />
+      </forms>
+    </stem>
+    <stem name="amaze" gloss="to amaze">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="amaze" />
+        <form name="AF Imperfective" value="amaze" />
+        <form name="AF Perfective" value="amaze" />
+        <form name="OF Contemplative" value="amaze" />
+        <form name="OF Imperfective" value="amaze" />
+        <form name="OF Perfective" value="amaze" />
+        <form name="DF Contemplative" value="amaze" />
+        <form name="DF Imperfective" value="amaze" />
+        <form name="DF Perfective" value="amaze" />
+      </forms>
+    </stem>
+    <stem name="anoint" gloss="to anoint">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="anoint" />
+        <form name="AF Imperfective" value="anoint" />
+        <form name="AF Perfective" value="anoint" />
+        <form name="OF Contemplative" value="anoint" />
+        <form name="OF Imperfective" value="anoint" />
+        <form name="OF Perfective" value="anoint" />
+        <form name="DF Contemplative" value="anoint" />
+        <form name="DF Imperfective" value="anoint" />
+        <form name="DF Perfective" value="anoint" />
+      </forms>
+    </stem>
+    <stem name="answer" gloss="to answer">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="answer" />
+        <form name="AF Imperfective" value="answer" />
+        <form name="AF Perfective" value="answer" />
+        <form name="OF Contemplative" value="answer" />
+        <form name="OF Imperfective" value="answer" />
+        <form name="OF Perfective" value="answer" />
+        <form name="DF Contemplative" value="answer" />
+        <form name="DF Imperfective" value="answer" />
+        <form name="DF Perfective" value="answer" />
+      </forms>
+    </stem>
+    <stem name="appear" gloss="to appear">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="appear" />
+        <form name="AF Imperfective" value="appear" />
+        <form name="AF Perfective" value="appear" />
+        <form name="OF Contemplative" value="appear" />
+        <form name="OF Imperfective" value="appear" />
+        <form name="OF Perfective" value="appear" />
+        <form name="DF Contemplative" value="appear" />
+        <form name="DF Imperfective" value="appear" />
+        <form name="DF Perfective" value="appear" />
+      </forms>
+    </stem>
+    <stem name="argue" gloss="to argue">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="argue" />
+        <form name="AF Imperfective" value="argue" />
+        <form name="AF Perfective" value="argue" />
+        <form name="OF Contemplative" value="argue" />
+        <form name="OF Imperfective" value="argue" />
+        <form name="OF Perfective" value="argue" />
+        <form name="DF Contemplative" value="argue" />
+        <form name="DF Imperfective" value="argue" />
+        <form name="DF Perfective" value="argue" />
+      </forms>
+    </stem>
+    <stem name="arrive" gloss="to arrive">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="arrive" />
+        <form name="AF Imperfective" value="arrive" />
+        <form name="AF Perfective" value="arrive" />
+        <form name="OF Contemplative" value="arrive" />
+        <form name="OF Imperfective" value="arrive" />
+        <form name="OF Perfective" value="arrive" />
+        <form name="DF Contemplative" value="arrive" />
+        <form name="DF Imperfective" value="arrive" />
+        <form name="DF Perfective" value="arrive" />
+      </forms>
+    </stem>
+    <stem name="attach" gloss="to attach">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="attach" />
+        <form name="AF Imperfective" value="attach" />
+        <form name="AF Perfective" value="attach" />
+        <form name="OF Contemplative" value="attach" />
+        <form name="OF Imperfective" value="attach" />
+        <form name="OF Perfective" value="attach" />
+        <form name="DF Contemplative" value="attach" />
+        <form name="DF Imperfective" value="attach" />
+        <form name="DF Perfective" value="attach" />
+      </forms>
+    </stem>
+    <stem name="attend" gloss="to attend">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="attend" />
+        <form name="AF Imperfective" value="attend" />
+        <form name="AF Perfective" value="attend" />
+        <form name="OF Contemplative" value="attend" />
+        <form name="OF Imperfective" value="attend" />
+        <form name="OF Perfective" value="attend" />
+        <form name="DF Contemplative" value="attend" />
+        <form name="DF Imperfective" value="attend" />
+        <form name="DF Perfective" value="attend" />
+      </forms>
+    </stem>
     <stem name="ay" gloss="be">
       <comments />
       <sentence />
@@ -36,6 +216,171 @@
         <mapping concept="be" sense="D" pos="v" />
       </mappings>
     </stem>
+    <stem name="baptize" gloss="to baptize">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="baptize" />
+        <form name="AF Imperfective" value="baptize" />
+        <form name="AF Perfective" value="baptize" />
+        <form name="OF Contemplative" value="baptize" />
+        <form name="OF Imperfective" value="baptize" />
+        <form name="OF Perfective" value="baptize" />
+        <form name="DF Contemplative" value="baptize" />
+        <form name="DF Imperfective" value="baptize" />
+        <form name="DF Perfective" value="baptize" />
+      </forms>
+    </stem>
+    <stem name="be" gloss="to be">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="be" />
+        <form name="AF Imperfective" value="be" />
+        <form name="AF Perfective" value="be" />
+        <form name="OF Contemplative" value="be" />
+        <form name="OF Imperfective" value="be" />
+        <form name="OF Perfective" value="be" />
+        <form name="DF Contemplative" value="be" />
+        <form name="DF Imperfective" value="be" />
+        <form name="DF Perfective" value="be" />
+      </forms>
+    </stem>
+    <stem name="be born" gloss="to born">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="be born" />
+        <form name="AF Imperfective" value="be born" />
+        <form name="AF Perfective" value="be born" />
+        <form name="OF Contemplative" value="be born" />
+        <form name="OF Imperfective" value="be born" />
+        <form name="OF Perfective" value="be born" />
+        <form name="DF Contemplative" value="be born" />
+        <form name="DF Imperfective" value="be born" />
+        <form name="DF Perfective" value="be born" />
+      </forms>
+    </stem>
+    <stem name="be made of" gloss="to be">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="be made of" />
+        <form name="AF Imperfective" value="be made of" />
+        <form name="AF Perfective" value="be made of" />
+        <form name="OF Contemplative" value="be made of" />
+        <form name="OF Imperfective" value="be made of" />
+        <form name="OF Perfective" value="be made of" />
+        <form name="DF Contemplative" value="be made of" />
+        <form name="DF Imperfective" value="be made of" />
+        <form name="DF Perfective" value="be made of" />
+      </forms>
+    </stem>
+    <stem name="be tied" gloss="to tied">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="be tied" />
+        <form name="AF Imperfective" value="be tied" />
+        <form name="AF Perfective" value="be tied" />
+        <form name="OF Contemplative" value="be tied" />
+        <form name="OF Imperfective" value="be tied" />
+        <form name="OF Perfective" value="be tied" />
+        <form name="DF Contemplative" value="be tied" />
+        <form name="DF Imperfective" value="be tied" />
+        <form name="DF Perfective" value="be tied" />
+      </forms>
+    </stem>
+    <stem name="beat" gloss="to beat">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="beat" />
+        <form name="AF Imperfective" value="beat" />
+        <form name="AF Perfective" value="beat" />
+        <form name="OF Contemplative" value="beat" />
+        <form name="OF Imperfective" value="beat" />
+        <form name="OF Perfective" value="beat" />
+        <form name="DF Contemplative" value="beat" />
+        <form name="DF Imperfective" value="beat" />
+        <form name="DF Perfective" value="beat" />
+      </forms>
+    </stem>
+    <stem name="become" gloss="to become">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="become" />
+        <form name="AF Imperfective" value="become" />
+        <form name="AF Perfective" value="become" />
+        <form name="OF Contemplative" value="become" />
+        <form name="OF Imperfective" value="become" />
+        <form name="OF Perfective" value="become" />
+        <form name="DF Contemplative" value="become" />
+        <form name="DF Imperfective" value="become" />
+        <form name="DF Perfective" value="become" />
+      </forms>
+    </stem>
+    <stem name="beg" gloss="to beg">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="beg" />
+        <form name="AF Imperfective" value="beg" />
+        <form name="AF Perfective" value="beg" />
+        <form name="OF Contemplative" value="beg" />
+        <form name="OF Imperfective" value="beg" />
+        <form name="OF Perfective" value="beg" />
+        <form name="DF Contemplative" value="beg" />
+        <form name="DF Imperfective" value="beg" />
+        <form name="DF Perfective" value="beg" />
+      </forms>
+    </stem>
+    <stem name="begin" gloss="to begin">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="begin" />
+        <form name="AF Imperfective" value="begin" />
+        <form name="AF Perfective" value="begin" />
+        <form name="OF Contemplative" value="begin" />
+        <form name="OF Imperfective" value="begin" />
+        <form name="OF Perfective" value="begin" />
+        <form name="DF Contemplative" value="begin" />
+        <form name="DF Imperfective" value="begin" />
+        <form name="DF Perfective" value="begin" />
+      </forms>
+    </stem>
+    <stem name="believe" gloss="to believe">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="believe" />
+        <form name="AF Imperfective" value="believe" />
+        <form name="AF Perfective" value="believe" />
+        <form name="OF Contemplative" value="believe" />
+        <form name="OF Imperfective" value="believe" />
+        <form name="OF Perfective" value="believe" />
+        <form name="DF Contemplative" value="believe" />
+        <form name="DF Imperfective" value="believe" />
+        <form name="DF Perfective" value="believe" />
+      </forms>
+    </stem>
+    <stem name="belong" gloss="to belong">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="belong" />
+        <form name="AF Imperfective" value="belong" />
+        <form name="AF Perfective" value="belong" />
+        <form name="OF Contemplative" value="belong" />
+        <form name="OF Imperfective" value="belong" />
+        <form name="OF Perfective" value="belong" />
+        <form name="DF Contemplative" value="belong" />
+        <form name="DF Imperfective" value="belong" />
+        <form name="DF Perfective" value="belong" />
+      </forms>
+    </stem>
     <stem name="bigay" gloss="give">
       <comments />
       <sentence />
@@ -49,6 +394,906 @@
         <form name="DF Contemplative" value="bibigayan" />
         <form name="DF Imperfective" value="binibigayan" />
         <form name="DF Perfective" value="binigayan" />
+      </forms>
+    </stem>
+    <stem name="bite" gloss="bite">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="bite" />
+        <form name="AF Imperfective" value="bite" />
+        <form name="AF Perfective" value="bite" />
+        <form name="OF Contemplative" value="bite" />
+        <form name="OF Imperfective" value="bite" />
+        <form name="OF Perfective" value="bite" />
+        <form name="DF Contemplative" value="bite" />
+        <form name="DF Imperfective" value="bite" />
+        <form name="DF Perfective" value="bite" />
+      </forms>
+    </stem>
+    <stem name="bleed" gloss="to bleed">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="bleed" />
+        <form name="AF Imperfective" value="bleed" />
+        <form name="AF Perfective" value="bleed" />
+        <form name="OF Contemplative" value="bleed" />
+        <form name="OF Imperfective" value="bleed" />
+        <form name="OF Perfective" value="bleed" />
+        <form name="DF Contemplative" value="bleed" />
+        <form name="DF Imperfective" value="bleed" />
+        <form name="DF Perfective" value="bleed" />
+      </forms>
+    </stem>
+    <stem name="bless" gloss="to bless">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="bless" />
+        <form name="AF Imperfective" value="bless" />
+        <form name="AF Perfective" value="bless" />
+        <form name="OF Contemplative" value="bless" />
+        <form name="OF Imperfective" value="bless" />
+        <form name="OF Perfective" value="bless" />
+        <form name="DF Contemplative" value="bless" />
+        <form name="DF Imperfective" value="bless" />
+        <form name="DF Perfective" value="bless" />
+      </forms>
+    </stem>
+    <stem name="blow" gloss="to blow">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="blow" />
+        <form name="AF Imperfective" value="blow" />
+        <form name="AF Perfective" value="blow" />
+        <form name="OF Contemplative" value="blow" />
+        <form name="OF Imperfective" value="blow" />
+        <form name="OF Perfective" value="blow" />
+        <form name="DF Contemplative" value="blow" />
+        <form name="DF Imperfective" value="blow" />
+        <form name="DF Perfective" value="blow" />
+      </forms>
+    </stem>
+    <stem name="boil" gloss="to boil">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="boil" />
+        <form name="AF Imperfective" value="boil" />
+        <form name="AF Perfective" value="boil" />
+        <form name="OF Contemplative" value="boil" />
+        <form name="OF Imperfective" value="boil" />
+        <form name="OF Perfective" value="boil" />
+        <form name="DF Contemplative" value="boil" />
+        <form name="DF Imperfective" value="boil" />
+        <form name="DF Perfective" value="boil" />
+      </forms>
+    </stem>
+    <stem name="bought" gloss="bought">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="bought" />
+        <form name="AF Imperfective" value="bought" />
+        <form name="AF Perfective" value="bought" />
+        <form name="OF Contemplative" value="bought" />
+        <form name="OF Imperfective" value="bought" />
+        <form name="OF Perfective" value="bought" />
+        <form name="DF Contemplative" value="bought" />
+        <form name="DF Imperfective" value="bought" />
+        <form name="DF Perfective" value="bought" />
+      </forms>
+    </stem>
+    <stem name="bow" gloss="to bow">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="bow" />
+        <form name="AF Imperfective" value="bow" />
+        <form name="AF Perfective" value="bow" />
+        <form name="OF Contemplative" value="bow" />
+        <form name="OF Imperfective" value="bow" />
+        <form name="OF Perfective" value="bow" />
+        <form name="DF Contemplative" value="bow" />
+        <form name="DF Imperfective" value="bow" />
+        <form name="DF Perfective" value="bow" />
+      </forms>
+    </stem>
+    <stem name="break" gloss="to break">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="break" />
+        <form name="AF Imperfective" value="break" />
+        <form name="AF Perfective" value="break" />
+        <form name="OF Contemplative" value="break" />
+        <form name="OF Imperfective" value="break" />
+        <form name="OF Perfective" value="break" />
+        <form name="DF Contemplative" value="break" />
+        <form name="DF Imperfective" value="break" />
+        <form name="DF Perfective" value="break" />
+      </forms>
+    </stem>
+    <stem name="breathe" gloss="to breathe">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="breathe" />
+        <form name="AF Imperfective" value="breathe" />
+        <form name="AF Perfective" value="breathe" />
+        <form name="OF Contemplative" value="breathe" />
+        <form name="OF Imperfective" value="breathe" />
+        <form name="OF Perfective" value="breathe" />
+        <form name="DF Contemplative" value="breathe" />
+        <form name="DF Imperfective" value="breathe" />
+        <form name="DF Perfective" value="breathe" />
+      </forms>
+    </stem>
+    <stem name="bring" gloss="to bring">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="bring" />
+        <form name="AF Imperfective" value="bring" />
+        <form name="AF Perfective" value="bring" />
+        <form name="OF Contemplative" value="bring" />
+        <form name="OF Imperfective" value="bring" />
+        <form name="OF Perfective" value="bring" />
+        <form name="DF Contemplative" value="bring" />
+        <form name="DF Imperfective" value="bring" />
+        <form name="DF Perfective" value="bring" />
+      </forms>
+    </stem>
+    <stem name="bury" gloss="to bury">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="bury" />
+        <form name="AF Imperfective" value="bury" />
+        <form name="AF Perfective" value="bury" />
+        <form name="OF Contemplative" value="bury" />
+        <form name="OF Imperfective" value="bury" />
+        <form name="OF Perfective" value="bury" />
+        <form name="DF Contemplative" value="bury" />
+        <form name="DF Imperfective" value="bury" />
+        <form name="DF Perfective" value="bury" />
+      </forms>
+    </stem>
+    <stem name="buy" gloss="to buy">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="buy" />
+        <form name="AF Imperfective" value="buy" />
+        <form name="AF Perfective" value="buy" />
+        <form name="OF Contemplative" value="buy" />
+        <form name="OF Imperfective" value="buy" />
+        <form name="OF Perfective" value="buy" />
+        <form name="DF Contemplative" value="buy" />
+        <form name="DF Imperfective" value="buy" />
+        <form name="DF Perfective" value="buy" />
+      </forms>
+    </stem>
+    <stem name="call" gloss="to call">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="call" />
+        <form name="AF Imperfective" value="call" />
+        <form name="AF Perfective" value="call" />
+        <form name="OF Contemplative" value="call" />
+        <form name="OF Imperfective" value="call" />
+        <form name="OF Perfective" value="call" />
+        <form name="DF Contemplative" value="call" />
+        <form name="DF Imperfective" value="call" />
+        <form name="DF Perfective" value="call" />
+      </forms>
+    </stem>
+    <stem name="care" gloss="to care">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="care" />
+        <form name="AF Imperfective" value="care" />
+        <form name="AF Perfective" value="care" />
+        <form name="OF Contemplative" value="care" />
+        <form name="OF Imperfective" value="care" />
+        <form name="OF Perfective" value="care" />
+        <form name="DF Contemplative" value="care" />
+        <form name="DF Imperfective" value="care" />
+        <form name="DF Perfective" value="care" />
+      </forms>
+    </stem>
+    <stem name="carry" gloss="to carry">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="carry" />
+        <form name="AF Imperfective" value="carry" />
+        <form name="AF Perfective" value="carry" />
+        <form name="OF Contemplative" value="carry" />
+        <form name="OF Imperfective" value="carry" />
+        <form name="OF Perfective" value="carry" />
+        <form name="DF Contemplative" value="carry" />
+        <form name="DF Imperfective" value="carry" />
+        <form name="DF Perfective" value="carry" />
+      </forms>
+    </stem>
+    <stem name="celebrate" gloss="to celebrate">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="celebrate" />
+        <form name="AF Imperfective" value="celebrate" />
+        <form name="AF Perfective" value="celebrate" />
+        <form name="OF Contemplative" value="celebrate" />
+        <form name="OF Imperfective" value="celebrate" />
+        <form name="OF Perfective" value="celebrate" />
+        <form name="DF Contemplative" value="celebrate" />
+        <form name="DF Imperfective" value="celebrate" />
+        <form name="DF Perfective" value="celebrate" />
+      </forms>
+    </stem>
+    <stem name="chase" gloss="to chase-away">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="chase" />
+        <form name="AF Imperfective" value="chase" />
+        <form name="AF Perfective" value="chase" />
+        <form name="OF Contemplative" value="chase" />
+        <form name="OF Imperfective" value="chase" />
+        <form name="OF Perfective" value="chase" />
+        <form name="DF Contemplative" value="chase" />
+        <form name="DF Imperfective" value="chase" />
+        <form name="DF Perfective" value="chase" />
+      </forms>
+    </stem>
+    <stem name="chase away" gloss="to  chase-away">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="chase away" />
+        <form name="AF Imperfective" value="chase away" />
+        <form name="AF Perfective" value="chase away" />
+        <form name="OF Contemplative" value="chase away" />
+        <form name="OF Imperfective" value="chase away" />
+        <form name="OF Perfective" value="chase away" />
+        <form name="DF Contemplative" value="chase away" />
+        <form name="DF Imperfective" value="chase away" />
+        <form name="DF Perfective" value="chase away" />
+      </forms>
+    </stem>
+    <stem name="cheat" gloss="to cheat">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="cheat" />
+        <form name="AF Imperfective" value="cheat" />
+        <form name="AF Perfective" value="cheat" />
+        <form name="OF Contemplative" value="cheat" />
+        <form name="OF Imperfective" value="cheat" />
+        <form name="OF Perfective" value="cheat" />
+        <form name="DF Contemplative" value="cheat" />
+        <form name="DF Imperfective" value="cheat" />
+        <form name="DF Perfective" value="cheat" />
+      </forms>
+    </stem>
+    <stem name="choose" gloss="to choose">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="choose" />
+        <form name="AF Imperfective" value="choose" />
+        <form name="AF Perfective" value="choose" />
+        <form name="OF Contemplative" value="choose" />
+        <form name="OF Imperfective" value="choose" />
+        <form name="OF Perfective" value="choose" />
+        <form name="DF Contemplative" value="choose" />
+        <form name="DF Imperfective" value="choose" />
+        <form name="DF Perfective" value="choose" />
+      </forms>
+    </stem>
+    <stem name="close" gloss="to close">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="close" />
+        <form name="AF Imperfective" value="close" />
+        <form name="AF Perfective" value="close" />
+        <form name="OF Contemplative" value="close" />
+        <form name="OF Imperfective" value="close" />
+        <form name="OF Perfective" value="close" />
+        <form name="DF Contemplative" value="close" />
+        <form name="DF Imperfective" value="close" />
+        <form name="DF Perfective" value="close" />
+      </forms>
+    </stem>
+    <stem name="collect" gloss="to collect">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="collect" />
+        <form name="AF Imperfective" value="collect" />
+        <form name="AF Perfective" value="collect" />
+        <form name="OF Contemplative" value="collect" />
+        <form name="OF Imperfective" value="collect" />
+        <form name="OF Perfective" value="collect" />
+        <form name="DF Contemplative" value="collect" />
+        <form name="DF Imperfective" value="collect" />
+        <form name="DF Perfective" value="collect" />
+      </forms>
+    </stem>
+    <stem name="comb" gloss="to comb">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="comb" />
+        <form name="AF Imperfective" value="comb" />
+        <form name="AF Perfective" value="comb" />
+        <form name="OF Contemplative" value="comb" />
+        <form name="OF Imperfective" value="comb" />
+        <form name="OF Perfective" value="comb" />
+        <form name="DF Contemplative" value="comb" />
+        <form name="DF Imperfective" value="comb" />
+        <form name="DF Perfective" value="comb" />
+      </forms>
+    </stem>
+    <stem name="come out" gloss="to come-out">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="come out" />
+        <form name="AF Imperfective" value="come out" />
+        <form name="AF Perfective" value="come out" />
+        <form name="OF Contemplative" value="come out" />
+        <form name="OF Imperfective" value="come out" />
+        <form name="OF Perfective" value="come out" />
+        <form name="DF Contemplative" value="come out" />
+        <form name="DF Imperfective" value="come out" />
+        <form name="DF Perfective" value="come out" />
+      </forms>
+    </stem>
+    <stem name="comfort" gloss="to comfort">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="comfort" />
+        <form name="AF Imperfective" value="comfort" />
+        <form name="AF Perfective" value="comfort" />
+        <form name="OF Contemplative" value="comfort" />
+        <form name="OF Imperfective" value="comfort" />
+        <form name="OF Perfective" value="comfort" />
+        <form name="DF Contemplative" value="comfort" />
+        <form name="DF Imperfective" value="comfort" />
+        <form name="DF Perfective" value="comfort" />
+      </forms>
+    </stem>
+    <stem name="cook" gloss="to cook">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="cook" />
+        <form name="AF Imperfective" value="cook" />
+        <form name="AF Perfective" value="cook" />
+        <form name="OF Contemplative" value="cook" />
+        <form name="OF Imperfective" value="cook" />
+        <form name="OF Perfective" value="cook" />
+        <form name="DF Contemplative" value="cook" />
+        <form name="DF Imperfective" value="cook" />
+        <form name="DF Perfective" value="cook" />
+      </forms>
+    </stem>
+    <stem name="cover" gloss="to cover">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="cover" />
+        <form name="AF Imperfective" value="cover" />
+        <form name="AF Perfective" value="cover" />
+        <form name="OF Contemplative" value="cover" />
+        <form name="OF Imperfective" value="cover" />
+        <form name="OF Perfective" value="cover" />
+        <form name="DF Contemplative" value="cover" />
+        <form name="DF Imperfective" value="cover" />
+        <form name="DF Perfective" value="cover" />
+      </forms>
+    </stem>
+    <stem name="crow" gloss="to crow, a rooster crows">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="crow" />
+        <form name="AF Imperfective" value="crow" />
+        <form name="AF Perfective" value="crow" />
+        <form name="OF Contemplative" value="crow" />
+        <form name="OF Imperfective" value="crow" />
+        <form name="OF Perfective" value="crow" />
+        <form name="DF Contemplative" value="crow" />
+        <form name="DF Imperfective" value="crow" />
+        <form name="DF Perfective" value="crow" />
+      </forms>
+    </stem>
+    <stem name="cry" gloss="to cry">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="cry" />
+        <form name="AF Imperfective" value="cry" />
+        <form name="AF Perfective" value="cry" />
+        <form name="OF Contemplative" value="cry" />
+        <form name="OF Imperfective" value="cry" />
+        <form name="OF Perfective" value="cry" />
+        <form name="DF Contemplative" value="cry" />
+        <form name="DF Imperfective" value="cry" />
+        <form name="DF Perfective" value="cry" />
+      </forms>
+    </stem>
+    <stem name="curse" gloss="to curse">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="curse" />
+        <form name="AF Imperfective" value="curse" />
+        <form name="AF Perfective" value="curse" />
+        <form name="OF Contemplative" value="curse" />
+        <form name="OF Imperfective" value="curse" />
+        <form name="OF Perfective" value="curse" />
+        <form name="DF Contemplative" value="curse" />
+        <form name="DF Imperfective" value="curse" />
+        <form name="DF Perfective" value="curse" />
+      </forms>
+    </stem>
+    <stem name="cut down" gloss="to cut-down">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="cut down" />
+        <form name="AF Imperfective" value="cut down" />
+        <form name="AF Perfective" value="cut down" />
+        <form name="OF Contemplative" value="cut down" />
+        <form name="OF Imperfective" value="cut down" />
+        <form name="OF Perfective" value="cut down" />
+        <form name="DF Contemplative" value="cut down" />
+        <form name="DF Imperfective" value="cut down" />
+        <form name="DF Perfective" value="cut down" />
+      </forms>
+    </stem>
+    <stem name="dance" gloss="to dance">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="dance" />
+        <form name="AF Imperfective" value="dance" />
+        <form name="AF Perfective" value="dance" />
+        <form name="OF Contemplative" value="dance" />
+        <form name="OF Imperfective" value="dance" />
+        <form name="OF Perfective" value="dance" />
+        <form name="DF Contemplative" value="dance" />
+        <form name="DF Imperfective" value="dance" />
+        <form name="DF Perfective" value="dance" />
+      </forms>
+    </stem>
+    <stem name="declare" gloss="to declare">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="declare" />
+        <form name="AF Imperfective" value="declare" />
+        <form name="AF Perfective" value="declare" />
+        <form name="OF Contemplative" value="declare" />
+        <form name="OF Imperfective" value="declare" />
+        <form name="OF Perfective" value="declare" />
+        <form name="DF Contemplative" value="declare" />
+        <form name="DF Imperfective" value="declare" />
+        <form name="DF Perfective" value="declare" />
+      </forms>
+    </stem>
+    <stem name="defeat" gloss="to defeat">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="defeat" />
+        <form name="AF Imperfective" value="defeat" />
+        <form name="AF Perfective" value="defeat" />
+        <form name="OF Contemplative" value="defeat" />
+        <form name="OF Imperfective" value="defeat" />
+        <form name="OF Perfective" value="defeat" />
+        <form name="DF Contemplative" value="defeat" />
+        <form name="DF Imperfective" value="defeat" />
+        <form name="DF Perfective" value="defeat" />
+      </forms>
+    </stem>
+    <stem name="defile" gloss="to defile">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="defile" />
+        <form name="AF Imperfective" value="defile" />
+        <form name="AF Perfective" value="defile" />
+        <form name="OF Contemplative" value="defile" />
+        <form name="OF Imperfective" value="defile" />
+        <form name="OF Perfective" value="defile" />
+        <form name="DF Contemplative" value="defile" />
+        <form name="DF Imperfective" value="defile" />
+        <form name="DF Perfective" value="defile" />
+      </forms>
+    </stem>
+    <stem name="demand" gloss="to demand">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="demand" />
+        <form name="AF Imperfective" value="demand" />
+        <form name="AF Perfective" value="demand" />
+        <form name="OF Contemplative" value="demand" />
+        <form name="OF Imperfective" value="demand" />
+        <form name="OF Perfective" value="demand" />
+        <form name="DF Contemplative" value="demand" />
+        <form name="DF Imperfective" value="demand" />
+        <form name="DF Perfective" value="demand" />
+      </forms>
+    </stem>
+    <stem name="describe" gloss="to describe">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="describe" />
+        <form name="AF Imperfective" value="describe" />
+        <form name="AF Perfective" value="describe" />
+        <form name="OF Contemplative" value="describe" />
+        <form name="OF Imperfective" value="describe" />
+        <form name="OF Perfective" value="describe" />
+        <form name="DF Contemplative" value="describe" />
+        <form name="DF Imperfective" value="describe" />
+        <form name="DF Perfective" value="describe" />
+      </forms>
+    </stem>
+    <stem name="deserve" gloss="to deserve">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="deserve" />
+        <form name="AF Imperfective" value="deserve" />
+        <form name="AF Perfective" value="deserve" />
+        <form name="OF Contemplative" value="deserve" />
+        <form name="OF Imperfective" value="deserve" />
+        <form name="OF Perfective" value="deserve" />
+        <form name="DF Contemplative" value="deserve" />
+        <form name="DF Imperfective" value="deserve" />
+        <form name="DF Perfective" value="deserve" />
+      </forms>
+    </stem>
+    <stem name="die" gloss="to die">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="die" />
+        <form name="AF Imperfective" value="die" />
+        <form name="AF Perfective" value="die" />
+        <form name="OF Contemplative" value="die" />
+        <form name="OF Imperfective" value="die" />
+        <form name="OF Perfective" value="die" />
+        <form name="DF Contemplative" value="die" />
+        <form name="DF Imperfective" value="die" />
+        <form name="DF Perfective" value="die" />
+      </forms>
+    </stem>
+    <stem name="dig" gloss="to dig">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="dig" />
+        <form name="AF Imperfective" value="dig" />
+        <form name="AF Perfective" value="dig" />
+        <form name="OF Contemplative" value="dig" />
+        <form name="OF Imperfective" value="dig" />
+        <form name="OF Perfective" value="dig" />
+        <form name="DF Contemplative" value="dig" />
+        <form name="DF Imperfective" value="dig" />
+        <form name="DF Perfective" value="dig" />
+      </forms>
+    </stem>
+    <stem name="eat" gloss="to eat">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="eat" />
+        <form name="AF Imperfective" value="eat" />
+        <form name="AF Perfective" value="eat" />
+        <form name="OF Contemplative" value="eat" />
+        <form name="OF Imperfective" value="eat" />
+        <form name="OF Perfective" value="eat" />
+        <form name="DF Contemplative" value="eat" />
+        <form name="DF Imperfective" value="eat" />
+        <form name="DF Perfective" value="eat" />
+      </forms>
+    </stem>
+    <stem name="enter" gloss="to enter">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="enter" />
+        <form name="AF Imperfective" value="enter" />
+        <form name="AF Perfective" value="enter" />
+        <form name="OF Contemplative" value="enter" />
+        <form name="OF Imperfective" value="enter" />
+        <form name="OF Perfective" value="enter" />
+        <form name="DF Contemplative" value="enter" />
+        <form name="DF Imperfective" value="enter" />
+        <form name="DF Perfective" value="enter" />
+      </forms>
+    </stem>
+    <stem name="escape" gloss="to escape">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="escape" />
+        <form name="AF Imperfective" value="escape" />
+        <form name="AF Perfective" value="escape" />
+        <form name="OF Contemplative" value="escape" />
+        <form name="OF Imperfective" value="escape" />
+        <form name="OF Perfective" value="escape" />
+        <form name="DF Contemplative" value="escape" />
+        <form name="DF Imperfective" value="escape" />
+        <form name="DF Perfective" value="escape" />
+      </forms>
+    </stem>
+    <stem name="exist" gloss="to exist">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="exist" />
+        <form name="AF Imperfective" value="exist" />
+        <form name="AF Perfective" value="exist" />
+        <form name="OF Contemplative" value="exist" />
+        <form name="OF Imperfective" value="exist" />
+        <form name="OF Perfective" value="exist" />
+        <form name="DF Contemplative" value="exist" />
+        <form name="DF Imperfective" value="exist" />
+        <form name="DF Perfective" value="exist" />
+      </forms>
+    </stem>
+    <stem name="expect" gloss="to expect">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="expect" />
+        <form name="AF Imperfective" value="expect" />
+        <form name="AF Perfective" value="expect" />
+        <form name="OF Contemplative" value="expect" />
+        <form name="OF Imperfective" value="expect" />
+        <form name="OF Perfective" value="expect" />
+        <form name="DF Contemplative" value="expect" />
+        <form name="DF Imperfective" value="expect" />
+        <form name="DF Perfective" value="expect" />
+      </forms>
+    </stem>
+    <stem name="fail" gloss="to fail">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="fail" />
+        <form name="AF Imperfective" value="fail" />
+        <form name="AF Perfective" value="fail" />
+        <form name="OF Contemplative" value="fail" />
+        <form name="OF Imperfective" value="fail" />
+        <form name="OF Perfective" value="fail" />
+        <form name="DF Contemplative" value="fail" />
+        <form name="DF Imperfective" value="fail" />
+        <form name="DF Perfective" value="fail" />
+      </forms>
+    </stem>
+    <stem name="fast" gloss="to fast">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="fast" />
+        <form name="AF Imperfective" value="fast" />
+        <form name="AF Perfective" value="fast" />
+        <form name="OF Contemplative" value="fast" />
+        <form name="OF Imperfective" value="fast" />
+        <form name="OF Perfective" value="fast" />
+        <form name="DF Contemplative" value="fast" />
+        <form name="DF Imperfective" value="fast" />
+        <form name="DF Perfective" value="fast" />
+      </forms>
+    </stem>
+    <stem name="feat" gloss="to fear">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="feat" />
+        <form name="AF Imperfective" value="feat" />
+        <form name="AF Perfective" value="feat" />
+        <form name="OF Contemplative" value="feat" />
+        <form name="OF Imperfective" value="feat" />
+        <form name="OF Perfective" value="feat" />
+        <form name="DF Contemplative" value="feat" />
+        <form name="DF Imperfective" value="feat" />
+        <form name="DF Perfective" value="feat" />
+      </forms>
+    </stem>
+    <stem name="feed" gloss="to feed">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="feed" />
+        <form name="AF Imperfective" value="feed" />
+        <form name="AF Perfective" value="feed" />
+        <form name="OF Contemplative" value="feed" />
+        <form name="OF Imperfective" value="feed" />
+        <form name="OF Perfective" value="feed" />
+        <form name="DF Contemplative" value="feed" />
+        <form name="DF Imperfective" value="feed" />
+        <form name="DF Perfective" value="feed" />
+      </forms>
+    </stem>
+    <stem name="fight" gloss="to fight">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="fight" />
+        <form name="AF Imperfective" value="fight" />
+        <form name="AF Perfective" value="fight" />
+        <form name="OF Contemplative" value="fight" />
+        <form name="OF Imperfective" value="fight" />
+        <form name="OF Perfective" value="fight" />
+        <form name="DF Contemplative" value="fight" />
+        <form name="DF Imperfective" value="fight" />
+        <form name="DF Perfective" value="fight" />
+      </forms>
+    </stem>
+    <stem name="fill" gloss="to fill">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="fill" />
+        <form name="AF Imperfective" value="fill" />
+        <form name="AF Perfective" value="fill" />
+        <form name="OF Contemplative" value="fill" />
+        <form name="OF Imperfective" value="fill" />
+        <form name="OF Perfective" value="fill" />
+        <form name="DF Contemplative" value="fill" />
+        <form name="DF Imperfective" value="fill" />
+        <form name="DF Perfective" value="fill" />
+      </forms>
+    </stem>
+    <stem name="find" gloss="to find">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="find" />
+        <form name="AF Imperfective" value="find" />
+        <form name="AF Perfective" value="find" />
+        <form name="OF Contemplative" value="find" />
+        <form name="OF Imperfective" value="find" />
+        <form name="OF Perfective" value="find" />
+        <form name="DF Contemplative" value="find" />
+        <form name="DF Imperfective" value="find" />
+        <form name="DF Perfective" value="find" />
+      </forms>
+    </stem>
+    <stem name="give birth" gloss="to birth, to give birth">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="give birth" />
+        <form name="AF Imperfective" value="give birth" />
+        <form name="AF Perfective" value="give birth" />
+        <form name="OF Contemplative" value="give birth" />
+        <form name="OF Imperfective" value="give birth" />
+        <form name="OF Perfective" value="give birth" />
+        <form name="DF Contemplative" value="give birth" />
+        <form name="DF Imperfective" value="give birth" />
+        <form name="DF Perfective" value="give birth" />
+      </forms>
+    </stem>
+    <stem name="go" gloss="to go">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="go" />
+        <form name="AF Imperfective" value="go" />
+        <form name="AF Perfective" value="go" />
+        <form name="OF Contemplative" value="go" />
+        <form name="OF Imperfective" value="go" />
+        <form name="OF Perfective" value="go" />
+        <form name="DF Contemplative" value="go" />
+        <form name="DF Imperfective" value="go" />
+        <form name="DF Perfective" value="go" />
+      </forms>
+    </stem>
+    <stem name="govern" gloss="to govern">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="govern" />
+        <form name="AF Imperfective" value="govern" />
+        <form name="AF Perfective" value="govern" />
+        <form name="OF Contemplative" value="govern" />
+        <form name="OF Imperfective" value="govern" />
+        <form name="OF Perfective" value="govern" />
+        <form name="DF Contemplative" value="govern" />
+        <form name="DF Imperfective" value="govern" />
+        <form name="DF Perfective" value="govern" />
+      </forms>
+    </stem>
+    <stem name="greet" gloss="to greet">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="greet" />
+        <form name="AF Imperfective" value="greet" />
+        <form name="AF Perfective" value="greet" />
+        <form name="OF Contemplative" value="greet" />
+        <form name="OF Imperfective" value="greet" />
+        <form name="OF Perfective" value="greet" />
+        <form name="DF Contemplative" value="greet" />
+        <form name="DF Imperfective" value="greet" />
+        <form name="DF Perfective" value="greet" />
+      </forms>
+    </stem>
+    <stem name="grow up" gloss="to grow">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="grow up" />
+        <form name="AF Imperfective" value="grow up" />
+        <form name="AF Perfective" value="grow up" />
+        <form name="OF Contemplative" value="grow up" />
+        <form name="OF Imperfective" value="grow up" />
+        <form name="OF Perfective" value="grow up" />
+        <form name="DF Contemplative" value="grow up" />
+        <form name="DF Imperfective" value="grow up" />
+        <form name="DF Perfective" value="grow up" />
+      </forms>
+    </stem>
+    <stem name="guard" gloss="to guard">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="guard" />
+        <form name="AF Imperfective" value="guard" />
+        <form name="AF Perfective" value="guard" />
+        <form name="OF Contemplative" value="guard" />
+        <form name="OF Imperfective" value="guard" />
+        <form name="OF Perfective" value="guard" />
+        <form name="DF Contemplative" value="guard" />
+        <form name="DF Imperfective" value="guard" />
+        <form name="DF Perfective" value="guard" />
+      </forms>
+    </stem>
+    <stem name="help" gloss="to help">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="help" />
+        <form name="AF Imperfective" value="help" />
+        <form name="AF Perfective" value="help" />
+        <form name="OF Contemplative" value="help" />
+        <form name="OF Imperfective" value="help" />
+        <form name="OF Perfective" value="help" />
+        <form name="DF Contemplative" value="help" />
+        <form name="DF Imperfective" value="help" />
+        <form name="DF Perfective" value="help" />
+      </forms>
+    </stem>
+    <stem name="hide" gloss="to hide">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="hide" />
+        <form name="AF Imperfective" value="hide" />
+        <form name="AF Perfective" value="hide" />
+        <form name="OF Contemplative" value="hide" />
+        <form name="OF Imperfective" value="hide" />
+        <form name="OF Perfective" value="hide" />
+        <form name="DF Contemplative" value="hide" />
+        <form name="DF Imperfective" value="hide" />
+        <form name="DF Perfective" value="hide" />
       </forms>
     </stem>
     <stem name="himasok" gloss="">
@@ -66,6 +1311,21 @@
         <form name="DF Perfective" value="pinanghimasukan" />
       </forms>
     </stem>
+    <stem name="hit" gloss="to hit">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="hit" />
+        <form name="AF Imperfective" value="hit" />
+        <form name="AF Perfective" value="hit" />
+        <form name="OF Contemplative" value="hit" />
+        <form name="OF Imperfective" value="hit" />
+        <form name="OF Perfective" value="hit" />
+        <form name="DF Contemplative" value="hit" />
+        <form name="DF Imperfective" value="hit" />
+        <form name="DF Perfective" value="hit" />
+      </forms>
+    </stem>
     <stem name="hiwa" gloss="to slice">
       <comments />
       <sentence />
@@ -81,11 +1341,911 @@
         <form name="DF Perfective" value="" />
       </forms>
     </stem>
+    <stem name="hold" gloss="to hold">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="hold" />
+        <form name="AF Imperfective" value="hold" />
+        <form name="AF Perfective" value="hold" />
+        <form name="OF Contemplative" value="hold" />
+        <form name="OF Imperfective" value="hold" />
+        <form name="OF Perfective" value="hold" />
+        <form name="DF Contemplative" value="hold" />
+        <form name="DF Imperfective" value="hold" />
+        <form name="DF Perfective" value="hold" />
+      </forms>
+    </stem>
+    <stem name="honor" gloss="to honor">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="honor" />
+        <form name="AF Imperfective" value="honor" />
+        <form name="AF Perfective" value="honor" />
+        <form name="OF Contemplative" value="honor" />
+        <form name="OF Imperfective" value="honor" />
+        <form name="OF Perfective" value="honor" />
+        <form name="DF Contemplative" value="honor" />
+        <form name="DF Imperfective" value="honor" />
+        <form name="DF Perfective" value="honor" />
+      </forms>
+    </stem>
+    <stem name="hurt" gloss="to hurt">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="hurt" />
+        <form name="AF Imperfective" value="hurt" />
+        <form name="AF Perfective" value="hurt" />
+        <form name="OF Contemplative" value="hurt" />
+        <form name="OF Imperfective" value="hurt" />
+        <form name="OF Perfective" value="hurt" />
+        <form name="DF Contemplative" value="hurt" />
+        <form name="DF Imperfective" value="hurt" />
+        <form name="DF Perfective" value="hurt" />
+      </forms>
+    </stem>
+    <stem name="join" gloss="to join">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="join" />
+        <form name="AF Imperfective" value="join" />
+        <form name="AF Perfective" value="join" />
+        <form name="OF Contemplative" value="join" />
+        <form name="OF Imperfective" value="join" />
+        <form name="OF Perfective" value="join" />
+        <form name="DF Contemplative" value="join" />
+        <form name="DF Imperfective" value="join" />
+        <form name="DF Perfective" value="join" />
+      </forms>
+    </stem>
+    <stem name="jump down" gloss="to jump-down">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="jump down" />
+        <form name="AF Imperfective" value="jump down" />
+        <form name="AF Perfective" value="jump down" />
+        <form name="OF Contemplative" value="jump down" />
+        <form name="OF Imperfective" value="jump down" />
+        <form name="OF Perfective" value="jump down" />
+        <form name="DF Contemplative" value="jump down" />
+        <form name="DF Imperfective" value="jump down" />
+        <form name="DF Perfective" value="jump down" />
+      </forms>
+    </stem>
+    <stem name="keep" gloss="to keep">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="keep" />
+        <form name="AF Imperfective" value="keep" />
+        <form name="AF Perfective" value="keep" />
+        <form name="OF Contemplative" value="keep" />
+        <form name="OF Imperfective" value="keep" />
+        <form name="OF Perfective" value="keep" />
+        <form name="DF Contemplative" value="keep" />
+        <form name="DF Imperfective" value="keep" />
+        <form name="DF Perfective" value="keep" />
+      </forms>
+    </stem>
+    <stem name="knock down" gloss="to knock-down">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="knock down" />
+        <form name="AF Imperfective" value="knock down" />
+        <form name="AF Perfective" value="knock down" />
+        <form name="OF Contemplative" value="knock down" />
+        <form name="OF Imperfective" value="knock down" />
+        <form name="OF Perfective" value="knock down" />
+        <form name="DF Contemplative" value="knock down" />
+        <form name="DF Imperfective" value="knock down" />
+        <form name="DF Perfective" value="knock down" />
+      </forms>
+    </stem>
+    <stem name="know" gloss="to know">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="know" />
+        <form name="AF Imperfective" value="know" />
+        <form name="AF Perfective" value="know" />
+        <form name="OF Contemplative" value="know" />
+        <form name="OF Imperfective" value="know" />
+        <form name="OF Perfective" value="know" />
+        <form name="DF Contemplative" value="know" />
+        <form name="DF Imperfective" value="know" />
+        <form name="DF Perfective" value="know" />
+      </forms>
+    </stem>
+    <stem name="laugh" gloss="to laugh">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="laugh" />
+        <form name="AF Imperfective" value="laugh" />
+        <form name="AF Perfective" value="laugh" />
+        <form name="OF Contemplative" value="laugh" />
+        <form name="OF Imperfective" value="laugh" />
+        <form name="OF Perfective" value="laugh" />
+        <form name="DF Contemplative" value="laugh" />
+        <form name="DF Imperfective" value="laugh" />
+        <form name="DF Perfective" value="laugh" />
+      </forms>
+    </stem>
+    <stem name="lead" gloss="to lead">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="lead" />
+        <form name="AF Imperfective" value="lead" />
+        <form name="AF Perfective" value="lead" />
+        <form name="OF Contemplative" value="lead" />
+        <form name="OF Imperfective" value="lead" />
+        <form name="OF Perfective" value="lead" />
+        <form name="DF Contemplative" value="lead" />
+        <form name="DF Imperfective" value="lead" />
+        <form name="DF Perfective" value="lead" />
+      </forms>
+    </stem>
+    <stem name="lie" gloss="to lie">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="lie" />
+        <form name="AF Imperfective" value="lie" />
+        <form name="AF Perfective" value="lie" />
+        <form name="OF Contemplative" value="lie" />
+        <form name="OF Imperfective" value="lie" />
+        <form name="OF Perfective" value="lie" />
+        <form name="DF Contemplative" value="lie" />
+        <form name="DF Imperfective" value="lie" />
+        <form name="DF Perfective" value="lie" />
+      </forms>
+    </stem>
+    <stem name="lie down" gloss="to lie-down">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="lie down" />
+        <form name="AF Imperfective" value="lie down" />
+        <form name="AF Perfective" value="lie down" />
+        <form name="OF Contemplative" value="lie down" />
+        <form name="OF Imperfective" value="lie down" />
+        <form name="OF Perfective" value="lie down" />
+        <form name="DF Contemplative" value="lie down" />
+        <form name="DF Imperfective" value="lie down" />
+        <form name="DF Perfective" value="lie down" />
+      </forms>
+    </stem>
+    <stem name="mourn" gloss="to mourn">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="mourn" />
+        <form name="AF Imperfective" value="mourn" />
+        <form name="AF Perfective" value="mourn" />
+        <form name="OF Contemplative" value="mourn" />
+        <form name="OF Imperfective" value="mourn" />
+        <form name="OF Perfective" value="mourn" />
+        <form name="DF Contemplative" value="mourn" />
+        <form name="DF Imperfective" value="mourn" />
+        <form name="DF Perfective" value="mourn" />
+      </forms>
+    </stem>
+    <stem name="move" gloss="to move">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="move" />
+        <form name="AF Imperfective" value="move" />
+        <form name="AF Perfective" value="move" />
+        <form name="OF Contemplative" value="move" />
+        <form name="OF Imperfective" value="move" />
+        <form name="OF Perfective" value="move" />
+        <form name="DF Contemplative" value="move" />
+        <form name="DF Imperfective" value="move" />
+        <form name="DF Perfective" value="move" />
+      </forms>
+    </stem>
+    <stem name="name" gloss="to name">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="name" />
+        <form name="AF Imperfective" value="name" />
+        <form name="AF Perfective" value="name" />
+        <form name="OF Contemplative" value="name" />
+        <form name="OF Imperfective" value="name" />
+        <form name="OF Perfective" value="name" />
+        <form name="DF Contemplative" value="name" />
+        <form name="DF Imperfective" value="name" />
+        <form name="DF Perfective" value="name" />
+      </forms>
+    </stem>
+    <stem name="need" gloss="to need">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="need" />
+        <form name="AF Imperfective" value="need" />
+        <form name="AF Perfective" value="need" />
+        <form name="OF Contemplative" value="need" />
+        <form name="OF Imperfective" value="need" />
+        <form name="OF Perfective" value="need" />
+        <form name="DF Contemplative" value="need" />
+        <form name="DF Imperfective" value="need" />
+        <form name="DF Perfective" value="need" />
+      </forms>
+    </stem>
+    <stem name="obey" gloss="to obey">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="obey" />
+        <form name="AF Imperfective" value="obey" />
+        <form name="AF Perfective" value="obey" />
+        <form name="OF Contemplative" value="obey" />
+        <form name="OF Imperfective" value="obey" />
+        <form name="OF Perfective" value="obey" />
+        <form name="DF Contemplative" value="obey" />
+        <form name="DF Imperfective" value="obey" />
+        <form name="DF Perfective" value="obey" />
+      </forms>
+    </stem>
+    <stem name="open" gloss="to open">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="open" />
+        <form name="AF Imperfective" value="open" />
+        <form name="AF Perfective" value="open" />
+        <form name="OF Contemplative" value="open" />
+        <form name="OF Imperfective" value="open" />
+        <form name="OF Perfective" value="open" />
+        <form name="DF Contemplative" value="open" />
+        <form name="DF Imperfective" value="open" />
+        <form name="DF Perfective" value="open" />
+      </forms>
+    </stem>
+    <stem name="oppose" gloss="to oppose">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="oppose" />
+        <form name="AF Imperfective" value="oppose" />
+        <form name="AF Perfective" value="oppose" />
+        <form name="OF Contemplative" value="oppose" />
+        <form name="OF Imperfective" value="oppose" />
+        <form name="OF Perfective" value="oppose" />
+        <form name="DF Contemplative" value="oppose" />
+        <form name="DF Imperfective" value="oppose" />
+        <form name="DF Perfective" value="oppose" />
+      </forms>
+    </stem>
+    <stem name="order" gloss="to order">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="order" />
+        <form name="AF Imperfective" value="order" />
+        <form name="AF Perfective" value="order" />
+        <form name="OF Contemplative" value="order" />
+        <form name="OF Imperfective" value="order" />
+        <form name="OF Perfective" value="order" />
+        <form name="DF Contemplative" value="order" />
+        <form name="DF Imperfective" value="order" />
+        <form name="DF Perfective" value="order" />
+      </forms>
+    </stem>
+    <stem name="pay" gloss="to pay">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="pay" />
+        <form name="AF Imperfective" value="pay" />
+        <form name="AF Perfective" value="pay" />
+        <form name="OF Contemplative" value="pay" />
+        <form name="OF Imperfective" value="pay" />
+        <form name="OF Perfective" value="pay" />
+        <form name="DF Contemplative" value="pay" />
+        <form name="DF Imperfective" value="pay" />
+        <form name="DF Perfective" value="pay" />
+      </forms>
+    </stem>
+    <stem name="pick" gloss="to pick">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="pick" />
+        <form name="AF Imperfective" value="pick" />
+        <form name="AF Perfective" value="pick" />
+        <form name="OF Contemplative" value="pick" />
+        <form name="OF Imperfective" value="pick" />
+        <form name="OF Perfective" value="pick" />
+        <form name="DF Contemplative" value="pick" />
+        <form name="DF Imperfective" value="pick" />
+        <form name="DF Perfective" value="pick" />
+      </forms>
+    </stem>
+    <stem name="pick up" gloss="to pick-up">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="pick up" />
+        <form name="AF Imperfective" value="pick up" />
+        <form name="AF Perfective" value="pick up" />
+        <form name="OF Contemplative" value="pick up" />
+        <form name="OF Imperfective" value="pick up" />
+        <form name="OF Perfective" value="pick up" />
+        <form name="DF Contemplative" value="pick up" />
+        <form name="DF Imperfective" value="pick up" />
+        <form name="DF Perfective" value="pick up" />
+      </forms>
+    </stem>
+    <stem name="pity" gloss="to pity">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="pity" />
+        <form name="AF Imperfective" value="pity" />
+        <form name="AF Perfective" value="pity" />
+        <form name="OF Contemplative" value="pity" />
+        <form name="OF Imperfective" value="pity" />
+        <form name="OF Perfective" value="pity" />
+        <form name="DF Contemplative" value="pity" />
+        <form name="DF Imperfective" value="pity" />
+        <form name="DF Perfective" value="pity" />
+      </forms>
+    </stem>
+    <stem name="plan" gloss="to plan">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="plan" />
+        <form name="AF Imperfective" value="plan" />
+        <form name="AF Perfective" value="plan" />
+        <form name="OF Contemplative" value="plan" />
+        <form name="OF Imperfective" value="plan" />
+        <form name="OF Perfective" value="plan" />
+        <form name="DF Contemplative" value="plan" />
+        <form name="DF Imperfective" value="plan" />
+        <form name="DF Perfective" value="plan" />
+      </forms>
+    </stem>
+    <stem name="play" gloss="to play">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="play" />
+        <form name="AF Imperfective" value="play" />
+        <form name="AF Perfective" value="play" />
+        <form name="OF Contemplative" value="play" />
+        <form name="OF Imperfective" value="play" />
+        <form name="OF Perfective" value="play" />
+        <form name="DF Contemplative" value="play" />
+        <form name="DF Imperfective" value="play" />
+        <form name="DF Perfective" value="play" />
+      </forms>
+    </stem>
+    <stem name="please" gloss="to please">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="please" />
+        <form name="AF Imperfective" value="please" />
+        <form name="AF Perfective" value="please" />
+        <form name="OF Contemplative" value="please" />
+        <form name="OF Imperfective" value="please" />
+        <form name="OF Perfective" value="please" />
+        <form name="DF Contemplative" value="please" />
+        <form name="DF Imperfective" value="please" />
+        <form name="DF Perfective" value="please" />
+      </forms>
+    </stem>
+    <stem name="point" gloss="to point">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="point" />
+        <form name="AF Imperfective" value="point" />
+        <form name="AF Perfective" value="point" />
+        <form name="OF Contemplative" value="point" />
+        <form name="OF Imperfective" value="point" />
+        <form name="OF Perfective" value="point" />
+        <form name="DF Contemplative" value="point" />
+        <form name="DF Imperfective" value="point" />
+        <form name="DF Perfective" value="point" />
+      </forms>
+    </stem>
+    <stem name="pour" gloss="to pour">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="pour" />
+        <form name="AF Imperfective" value="pour" />
+        <form name="AF Perfective" value="pour" />
+        <form name="OF Contemplative" value="pour" />
+        <form name="OF Imperfective" value="pour" />
+        <form name="OF Perfective" value="pour" />
+        <form name="DF Contemplative" value="pour" />
+        <form name="DF Imperfective" value="pour" />
+        <form name="DF Perfective" value="pour" />
+      </forms>
+    </stem>
+    <stem name="pour out" gloss="to pour-our">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="pour out" />
+        <form name="AF Imperfective" value="pour out" />
+        <form name="AF Perfective" value="pour out" />
+        <form name="OF Contemplative" value="pour out" />
+        <form name="OF Imperfective" value="pour out" />
+        <form name="OF Perfective" value="pour out" />
+        <form name="DF Contemplative" value="pour out" />
+        <form name="DF Imperfective" value="pour out" />
+        <form name="DF Perfective" value="pour out" />
+      </forms>
+    </stem>
+    <stem name="prevent" gloss="to prevent">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="prevent" />
+        <form name="AF Imperfective" value="prevent" />
+        <form name="AF Perfective" value="prevent" />
+        <form name="OF Contemplative" value="prevent" />
+        <form name="OF Imperfective" value="prevent" />
+        <form name="OF Perfective" value="prevent" />
+        <form name="DF Contemplative" value="prevent" />
+        <form name="DF Imperfective" value="prevent" />
+        <form name="DF Perfective" value="prevent" />
+      </forms>
+    </stem>
+    <stem name="receive" gloss="to receive">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="receive" />
+        <form name="AF Imperfective" value="receive" />
+        <form name="AF Perfective" value="receive" />
+        <form name="OF Contemplative" value="receive" />
+        <form name="OF Imperfective" value="receive" />
+        <form name="OF Perfective" value="receive" />
+        <form name="DF Contemplative" value="receive" />
+        <form name="DF Imperfective" value="receive" />
+        <form name="DF Perfective" value="receive" />
+      </forms>
+    </stem>
+    <stem name="redeem" gloss="to redeem">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="redeem" />
+        <form name="AF Imperfective" value="redeem" />
+        <form name="AF Perfective" value="redeem" />
+        <form name="OF Contemplative" value="redeem" />
+        <form name="OF Imperfective" value="redeem" />
+        <form name="OF Perfective" value="redeem" />
+        <form name="DF Contemplative" value="redeem" />
+        <form name="DF Imperfective" value="redeem" />
+        <form name="DF Perfective" value="redeem" />
+      </forms>
+    </stem>
+    <stem name="regret" gloss="to regret">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="regret" />
+        <form name="AF Imperfective" value="regret" />
+        <form name="AF Perfective" value="regret" />
+        <form name="OF Contemplative" value="regret" />
+        <form name="OF Imperfective" value="regret" />
+        <form name="OF Perfective" value="regret" />
+        <form name="DF Contemplative" value="regret" />
+        <form name="DF Imperfective" value="regret" />
+        <form name="DF Perfective" value="regret" />
+      </forms>
+    </stem>
+    <stem name="rejoice" gloss="to rejoice">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="rejoice" />
+        <form name="AF Imperfective" value="rejoice" />
+        <form name="AF Perfective" value="rejoice" />
+        <form name="OF Contemplative" value="rejoice" />
+        <form name="OF Imperfective" value="rejoice" />
+        <form name="OF Perfective" value="rejoice" />
+        <form name="DF Contemplative" value="rejoice" />
+        <form name="DF Imperfective" value="rejoice" />
+        <form name="DF Perfective" value="rejoice" />
+      </forms>
+    </stem>
+    <stem name="remember" gloss="to remember">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="remember" />
+        <form name="AF Imperfective" value="remember" />
+        <form name="AF Perfective" value="remember" />
+        <form name="OF Contemplative" value="remember" />
+        <form name="OF Imperfective" value="remember" />
+        <form name="OF Perfective" value="remember" />
+        <form name="DF Contemplative" value="remember" />
+        <form name="DF Imperfective" value="remember" />
+        <form name="DF Perfective" value="remember" />
+      </forms>
+    </stem>
+    <stem name="repair" gloss="to repair">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="repair" />
+        <form name="AF Imperfective" value="repair" />
+        <form name="AF Perfective" value="repair" />
+        <form name="OF Contemplative" value="repair" />
+        <form name="OF Imperfective" value="repair" />
+        <form name="OF Perfective" value="repair" />
+        <form name="DF Contemplative" value="repair" />
+        <form name="DF Imperfective" value="repair" />
+        <form name="DF Perfective" value="repair" />
+      </forms>
+    </stem>
+    <stem name="respect" gloss="to respect">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="respect" />
+        <form name="AF Imperfective" value="respect" />
+        <form name="AF Perfective" value="respect" />
+        <form name="OF Contemplative" value="respect" />
+        <form name="OF Imperfective" value="respect" />
+        <form name="OF Perfective" value="respect" />
+        <form name="DF Contemplative" value="respect" />
+        <form name="DF Imperfective" value="respect" />
+        <form name="DF Perfective" value="respect" />
+      </forms>
+    </stem>
+    <stem name="rule" gloss="to rule">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="rule" />
+        <form name="AF Imperfective" value="rule" />
+        <form name="AF Perfective" value="rule" />
+        <form name="OF Contemplative" value="rule" />
+        <form name="OF Imperfective" value="rule" />
+        <form name="OF Perfective" value="rule" />
+        <form name="DF Contemplative" value="rule" />
+        <form name="DF Imperfective" value="rule" />
+        <form name="DF Perfective" value="rule" />
+      </forms>
+    </stem>
+    <stem name="run away" gloss="to run-away">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="run away" />
+        <form name="AF Imperfective" value="run away" />
+        <form name="AF Perfective" value="run away" />
+        <form name="OF Contemplative" value="run away" />
+        <form name="OF Imperfective" value="run away" />
+        <form name="OF Perfective" value="run away" />
+        <form name="DF Contemplative" value="run away" />
+        <form name="DF Imperfective" value="run away" />
+        <form name="DF Perfective" value="run away" />
+      </forms>
+    </stem>
+    <stem name="save" gloss="to save">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="save" />
+        <form name="AF Imperfective" value="save" />
+        <form name="AF Perfective" value="save" />
+        <form name="OF Contemplative" value="save" />
+        <form name="OF Imperfective" value="save" />
+        <form name="OF Perfective" value="save" />
+        <form name="DF Contemplative" value="save" />
+        <form name="DF Imperfective" value="save" />
+        <form name="DF Perfective" value="save" />
+      </forms>
+    </stem>
+    <stem name="say" gloss="to say">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="say" />
+        <form name="AF Imperfective" value="say" />
+        <form name="AF Perfective" value="say" />
+        <form name="OF Contemplative" value="say" />
+        <form name="OF Imperfective" value="say" />
+        <form name="OF Perfective" value="say" />
+        <form name="DF Contemplative" value="say" />
+        <form name="DF Imperfective" value="say" />
+        <form name="DF Perfective" value="say" />
+      </forms>
+    </stem>
+    <stem name="say goodbye" gloss="to goodbye">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="say goodbye" />
+        <form name="AF Imperfective" value="say goodbye" />
+        <form name="AF Perfective" value="say goodbye" />
+        <form name="OF Contemplative" value="say goodbye" />
+        <form name="OF Imperfective" value="say goodbye" />
+        <form name="OF Perfective" value="say goodbye" />
+        <form name="DF Contemplative" value="say goodbye" />
+        <form name="DF Imperfective" value="say goodbye" />
+        <form name="DF Perfective" value="say goodbye" />
+      </forms>
+    </stem>
+    <stem name="see" gloss="to see">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="see" />
+        <form name="AF Imperfective" value="see" />
+        <form name="AF Perfective" value="see" />
+        <form name="OF Contemplative" value="see" />
+        <form name="OF Imperfective" value="see" />
+        <form name="OF Perfective" value="see" />
+        <form name="DF Contemplative" value="see" />
+        <form name="DF Imperfective" value="see" />
+        <form name="DF Perfective" value="see" />
+      </forms>
+    </stem>
+    <stem name="seve" gloss="to serve">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="seve" />
+        <form name="AF Imperfective" value="seve" />
+        <form name="AF Perfective" value="seve" />
+        <form name="OF Contemplative" value="seve" />
+        <form name="OF Imperfective" value="seve" />
+        <form name="OF Perfective" value="seve" />
+        <form name="DF Contemplative" value="seve" />
+        <form name="DF Imperfective" value="seve" />
+        <form name="DF Perfective" value="seve" />
+      </forms>
+    </stem>
+    <stem name="sew" gloss="to sew">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="sew" />
+        <form name="AF Imperfective" value="sew" />
+        <form name="AF Perfective" value="sew" />
+        <form name="OF Contemplative" value="sew" />
+        <form name="OF Imperfective" value="sew" />
+        <form name="OF Perfective" value="sew" />
+        <form name="DF Contemplative" value="sew" />
+        <form name="DF Imperfective" value="sew" />
+        <form name="DF Perfective" value="sew" />
+      </forms>
+    </stem>
+    <stem name="shop" gloss="to shop">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="shop" />
+        <form name="AF Imperfective" value="shop" />
+        <form name="AF Perfective" value="shop" />
+        <form name="OF Contemplative" value="shop" />
+        <form name="OF Imperfective" value="shop" />
+        <form name="OF Perfective" value="shop" />
+        <form name="DF Contemplative" value="shop" />
+        <form name="DF Imperfective" value="shop" />
+        <form name="DF Perfective" value="shop" />
+      </forms>
+    </stem>
+    <stem name="sit" gloss="to sit">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="umupo" />
+        <form name="AF Imperfective" value="upo" />
+        <form name="AF Perfective" value="sit" />
+        <form name="OF Contemplative" value="sit" />
+        <form name="OF Imperfective" value="sit" />
+        <form name="OF Perfective" value="sit" />
+        <form name="DF Contemplative" value="sit" />
+        <form name="DF Imperfective" value="sit" />
+        <form name="DF Perfective" value="sit" />
+      </forms>
+    </stem>
+    <stem name="stand" gloss="to stand">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="stand" />
+        <form name="AF Imperfective" value="stand" />
+        <form name="AF Perfective" value="stand" />
+        <form name="OF Contemplative" value="stand" />
+        <form name="OF Imperfective" value="stand" />
+        <form name="OF Perfective" value="stand" />
+        <form name="DF Contemplative" value="stand" />
+        <form name="DF Imperfective" value="stand" />
+        <form name="DF Perfective" value="stand" />
+      </forms>
+    </stem>
+    <stem name="stay" gloss="to stay">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="stay" />
+        <form name="AF Imperfective" value="stay" />
+        <form name="AF Perfective" value="stay" />
+        <form name="OF Contemplative" value="stay" />
+        <form name="OF Imperfective" value="stay" />
+        <form name="OF Perfective" value="stay" />
+        <form name="DF Contemplative" value="stay" />
+        <form name="DF Imperfective" value="stay" />
+        <form name="DF Perfective" value="stay" />
+      </forms>
+    </stem>
+    <stem name="succeed" gloss="succeed">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="succeed" />
+        <form name="AF Imperfective" value="succeed" />
+        <form name="AF Perfective" value="succeed" />
+        <form name="OF Contemplative" value="succeed" />
+        <form name="OF Imperfective" value="succeed" />
+        <form name="OF Perfective" value="succeed" />
+        <form name="DF Contemplative" value="succeed" />
+        <form name="DF Imperfective" value="succeed" />
+        <form name="DF Perfective" value="succeed" />
+      </forms>
+    </stem>
+    <stem name="take" gloss="to take">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="take" />
+        <form name="AF Imperfective" value="take" />
+        <form name="AF Perfective" value="take" />
+        <form name="OF Contemplative" value="take" />
+        <form name="OF Imperfective" value="take" />
+        <form name="OF Perfective" value="take" />
+        <form name="DF Contemplative" value="take" />
+        <form name="DF Imperfective" value="take" />
+        <form name="DF Perfective" value="take" />
+      </forms>
+    </stem>
+    <stem name="take care of" gloss="to care, to take care of">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="take care of" />
+        <form name="AF Imperfective" value="take care of" />
+        <form name="AF Perfective" value="take care of" />
+        <form name="OF Contemplative" value="take care of" />
+        <form name="OF Imperfective" value="take care of" />
+        <form name="OF Perfective" value="take care of" />
+        <form name="DF Contemplative" value="take care of" />
+        <form name="DF Imperfective" value="take care of" />
+        <form name="DF Perfective" value="take care of" />
+      </forms>
+    </stem>
+    <stem name="take off" gloss="to take-off">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="take off" />
+        <form name="AF Imperfective" value="take off" />
+        <form name="AF Perfective" value="take off" />
+        <form name="OF Contemplative" value="take off" />
+        <form name="OF Imperfective" value="take off" />
+        <form name="OF Perfective" value="take off" />
+        <form name="DF Contemplative" value="take off" />
+        <form name="DF Imperfective" value="take off" />
+        <form name="DF Perfective" value="take off" />
+      </forms>
+    </stem>
+    <stem name="teach" gloss="to teach">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="teach" />
+        <form name="AF Imperfective" value="teach" />
+        <form name="AF Perfective" value="teach" />
+        <form name="OF Contemplative" value="teach" />
+        <form name="OF Imperfective" value="teach" />
+        <form name="OF Perfective" value="teach" />
+        <form name="DF Contemplative" value="teach" />
+        <form name="DF Imperfective" value="teach" />
+        <form name="DF Perfective" value="teach" />
+      </forms>
+    </stem>
+    <stem name="tempt" gloss="to tempt">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="tempt" />
+        <form name="AF Imperfective" value="tempt" />
+        <form name="AF Perfective" value="tempt" />
+        <form name="OF Contemplative" value="tempt" />
+        <form name="OF Imperfective" value="tempt" />
+        <form name="OF Perfective" value="tempt" />
+        <form name="DF Contemplative" value="tempt" />
+        <form name="DF Imperfective" value="tempt" />
+        <form name="DF Perfective" value="tempt" />
+      </forms>
+    </stem>
+    <stem name="tie" gloss="to tie">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="tie" />
+        <form name="AF Imperfective" value="tie" />
+        <form name="AF Perfective" value="tie" />
+        <form name="OF Contemplative" value="tie" />
+        <form name="OF Imperfective" value="tie" />
+        <form name="OF Perfective" value="tie" />
+        <form name="DF Contemplative" value="tie" />
+        <form name="DF Imperfective" value="tie" />
+        <form name="DF Perfective" value="tie" />
+      </forms>
+    </stem>
+    <stem name="touch" gloss="to touch">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="touch" />
+        <form name="AF Imperfective" value="touch" />
+        <form name="AF Perfective" value="touch" />
+        <form name="OF Contemplative" value="touch" />
+        <form name="OF Imperfective" value="touch" />
+        <form name="OF Perfective" value="touch" />
+        <form name="DF Contemplative" value="touch" />
+        <form name="DF Imperfective" value="touch" />
+        <form name="DF Perfective" value="touch" />
+      </forms>
+    </stem>
+    <stem name="trust" gloss="to trust">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="trust" />
+        <form name="AF Imperfective" value="trust" />
+        <form name="AF Perfective" value="trust" />
+        <form name="OF Contemplative" value="trust" />
+        <form name="OF Imperfective" value="trust" />
+        <form name="OF Perfective" value="trust" />
+        <form name="DF Contemplative" value="trust" />
+        <form name="DF Imperfective" value="trust" />
+        <form name="DF Perfective" value="trust" />
+      </forms>
+    </stem>
+    <stem name="try" gloss="to try">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="try" />
+        <form name="AF Imperfective" value="try" />
+        <form name="AF Perfective" value="try" />
+        <form name="OF Contemplative" value="try" />
+        <form name="OF Imperfective" value="try" />
+        <form name="OF Perfective" value="try" />
+        <form name="DF Contemplative" value="try" />
+        <form name="DF Imperfective" value="try" />
+        <form name="DF Perfective" value="try" />
+      </forms>
+    </stem>
     <stem name="upo" gloss="sit">
       <comments />
       <sentence />
       <forms>
-        <form name="AF Contemplative" value="upo" />
+        <form name="AF Contemplative" value="umuupo" />
         <form name="AF Imperfective" value="upo" />
         <form name="AF Perfective" value="upo" />
         <form name="OF Contemplative" value="upo" />
@@ -98,6 +2258,171 @@
       <mappings>
         <mapping concept="sit" sense="A" pos="v" />
       </mappings>
+    </stem>
+    <stem name="visit" gloss="to visit">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="visit" />
+        <form name="AF Imperfective" value="visit" />
+        <form name="AF Perfective" value="visit" />
+        <form name="OF Contemplative" value="visit" />
+        <form name="OF Imperfective" value="visit" />
+        <form name="OF Perfective" value="visit" />
+        <form name="DF Contemplative" value="visit" />
+        <form name="DF Imperfective" value="visit" />
+        <form name="DF Perfective" value="visit" />
+      </forms>
+    </stem>
+    <stem name="walk away" gloss="to walk-away">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="walk away" />
+        <form name="AF Imperfective" value="walk away" />
+        <form name="AF Perfective" value="walk away" />
+        <form name="OF Contemplative" value="walk away" />
+        <form name="OF Imperfective" value="walk away" />
+        <form name="OF Perfective" value="walk away" />
+        <form name="DF Contemplative" value="walk away" />
+        <form name="DF Imperfective" value="walk away" />
+        <form name="DF Perfective" value="walk away" />
+      </forms>
+    </stem>
+    <stem name="wash" gloss="to wash">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="wash" />
+        <form name="AF Imperfective" value="wash" />
+        <form name="AF Perfective" value="wash" />
+        <form name="OF Contemplative" value="wash" />
+        <form name="OF Imperfective" value="wash" />
+        <form name="OF Perfective" value="wash" />
+        <form name="DF Contemplative" value="wash" />
+        <form name="DF Imperfective" value="wash" />
+        <form name="DF Perfective" value="wash" />
+      </forms>
+    </stem>
+    <stem name="watch" gloss="to watch">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="watch" />
+        <form name="AF Imperfective" value="watch" />
+        <form name="AF Perfective" value="watch" />
+        <form name="OF Contemplative" value="watch" />
+        <form name="OF Imperfective" value="watch" />
+        <form name="OF Perfective" value="watch" />
+        <form name="DF Contemplative" value="watch" />
+        <form name="DF Imperfective" value="watch" />
+        <form name="DF Perfective" value="watch" />
+      </forms>
+    </stem>
+    <stem name="welcome" gloss="to welcome">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="welcome" />
+        <form name="AF Imperfective" value="welcome" />
+        <form name="AF Perfective" value="welcome" />
+        <form name="OF Contemplative" value="welcome" />
+        <form name="OF Imperfective" value="welcome" />
+        <form name="OF Perfective" value="welcome" />
+        <form name="DF Contemplative" value="welcome" />
+        <form name="DF Imperfective" value="welcome" />
+        <form name="DF Perfective" value="welcome" />
+      </forms>
+    </stem>
+    <stem name="wish" gloss="to wish">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="wish" />
+        <form name="AF Imperfective" value="wish" />
+        <form name="AF Perfective" value="wish" />
+        <form name="OF Contemplative" value="wish" />
+        <form name="OF Imperfective" value="wish" />
+        <form name="OF Perfective" value="wish" />
+        <form name="DF Contemplative" value="wish" />
+        <form name="DF Imperfective" value="wish" />
+        <form name="DF Perfective" value="wish" />
+      </forms>
+    </stem>
+    <stem name="witness" gloss="to witness">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="witness" />
+        <form name="AF Imperfective" value="witness" />
+        <form name="AF Perfective" value="witness" />
+        <form name="OF Contemplative" value="witness" />
+        <form name="OF Imperfective" value="witness" />
+        <form name="OF Perfective" value="witness" />
+        <form name="DF Contemplative" value="witness" />
+        <form name="DF Imperfective" value="witness" />
+        <form name="DF Perfective" value="witness" />
+      </forms>
+    </stem>
+    <stem name="work" gloss="to work">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="work" />
+        <form name="AF Imperfective" value="work" />
+        <form name="AF Perfective" value="work" />
+        <form name="OF Contemplative" value="work" />
+        <form name="OF Imperfective" value="work" />
+        <form name="OF Perfective" value="work" />
+        <form name="DF Contemplative" value="work" />
+        <form name="DF Imperfective" value="work" />
+        <form name="DF Perfective" value="work" />
+      </forms>
+    </stem>
+    <stem name="worry" gloss="to worry">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="worry" />
+        <form name="AF Imperfective" value="worry" />
+        <form name="AF Perfective" value="worry" />
+        <form name="OF Contemplative" value="worry" />
+        <form name="OF Imperfective" value="worry" />
+        <form name="OF Perfective" value="worry" />
+        <form name="DF Contemplative" value="worry" />
+        <form name="DF Imperfective" value="worry" />
+        <form name="DF Perfective" value="worry" />
+      </forms>
+    </stem>
+    <stem name="write" gloss="to write">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="write" />
+        <form name="AF Imperfective" value="write" />
+        <form name="AF Perfective" value="write" />
+        <form name="OF Contemplative" value="write" />
+        <form name="OF Imperfective" value="write" />
+        <form name="OF Perfective" value="write" />
+        <form name="DF Contemplative" value="write" />
+        <form name="DF Imperfective" value="write" />
+        <form name="DF Perfective" value="write" />
+      </forms>
+    </stem>
+    <stem name="write down" gloss="to write-down">
+      <comments />
+      <sentence />
+      <forms>
+        <form name="AF Contemplative" value="write down" />
+        <form name="AF Imperfective" value="write down" />
+        <form name="AF Perfective" value="write down" />
+        <form name="OF Contemplative" value="write down" />
+        <form name="OF Imperfective" value="write down" />
+        <form name="OF Perfective" value="write down" />
+        <form name="DF Contemplative" value="write down" />
+        <form name="DF Imperfective" value="write down" />
+        <form name="DF Perfective" value="write down" />
+      </forms>
     </stem>
   </stems>
 </pos>

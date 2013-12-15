@@ -1,0 +1,49 @@
+<pos name="conj">
+  <features />
+  <forms />
+  <stems>
+    <stem name="and" gloss="and">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="at that time" gloss="at-that-time">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="instead" gloss="on-the-contrary">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="or" gloss="or">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="pero" gloss="but">
+      <comments />
+      <sentence />
+      <forms />
+      <mappings>
+        <mapping concept="but" sense="A" pos="conj" />
+      </mappings>
+    </stem>
+    <stem name="similarly" gloss="likewise">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="so" gloss="so">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="then" gloss="then">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+  </stems>
+</pos>
