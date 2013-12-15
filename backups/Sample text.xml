@@ -1,0 +1,43 @@
+<document name="Sample text">
+  <comments>for mp demo</comments>
+  <component name="Cl">
+    <component name="NP">
+      <component name="N" concept="girl" sense="A" lexicon="babae">
+        <features>
+          <feature name="Participant Tracking" value="Routine" />
+        </features>
+      </component>
+    </component>
+    <component name="VP">
+      <component name="V" concept="shop" sense="A">
+        <features>
+          <feature name="Time" value="Immediate Past" />
+          <feature name="Aspect" value="Imperfective" />
+        </features>
+      </component>
+    </component>
+    <component name="NP">
+      <features>
+        <feature name="Semantic Role" value="Destination" />
+      </features>
+      <component name="N" concept="store" sense="A" />
+    </component>
+  </component>
+  <component name="Cl">
+    <component name="NP">
+      <component name="N" concept="girl" sense="A" lexicon="babae">
+        <features>
+          <feature name="Participant Tracking" value="Routine" />
+        </features>
+      </component>
+    </component>
+    <component name="VP">
+      <component name="V" concept="shop" sense="A">
+        <features>
+          <feature name="Time" value="Immediate Past" />
+          <feature name="Aspect" value="Imperfective" />
+        </features>
+      </component>
+    </component>
+  </component>
+</document>
