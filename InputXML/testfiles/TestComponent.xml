@@ -15,7 +15,7 @@
 		<component name="VP">
 			<component name="V" concept="sleep" sense="A">
 				<features>
-					<feature name="Time" value="Present" />
+					<feature name="Time" value="Earlier Today" />
 				</features>
 			</component>
 		</component>

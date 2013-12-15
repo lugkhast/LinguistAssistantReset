@@ -29,7 +29,8 @@ public abstract class Component implements Cloneable {
 		
 		//Set the features defined in the XML
 		this.name = componentElement.getAttributeValue(ATTRIBUTE_NAME);
-		this.featureList = new FeatureList(FeatureManager.getDefaultFeatures(name));
+		//this.featureList = new FeatureList(FeatureManager.getDefaultFeatures(name));
+		this.featureList = new FeatureList(null); // match all unspecified features
 		
 		//get info (may be null for now as input xml may contain user defined phrases)
 		info = ComponentManager.getInstance().getComponentInfo(name);
@@ -37,7 +38,7 @@ public abstract class Component implements Cloneable {
 		//override defaults
 		ArrayList<Feature> specifiedFeatures = SemanticsManager.getSpecifiedFeatures(componentElement);
 		for(Feature feature: specifiedFeatures) 
-			setFeature(feature);
+			this.featureList.getFeatureList().add(feature);
 	}
 		
 	protected Component(String componentName){

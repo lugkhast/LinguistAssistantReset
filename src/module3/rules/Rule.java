@@ -91,21 +91,26 @@ public class Rule {
 	public ArrayList<UniMap> unify(Component constit, Component pattern) {
 		// returns null if false
 		// a list if true (DUH)
-		System.out.println("Comparing " + constit.getName() + " " + pattern.getName());
 		if (!constit.getName().equals(pattern.getName())) {
 			return null;
 		}
 		
+		boolean featureFound = false;
 		for (Feature f : pattern.getFeatureList().getFeatureList()) {
-			Feature m = constit.getFeature(f.getName());
-			System.out.println("Comparing features " + f.getValue() + " " + m.getValue());
-			if (m == null) {
-				return null;
+			for (Feature m : constit.getFeatureList().getFeatureList()) {
+				if (m.getName().equals(f.getName())) {
+					System.out.println(f.getName() + " = " + m.getValue() + " - " + f.getValue());
+					if (f.getValue().equals(m.getValue())) {
+						featureFound = true;
+						break;
+					}
+				}
 			}
-			if (!f.getValue().equals(m.getValue())) {
-				return null;
-			}
+			if (featureFound)
+				break;
 		}
+		if (!featureFound && pattern.getFeatureList().getFeatureList().size() != 0)
+			return null;
 		
 		ArrayList<UniMap> results = new ArrayList<UniMap>();
 		

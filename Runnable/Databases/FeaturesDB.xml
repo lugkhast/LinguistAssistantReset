@@ -233,9 +233,9 @@
 			<value>Undefined</value>
 			<value>Actor</value>
 			<value>Object</value>
-			<value>Directional</value>
+			<value>Destination</value>
 		</feature>
-		<feature name = "Type">
+		<feature name = "Focus Type">
 			<value>Undefined</value>
 			<value>Focus</value> 
 		</feature>
@@ -421,6 +421,18 @@
 		</feature>
 	</featuregroup>
 	<featuregroup type = "user">
+		<feature name="Surface Aspect">
+			<value>Undefined</value>
+			<value>Contemplative</value>
+			<value>Imperfective</value>
+			<value>Perfective</value>
+		</feature>
+		<feature name="Focus">
+			<value>Undefined</value>
+			<value>AF</value>
+			<value>DF</value>
+			<value>OF</value>
+		</feature>
 	</featuregroup>
 </component>
 <component name = "Adj">

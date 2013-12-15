@@ -9,6 +9,7 @@
         <feature name="Participant Tracking" value="Routine" />
       </features>
     </component>
+    <component name="Marker" />
   </component>
   <component name="VP">
     <component name="V" concept="sleep" sense="A">

@@ -12,10 +12,11 @@
 			</component>
 		</input>
 		<output>
-			<action name="addConstit" parentTag="$1" />
-			<argument>
-				<component name="Marker" translation="ang" />
-			</argument>
+			<action name="addConstit" parentTag="$1">
+				<argument>
+					<component name="Marker" translation="ang" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 	
@@ -24,7 +25,7 @@
 			<component name="Cl">
 				<component name="NP" matcher="$1">
 					<features>
-						<feature name="Focus Type" value="undefined" />
+						<feature name="Focus Type" value="Undefined" />
 						<feature name="Complement Type" value="Actor" />
 					</features>
 					<component name="N" />
@@ -32,10 +33,11 @@
 			</component>
 		</input>
 		<output>
-			<action name="addConstit" parentTag="$1" />
-			<argument>
-				<component name="Marker" translation="ng" />
-			</argument>
+			<action name="addConstit" parentTag="$1">
+				<argument>
+					<component name="Marker" translation="ng" />
+				</argument>
+			</action>
 		</output>
 	</rule>
 
@@ -44,7 +46,7 @@
 			<component name="Cl">
 				<component name="NP" matcher="$1">
 					<features>
-						<feature name="Focus Type" value="undefined" />
+						<feature name="Focus Type" value="Undefined" />
 						<feature name="Complement Type" value="Object" />
 					</features>
 					<component name="N" />
@@ -64,7 +66,7 @@
 			<component name="Cl">
 				<component name="NP" matcher="$1">
 					<features>
-						<feature name="Focus Type" value="undefined" />
+						<feature name="Focus Type" value="Undefined" />
 						<feature name="Complement Type" value="Directional" />
 					</features>
 					<component name="N" />
