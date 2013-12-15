@@ -72,27 +72,28 @@ public class OutputActionReader {
 		return;
 	}
 	
-	private static Component deleteLexiconAction(Component c, List<Element> args) {	
+	private static void deleteLexiconAction(Component c, List<Element> args) {	
 		Leaf leaf = (Leaf) c;
 		
 		if (leaf.getConcept() != null)
 			leaf.setConcept("");
-		
-		return leaf;
 	}
 	
 	
 	private static void changeLexiconAction(Component c, List<Element> args) {	
-		return;
+		Leaf leaf = (Leaf) c;
+		String lexicon = args.get(0).getChild("argument").getAttributeValue("lexiconName");
+		
+		if (leaf.getConcept() != null)
+			leaf.setConcept(lexicon);
 	}
 	
-	private static Component addLexiconAction(Component c, List<Element> args) {	
+	private static void addLexiconAction(Component c, List<Element> args) {	
 		Leaf leaf = (Leaf) c;
 		String lexicon = args.get(0).getChild("argument").getAttributeValue("lexiconName");
 		
 		if (leaf.getConcept() == null)
 			leaf.setConcept(lexicon);
-		return leaf;
 	}
 	
 	private static void orderSubConstituentAction(Component c, List<Element> args) {	
@@ -102,16 +103,12 @@ public class OutputActionReader {
 	}
 	
 	private static void copyConstituentAction(Component c, List<Element> args) {	
-		
 		return;
 	}
 	
-	private static Component deleteConstituentAction(Component c, List<Element> args) {	
+	private static void deleteConstituentAction(Component c, List<Element> args) {	
 		Component child = Component.createMatcher(args.get(0).getChild("component"));
 		c.getChildren().removeChild(child);
-		
-		//return modified componentParent (c)
-		return c;
 	}
 	
 	private static void moveConstituentAction(Component c, List<Element> args) {	
@@ -123,40 +120,30 @@ public class OutputActionReader {
 		return;
 	}
 	
-	private static Component addConstituentAction(Component c, List<Element> args) {
+	private static void addConstituentAction(Component c, List<Element> args) {
 		Component child = Component.createMatcher(args.get(0).getChild("component"));
 		c.getChildren().addChild(child);
-		//return modified componentParent (c)
-		return c;
 	}
 	
-	private static Component addFeatureAction(Component c, List<Element> args) {
+	private static void addFeatureAction(Component c, List<Element> args) {
 		String featureName = args.get(0).getChild("feature").getAttributeValue("name");
 		String featureValue = args.get(0).getChild("feature").getAttributeValue("value");
 		
 		Feature f = new Feature(featureName, featureValue, FeatureManager.isFeatureStandard(c.getName(), featureName));
 		c.setFeature(f);
-		//return modified component (c)
-		return c;
 	}
 
-	private static Component editFeatureAction(Component c, List<Element> args) {
+	private static void editFeatureAction(Component c, List<Element> args) {
 		String featureName = args.get(0).getChild("feature").getAttributeValue("name");
 		String featureValue = args.get(0).getChild("feature").getAttributeValue("value");
 		
 		Feature f = new Feature(featureName, featureValue, FeatureManager.isFeatureStandard(c.getName(), featureName));
 		c.setFeature(f);
-		
-		//return modified component (c)
-		return c;
 	}
 	
-	private static Component deleteFeatureAction(Component c, List<Element> args) {
+	private static void deleteFeatureAction(Component c, List<Element> args) {
 		String featureName = args.get(0).getAttributeValue("name");
 		
 		c.getFeatureList().removeFeature(featureName);
-		
-		//return modified component (c)
-		return c;
 	}
 }
