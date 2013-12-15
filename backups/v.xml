@@ -1,5 +1,11 @@
 <pos name="v">
-  <features />
+  <features>
+    <feature name="Type">
+      <value>Object</value>
+      <value>Directional</value>
+      <value />
+    </feature>
+  </features>
   <forms>
     <form>AF Contemplative</form>
     <form>AF Imperfective</form>
@@ -57,7 +63,7 @@
         <form name="OF Perfective" value="" />
         <form name="DF Contemplative" value="panghihimasukan" />
         <form name="DF Imperfective" value="pinanghihimasukan" />
-        <form name="DF Perfective" value="himasok" />
+        <form name="DF Perfective" value="pinanghimasukan" />
       </forms>
     </stem>
     <stem name="hiwa" gloss="to slice">

@@ -1,5 +1,11 @@
 <pos name="v">
-  <features />
+  <features>
+    <feature name="Type">
+      <value>Object</value>
+      <value>Directional</value>
+      <value>Double Obj</value>
+    </feature>
+  </features>
   <forms>
     <form>AF Contemplative</form>
     <form>AF Imperfective</form>
