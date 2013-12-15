@@ -178,7 +178,6 @@ import java.util.ArrayList;
 					currentXMLPanel = outputXMLPanel;
 					break;
 			}
-			
 		}
 		
 		public void setSelectComponentListeners()

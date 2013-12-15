@@ -68,10 +68,10 @@ public class Leaf extends Component{
 	public String toGeneratedString() {
 		StringBuilder sb = new StringBuilder();
 		if(!this.toLexiconSentence().isEmpty()){
-			sb.append(this.toLexiconSentence());
-			sb.append(" <");
+//			sb.append(this.toLexiconSentence());
+//			sb.append(" <");
 			sb.append(this.toString());
-			sb.append(">");
+//			sb.append(">");
 		}
 		else
 			sb.append(this.toString());
