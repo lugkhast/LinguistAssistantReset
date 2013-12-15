@@ -71,7 +71,7 @@ public class OutputActionReader {
 	}
 	
 	private static void selectFormAction(Component c, List<Element> args) {	
-		Leaf l = (Leaf)(c);
+		//Leaf l = (Leaf)(c);
 		
 		//l.setConcept();
 		return;
@@ -87,7 +87,7 @@ public class OutputActionReader {
 	
 	private static void changeLexiconAction(Component c, List<Element> args) {	
 		Leaf leaf = (Leaf) c;
-		String lexicon = args.get(0).getChild("argument").getAttributeValue("lexiconName");
+		String lexicon = args.get(0).getAttributeValue("lexiconName");
 		
 		if (leaf.getConcept() != null)
 			leaf.setConcept(lexicon);
@@ -95,14 +95,16 @@ public class OutputActionReader {
 	
 	private static void addLexiconAction(Component c, List<Element> args) {	
 		Leaf leaf = (Leaf) c;
-		String lexicon = args.get(0).getChild("argument").getAttributeValue("lexiconName");
+		String lexicon = args.get(0).getAttributeValue("lexiconName");
 		
 		if (leaf.getConcept() == null)
 			leaf.setConcept(lexicon);
 	}
 	
 	private static void orderSubConstituentAction(Component c, List<Element> args, ArrayList<UniMap> u) {	
-		String[] order = args.get(0).getChild("argument").getAttributeValue("order").split(" ");
+		String order1 = args.get(0).getAttributeValue("order");
+		String[] order = order1.split(" ");
+		
 		
 		for (int i = order.length-1; i >= 0; i--) {
 			String firstTag = order[i];

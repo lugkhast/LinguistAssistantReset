@@ -23,12 +23,15 @@ public abstract class Component implements Cloneable {
 	protected String name;
 	protected FeatureList featureList;
 	
+	protected Component() {
+	}
+	
 	//Constructor
 	protected Component(Element componentElement){
 		
 		//Set the features defined in the XML
 		this.name = componentElement.getAttributeValue(ATTRIBUTE_NAME);
-		this.featureList = new FeatureList(FeatureManager.getDefaultFeatures(name));
+		setDefaults(name);
 		
 		//get info (may be null for now as input xml may contain user defined phrases)
 		info = ComponentManager.getInstance().getComponentInfo(name);
@@ -39,10 +42,14 @@ public abstract class Component implements Cloneable {
 			setFeature(feature);
 		
 	}
-		
+	
 	protected Component(String componentName){
 		this.name = componentName;
-		this.featureList = new FeatureList(FeatureManager.getDefaultFeatures(componentName));
+		setDefaults(componentName);
+	}
+	
+	protected void setDefaults(String componentName) {
+		 this.featureList = new FeatureList(FeatureManager.getDefaultFeatures(componentName));
 	}
 	
 	//this creator creates a component with all default features. this was made for adding new components in the editor.

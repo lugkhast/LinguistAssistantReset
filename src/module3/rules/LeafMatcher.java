@@ -15,7 +15,7 @@ public class LeafMatcher extends Leaf{
 		tag = componentElement.getAttributeValue("matcher");
 	}
 	
-	protected void setDefaults() {
+	protected void setDefaults(String cName) {
 		this.featureList = new FeatureList(null);
 	}
 	

@@ -1,19 +1,21 @@
 <component name="Cl">
+  <component name="VP">
+    <component name="V" concept="sleep" sense="A">
+      <features>
+        <feature name="Surface Aspect" value="Imperfective" />
+        <feature name="Focus" value="AF" />
+      </features>
+    </component>
+  </component>
   <component name="NP">
     <features>
       <feature name="Complement Type" value="Actor" />
       <feature name="Focus Type" value="Focus" />
     </features>
+    <component name="Marker" />
     <component name="N" concept="human" sense="A">
       <features>
         <feature name="Participant Tracking" value="Routine" />
-      </features>
-    </component>
-  </component>
-  <component name="VP">
-    <component name="V" concept="sleep" sense="A">
-      <features>
-        <feature name="Surface Aspect" value="Contemplative" />
       </features>
     </component>
   </component>

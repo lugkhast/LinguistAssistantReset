@@ -55,7 +55,7 @@ public class RulesManager {
 		ArrayList<Component> comp = doc.getClauses();
 		// get test rules
 		ArrayList<RuleTree> rts = new ArrayList<RuleTree>();
-		for (int i = 1; i <= 5; i++) {
+		for (int i = 1; i <= 8; i++) {
 			rts.add(RulesManager.initializeRules(new File("inputxml/testfiles/Rule " + i + ".xml")));
 			System.out.println("File " + i + " successfully loaded");
 		}

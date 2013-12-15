@@ -21,7 +21,7 @@ public class PhraseMatcher extends Phrase {
 		tag = "";
 	}
 
-	protected void setDefaults() {
+	protected void setDefaults(String cName) {
 		this.featureList = new FeatureList(null);
 	}
 
