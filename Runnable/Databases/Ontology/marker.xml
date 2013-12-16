@@ -1,0 +1,9 @@
+<pos name="marker">
+  <stem name="ang" sense="A">
+    <definition>ang</definition>
+  </stem>
+  <stem name="ng" sense="A">
+    <definition>ng</definition>
+  </stem>
+  <stem name="sa" sense="A" />
+</pos>

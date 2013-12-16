@@ -41,7 +41,7 @@ public class RulesManager {
 	public RuleTree initializeRules(File xmlFile){
 		SAXBuilder builder = new SAXBuilder();
 		
-		System.out.print("XML NAME: " + xmlFile.getName());
+//		System.out.print("XML NAME: " + xmlFile.getName());
 		
 		String rulesetName = "";
 		

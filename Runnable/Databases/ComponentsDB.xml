@@ -11,6 +11,9 @@
 	<component name = "Conj" description = "Conjuction" type = "leaf" />
 	<component name = "Par" description = "Particle" type = "leaf" />
 	<component name = "Adv" description = "Adverb" type = "leaf" />
+<<<<<<< HEAD
 	
+=======
+>>>>>>> f5958dd82dfcf2f4e021d44ddcd471fc6af79ad3
 	<component name = "Marker" description="Marker" type="leaf" />
 </db>

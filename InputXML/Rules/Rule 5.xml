@@ -14,7 +14,7 @@
 		<output>
 			<action name="addConstit" parentTag="$1">
 				<argument>
-					<component name="Marker" concept="ang" />
+					<component name="Marker" concept="ang" sense="A"/>
 				</argument>
 			</action>
 		</output>
@@ -35,7 +35,7 @@
 		<output>
 			<action name="addConstit" parentTag="$1">
 				<argument>
-					<component name="Marker" concept="ng" />
+					<component name="Marker" concept="ng" sense="A"/>
 				</argument>
 			</action>
 		</output>
@@ -56,7 +56,7 @@
 		<output>
 			<action name="addConstit" parentTag="$1">
 				<argument>
-					<component name="Marker" concept="ng" />
+					<component name="Marker" concept="ng" sense="A"/>
 				</argument>
 			</action>
 		</output>
@@ -76,7 +76,7 @@
 		<output>
 			<action name="addConstit" parentTag="$1">
 				<argument>
-					<component name="Marker" concept="sa" />
+					<component name="Marker" concept="sa" sense="A"/>
 				</argument>
 			</action>
 		</output>

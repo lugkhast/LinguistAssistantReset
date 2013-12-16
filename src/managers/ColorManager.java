@@ -46,6 +46,8 @@ public class ColorManager {
 		colorMap.put(PartOfSpeech.PARTICLE.toLowerCase(), new Color(224,224,224)); //violet
 		
 		colorMap.put(PartOfSpeech.PERIOD, new Color(255,153,153));
+		
+		colorMap.put(PartOfSpeech.MARKER.toLowerCase(), Color.WHITE);
 	}
 	
 	public Color getColor(String partOfSpeech){

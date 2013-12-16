@@ -20,6 +20,8 @@ public class PartOfSpeech {
 	public static final String FEMININE_NOUN = "Feminine Noun";
 	public static final String PLACE_NAME = "Place Name";
 	
+	public static final String MARKER = "marker";
+	
 	private String name;
 	private String description;
 	
