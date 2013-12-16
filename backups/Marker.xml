@@ -1,0 +1,21 @@
+<pos name="Marker">
+  <features />
+  <forms />
+  <stems>
+    <stem name="ang" gloss="ang">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="ng" gloss="ng">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+    <stem name="sa" gloss="sa">
+      <comments />
+      <sentence />
+      <forms />
+    </stem>
+  </stems>
+</pos>

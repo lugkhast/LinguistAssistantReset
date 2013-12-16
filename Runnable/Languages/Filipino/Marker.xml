@@ -6,6 +6,9 @@
       <comments />
       <sentence />
       <forms />
+      <mappings>
+        <mapping concept="ang" sense="A" pos="n" />
+      </mappings>
     </stem>
     <stem name="ng" gloss="ng">
       <comments />
