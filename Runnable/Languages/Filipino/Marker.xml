@@ -7,18 +7,24 @@
       <sentence />
       <forms />
       <mappings>
-        <mapping concept="ang" sense="A" pos="n" />
+        <mapping concept="ang" sense="A" pos="marker" />
       </mappings>
     </stem>
     <stem name="ng" gloss="ng">
       <comments />
       <sentence />
       <forms />
+      <mappings>
+        <mapping concept="ng" sense="A" pos="marker" />
+      </mappings>
     </stem>
     <stem name="sa" gloss="sa">
       <comments />
       <sentence />
       <forms />
+      <mappings>
+        <mapping concept="sa" sense="A" pos="marker" />
+      </mappings>
     </stem>
   </stems>
 </pos>

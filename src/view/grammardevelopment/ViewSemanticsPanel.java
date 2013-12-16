@@ -150,7 +150,7 @@ public class ViewSemanticsPanel extends JPanel{
 		
 		//Set initially displayed info
 		setDocumentInfo();
-		generatedArea.setTextAreaContent(display.getDisplaySentence());
+//		generatedArea.setTextAreaContent(display.getDisplaySentence());
 	}
 	
 	public void initializeSentences(){
@@ -207,7 +207,7 @@ public class ViewSemanticsPanel extends JPanel{
 				splitPane.setRightComponent(viewPanel);
 				splitPane.setDividerLocation(0.6);
 				display.display(this.initialDocPanel);
-				generatedArea.setTextAreaContent(display.getDisplaySentence());
+//				generatedArea.setTextAreaContent(display.getDisplaySentence());
 				viewPanel.remove(generatedArea);
 				break;
 			case MODE_EDIT:
