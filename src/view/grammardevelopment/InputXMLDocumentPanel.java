@@ -175,7 +175,7 @@ public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 				for (Rule rule : tree.getChildren())
 				{
 					if (rule.apply(sentencePanel.getComponent()))
-							System.out.print("APPLY RULE: " + rule.getName());
+							System.out.println("APPLY RULE: " + rule.getName());
 				}
 			}
 			
