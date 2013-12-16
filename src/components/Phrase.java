@@ -73,11 +73,11 @@ public class Phrase extends Component{
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append(name);
 		/*
-		stringBuilder.append(name+"(");
+		
 		for(Component child: children.getChildren())
 			stringBuilder.append(child.toString());
-		stringBuilder.append(")");
 		*/
+		
 		return stringBuilder.toString();
 	}
 

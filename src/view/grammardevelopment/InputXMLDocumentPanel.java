@@ -167,6 +167,9 @@ public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 	}
 	
 	public String toSentence(){
+		
+		System.out.print("\n\n\n RRUUUUUUUUUULLLLLLLLLEEEEEEEEE \n\n\n");
+		
 		StringBuilder sb = new StringBuilder();
 		for(ComponentPanel sentencePanel: sentencePanels)
 		{
@@ -174,15 +177,18 @@ public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 			{
 				for (Rule rule : tree.getChildren())
 				{
-					if (rule.apply(sentencePanel.getComponent()))
-							System.out.print("APPLY RULE: " + rule.getName());
+					rule.apply(sentencePanel.getComponent());
 				}
 			}
 			
 			sb.append(sentencePanel.toSentence());
 			sb.append(" ");
+			
 		}
-		
+		removeAllChildren();
+		refreshDisplay();
+		for (ComponentPanel comp : sentencePanels)
+			comp.setSelectListener(selectListener);
 		return sb.toString();
 	}
 	
