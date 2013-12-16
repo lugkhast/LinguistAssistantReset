@@ -1,6 +1,7 @@
 <ruleset name = "Tagalog Rules: Rule 7">
 	<comments> Rule 7, ORDER IN THE COURT >:I </comments>
-	<rule name="Order = Focus, Actor, Object, Directional, VP">
+
+	<rule name="Order = Focus, VP">
 		<input>
 			<component name="Cl" matcher="$1">
 				<component name="NP" matcher="$2">
@@ -8,19 +9,73 @@
 						<feature name="Focus Type" value="Focus" />
 					</features>
 				</component>
-				<component name="NP" matcher="$3o">
+				<component name="VP" matcher="$6" />
+			</component>
+		</input>
+		<output>
+			<action name="orderSubConst" parentTag="$1">
+				<argument order="$6 $2" />
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Order = Focus, Actor, VP">
+		<input>
+			<component name="Cl" matcher="$1">
+				<component name="NP" matcher="$2">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+					</features>
+				</component>
+				<component name="NP" matcher="$3">
 					<features>
 						<feature name="Focus Type" value="Undefined" />
 						<feature name="Complement Type" value="Actor" />
 					</features>
 				</component>
-				<component name="NP" matcher="$4o">
+				<component name="VP" matcher="$6" />
+			</component>
+		</input>
+		<output>
+			<action name="orderSubConst" parentTag="$1">
+				<argument order="$6 $3 $2" />
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Order = Focus, Object, VP">
+		<input>
+			<component name="Cl" matcher="$1">
+				<component name="NP" matcher="$2">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+					</features>
+				</component>
+				<component name="NP" matcher="$4">
 					<features>
 						<feature name="Focus Type" value="Undefined" />
 						<feature name="Complement Type" value="Object" />
 					</features>
 				</component>
-				<component name="NP" matcher="$5o">
+				<component name="VP" matcher="$6" />
+			</component>
+		</input>
+		<output>
+			<action name="orderSubConst" parentTag="$1">
+				<argument order="$6 $4 $2" />
+			</action>
+		</output>
+	</rule>	
+
+	<rule name="Order = Focus, Directional, VP">
+		<input>
+			<component name="Cl" matcher="$1">
+				<component name="NP" matcher="$2">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+					</features>
+				</component>
+				<component name="NP" matcher="$5">
 					<features>
 						<feature name="Focus Type" value="Undefined" />
 						<feature name="Complement Type" value="Directional" />
@@ -31,8 +86,135 @@
 		</input>
 		<output>
 			<action name="orderSubConst" parentTag="$1">
-				<argument order="$6 $3o $4o $5o $2" />
+				<argument order="$6 $5 $2" />
 			</action>
 		</output>
 	</rule>
+
+	<rule name="Order = Focus, Actor, Object, VP">
+		<input>
+			<component name="Cl" matcher="$1">
+				<component name="NP" matcher="$2">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+					</features>
+				</component>
+				<component name="NP" matcher="$3">
+					<features>
+						<feature name="Focus Type" value="Undefined" />
+						<feature name="Complement Type" value="Actor" />
+					</features>
+				</component>
+				<component name="NP" matcher="$4">
+					<features>
+						<feature name="Focus Type" value="Undefined" />
+						<feature name="Complement Type" value="Object" />
+					</features>
+				</component>
+				<component name="VP" matcher="$6" />
+			</component>
+		</input>
+		<output>
+			<action name="orderSubConst" parentTag="$1">
+				<argument order="$6 $3 $4 $2" />
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Order = Focus, Actor, Directional, VP">
+		<input>
+			<component name="Cl" matcher="$1">
+				<component name="NP" matcher="$2">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+					</features>
+				</component>
+				<component name="NP" matcher="$3">
+					<features>
+						<feature name="Focus Type" value="Undefined" />
+						<feature name="Complement Type" value="Actor" />
+					</features>
+				</component>
+				<component name="NP" matcher="$5">
+					<features>
+						<feature name="Focus Type" value="Undefined" />
+						<feature name="Complement Type" value="Directional" />
+					</features>
+				</component>
+				<component name="VP" matcher="$6" />
+			</component>
+		</input>
+		<output>
+			<action name="orderSubConst" parentTag="$1">
+				<argument order="$6 $3 $5 $2" />
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Order = Focus, Object, Directional, VP">
+		<input>
+			<component name="Cl" matcher="$1">
+				<component name="NP" matcher="$2">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+					</features>
+				</component>
+				<component name="NP" matcher="$4">
+					<features>
+						<feature name="Focus Type" value="Undefined" />
+						<feature name="Complement Type" value="Object" />
+					</features>
+				</component>
+				<component name="NP" matcher="$5">
+					<features>
+						<feature name="Focus Type" value="Undefined" />
+						<feature name="Complement Type" value="Directional" />
+					</features>
+				</component>
+				<component name="VP" matcher="$6" />
+			</component>
+		</input>
+		<output>
+			<action name="orderSubConst" parentTag="$1">
+				<argument order="$6 $4 $5 $2" />
+			</action>
+		</output>
+	</rule>
+
+	<rule name="Order = Focus, Actor, Object, Directional, VP">
+		<input>
+			<component name="Cl" matcher="$1">
+				<component name="NP" matcher="$2">
+					<features>
+						<feature name="Focus Type" value="Focus" />
+					</features>
+				</component>
+				<component name="NP" matcher="$3">
+					<features>
+						<feature name="Focus Type" value="Undefined" />
+						<feature name="Complement Type" value="Actor" />
+					</features>
+				</component>
+				<component name="NP" matcher="$4">
+					<features>
+						<feature name="Focus Type" value="Undefined" />
+						<feature name="Complement Type" value="Object" />
+					</features>
+				</component>
+				<component name="NP" matcher="$5">
+					<features>
+						<feature name="Focus Type" value="Undefined" />
+						<feature name="Complement Type" value="Directional" />
+					</features>
+				</component>
+				<component name="VP" matcher="$6" />
+			</component>
+		</input>
+		<output>
+			<action name="orderSubConst" parentTag="$1">
+				<argument order="$6 $3 $4 $5 $2" />
+			</action>
+		</output>
+	</rule>
+
 </ruleset>

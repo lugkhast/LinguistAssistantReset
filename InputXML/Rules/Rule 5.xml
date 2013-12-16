@@ -61,7 +61,6 @@
 			</action>
 		</output>
 	</rule>
-
 	<rule name="Nonfocus, Directional = 'sa'">
 		<input>
 			<component name="Cl">
