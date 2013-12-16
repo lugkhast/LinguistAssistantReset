@@ -16,8 +16,29 @@ import components.Component;
 import components.InputXMLDocument;
 
 public class RulesManager {
+	//For singleton
+	private static RulesManager RulesManager;
 	
-	public static RuleTree initializeRules(File xmlFile){
+	public static RulesManager getInstance(){
+		if(RulesManager == null){
+			RulesManager = new RulesManager();
+		}
+		return RulesManager;
+	}
+	
+	public RulesManager()
+	{
+		rules = new ArrayList<RuleTree>();
+	}
+	
+	private ArrayList<RuleTree> rules;
+	
+	public ArrayList<RuleTree> getRules()
+	{
+		return rules;
+	}
+	
+	public RuleTree initializeRules(File xmlFile){
 		SAXBuilder builder = new SAXBuilder();
 		
 		System.out.print("XML NAME: " + xmlFile.getName());
@@ -43,6 +64,8 @@ public class RulesManager {
 			for(Element node: nodes)
 				rulesList.add(Rule.createInstance(node));
 			
+			RuleTree newTree = new RuleTree(xmlFile.getName(), rulesetName, comments, rulesList);
+			rules.add(newTree);
 			return new RuleTree(xmlFile.getName(), rulesetName, comments, rulesList);
 		}catch(Exception e){e.printStackTrace();}
 		

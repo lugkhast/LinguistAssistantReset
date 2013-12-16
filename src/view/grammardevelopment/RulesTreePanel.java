@@ -77,9 +77,9 @@ public class RulesTreePanel extends JPanel{
 		
 		File folder = new File("InputXML/Rules");
 		File[] listOfFiles = folder.listFiles();
-		
+//		RulesManager rulesManager = new RulesManager();
 		for (File file : listOfFiles) {
-			RuleTree ruleTree = RulesManager.initializeRules(file);
+			RuleTree ruleTree = RulesManager.getInstance().initializeRules(file);
 			System.out.println(ruleTree.getName() + "-rt name");
 			ruleTrees.add(ruleTree);
 		}

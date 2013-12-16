@@ -14,7 +14,10 @@ import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
+import managers.RulesManager;
 import module3.rules.PhraseMatcher;
+import module3.rules.Rule;
+import module3.rules.RuleTree;
 
 import components.Component;
 import components.InputXMLDocument;
@@ -165,7 +168,17 @@ public class InputXMLDocumentPanel extends JPanel implements Cloneable{
 	
 	public String toSentence(){
 		StringBuilder sb = new StringBuilder();
-		for(ComponentPanel sentencePanel: sentencePanels){
+		for(ComponentPanel sentencePanel: sentencePanels)
+		{
+			for (RuleTree tree : RulesManager.getInstance().getRules())
+			{
+				for (Rule rule : tree.getChildren())
+				{
+					if (rule.apply(sentencePanel.getComponent()))
+							System.out.print("APPLY RULE: " + rule.getName());
+				}
+			}
+			
 			sb.append(sentencePanel.toSentence());
 			sb.append(" ");
 		}

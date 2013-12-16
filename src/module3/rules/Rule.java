@@ -142,7 +142,7 @@ public class Rule {
 		return results;
 	}
 	
-	public boolean apply(Component constit) {
+	public boolean apply (Component constit) {
 		ArrayList<UniMap> mapList = unify(constit, this.input);
 		
 		if (mapList == null)
@@ -155,6 +155,7 @@ public class Rule {
 				}
 			}
 		}
+		
 		return true;
 	}
 }
